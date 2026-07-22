@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pogoda Kg | Interactive Kyrgyzstan Weather Map & Radar</title>
+  <meta name="description" content="Interactive live weather map for Kyrgyzstan. Explore temperatures, wind currents, and precipitation overlay across all 10 cities.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- Floating Dark Mode Toggle Widget -->
+  <div class="floating-dark-toggle">
+    <span>Dark<br>Mode</span>
+    <label class="toggle-switch">
+      <input type="checkbox" class="theme-toggle-input">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">
+      <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+      Pogoda <span>Kg</span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="blog.html" data-i18n="nav_news">News</a></li>
+        <li><a href="map.html" class="active" data-i18n="nav_map">Map</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-selector">
+        <button class="lang-btn" data-lang="EN">EN</button>
+        <button class="lang-btn" data-lang="KG">KG</button>
+        <button class="lang-btn" data-lang="RU">RU</button>
+      </div>
+      <span class="domain-badge"><i class="fa-solid fa-globe"></i> pogoda.kg</span>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="page-header-banner">
+    <h1 style="font-size:38px; font-weight:700; margin-bottom:10px;" data-i18n="map_title">Interactive Kyrgyzstan Weather Map</h1>
+    <p style="color:var(--text-sub); max-width:600px; margin:0 auto; font-size:16px;" data-i18n="map_desc">
+      Explore live temperature markers and forecast data across Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, and Talas.
+    </p>
+  </div>
+
+  <main class="section-wrapper">
+    <div id="kyrgyzstanWeatherMap" class="map-view-box" style="background: linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.6)), url('assets/images/naryn.png') center/cover no-repeat;"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+          Pogoda <span>Kg</span>
+        </div>
+        <p data-i18n="footer_desc">Kyrgyzstan's official weather portal (pogoda.kg).</p>
+      </div>
+
+      <div class="footer-column">
+        <h4 data-i18n="footer_nav">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="blog.html" data-i18n="nav_news">Weather News</a></li>
+          <li><a href="map.html" data-i18n="nav_map">Weather Map</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4 data-i18n="footer_locations">Top Locations</h4>
+        <ul>
+          <li><a href="index.html">Bishkek</a></li>
+          <li><a href="index.html">Osh</a></li>
+          <li><a href="index.html">Jalal-Abad</a></li>
+          <li><a href="index.html">Karakol</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <p style="font-size:14px; color:var(--text-sub);">Chuy Ave 114, Bishkek, Kyrgyzstan</p>
+      </div>
+    </div>
+
+    <div class="copyright-bar">
+      <div>© 2026 Pogoda Kg (pogoda.kg). All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/map.js"></script>
+</body>
+</html>
