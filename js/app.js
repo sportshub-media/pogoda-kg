@@ -2,7 +2,7 @@
 import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
-import { applyTranslations, TRANSLATIONS, getCurrentLang } from './i18n.js';
+import { applyTranslations, TRANSLATIONS, getCurrentLang, updateLinksForLang } from './i18n.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -27,13 +27,46 @@ function getConditionStr(conditionKey) {
 }
 
 function setupLanguageSwitcher() {
-  applyTranslations();
+  // Detect language from URL on page load
+  const path = window.location.pathname;
+  let detectedLang = null;
+  if (path.startsWith('/en')) detectedLang = 'EN';
+  else if (path.startsWith('/ru')) detectedLang = 'RU';
+  else if (path.startsWith('/kg')) detectedLang = 'KG';
+  
+  const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'KG';
+  localStorage.setItem('pogoda_lang', activeLang);
+  
+  // If no language prefix in URL, add one
+  if (!detectedLang) {
+    let newPath = `/${activeLang.toLowerCase()}${path === '/' ? '' : path}`;
+    newPath = newPath.replace('//', '/');
+    if (newPath.endsWith('/') && newPath.length > 1) newPath = newPath.slice(0, -1);
+    window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+  }
+  
+  applyTranslations(activeLang);
+  
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const lang = e.currentTarget.getAttribute('data-lang');
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
       e.currentTarget.classList.add('active');
       localStorage.setItem('pogoda_lang', lang);
+      
+      // Update the URL with new language prefix
+      let currentPath = window.location.pathname;
+      // Strip existing lang prefix
+      currentPath = currentPath.replace(/^\/(en|ru|kg)(\/|$)/, '/');
+      // Remove trailing index.html
+      if (currentPath.endsWith('index.html')) currentPath = currentPath.replace('index.html', '');
+      
+      let newPath = `/${lang.toLowerCase()}${currentPath === '/' ? '' : currentPath}`;
+      newPath = newPath.replace('//', '/');
+      if (newPath.endsWith('/') && newPath.length > 1) newPath = newPath.slice(0, -1);
+      
+      window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
+      
       applyTranslations(lang);
       
       // Re-render UI components with new language
