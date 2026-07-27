@@ -117,7 +117,7 @@ function setupCityPills() {
       loadCityWeather(city);
       const heroSection = document.querySelector('.hero-section');
       if (heroSection) {
-        heroSection.scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
 
@@ -344,7 +344,7 @@ function setupSearch() {
         dropdown.classList.remove('active');
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
-          heroSection.scrollIntoView({ behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }
     }
