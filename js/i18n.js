@@ -224,6 +224,10 @@ export function initLangSwitcher(onLangChange) {
       localStorage.setItem('pogoda_lang', targetLang);
       
       let currentPath = window.location.pathname;
+      
+      // Remove trailing index.html if present
+      if (currentPath.endsWith('index.html')) currentPath = currentPath.replace('index.html', '');
+      
       if (currentPath.startsWith('/en/')) currentPath = currentPath.replace('/en/', '/');
       else if (currentPath.startsWith('/ru/')) currentPath = currentPath.replace('/ru/', '/');
       else if (currentPath.startsWith('/kg/')) currentPath = currentPath.replace('/kg/', '/');
@@ -233,7 +237,20 @@ export function initLangSwitcher(onLangChange) {
       let newPath = `/${targetLang.toLowerCase()}` + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
       newPath = newPath.replace('//', '/');
       
-      window.location.href = newPath + window.location.search + window.location.hash;
+      // Remove trailing slash for root paths e.g. /kg/ -> /kg
+      if (newPath.endsWith('/') && newPath.length > 1) {
+          newPath = newPath.slice(0, -1);
+      }
+      
+      window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
+      
+      // Immediately apply translations without reloading the page
+      applyTranslations(targetLang);
+      
+      // Update active state in language selector UI buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === targetLang);
+      });
     });
   });
 }
