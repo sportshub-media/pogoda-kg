@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pogoda Kg | Kyrgyzstan Weather News & Climate Blog</title>
   <meta name="description" content="Latest weather forecast news, mountain pass reports, and climate updates across Kyrgyzstan.">
+  <link rel="alternate" hreflang="en" href="https://pogoda-kg.pages.dev/en" />
+  <link rel="alternate" hreflang="ru" href="https://pogoda-kg.pages.dev/ru" />
+  <link rel="alternate" hreflang="ky" href="https://pogoda-kg.pages.dev/kg" />
+  <link rel="alternate" hreflang="x-default" href="https://pogoda-kg.pages.dev/kg" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +18,7 @@
   <div class="floating-dark-toggle">
     <span>Dark<br>Mode</span>
     <label class="toggle-switch">
-      <input type="checkbox" class="theme-toggle-input">
+      <input type="checkbox" id="darkModeToggle" class="theme-toggle-input">
       <span class="slider"></span>
     </label>
   </div>
@@ -32,6 +36,7 @@
           <li><a href="index.html" data-i18n="nav_home">Home</a></li>
           <li><a href="blog.html" class="active" data-i18n="nav_news">News</a></li>
           <li><a href="map.html" data-i18n="nav_map">Map</a></li>
+          <li><a href="blog.html#pictures" data-i18n="nav_pictures">Pictures</a></li>
           <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
         </ul>
       </nav>
@@ -46,19 +51,20 @@
     </div>
   </header>
 
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-container" style="max-width:1320px; margin: 20px auto 0; padding: 0 40px; font-size: 14px; color: var(--text-sub);">
+    <a href="index.html" style="color:var(--text-sub); text-decoration:none;"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Home</span></a> 
+    <span style="margin: 0 8px;">/</span>
+    <span data-i18n="nav_news">News</span>
+  </div>
+
   <!-- Banner -->
   <div class="page-header-banner">
     <h1 style="font-size:38px; font-weight:700; margin-bottom:10px;" data-i18n="news_title">Kyrgyzstan Weather News & Insights</h1>
     <p style="color:var(--text-sub); max-width:600px; margin:0 auto; font-size:16px;" data-i18n="news_desc">
       Explore up-to-the-minute forecast reports, mountain pass snow conditions, Issyk-Kul lake reports, and environmental updates.
     </p>
-
-    <!-- Search & Filter Controls -->
-    <div style="max-width:600px; margin:30px auto 0 auto; display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-      <input type="text" id="blogSearchInput" class="form-input" data-i18n-placeholder="search_placeholder" placeholder="Search news articles..." style="max-width:360px; border-radius:24px;">
-    </div>
-
-
+  </div>
 
   <!-- Articles Grid -->
   <main class="section-wrapper">

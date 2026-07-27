@@ -206,7 +206,7 @@ export function initLangSwitcher(onLangChange) {
   else if (path.startsWith('/ru')) detectedLang = 'RU';
   else if (path.startsWith('/kg')) detectedLang = 'KG';
   
-  const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'EN';
+  const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'KG';
   localStorage.setItem('pogoda_lang', activeLang);
   
   if (!detectedLang) {
