@@ -9,7 +9,7 @@ export const BLOG_POSTS = [
     category: "Mountain Weather",
     date: "July 22, 2026",
     author: "Meteorologist Team",
-    image: "assets/images/hero_mountains.png",
+    image: "assets/images/hero_mountains.webp",
     excerpt: "High altitude snow condition breakdown for Too-Ashuu and Ala-Bel mountain routes connecting Bishkek and Osh.",
     content: `
       <p>Drivers traveling between Bishkek and Osh are advised to stay updated on mountain weather conditions over the Tian-Shan range. High-altitude passes including Too-Ashuu (3,180m) and Ala-Bel (3,175m) experience swift weather shifts even during summer months.</p>
@@ -28,7 +28,7 @@ export const BLOG_POSTS = [
     category: "Rain Forecast",
     date: "July 21, 2026",
     author: "Pogoda Editor",
-    image: "assets/images/kara_balta.png",
+    image: "assets/images/kara_balta.webp",
     excerpt: "Localized heavy rain showers expected in Bishkek, Kara-Balta, and Tokmok over the weekend.",
     content: `
       <p>An atmospheric front moving from the west brings increased humidity and evening thunderstorms across the Chuy Valley. Main urban centers including Bishkek and Kara-Balta will see short bursts of precipitation.</p>
@@ -41,7 +41,7 @@ export const BLOG_POSTS = [
     category: "Issyk-Kul Region",
     date: "July 20, 2026",
     author: "Balykchy Bureau",
-    image: "assets/images/balykchy.png",
+    image: "assets/images/balykchy.webp",
     excerpt: "Water temperature reaches 20°C in Cholpon-Ata and Balykchy with sunny weekend forecasts.",
     content: `
       <p>Lake Issyk-Kul is experiencing prime summer resort weather. Water surface temperatures in Cholpon-Ata, Balykchy, and Karakol bay have reached 19°C - 21°C. Offshore morning breezes remain gentle at 12 km/h.</p>
@@ -54,7 +54,7 @@ export const BLOG_POSTS = [
     category: "Urban Climate",
     date: "July 19, 2026",
     author: "Climate Desk",
-    image: "assets/images/bishkek.png",
+    image: "assets/images/bishkek.webp",
     excerpt: "Air quality index remains in the Good zone across Bishkek urban parks following recent rain showers.",
     content: `
       <p>Fresh mountain air currents down from Ala-Archa gorge have refreshed the atmosphere across Bishkek. The Air Quality Index (AQI) is currently reading 32 (Good), making it ideal for outdoor sports and city walks.</p>
@@ -66,7 +66,7 @@ export const BLOG_POSTS = [
     category: "Mountain Weather",
     date: "July 18, 2026",
     author: "Naryn Station Desk",
-    image: "assets/images/naryn.png",
+    image: "assets/images/naryn.webp",
     excerpt: "High elevation areas in Naryn region see sub-zero night temperatures and crisp mountain sun.",
     content: `
       <p>Naryn station reports crisp clear morning skies with night temperatures dipping near freezing at high elevations. Shepherds and mountain trekkers are advised to dress in layers.</p>
@@ -78,7 +78,7 @@ export const BLOG_POSTS = [
     category: "Mountain Weather",
     date: "July 17, 2026",
     author: "Karakol Alpine Team",
-    image: "assets/images/karakol.png",
+    image: "assets/images/karakol.webp",
     excerpt: "Karakol ski slopes report excellent powder snow conditions and clear alpine visibility.",
     content: `
       <p>Alpine snow monitoring equipment at Karakol base elevation (2,300m) shows pristine winter snow cover. Peak wind speeds remain under 15 km/h with high solar radiation.</p>

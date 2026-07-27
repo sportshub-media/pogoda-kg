@@ -11,7 +11,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: true,
     population: "1,074,000",
     elevation: "800 m",
-    image: "assets/images/bishkek.png"
+    image: "assets/images/bishkek.webp"
   },
   {
     id: "osh",
@@ -23,7 +23,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "322,000",
     elevation: "963 m",
-    image: "assets/images/osh.png"
+    image: "assets/images/osh.webp"
   },
   {
     id: "jalal-abad",
@@ -35,7 +35,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "123,000",
     elevation: "763 m",
-    image: "assets/images/jalal_abad.png"
+    image: "assets/images/jalal_abad.webp"
   },
   {
     id: "karakol",
@@ -47,7 +47,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "84,000",
     elevation: "1,760 m",
-    image: "assets/images/karakol.png"
+    image: "assets/images/karakol.webp"
   },
   {
     id: "tokmok",
@@ -59,7 +59,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "71,000",
     elevation: "816 m",
-    image: "assets/images/tokmok.png"
+    image: "assets/images/tokmok.webp"
   },
   {
     id: "uzgen",
@@ -71,7 +71,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "62,000",
     elevation: "1,025 m",
-    image: "assets/images/uzgen.png"
+    image: "assets/images/uzgen.webp"
   },
   {
     id: "kara-balta",
@@ -83,7 +83,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "54,000",
     elevation: "780 m",
-    image: "assets/images/kara_balta.png"
+    image: "assets/images/kara_balta.webp"
   },
   {
     id: "balykchy",
@@ -95,7 +95,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "51,000",
     elevation: "1,609 m",
-    image: "assets/images/balykchy.png"
+    image: "assets/images/balykchy.webp"
   },
   {
     id: "naryn",
@@ -107,7 +107,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "41,000",
     elevation: "2,044 m",
-    image: "assets/images/naryn.png"
+    image: "assets/images/naryn.webp"
   },
   {
     id: "talas",
@@ -119,7 +119,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "40,000",
     elevation: "1,280 m",
-    image: "assets/images/talas.png"
+    image: "assets/images/talas.webp"
   }
 ];
 

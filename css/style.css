@@ -268,7 +268,7 @@ nav.main-nav a.active::after {
   min-height: 760px;
   background-color: #0F172A;
   background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.88)),
-                    url('../assets/images/hero_mountains.png');
+                    url('../assets/images/hero_mountains.webp');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

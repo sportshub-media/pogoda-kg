@@ -176,6 +176,46 @@ export function getCurrentLang() {
   return localStorage.getItem('pogoda_lang') || 'EN';
 }
 
+export function updateLinksForLang(lang) {
+  const prefix = `/${lang.toLowerCase()}`;
+  document.querySelectorAll('a').forEach(a => {
+    let href = a.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
+    
+    // Remove any existing language prefix
+    let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
+    
+    if (!cleanHref.startsWith('/')) {
+        let currentPath = window.location.pathname;
+        let dir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+        cleanHref = dir + cleanHref;
+        cleanHref = cleanHref.replace(/^\/(en|ru|kg)(\/|$)/, '/');
+    }
+    
+    cleanHref = cleanHref.replace(/\/\//g, '/');
+    if (cleanHref === '') cleanHref = '/';
+    
+    a.setAttribute('href', prefix + cleanHref);
+  });
+  
+  document.querySelectorAll('[onclick^="window.location.href"]').forEach(el => {
+    let onclick = el.getAttribute('onclick');
+    let match = onclick.match(/window\.location\.href='([^']+)'/);
+    if (match) {
+        let href = match[1];
+        let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
+        if (!cleanHref.startsWith('/')) {
+            let currentPath = window.location.pathname;
+            let dir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+            cleanHref = dir + cleanHref;
+            cleanHref = cleanHref.replace(/^\/(en|ru|kg)(\/|$)/, '/');
+        }
+        cleanHref = cleanHref.replace(/\/\//g, '/');
+        el.setAttribute('onclick', `window.location.href='${prefix}${cleanHref}'`);
+    }
+  });
+}
+
 export function applyTranslations(lang = getCurrentLang()) {
   const dict = TRANSLATIONS[lang] || TRANSLATIONS['EN'];
 
@@ -197,6 +237,8 @@ export function applyTranslations(lang = getCurrentLang()) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  updateLinksForLang(lang);
 }
 
 export function initLangSwitcher(onLangChange) {
@@ -253,4 +295,10 @@ export function initLangSwitcher(onLangChange) {
       });
     });
   });
+
+  // Observe DOM for dynamically added links and update them
+  const observer = new MutationObserver(() => {
+    updateLinksForLang(getCurrentLang());
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 }
