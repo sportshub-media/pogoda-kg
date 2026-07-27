@@ -2,7 +2,7 @@
 import { initTheme } from './theme.js';
 import { initLangSwitcher } from './i18n.js';
 
-const BLOG_POSTS = [
+export const BLOG_POSTS = [
   {
     id: "post-1",
     title: "Tian-Shan Mountain Passes Weather Advisory for Drivers",
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLangSwitcher();
   renderBlogPosts(BLOG_POSTS);
   setupBlogFilters();
-  setupModalReader();
+  setupBlogRouting();
 });
 
 function renderBlogPosts(posts) {
@@ -149,55 +149,15 @@ function setupBlogFilters() {
   }
 }
 
-function setupModalReader() {
-  const modal = document.getElementById('blogReaderModal');
+function setupBlogRouting() {
   const container = document.getElementById('blogCardsGrid');
-  const closeBtn = document.getElementById('closeModalBtn');
-
-  if (!container || !modal) return;
+  if (!container) return;
 
   container.addEventListener('click', (e) => {
-    const card = e.target.closest('[data-post-id]');
+    const card = e.target.closest('.news-card');
     if (card) {
       const postId = card.dataset.postId;
-      const post = BLOG_POSTS.find(p => p.id === postId);
-      if (post) {
-        openModal(post);
-      }
+      window.location.href = `post.html?id=${postId}`;
     }
   });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-}
-
-function openModal(post) {
-  const modal = document.getElementById('blogReaderModal');
-  const contentBox = document.getElementById('modalArticleContent');
-  if (!modal || !contentBox) return;
-
-  contentBox.innerHTML = `
-    <img src="${post.image}" alt="${post.title}" style="width:100%; height:260px; object-fit:cover; border-radius:16px; margin-bottom:20px;">
-    <span class="news-tag">${post.category}</span>
-    <h2 style="font-size:28px; font-weight:700; margin:12px 0;">${post.title}</h2>
-    <div style="font-size:13px; color:var(--text-sub); margin-bottom:20px; display:flex; gap:20px;">
-      <span><i class="fa-solid fa-user"></i> ${post.author}</span>
-      <span><i class="fa-solid fa-calendar"></i> ${post.date}</span>
-    </div>
-    <div style="line-height:1.8; font-size:16px; color:var(--text-main);">
-      ${post.content}
-    </div>
-  `;
-
-  modal.style.display = 'flex';
-}
-
-function closeModal() {
-  const modal = document.getElementById('blogReaderModal');
-  if (modal) modal.style.display = 'none';
 }
