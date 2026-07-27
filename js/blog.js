@@ -90,9 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLangSwitcher();
   renderBlogPosts(BLOG_POSTS);
-  setupBlogFilters();
-  setupBlogRouting();
 });
+
+function slugify(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
 
 function renderBlogPosts(posts) {
   const container = document.getElementById('blogCardsGrid');
@@ -103,61 +110,35 @@ function renderBlogPosts(posts) {
     return;
   }
 
-  container.innerHTML = posts.map(post => `
-    <div class="news-card" style="height: 380px;" data-post-id="${post.id}">
-      <img src="${post.image}" alt="${post.title}" class="news-card-img">
-      <div class="news-card-overlay">
-        <span class="news-tag">${post.category}</span>
-        <h3 class="news-title" style="font-size:18px;">${post.title}</h3>
-        <p style="font-size:13px; opacity:0.85; margin-bottom:10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${post.excerpt}</p>
-        <div class="news-meta">
-          <span><i class="fa-solid fa-user"></i> ${post.author}</span>
-          <span><i class="fa-solid fa-calendar"></i> ${post.date}</span>
+  container.innerHTML = posts.map(post => {
+    const slug = slugify(post.title);
+    return `
+      <a href="/blog/${slug}.html" style="text-decoration: none; color: inherit;">
+        <div class="news-card" style="height: 380px;">
+          <img src="${post.image}" alt="${post.title}" class="news-card-img">
+          <div class="news-card-overlay">
+            <span class="news-tag">${post.category}</span>
+            <h3 class="news-title" style="font-size:18px;">${post.title}</h3>
+            <p style="font-size:13px; opacity:0.85; margin-bottom:10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${post.excerpt}</p>
+            <div class="news-meta">
+              <span><i class="fa-solid fa-user"></i> ${post.author}</span>
+              <span><i class="fa-solid fa-calendar"></i> ${post.date}</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  `).join('');
+      </a>
+    `;
+  }).join('');
 }
 
-function setupBlogFilters() {
-  const searchInput = document.getElementById('blogSearchInput');
-  const categoryPills = document.querySelectorAll('.category-filter-pill');
-
-  let activeCategory = 'all';
-
-  categoryPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      categoryPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      activeCategory = pill.dataset.category;
-      filterPosts();
-    });
-  });
-
-  if (searchInput) {
-    searchInput.addEventListener('input', filterPosts);
-  }
-
-  function filterPosts() {
-    const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+// Search logic only
+const searchInput = document.getElementById('blogSearchInput');
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
     const filtered = BLOG_POSTS.filter(post => {
-      const matchesCat = (activeCategory === 'all' || post.category.toLowerCase().includes(activeCategory));
-      const matchesQuery = post.title.toLowerCase().includes(query) || post.excerpt.toLowerCase().includes(query);
-      return matchesCat && matchesQuery;
+      return post.title.toLowerCase().includes(query) || post.excerpt.toLowerCase().includes(query);
     });
     renderBlogPosts(filtered);
-  }
-}
-
-function setupBlogRouting() {
-  const container = document.getElementById('blogCardsGrid');
-  if (!container) return;
-
-  container.addEventListener('click', (e) => {
-    const card = e.target.closest('.news-card');
-    if (card) {
-      const postId = card.dataset.postId;
-      window.location.href = `post.html?id=${postId}`;
-    }
   });
 }

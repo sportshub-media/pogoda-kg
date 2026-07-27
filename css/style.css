@@ -140,11 +140,17 @@ header.site-header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.header-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
   padding: 14px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: var(--transition);
 }
 
 .brand-logo {
