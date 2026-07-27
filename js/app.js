@@ -341,6 +341,7 @@ function setupSearch() {
         });
         loadCityWeather(selected);
         searchInput.value = '';
+        dropdown.innerHTML = '';
         dropdown.classList.remove('active');
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
@@ -353,6 +354,7 @@ function setupSearch() {
   document.addEventListener('click', (e) => {
     if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
       dropdown.classList.remove('active');
+      dropdown.innerHTML = '';
     }
   });
 }
