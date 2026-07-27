@@ -9,11 +9,20 @@ let weatherCache = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  
+  // Read city from URL if passed from map
+  const urlParams = new URLSearchParams(window.location.search);
+  const cityParam = urlParams.get('city');
+  if (cityParam) {
+    const found = KYRGYZSTAN_CITIES.find(c => c.id === cityParam);
+    if (found) currentCity = found;
+  }
+
   setupLanguageSwitcher();
   setupCityPills();
   setupSearch();
   setupHourlySlider();
-  loadCityWeather(DEFAULT_CITY);
+  loadCityWeather(currentCity);
 });
 
 function getCityName(city) {
@@ -106,6 +115,10 @@ function setupCityPills() {
       document.querySelectorAll('.city-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       loadCityWeather(city);
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
     });
 
     container.appendChild(pill);
@@ -329,6 +342,10 @@ function setupSearch() {
         loadCityWeather(selected);
         searchInput.value = '';
         dropdown.classList.remove('active');
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+          heroSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   });

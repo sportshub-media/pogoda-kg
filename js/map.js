@@ -76,7 +76,7 @@ async function renderMarkers() {
           <span>💨 ${data.current.windSpeed} km/h</span>
           <span>💧 ${data.current.humidity}%</span>
         </div>
-        <a href="index.html" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">View Full Forecast</a>
+        <a href="index.html?city=${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">View Full Forecast</a>
       </div>
     `);
   }
