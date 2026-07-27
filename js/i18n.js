@@ -8,7 +8,7 @@ export const TRANSLATIONS = {
     nav_pictures: "Pictures",
     nav_contact: "Contact",
     hero_subtitle: "Weather and Forecast",
-    hero_title: "Daily Weather Forecast Update in Kyrgizstan",
+    hero_title: "Daily Weather Forecast Update in Kyrgyzstan",
     hero_desc: "Get the latest real-time weather forecast for Kyrgyzstan cities with up-to-date information on temperature, precipitation, wind speed, and monthly outlooks.",
     search_placeholder: "Search location in Kyrgyzstan...",
     hourly_title: "Hourly Update",

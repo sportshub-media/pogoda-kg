@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Pogoda Kg</title>
+  <meta name="description" content="The page you are looking for does not exist on Pogoda Kg.">
+  <meta name="theme-color" content="#FF9F43">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .error-code {
+      font-size: 120px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF9F43, #F7B731);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .error-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 16px;
+      color: var(--text-sub);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #FF9F43, #F7B731);
+      color: #0f172a;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .error-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 159, 67, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
+        Pogoda <span>Kg</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">
+      The weather page you're looking for doesn't exist or has been moved. Let's get you back to the forecast.
+    </p>
+    <a href="index.html" class="error-btn">
+      <i class="fa-solid fa-house"></i> Back to Weather Home
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="copyright-bar">
+      <div>© 2026 Pogoda Kg (pogoda.kg). All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

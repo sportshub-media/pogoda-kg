@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg</title>
   <meta name="description" content="Accurate daily, hourly, weekly, and monthly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn.">
+  <link rel="canonical" href="https://pogoda-kg.pages.dev/">
   <link rel="alternate" hreflang="en" href="https://pogoda-kg.pages.dev/en" />
   <link rel="alternate" hreflang="ru" href="https://pogoda-kg.pages.dev/ru" />
-  <link rel="alternate" hreflang="kg" href="https://pogoda-kg.pages.dev/kg" />
-  <link rel="alternate" hreflang="x-default" href="https://pogoda-kg.pages.dev/kg" />
+  <link rel="alternate" hreflang="ky" href="https://pogoda-kg.pages.dev/kg" />
+  <link rel="alternate" hreflang="x-default" href="https://pogoda-kg.pages.dev/en" />
+  <meta name="theme-color" content="#FF9F43">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg">
+  <meta property="og:description" content="Accurate daily, hourly, weekly, and monthly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn.">
+  <meta property="og:url" content="https://pogoda-kg.pages.dev/">
+  <meta property="og:image" content="https://pogoda-kg.pages.dev/assets/images/hero_mountains.webp">
+  <meta property="og:site_name" content="Pogoda Kg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kyrgyzstan Daily Weather Forecast | Pogoda Kg">
+  <meta name="twitter:description" content="Real-time weather forecasts for Kyrgyzstan cities.">
+  <meta name="twitter:image" content="https://pogoda-kg.pages.dev/assets/images/hero_mountains.webp">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -58,7 +73,7 @@
       <!-- Hero Left Text & Location Search -->
       <div class="hero-left">
         <div class="hero-subtitle" data-i18n="hero_subtitle">Weather and Forecast</div>
-        <h1 class="hero-title" data-i18n="hero_title">Daily Weather Forecast Update in Kyrgizstan</h1>
+        <h1 class="hero-title" data-i18n="hero_title">Daily Weather Forecast Update in Kyrgyzstan</h1>
         <p class="hero-desc" data-i18n="hero_desc">
           Get the latest real-time weather forecast for Kyrgyzstan cities with up-to-date information on temperature, precipitation, wind speed, and monthly outlooks.
         </p>
@@ -72,7 +87,12 @@
 
       <!-- Hero Right Live Weather Summary Card -->
       <div id="heroWeatherCard" class="hero-weather-card">
-        <div style="text-align:center; padding: 40px 0;">Loading weather data...</div>
+        <div style="padding: 24px;">
+          <div class="skeleton skeleton-text" style="width:40%;"></div>
+          <div class="skeleton skeleton-text" style="width:25%;"></div>
+          <div class="skeleton skeleton-temp" style="margin-top:16px;"></div>
+          <div class="skeleton skeleton-text" style="width:55%;"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -250,42 +270,42 @@
 
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="assets/images/gallery_naryn.webp" alt="Naryn Highland Weather" class="gallery-img">
+        <img src="assets/images/gallery_naryn.webp" alt="Naryn Highland Weather" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Naryn Alpine Valley</h4>
           <p>Highland weather & mountain pass conditions</p>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery_karakol.webp" alt="Karakol Ski Resort Weather" class="gallery-img">
+        <img src="assets/images/gallery_karakol.webp" alt="Karakol Ski Resort Weather" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Karakol Peak & Slopes</h4>
           <p>Snow depth & mountain winter forecast</p>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery_issyk_kul.webp" alt="Issyk-Kul Lake Weather" class="gallery-img">
+        <img src="assets/images/gallery_issyk_kul.webp" alt="Issyk-Kul Lake Weather" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Issyk-Kul Lake Coast</h4>
           <p>Balykchy & Cholpon-Ata resort climate</p>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery_osh.webp" alt="Osh Region Weather" class="gallery-img">
+        <img src="assets/images/gallery_osh.webp" alt="Osh Region Weather" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Osh & Sulaiman-Too Mountain</h4>
           <p>Southern Kyrgyzstan regional weather monitoring</p>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery_bishkek.webp" alt="Bishkek Skyline Weather" class="gallery-img">
+        <img src="assets/images/gallery_bishkek.webp" alt="Bishkek Skyline Weather" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Bishkek City Valley</h4>
           <p>Chuy region urban weather & air index</p>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="assets/images/gallery_jalal_abad.webp" alt="Jalal-Abad Resort Forecast" class="gallery-img">
+        <img src="assets/images/gallery_jalal_abad.webp" alt="Jalal-Abad Resort Forecast" class="gallery-img" loading="lazy">
         <div class="gallery-caption">
           <h4>Jalal-Abad Valley</h4>
           <p>Mineral spring resort weather radar tracking</p>
@@ -322,11 +342,11 @@
       <div class="footer-column">
         <h4 data-i18n="footer_locations">Top Locations</h4>
         <ul>
-          <li><a href="#">Bishkek</a></li>
-          <li><a href="#">Osh</a></li>
-          <li><a href="#">Jalal-Abad</a></li>
-          <li><a href="#">Karakol</a></li>
-          <li><a href="#">Naryn</a></li>
+          <li><a href="index.html">Bishkek</a></li>
+          <li><a href="index.html">Osh</a></li>
+          <li><a href="index.html">Jalal-Abad</a></li>
+          <li><a href="index.html">Karakol</a></li>
+          <li><a href="index.html">Naryn</a></li>
         </ul>
       </div>
 
@@ -347,12 +367,50 @@
     <div class="copyright-bar">
       <div>© 2026 Pogoda Kg (pogoda.kg). All rights reserved.</div>
       <div style="display:flex; gap:16px;">
-        <a href="contact.html">Privacy Policy</a>
-        <a href="contact.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
 
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pogoda Kg",
+    "url": "https://pogoda-kg.pages.dev/",
+    "description": "Kyrgyzstan's primary weather forecast portal with real-time data for Bishkek, Osh, Jalal-Abad, Karakol, and all major cities.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://pogoda-kg.pages.dev/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pogoda Kg",
+    "url": "https://pogoda-kg.pages.dev/",
+    "logo": "https://pogoda-kg.pages.dev/assets/favicon.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+996-312-55-00-11",
+      "contactType": "customer support",
+      "areaServed": "KG",
+      "availableLanguage": ["English", "Russian", "Kyrgyz"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Chuy Avenue 114",
+      "addressLocality": "Bishkek",
+      "postalCode": "720000",
+      "addressCountry": "KG"
+    }
+  }
+  </script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

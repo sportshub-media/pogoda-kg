@@ -1,33 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://pogoda-kg.pages.dev/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pogoda-kg.pages.dev/index.html</loc>
-    <lastmod>2026-07-22</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://pogoda-kg.pages.dev/map.html</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pogoda-kg.pages.dev/blog.html</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pogoda.kg/contact.html</loc>
-    <lastmod>2026-07-22</lastmod>
+    <loc>https://pogoda-kg.pages.dev/contact.html</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/bishkek-air-quality-weekly-uv-index-report.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/heavy-rain-mountain-runoff-in-chuy-valley.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/issyk-kul-summer-lake-weather-water-temperature-guide.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/karakol-peak-ski-winter-trail-forecast.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/naryn-highland-snowfall-temperature-drop-outlook.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/blog/tian-shan-mountain-passes-weather-advisory-for-drivers.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/privacy.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pogoda-kg.pages.dev/terms.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
