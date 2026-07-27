@@ -1,5 +1,7 @@
 // Pogoda Kg - Theme Toggle Manager
 
+import { initCookieConsent } from './cookie-consent.js';
+
 export function initTheme() {
   const savedTheme = localStorage.getItem('pogoda_theme') || 'light';
   if (savedTheme === 'dark') {
@@ -9,6 +11,9 @@ export function initTheme() {
     document.documentElement.setAttribute('data-theme', 'light');
     document.body.classList.remove('dark-theme');
   }
+
+  // Initialize Cookie Consent Banner
+  initCookieConsent();
 
   // Bind all theme toggles
   const themeToggles = document.querySelectorAll('.theme-toggle-input, #darkModeToggle');
