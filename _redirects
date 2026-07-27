@@ -1,0 +1,9 @@
+/en  /index.html  200
+/ru  /index.html  200
+/kg  /index.html  200
+/en/  /index.html  200
+/ru/  /index.html  200
+/kg/  /index.html  200
+/en/*  /:splat  200
+/ru/*  /:splat  200
+/kg/*  /:splat  200

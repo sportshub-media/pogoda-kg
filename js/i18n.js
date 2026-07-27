@@ -169,6 +169,10 @@ export const TRANSLATIONS = {
 };
 
 export function getCurrentLang() {
+  const path = window.location.pathname;
+  if (path.startsWith('/en')) return 'EN';
+  if (path.startsWith('/ru')) return 'RU';
+  if (path.startsWith('/kg')) return 'KG';
   return localStorage.getItem('pogoda_lang') || 'EN';
 }
 
@@ -196,15 +200,40 @@ export function applyTranslations(lang = getCurrentLang()) {
 }
 
 export function initLangSwitcher(onLangChange) {
-  applyTranslations();
+  const path = window.location.pathname;
+  let detectedLang = null;
+  if (path.startsWith('/en')) detectedLang = 'EN';
+  else if (path.startsWith('/ru')) detectedLang = 'RU';
+  else if (path.startsWith('/kg')) detectedLang = 'KG';
+  
+  const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'EN';
+  localStorage.setItem('pogoda_lang', activeLang);
+  
+  if (!detectedLang) {
+    let newPath = `/${activeLang.toLowerCase()}${path}`;
+    if (newPath === `/${activeLang.toLowerCase()}/`) newPath = `/${activeLang.toLowerCase()}/index.html`;
+    newPath = newPath.replace('//', '/');
+    window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+  }
+
+  applyTranslations(activeLang);
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const lang = e.currentTarget.getAttribute('data-lang');
-      localStorage.setItem('pogoda_lang', lang);
-      applyTranslations(lang);
-      if (onLangChange) {
-        onLangChange(lang);
-      }
+      const targetLang = e.currentTarget.getAttribute('data-lang');
+      localStorage.setItem('pogoda_lang', targetLang);
+      
+      let currentPath = window.location.pathname;
+      if (currentPath.startsWith('/en/')) currentPath = currentPath.replace('/en/', '/');
+      else if (currentPath.startsWith('/ru/')) currentPath = currentPath.replace('/ru/', '/');
+      else if (currentPath.startsWith('/kg/')) currentPath = currentPath.replace('/kg/', '/');
+      
+      if (currentPath === '/en' || currentPath === '/ru' || currentPath === '/kg') currentPath = '/';
+      
+      let newPath = `/${targetLang.toLowerCase()}` + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+      newPath = newPath.replace('//', '/');
+      
+      window.location.href = newPath + window.location.search + window.location.hash;
     });
   });
 }
