@@ -48,8 +48,34 @@
           <button class="lang-btn" data-lang="KG">KG</button>
           <button class="lang-btn" data-lang="RU">RU</button>
         </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="blog.html" data-i18n="nav_news">News</a></li>
+          <li><a href="map.html" data-i18n="nav_map">Map</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <div class="mobile-lang-title">Language / Тил / Язык</div>
+        <div class="lang-selector mobile-lang-selector">
+          <button class="lang-btn" data-lang="EN">EN</button>
+          <button class="lang-btn" data-lang="KG">KG</button>
+          <button class="lang-btn" data-lang="RU">RU</button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
 
   <div class="breadcrumbs-container" style="max-width:1320px; margin: 20px auto 0; padding: 0 40px; font-size: 14px; color: var(--text-sub);">

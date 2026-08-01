@@ -303,9 +303,56 @@ export function initLangSwitcher(onLangChange) {
     });
   });
 
+  initMobileMenu();
+
   // Observe DOM for dynamically added links and update them
   const observer = new MutationObserver(() => {
     updateLinksForLang(getCurrentLang());
   });
   observer.observe(document.body, { childList: true, subtree: true });
+}
+
+export function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  const overlay = document.getElementById('mobileOverlay');
+
+  if (!toggleBtn || !drawer) return;
+
+  function openMenu() {
+    toggleBtn.classList.add('active');
+    drawer.classList.add('open');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    toggleBtn.classList.remove('active');
+    drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', closeMenu);
+  }
+
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeMenu();
+    }
+  });
 }

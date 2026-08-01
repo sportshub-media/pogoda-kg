@@ -2,13 +2,14 @@
 import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
-import { applyTranslations, TRANSLATIONS, getCurrentLang, updateLinksForLang } from './i18n.js';
+import { applyTranslations, TRANSLATIONS, getCurrentLang, updateLinksForLang, initMobileMenu } from './i18n.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initMobileMenu();
   
   // Read city from URL if passed from map
   const urlParams = new URLSearchParams(window.location.search);
