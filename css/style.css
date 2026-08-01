@@ -176,14 +176,13 @@ header.site-header {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 20px;
   box-shadow: 0 4px 12px rgba(255, 159, 67, 0.4);
 }
 
+.brand-icon svg,
 .brand-icon-svg {
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1);
 }
 
 nav.main-nav ul {
