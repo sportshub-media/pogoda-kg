@@ -160,11 +160,27 @@ header.site-header {
   color: var(--text-main);
 }
 
-.brand-logo-full {
-  height: 42px;
+.brand-logo-full,
+.brand-logo-img {
+  height: 40px;
   width: auto;
   max-width: 210px;
+  object-fit: contain;
   display: block;
+}
+
+[data-theme="light"] .logo-light-theme {
+  display: block !important;
+}
+[data-theme="light"] .logo-dark-theme {
+  display: none !important;
+}
+
+[data-theme="dark"] .logo-light-theme {
+  display: none !important;
+}
+[data-theme="dark"] .logo-dark-theme {
+  display: block !important;
 }
 
 nav.main-nav ul {
