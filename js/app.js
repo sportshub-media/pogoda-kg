@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCityPills();
   setupSearch();
   setupHourlySlider();
+  setupFooterCityLinks();
   loadCityWeather(currentCity);
 });
 
@@ -422,7 +423,37 @@ function renderRecentSearches() {
         p.classList.toggle('active', p.dataset.cityId === city.id);
       });
       loadCityWeather(city);
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
     container.appendChild(card);
+  });
+}
+
+function setupFooterCityLinks() {
+  document.querySelectorAll('.footer-city-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const cityId = link.getAttribute('data-city-id');
+      if (cityId) {
+        const found = KYRGYZSTAN_CITIES.find(c => c.id === cityId.toLowerCase());
+        if (found) {
+          if (document.getElementById('heroWeatherCard')) {
+            e.preventDefault();
+            const newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('city', found.id);
+            window.history.pushState(null, '', newUrl.toString());
+
+            document.querySelectorAll('.city-pill').forEach(p => {
+              p.classList.toggle('active', p.dataset.cityId === found.id);
+            });
+
+            loadCityWeather(found);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      }
+    });
   });
 }
