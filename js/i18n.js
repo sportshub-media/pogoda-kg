@@ -296,6 +296,10 @@ export function initLangSwitcher(onLangChange) {
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === targetLang);
       });
+
+      if (onLangChange && typeof onLangChange === 'function') {
+        onLangChange(targetLang);
+      }
     });
   });
 
