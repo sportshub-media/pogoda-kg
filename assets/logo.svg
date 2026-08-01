@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Center Spiral -->
+  <path d="M 46 50 C 46 43, 55 43, 55 50 C 55 59, 41 59, 41 50 C 41 37, 63 37, 63 50 C 63 67, 33 67, 33 50" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="7" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  <!-- 8 Sun Rays -->
+  <line x1="50" y1="20" x2="50" y2="10" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="71" y1="29" x2="78" y2="22" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="80" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="71" y1="71" x2="78" y2="78" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="50" y1="80" x2="50" y2="90" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="29" y1="71" x2="22" y2="78" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="20" y1="50" x2="10" y2="50" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  <line x1="29" y1="29" x2="22" y2="22" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+</svg>
