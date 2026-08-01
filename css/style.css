@@ -154,25 +154,16 @@ header.site-header {
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.5px;
   text-decoration: none;
+  color: var(--text-main);
 }
 
-.brand-logo span {
-  color: var(--primary);
-}
-
-.brand-logo-img,
-.brand-logo-svg {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
+.brand-logo-full {
+  height: 42px;
+  width: auto;
+  max-width: 190px;
   display: block;
 }
 
