@@ -721,7 +721,8 @@ nav.main-nav a.active::after {
 
 .other-country-card {
   flex: 0 0 340px;
-  background: var(--glass-bg);
+  background: rgba(30, 41, 59, 0.85);
+  color: #FFFFFF;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
@@ -733,7 +734,6 @@ nav.main-nav a.active::after {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  color: var(--text-main);
 }
 
 .other-country-card:hover {
@@ -811,7 +811,8 @@ nav.main-nav a.active::after {
 .ten-day-pill {
   flex: 0 0 auto;
   width: 120px;
-  background: var(--glass-bg);
+  background: rgba(30, 41, 59, 0.85);
+  color: #FFFFFF;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
@@ -821,7 +822,6 @@ nav.main-nav a.active::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--text-main);
   transition: transform 0.2s;
 }
 
@@ -924,7 +924,8 @@ nav.main-nav a.active::after {
 
 .hourly-card {
   min-width: 160px;
-  background: var(--glass-bg);
+  background: rgba(30, 41, 59, 0.85);
+  color: #FFFFFF;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
@@ -959,7 +960,7 @@ nav.main-nav a.active::after {
 .hourly-condition {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-main);
+  opacity: 0.9;
 }
 
 .hourly-details {
@@ -1106,14 +1107,12 @@ nav.main-nav a.active::after {
   font-size: 16px;
   font-weight: 700;
   margin-top: 4px;
-}
-
 .weekly-temp-max {
-  color: var(--text-main);
+  font-weight: 700;
 }
 
 .weekly-temp-min {
-  color: var(--text-sub);
+  opacity: 0.8;
   font-weight: 500;
 }
 
@@ -1127,7 +1126,8 @@ nav.main-nav a.active::after {
 
 .news-card {
   position: relative;
-  background: var(--glass-bg);
+  background: rgba(30, 41, 59, 0.85);
+  color: #FFFFFF;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
