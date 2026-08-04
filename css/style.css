@@ -1107,6 +1107,7 @@ nav.main-nav a.active::after {
   font-size: 16px;
   font-weight: 700;
   margin-top: 4px;
+}
 .weekly-temp-max {
   font-weight: 700;
 }
