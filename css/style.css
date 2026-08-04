@@ -1448,7 +1448,7 @@ footer.site-footer {
   right: 0;
   bottom: 0;
   width: 280px;
-  background: #ffffff;
+  background: #ffffff !important;
   border-left: 1px solid var(--border);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
   padding: 24px 20px;
@@ -1460,11 +1460,6 @@ footer.site-footer {
   visibility: hidden;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
   z-index: 1000;
-}
-
-.dark-theme .mobile-drawer,
-[data-theme="dark"] .mobile-drawer {
-  background: #0f172a;
 }
 
 
@@ -1489,7 +1484,7 @@ footer.site-footer {
   padding: 10px 14px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--text-main);
+  color: #1E293B !important;
   text-decoration: none;
   border-radius: 10px;
   transition: background 0.2s ease, color 0.2s ease;
@@ -1516,7 +1511,7 @@ footer.site-footer {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-sub);
+  color: #475569 !important;
 }
 
 .mobile-lang-selector {
@@ -1530,6 +1525,7 @@ footer.site-footer {
 }
 
 .mobile-lang-selector .lang-btn {
+  color: #475569 !important;
   flex: none;
   padding: 5px 12px;
   font-size: 12px;
@@ -1537,6 +1533,10 @@ footer.site-footer {
   border-radius: 7px;
   min-width: 38px;
   text-align: center;
+}
+
+.mobile-lang-selector .lang-btn:hover {
+  color: #1E293B !important;
 }
 
 .mobile-overlay {
