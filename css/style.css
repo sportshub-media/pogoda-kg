@@ -672,7 +672,152 @@ nav.main-nav a.active::after {
   border-color: var(--primary);
   box-shadow: 0 6px 16px rgba(255, 159, 67, 0.4);
 }
+/* Other Countries Horizontal Scrolling Section */
+.other-countries-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
 
+.other-countries-container::-webkit-scrollbar {
+  height: 6px;
+}
+.other-countries-container::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+.other-countries-container::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.other-country-card {
+  flex: 0 0 320px;
+  background: #222; /* Dark background as in screenshot */
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff;
+}
+
+.other-country-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.other-country-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.other-country-name {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.other-country-city {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 2px 0 6px 0;
+}
+
+.other-country-cond {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.other-country-weather {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.other-country-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.other-country-temp {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.other-country-min {
+  font-size: 16px;
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* 10-Day Forecast Pill Container */
+.ten-day-forecast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.ten-day-forecast-container::-webkit-scrollbar {
+  height: 6px;
+}
+.ten-day-forecast-container::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+.ten-day-forecast-container::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.ten-day-pill {
+  flex: 0 0 auto;
+  width: 100px;
+  background: #222; /* Dark pill */
+  border-radius: 30px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.ten-day-pill:hover {
+  transform: translateY(-4px);
+}
+
+.ten-day-day {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ten-day-divider {
+  width: 30px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 15px;
+}
+
+.ten-day-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.ten-day-temp {
+  font-size: 20px;
+  font-weight: 600;
+}
 /* Shared Section Styling */
 .section-wrapper {
   max-width: 1280px;

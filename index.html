@@ -126,6 +126,18 @@
     <div id="cityPillsContainer" class="city-pills-container"></div>
   </div>
 
+  <!-- Other Countries Horizontal Scrolling Section -->
+  <section class="section-wrapper" style="padding-top: 10px;">
+    <div class="section-header" style="flex-direction:row; align-items:center; justify-content:space-between; margin-bottom: 20px;">
+      <h2 class="section-title" data-i18n="other_countries_title" style="margin-bottom:0;">Other Countries</h2>
+      <a href="#" style="color:var(--text-sub); text-decoration:none; font-weight:600; font-size:14px;"><span data-i18n="see_all">See All</span> <i class="fa-solid fa-chevron-right" style="font-size:12px; margin-left:4px;"></i></a>
+    </div>
+    
+    <div id="otherCountriesContainer" class="other-countries-container">
+      <!-- Cards will be injected here by JS -->
+    </div>
+  </section>
+
   <!-- Hourly Update Section -->
   <section class="section-wrapper">
     <div class="section-header">
@@ -186,16 +198,16 @@
     </div>
   </section>
 
-  <!-- Weekly Weather Forecast Section -->
+  <!-- 10 Day Forecast Section -->
   <section class="section-wrapper">
     <div class="section-header">
-      <h2 class="section-title" data-i18n="weekly_title">Weekly Weather Forecast</h2>
+      <h2 class="section-title">10 Day Forecast</h2>
       <p class="section-desc" data-i18n="weekly_desc">
         7-day extended outlook with min/max temperatures, condition icons, and expected wind activity.
       </p>
     </div>
 
-    <div id="weeklyForecastContainer" class="weekly-forecast-grid"></div>
+    <div id="weeklyForecastContainer" class="ten-day-forecast-container"></div>
   </section>
 
   <!-- Recent Search Weather Section -->

@@ -1,5 +1,5 @@
 // Pogoda Kg - Main Application Logic
-import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
+import { KYRGYZSTAN_CITIES, OTHER_COUNTRIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { applyTranslations, TRANSLATIONS, getCurrentLang, updateLinksForLang, initMobileMenu } from './i18n.js';
@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSearch();
   setupHourlySlider();
   setupFooterCityLinks();
+  renderOtherCountries();
   loadCityWeather(currentCity);
 });
 
@@ -299,30 +300,96 @@ function renderSunArcGauge(sunrise, sunset, progressPercent) {
   `;
 }
 
-// Render Weekly Forecast (7 Days)
+// Render 10 Day Forecast (Pills)
 function renderWeeklyForecast(weeklyList) {
   const container = document.getElementById('weeklyForecastContainer');
   if (!container) return;
 
   container.innerHTML = '';
-  weeklyList.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'weekly-card';
-    card.innerHTML = `
-      <div class="weekly-day">${item.day}</div>
-      <div class="weekly-date">${item.date}</div>
-      <div style="width:36px; height:36px; margin:6px 0;">${item.svg}</div>
-      <div style="font-size:13px; font-weight:600; text-align:center;">${getConditionStr(item.conditionKey)}</div>
-      <div class="weekly-temp-range">
-        <span class="weekly-temp-max">${item.maxTemp}°</span>
-        <span class="weekly-temp-min">${item.minTemp}°</span>
-      </div>
-      <div style="font-size:11px; color:var(--text-sub); margin-top:4px;">
-        💧 ${item.precip}% | 💨 ${item.wind}km
-      </div>
+  weeklyList.forEach((item, index) => {
+    const pill = document.createElement('div');
+    pill.className = 'ten-day-pill';
+    
+    // Add little raindrops if precipitation probability is high
+    let precipHtml = '';
+    if (item.precip > 20) {
+      precipHtml = `<div style="color:#00c6ff; font-size:10px; margin-top:-10px; margin-bottom:5px;">💧 ${item.precip}%</div>`;
+    }
+
+    const lang = getCurrentLang();
+    const todayStr = TRANSLATIONS[lang]?.today || "Today";
+    const dayName = index === 0 ? todayStr : item.day;
+
+    pill.innerHTML = `
+      <div class="ten-day-day">${dayName}</div>
+      <div class="ten-day-divider"></div>
+      <div class="ten-day-icon">${item.svg}</div>
+      ${precipHtml}
+      <div class="ten-day-temp">${item.maxTemp}°C</div>
     `;
-    container.appendChild(card);
+    container.appendChild(pill);
   });
+}
+
+// Render Other Countries Section
+async function renderOtherCountries() {
+  const container = document.getElementById('otherCountriesContainer');
+  if (!container) return;
+  
+  container.innerHTML = '';
+  
+  // We'll fetch weather for a few selected countries
+  for (const country of OTHER_COUNTRIES) {
+    try {
+      // Create a dummy structure that loadCityWeather expects
+      const countryCity = {
+        id: country.id,
+        name: country.name,
+        nativeName: country.nativeName,
+        lat: country.lat,
+        lon: country.lon,
+        isCountry: true, // flag to indicate it's not a local city
+        country: country.country
+      };
+      
+      const data = await fetchWeatherData(countryCity.lat, countryCity.lon);
+      if (!data || !data.current) continue;
+      
+      const card = document.createElement('div');
+      card.className = 'other-country-card';
+      card.onclick = () => {
+        // Scroll up to hero section
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        currentCity = countryCity;
+        
+        // Remove active state from all local city pills
+        document.querySelectorAll('.city-pill').forEach(btn => btn.classList.remove('active'));
+        
+        loadCityWeather(currentCity);
+      };
+      
+      const conditionName = getConditionStr(data.current.conditionKey);
+      
+      card.innerHTML = `
+        <div class="other-country-info">
+          <div class="other-country-name">${country.country}</div>
+          <div class="other-country-city">${country.name}</div>
+          <div class="other-country-cond">${conditionName}</div>
+        </div>
+        <div class="other-country-weather">
+          <div class="other-country-icon">${data.current.svg}</div>
+          <div style="text-align:right;">
+            <div class="other-country-temp">${data.current.temp}°</div>
+            <div class="other-country-min">${data.weekly[0].minTemp}°</div>
+          </div>
+        </div>
+      `;
+      
+      container.appendChild(card);
+    } catch (error) {
+      console.error('Error loading country weather:', error);
+    }
+  }
 }
 
 // 3. Search Bar logic for 10 Kyrgyzstan locations
