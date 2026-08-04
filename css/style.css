@@ -705,7 +705,7 @@ nav.main-nav a.active::after {
   gap: 16px;
   padding-bottom: 16px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 
 .other-countries-container::-webkit-scrollbar {

@@ -126,7 +126,11 @@
   <section class="section-wrapper" style="padding-top: 10px;">
     <div class="section-header" style="flex-direction:row; align-items:center; justify-content:space-between; margin-bottom: 20px;">
       <h2 class="section-title" data-i18n="other_cities_title" style="margin-bottom:0;">Other Cities</h2>
-      <a href="#" style="color:var(--text-sub); text-decoration:none; font-weight:600; font-size:14px;"><span data-i18n="see_all">See All</span> <i class="fa-solid fa-chevron-right" style="font-size:12px; margin-left:4px;"></i></a>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button id="btnOtherLeft" class="nav-btn" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btnOtherRight" class="nav-btn" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-right"></i></button>
+        <a href="#" style="color:var(--text-sub); text-decoration:none; font-weight:600; font-size:14px; margin-left: 12px;"><span data-i18n="see_all">See All</span></a>
+      </div>
     </div>
     
     <div id="otherCountriesContainer" class="other-countries-container">

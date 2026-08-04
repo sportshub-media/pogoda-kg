@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupLanguageSwitcher();
   setupSearch();
   setupHourlySlider();
+  setupOtherCitiesScroll();
   setupFooterCityLinks();
   renderOtherCities();
   loadCityWeather(currentCity);
@@ -510,3 +511,25 @@ function setupFooterCityLinks() {
     });
   });
 }
+
+// Horizontal Scrolling for Other Cities
+function setupOtherCitiesScroll() {
+  const container = document.getElementById('otherCountriesContainer');
+  const btnLeft = document.getElementById('btnOtherLeft');
+  const btnRight = document.getElementById('btnOtherRight');
+  
+  if (btnLeft && container) {
+    btnLeft.addEventListener('click', (e) => {
+      e.preventDefault();
+      container.scrollBy({ left: -360, behavior: 'smooth' });
+    });
+  }
+  
+  if (btnRight && container) {
+    btnRight.addEventListener('click', (e) => {
+      e.preventDefault();
+      container.scrollBy({ left: 360, behavior: 'smooth' });
+    });
+  }
+}
+
