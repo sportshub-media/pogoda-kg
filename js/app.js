@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   setupLanguageSwitcher();
-  setupCityPills();
   setupSearch();
   setupHourlySlider();
   setupFooterCityLinks();
@@ -82,7 +81,6 @@ function setupLanguageSwitcher() {
       applyTranslations(lang);
       
       // Re-render UI components with new language
-      setupCityPills();
       updateCityInfoDisplay(currentCity);
       if (weatherCache[currentCity.id]) {
         const data = weatherCache[currentCity.id];
@@ -96,37 +94,6 @@ function setupLanguageSwitcher() {
   });
 }
 
-// 1. Setup 10 Kyrgyzstan City Pills
-function setupCityPills() {
-  const container = document.getElementById('cityPillsContainer');
-  if (!container) return;
-
-  container.innerHTML = '';
-  KYRGYZSTAN_CITIES.forEach(city => {
-    const pill = document.createElement('button');
-    pill.className = `city-pill ${city.id === currentCity.id ? 'active' : ''}`;
-    pill.setAttribute('data-city-id', city.id);
-    
-    // Show appropriate name based on language
-    const displayName = getCityName(city);
-    // Display English as small subtitle if current lang is not EN
-    const subName = getCurrentLang() === 'EN' ? city.nativeName : city.name;
-    
-    pill.innerHTML = `<img src="${city.image}" alt="${city.name}" class="city-pill-img"> <span>${displayName}</span> <small style="opacity:0.75; font-size:11px;">(${subName})</small>`;
-    
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.city-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      loadCityWeather(city);
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-
-    container.appendChild(pill);
-  });
-}
 
 // 2. Load and render weather for a selected city
 export async function loadCityWeather(city) {
@@ -351,14 +318,6 @@ async function renderOtherCities() {
       card.onclick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         currentCity = city;
-        
-        document.querySelectorAll('.city-pill').forEach(btn => {
-          if (btn.dataset.cityId === city.id) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
-        });
         
         loadCityWeather(currentCity);
         renderOtherCities(); // Re-render to exclude the new current city
