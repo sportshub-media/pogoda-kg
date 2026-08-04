@@ -458,12 +458,14 @@ nav.main-nav a.active::after {
 
 /* Hero Right Weather Summary Card */
 .hero-weather-card {
-  background: linear-gradient(135deg, #FFC062 0%, #F89B29 100%);
-  color: #0F172A;
-  border: none;
-  border-radius: 36px;
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-radius: 40px;
   padding: 32px 40px;
-  box-shadow: 0 20px 40px rgba(248, 155, 41, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   gap: 24px;

@@ -209,7 +209,7 @@ function renderHeroCard(city, data) {
 
     <div class="card-metrics-row">
       <div class="metric-left">
-        <i class="fa-solid fa-wind" style="color:#4A5568;"></i> 
+        <i class="fa-solid fa-wind" style="color:#94A3B8;"></i> 
         <span>${t.wind_label || 'Wind'}</span>
       </div>
       <div class="metric-right">${t.wind_prefix || 'up to'} ${current.windSpeed} ${t.wind_unit || 'm/s'}</div>
