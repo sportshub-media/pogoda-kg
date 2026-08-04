@@ -127,9 +127,9 @@
     <div class="section-header" style="flex-direction:row; align-items:center; justify-content:space-between; margin-bottom: 20px;">
       <h2 class="section-title" data-i18n="other_cities_title" style="margin-bottom:0;">Other Cities</h2>
       <div style="display: flex; gap: 12px; align-items: center;">
-        <button id="btnOtherLeft" class="nav-btn" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-left"></i></button>
-        <button id="btnOtherRight" class="nav-btn" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-right"></i></button>
-        <a href="#" style="color:var(--text-sub); text-decoration:none; font-weight:600; font-size:14px; margin-left: 12px;"><span data-i18n="see_all">See All</span></a>
+        <button id="btnOtherLeft" class="nav-btn" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btnOtherRight" class="nav-btn" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-chevron-right"></i></button>
+        <a href="map.html" class="nav-btn" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); text-decoration:none; font-weight:600; font-size:14px; margin-left: 12px; padding: 6px 16px; border-radius: 20px;"><span data-i18n="see_all">See All</span></a>
       </div>
     </div>
     
@@ -170,7 +170,7 @@
         </div>
         <div class="detail-label" data-i18n="wind_label">Wind</div>
         <div id="detailWindValue" class="detail-value">19 km/h</div>
-        <div style="font-size:13px; color:var(--text-sub); margin-top:8px;" data-i18n="wind_desc">Gentle Mountain Breeze</div>
+        <div style="font-size:13px; opacity:0.8; margin-top:8px;" data-i18n="wind_desc">Gentle Mountain Breeze</div>
       </div>
 
       <div class="detail-card">
@@ -179,7 +179,7 @@
         </div>
         <div class="detail-label" data-i18n="humidity_label">Humidity</div>
         <div id="detailHumidityValue" class="detail-value">22%</div>
-        <div style="font-size:13px; color:var(--text-sub); margin-top:8px;" data-i18n="humidity_desc">Optimal Comfort Level</div>
+        <div style="font-size:13px; opacity:0.8; margin-top:8px;" data-i18n="humidity_desc">Optimal Comfort Level</div>
       </div>
 
       <div class="detail-card">
@@ -188,10 +188,10 @@
         </div>
         <div class="detail-label" data-i18n="visibility_label">Visibility</div>
         <div id="detailVisibilityValue" class="detail-value">10 Km</div>
-        <div style="font-size:13px; color:var(--text-sub); margin-top:8px;" data-i18n="visibility_desc">Clear Atmospheric View</div>
+        <div style="font-size:13px; opacity:0.8; margin-top:8px;" data-i18n="visibility_desc">Clear Atmospheric View</div>
       </div>
 
-      <div class="detail-card" style="grid-column: 1 / -1; background: var(--surface);">
+      <div class="detail-card" style="grid-column: 1 / -1;">
         <div class="detail-label" style="margin-bottom:14px;" data-i18n="sun_arc_label">Sun & Daylight Progress</div>
         <div id="sunArcContainer" style="width:100%;"></div>
       </div>
@@ -201,7 +201,7 @@
   <!-- 10 Day Forecast Section -->
   <section class="section-wrapper">
     <div class="section-header">
-      <h2 class="section-title">10 Day Forecast</h2>
+      <h2 class="section-title">7 Day Forecast</h2>
       <p class="section-desc" data-i18n="weekly_desc">
         7-day extended outlook with min/max temperatures, condition icons, and expected wind activity.
       </p>
@@ -235,7 +235,6 @@
       <div class="news-card news-card-featured" onclick="window.location.href='blog/august-3-10-kyrgyzstan-weather-forecast-rain-to-extreme-heat.html'">
         <img src="assets/images/august_weather_split.jpg" alt="Kyrgyzstan Weather Split" class="news-card-img">
         <div class="news-card-overlay">
-          <span class="news-tag" style="background:#00C6FF; color:#fff;">Breaking News</span>
           <h3 class="news-title">From Rain to Extreme Heat: Kyrgyzstan Weather Forecast for August 3-10</h3>
           <p style="font-size:14px; margin-bottom:12px; opacity:0.9;">Kyrgyzstan will experience a shift from rainy and unsettled weather to intense, scorching heat up to +38°C by August 10 as an anticyclone strengthens.</p>
           <div class="news-meta">
@@ -248,7 +247,6 @@
       <div class="news-card" onclick="window.location.href='blog/bishkek-temperature-drop-across-kyrgyzstan-regions.html'">
         <img src="assets/images/bishkek-temp-drop.jpg" alt="Bishkek Temperature Drop" class="news-card-img">
         <div class="news-card-overlay">
-          <span class="news-tag">Regional Weather</span>
           <h3 class="news-title">Bishkek Drops 5°C as Regional Cooling Front Spreads</h3>
           <div class="news-meta">
             <span><i class="fa-solid fa-user"></i> Pogoda Team</span>
@@ -260,7 +258,6 @@
       <div class="news-card" onclick="window.location.href='blog/tian-shan-mountain-passes-weather-advisory-for-drivers.html'">
         <img src="assets/images/news_tian_shan.webp" alt="Tian-Shan Weather Alert" class="news-card-img">
         <div class="news-card-overlay">
-          <span class="news-tag">Mountain Weather</span>
           <h3 class="news-title">Tian-Shan Mountain Passes Advisory for Drivers</h3>
           <div class="news-meta">
             <span><i class="fa-solid fa-user"></i> Meteorologist Team</span>
@@ -272,7 +269,6 @@
       <div class="news-card" onclick="window.location.href='blog/issyk-kul-summer-lake-weather-water-temperature-guide.html'">
         <img src="assets/images/news_summer_lake.webp" alt="Issyk-Kul Lake Weather" class="news-card-img">
         <div class="news-card-overlay">
-          <span class="news-tag">Issyk-Kul</span>
           <h3 class="news-title">Summer Lake Temperatures & Wind Warnings</h3>
           <div class="news-meta">
             <span><i class="fa-solid fa-user"></i> Balykchy Bureau</span>
@@ -284,7 +280,6 @@
       <div class="news-card" onclick="window.location.href='blog/bishkek-air-quality-weekly-uv-index-report.html'">
         <img src="assets/images/news_air_quality.webp" alt="Bishkek City Weather" class="news-card-img">
         <div class="news-card-overlay">
-          <span class="news-tag">Bishkek Update</span>
           <h3 class="news-title">Bishkek Air Quality & Weekly UV Index Report</h3>
           <div class="news-meta">
             <span><i class="fa-solid fa-user"></i> Climate Desk</span>
@@ -335,7 +330,7 @@
 
       <div class="footer-column">
         <h4 data-i18n="footer_contact">Contact & Support</h4>
-        <p style="font-size:14px; color:var(--text-sub);">
+        <p style="font-size:14px; opacity:0.8;">
           <i class="fa-solid fa-envelope" style="color:var(--primary);"></i> info.pogoda.kg@gmail.com
         </p>
       </div>
