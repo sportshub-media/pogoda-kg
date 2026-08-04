@@ -1446,11 +1446,13 @@ footer.site-footer {
   position: fixed;
   top: 70px;
   right: 0;
+  left: 0;
+  width: 100%;
   bottom: 0;
-  width: 280px;
   background: #ffffff !important;
-  border-left: 1px solid var(--border);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
@@ -1459,14 +1461,13 @@ footer.site-footer {
   opacity: 0;
   visibility: hidden;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
-  z-index: 1000;
+  z-index: 99999 !important;
 }
-
 
 .mobile-drawer.open {
   transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .mobile-nav ul {
