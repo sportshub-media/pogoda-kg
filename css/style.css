@@ -852,6 +852,7 @@ nav.main-nav a.active::after {
 .ten-day-temp {
   font-size: 20px;
   font-weight: 600;
+  margin-top: auto;
 }
 /* Shared Section Styling */
 .section-wrapper {
