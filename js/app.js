@@ -85,7 +85,7 @@ function setupLanguageSwitcher() {
       updateCityInfoDisplay(currentCity);
       if (weatherCache[currentCity.id]) {
         const data = weatherCache[currentCity.id];
-        renderHeroCard(currentCity, data.current);
+        renderHeroCard(currentCity, data);
         renderHourlyForecast(data.hourly);
         renderTodayDetails(currentCity, data.current);
         renderWeeklyForecast(data.weekly);
@@ -137,7 +137,7 @@ export async function loadCityWeather(city) {
   const data = await fetchWeatherData(city.lat, city.lon);
   weatherCache[city.id] = data;
 
-  renderHeroCard(city, data.current);
+  renderHeroCard(city, data);
   renderHourlyForecast(data.hourly);
   renderTodayDetails(city, data.current);
   renderWeeklyForecast(data.weekly);
@@ -155,33 +155,63 @@ function updateCityInfoDisplay(city) {
 }
 
 // Render Hero Section Weather Card
-function renderHeroCard(city, current) {
-  const dateStr = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: '2-digit', month: 'short' });
+function renderHeroCard(city, data) {
+  const current = data.current;
+  const today = data.weekly[0]; // Assuming weekly[0] is today to get Min/Max and Precip
   
   const heroCard = document.getElementById('heroWeatherCard');
   if (!heroCard) return;
 
+  const lang = getCurrentLang();
+  const t = TRANSLATIONS[lang];
+
   heroCard.innerHTML = `
-    <div class="card-top">
-      <div>
-        <div class="city-title">${getCityName(city)}</div>
-        <div style="font-size:13px; color:var(--text-sub);">${city.region}</div>
-      </div>
-      <div class="weather-icon-large">
-        ${current.svg}
-      </div>
+    <div class="card-top-row">
+      <div class="city-title-new">${getCityName(city)}</div>
     </div>
     
-    <div class="card-main-temp">
-      <div class="card-date">${dateStr}</div>
-      <div class="big-temp">${current.temp}°</div>
-      <div class="weather-status">${getConditionStr(current.conditionKey)}</div>
+    <div class="card-main-row">
+      <div class="weather-icon-new">
+        ${current.svg}
+      </div>
+      <div class="card-temp-col">
+        <div class="big-temp-new">${current.temp > 0 ? '+' : ''}${current.temp}°</div>
+        <div class="feels-like-new">${t.feels_like || 'Feels like'} &approx; ${current.feelsLike > 0 ? '+' : ''}${current.feelsLike}°</div>
+      </div>
     </div>
 
-    <div class="card-bottom-metrics">
-      <div><strong>${current.windSpeed} km/h</strong> | ${TRANSLATIONS[getCurrentLang()].wind_label || 'Wind'}</div>
-      <div class="metric-divider"></div>
-      <div><strong>${TRANSLATIONS[getCurrentLang()].humidity_label ? TRANSLATIONS[getCurrentLang()].humidity_label.substring(0,3) : 'Hum'}</strong> | <strong>${current.humidity}%</strong></div>
+    <div class="card-divider"></div>
+
+    <div class="card-minmax-row">
+      <div class="minmax-col">
+        <div class="minmax-label">${t.min_temp || 'MIN'}</div>
+        <div class="minmax-value">${today.minTemp > 0 ? '+' : ''}${today.minTemp}°</div>
+      </div>
+      <div class="minmax-vert-divider"></div>
+      <div class="minmax-col">
+        <div class="minmax-label">${t.max_temp || 'MAX'}</div>
+        <div class="minmax-value">${today.maxTemp > 0 ? '+' : ''}${today.maxTemp}°</div>
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <div class="card-metrics-row">
+      <div class="metric-left">
+        <i class="fa-solid fa-droplet" style="color:#00A2FF;"></i> 
+        <span>${t.precip_label || 'Precipitation'}</span>
+      </div>
+      <div class="metric-right">${today.precipProb}%</div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <div class="card-metrics-row">
+      <div class="metric-left">
+        <i class="fa-solid fa-wind" style="color:#4A5568;"></i> 
+        <span>${t.wind_label || 'Wind'}</span>
+      </div>
+      <div class="metric-right">${t.wind_prefix || 'up to'} ${current.windSpeed} ${t.wind_unit || 'm/s'}</div>
     </div>
   `;
 }
