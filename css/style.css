@@ -226,6 +226,13 @@ nav.main-nav a:hover, nav.main-nav a.active {
   color: var(--primary);
 }
 
+[data-theme="light"] nav.main-nav a:hover,
+[data-theme="light"] nav.main-nav a.active,
+body:not(.dark-theme) nav.main-nav a:hover,
+body:not(.dark-theme) nav.main-nav a.active {
+  color: #e65100;
+}
+
 nav.main-nav a.active::after {
   content: '';
   position: absolute;
@@ -235,6 +242,11 @@ nav.main-nav a.active::after {
   height: 2px;
   background: var(--primary);
   border-radius: 2px;
+}
+
+[data-theme="light"] nav.main-nav a.active::after,
+body:not(.dark-theme) nav.main-nav a.active::after {
+  background: #e65100;
 }
 
 .header-actions {
@@ -1355,7 +1367,9 @@ footer.site-footer {
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .hero-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
   }
 
   .today-details-grid {
@@ -1432,17 +1446,16 @@ footer.site-footer {
   position: fixed;
   top: 70px;
   right: 0;
-  left: 0;
-  background: var(--surface);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  padding: 16px 20px 20px;
+  bottom: 0;
+  width: 280px;
+  background: var(--bg-main);
+  border-left: 1px solid var(--border);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transform: translateY(-120%);
+  transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
@@ -1450,7 +1463,7 @@ footer.site-footer {
 }
 
 .mobile-drawer.open {
-  transform: translateY(0);
+  transform: translateX(0);
   opacity: 1;
   visibility: visible;
 }
@@ -1587,6 +1600,10 @@ footer.site-footer {
   .today-details-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+
+  .detail-card:nth-child(3) {
+    grid-column: 1 / -1;
   }
 
   .footer-container {
