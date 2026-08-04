@@ -4,6 +4,73 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-3-10",
+    slug: "august-3-10-kyrgyzstan-weather-forecast-rain-to-extreme-heat",
+    image: "/assets/images/august_weather_split.jpg",
+    translations: {
+      EN: {
+        title: "From Rain to Extreme Heat: Kyrgyzstan Weather Forecast for August 3-10",
+        category: "Weather Forecast",
+        date: "August 4, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzstan will experience a shift from rainy and unsettled weather to intense, scorching heat up to +38°C by August 10 as an anticyclone strengthens.",
+        content: `
+          <p>From August 3 to 5, a high-pressure area is shifting northward, allowing a more humid and unstable air mass to enter Kyrgyzstan. This atmospheric shift will lead to increased cloudiness and precipitation across the republic. In the Issyk-Kul region, the combination of mountainous terrain and the large body of water will enhance convection, resulting in thunderstorms. In Cholpon-Ata, the probability of precipitation rises to 93–97% during these days, with thunderstorms forecast for August 4. Light precipitation, primarily drizzle, is also possible in Bishkek, Naryn, Osh, and Manas. Concurrently, winds will strengthen, with gusts reaching up to 13 m/s in Talas.</p>
+          <h3>Return of the Heatwave</h3>
+          <p>After August 5, the anticyclone is expected to intensify and re-establish its position over the region. The humid air mass will be displaced, clouds will dissipate, and the weather will become dry and clear once again. As the air within the high-pressure zone continues to warm over several consecutive days, the heat will intensify, peaking by August 9–10. Daytime temperatures are forecast to reach +37...+38°C in Bishkek and Manas, and +32...+36°C in Osh, Batken, and Talas. Nighttime temperatures will also remain high, staying above +20...+22°C in Bishkek and Manas.</p>
+          <p>The coolest weather during this period will be in the mountainous regions. In Naryn, daytime temperatures will range between +14...+31°C, accompanied by periodic drizzle.</p>
+          <h3>Detailed Forecast Highlights</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Transitioning from light drizzle and +27...+30°C on August 4 to clear, scorching days reaching +38°C by August 10.</li>
+            <li><strong>Issyk-Kul (Cholpon-Ata):</strong> High probability of rain and thunderstorms early in the week, cooling down to +19...+24°C, before stabilizing to clear skies and +23°C towards the weekend.</li>
+            <li><strong>Osh & Batken:</strong> Heavy rain (showers) possible on August 4, quickly clearing up to deliver intense +36°C heat by August 9-10.</li>
+            <li><strong>Naryn:</strong> Consistently cooler alpine climate. Frequent drizzle expected with daytime highs hovering comfortably between +20°C and +27°C.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "Жамгырдан катуу ысыкка чейин: Кыргызстанда 3-10-августка карата аба ырайы",
+        category: "Аба ырайы",
+        date: "4-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызстанда 10-августка чейин антициклондун күчөшү менен жаан-чачындуу аба ырайынан +38°Cге чейин жеткен катуу ысыкка өтүшү күтүлүүдө.",
+        content: `
+          <p>3-августтан 5-августка чейин жогорку басымдуу аймак түндүккө жылып, Кыргызстанга нымдуу жана туруксуз аба массасы кирет. Бул өзгөрүү булуттуулуктун жана жаан-чачындын көбөйүшүнө алып келет. Ысык-Көл облусунда тоолуу рельеф жана чоң суу сактагыч конвекцияны күчөтүп, күн күркүрөшү мүмкүн. Чолпон-Атада бул күндөрү жаан-чачындын ыктымалдыгы 93–97% га чейин жогорулайт, ал эми 4-августта күн күркүрөшү күтүлөт. Бишкек, Нарын, Ош жана Манаста бир аз жаан, негизинен майда жамгыр жаашы мүмкүн. Ошол эле учурда шамал күчөп, Таласта анын ылдамдыгы 13 м/с жетиши ыктымал.</p>
+          <h3>Ысыктын кайтып келиши</h3>
+          <p>5-августтан кийин антициклондун күчөшү жана аймакта өз ордун калыбына келтириши күтүлүүдө. Нымдуу аба массасы сүрүлүп чыгып, булуттар тарап, аба ырайы кайрадан кургак жана ачык болот. Жогорку басымдуу аймактагы аба бир нече күн катары менен жылып тургандыктан, ысык күчөп, 9-10-августта эң жогорку чекке жетет. Бишкекте жана Манаста күндүз +37...+38°C, Ош, Баткен жана Таласта +32...+36°C чейин ысык болушу күтүлөт. Түнкү температура да жогору бойдон калат — Бишкек менен Манаста +20...+22°Cден төмөн түшпөйт.</p>
+          <p>Бул мезгилдеги эң салкын аба ырайы тоолуу аймактарда сакталат. Нарында күндүзгү температура +14...+31°C чегинде болуп, мезгил-мезгили менен майда жамгыр жаап турат.</p>
+          <h3>Кыскача маалымат</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> 4-августта майда жамгыр жаап, +27...+30°C жылуу болот, ал эми 10-августка карата ачык, катуу ысык күтүлүп, температура +38°Cге чейин жетет.</li>
+            <li><strong>Ысык-Көл (Чолпон-Ата):</strong> Аптанын башында жаан-чачын жана күн күркүрөө ыктымалдыгы жогору болуп, +19...+24°Cге чейин салкындайт. Дем алыш күндөрү аба ырайы турукташып, ачык асман жана +23°C күтүлөт.</li>
+            <li><strong>Ош жана Баткен:</strong> 4-августта нөшөрлөгөн жамгыр жаашы мүмкүн, андан кийин аба ырайы тез ачылып, 9-10-августта +36°Cге чейин ысыйт.</li>
+            <li><strong>Нарын:</strong> Тоолуу климат сакталат. Күндүз температура +20°Cден +27°Cге чейин жылып, көп учурда майда жамгыр жаашы күтүлөт.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "От дождей к аномальной жаре: Прогноз погоды в Кыргызстане на 3-10 августа",
+        category: "Прогноз погоды",
+        date: "4 августа, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызстан ожидает переход от дождливой и неустойчивой погоды к сильной жаре до +38°C к 10 августа по мере усиления антициклона.",
+        content: `
+          <p>С 3 по 5 августа область высокого давления смещается к северу, и в республику заходит более влажная и неустойчивая воздушная масса. Это приведет к росту облачности и осадкам, а в районе Иссык-Куля — из-за влияния горного рельефа и большого водоема, усиливающих конвекцию, возникают грозы. В Чолпон-Ате вероятность осадков в эти дни поднимается до 93–97%, а 4 августа прогнозируется гроза. Небольшие осадки возможны также в Бишкеке, Нарыне, Оше и Манасе, хотя по большей части это морось. Одновременно усиливается ветер — в Таласе порывы могут достигать 13 м/с.</p>
+          <h3>Возвращение жары</h3>
+          <p>После 5 августа ожидается усиление антициклона и восстановления его положения над регионом. Влажная воздушная масса вытеснится, облачность рассеется, погода снова станет сухой и ясной. Поскольку воздух в зоне высокого давления продолжит прогреваться несколько дней подряд, жара усилится и достигнет пика к 9-10 августа: в Бишкеке и Манасе днем прогнозируется до +37...+38°C, в Оше, Баткене и Таласе — до +32...+36°C. Ночные температуры также остаются высокими — в Бишкеке и Манасе они не опускаются ниже +20...+22°C.</p>
+          <p>Наиболее прохладная погода в этот период сохранится в горных районах — в Нарыне дневные температуры будут держаться в пределах +14...+31°C с периодическими моросящими дождями.</p>
+          <h3>Детали по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> 4 августа ожидается морось и +27...+30°C, а к 10 августа установится ясная и жаркая погода с температурой до +38°C.</li>
+            <li><strong>Иссык-Куль (Чолпон-Ата):</strong> В начале недели высокая вероятность дождей и гроз с похолоданием до +19...+24°C, затем погода стабилизируется, ожидается ясное небо и +23°C к выходным.</li>
+            <li><strong>Ош и Баткен:</strong> 4 августа возможны ливни, которые быстро сменятся ясной погодой. К 9-10 августа температура поднимется до +36°C.</li>
+            <li><strong>Нарын:</strong> Сохранится прохладный горный климат. Ожидается частая морось, дневная температура будет комфортной: от +20°C до +27°C.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-0",
     slug: "bishkek-temperature-drop-across-kyrgyzstan-regions",
     image: "/assets/images/bishkek-temp-drop.jpg",
