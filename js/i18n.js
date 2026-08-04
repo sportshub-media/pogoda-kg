@@ -381,6 +381,10 @@ export function initMobileMenu() {
 
   function openMenu() {
     toggleBtn.classList.add('active');
+    drawer.style.setProperty('background', '#ffffff', 'important');
+    drawer.style.setProperty('background-color', '#ffffff', 'important');
+    drawer.style.setProperty('opacity', '1', 'important');
+    drawer.style.setProperty('z-index', '99999', 'important');
     drawer.classList.add('open');
     if (overlay) overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
