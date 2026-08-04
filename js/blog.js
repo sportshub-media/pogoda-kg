@@ -4,6 +4,77 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-0",
+    slug: "bishkek-temperature-drop-across-kyrgyzstan-regions",
+    image: "/assets/images/bishkek-temp-drop.jpg",
+    translations: {
+      EN: {
+        title: "Bishkek Drops 5°C as Regional Cooling Front Spreads Across Kyrgyzstan",
+        category: "Regional Weather",
+        date: "August 4, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Morning temperatures in Bishkek fall to +24°C with light drizzle as cool alpine air lowers temperatures by 2°C to 5°C across all major cities in Kyrgyzstan.",
+        content: `
+          <p>Air temperatures in Bishkek dropped to +24°C on the morning of August 4—a noticeable 5°C drop compared to the +29°C recorded at the same time yesterday. The shift comes as a refreshing atmospheric cooling front sweeps across the Chuy Valley and surrounding highland regions of Kyrgyzstan.</p>
+          <h3>Wind & Atmospheric Conditions in Bishkek</h3>
+          <p>A gentle easterly wind of 2 m/s with gusts reaching up to 6 m/s accompanied a soft morning drizzle in Bishkek, contrasting with yesterday's dry westerly winds of 3 m/s (gusts to 8 m/s).</p>
+          <h3>Nationwide Regional Breakdown</h3>
+          <p>The cooling trend was observed across almost every major city and province in Kyrgyzstan:</p>
+          <ul>
+            <li><strong>Naryn:</strong> Experienced the most dramatic shift, falling from +23°C to +15°C under overcast mountain skies.</li>
+            <li><strong>Cholpon-Ata (Issyk-Kul):</strong> Cooled from +23°C down to +19°C with moderate coastal drizzle.</li>
+            <li><strong>Talas:</strong> Dropped from +26°C to +22°C under mostly clear skies.</li>
+            <li><strong>Southern Regions (Osh, Batken, Manas):</strong> Registered mild decreases of 2°C to 3°C, with Osh at +30°C (down from +32°C), Batken at +26°C (down from +29°C), and Manas at +28°C (down from +30°C).</li>
+          </ul>
+          <p>Overall, August 4 brings cooler, comfortable weather to all 10 major municipal centers in Kyrgyzstan, providing relief from intense peak summer heat.</p>
+        `
+      },
+      KG: {
+        title: "Бишкекте абанын температурасы кечээкиге караганда 5°Cге төмөндөдү — салкындоо бардык региондорду каптады",
+        category: "Аймактык аба ырайы",
+        date: "4-август, 2026",
+        author: "Pogoda синоптиктер тобу",
+        excerpt: "4-август күнү эртең менен Бишкекте температура +24°Cге чейин түшүп, мамыр жамгыр жаады. Өлкөнүн аймактарында температура 2ден 5 градуска чейин төмөндөдү.",
+        color: "Аймактык аба ырайы",
+        content: `
+          <p>4-август саат 09:30га карата Бишкек шаарында абанын температурасы +24°Cди түздү. Бул кечээки күнгө салыштырмалуу (+29°C) 5 градуска төмөн. Чүй өрөөнүнө жана тоолуу аймактарга салкын аба ма массасы келди.</p>
+          <h3>Бишкектеги шамал жана жаан-чачын</h3>
+          <p>Столицада чыгыштан соккон мелүүн шамалдын ылдамдыгы 2 м/сек (күчөшү 6 м/сек) түзүп, сыдырым майда жамгыр жаады. Кечээ күн ачык болуп, батыш шамалы 3–8 м/сек согуп жаткан эле.</p>
+          <h3>Облустар боюнча аба ырайы маалыматы</h3>
+          <p>Салкындоо Кыргызстандын бардык ири шаарларында катталды:</p>
+          <ul>
+            <li><strong>Нарын:</strong> Температура кескин төмөндөп, +23°Cден +15°Cге чейин түштү, күн булуттуу.</li>
+            <li><strong>Чолпон-Ата (Ысык-Көл):</strong> +23°Cден +19°Cге чейин салкындап, майда жамгыр жаады.</li>
+            <li><strong>Талас:</strong> +26°Cден +22°Cге чейин төмөндөдү.</li>
+            <li><strong>Түштүк аймактар (Ош, Баткен, Манас):</strong> Ошто +30°C (кечээ +32°C), Баткенде +26°C (кечээ +29°C), Манаста +28°C (кечээ +30°C).</li>
+          </ul>
+          <p>Ошентип, 4-августта Кыргызстандын 10 ири шаарында тең аба ырайы салкындап, жайкы аптап убактылуу чегинди.</p>
+        `
+      },
+      RU: {
+        title: "В Бишкеке температура опустилась на 5°C по сравнению со вчерашним днем — похолодание охватило все регионы КР",
+        category: "Региональная погода",
+        date: "4 августа 2026",
+        author: "Команда Pogoda",
+        excerpt: "Утром 4 августа в Бишкеке зафиксировано +24°C с моросящим дождем. Снижение температуры на 2–5 градусов отмечено во всех городах Кыргызстана.",
+        content: `
+          <p>Температура воздуха в Бишкеке утром 4 августа составила +24°C — это на 5 градусов ниже, чем в это же время накануне (+29°C). Прохладный атмосферный фронт принес свежесть в Чуйскую долину и регионы республики.</p>
+          <h3>Ветер и осадки в столице</h3>
+          <p>В столице отмечается тихий восточный ветер со скоростью 2 м/с (порывы до 6 м/с) и умеренная морось. Днем ранее в городе дул западный ветер 3–8 м/с и стояла ясная погода.</p>
+          <h3>Ситуация по регионам Кыргызстана</h3>
+          <p>Снижение температуры зафиксировано практически во всех уголках страны:</p>
+          <ul>
+            <li><strong>Нарын:</strong> Наиболее заметный спад — с +23°C до +15°C, погода сменилась на пасмурную.</li>
+            <li><strong>Чолпон-Ата (Иссык-Куль):</strong> Похолодало с +23°C до +19°C, сохраняется умеренная морось.</li>
+            <li><strong>Талас:</strong> Столбики термометров опустились с +26°C до +22°C.</li>
+            <li><strong>Юг республики (Ош, Баткен, Манас):</strong> В Оше +30°C (вчера +32°C), в Баткене +26°C (вчера +29°C), в Манасе +28°C (вчера +30°C).</li>
+          </ul>
+          <p>Таким образом, 4 августа во всех крупных населенных пунктах Кыргызстана температура оказалась на 2–5 градусов ниже вчерашних показателей.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-1",
     slug: "tian-shan-mountain-passes-weather-advisory-for-drivers",
     image: "/assets/images/hero_mountains.webp",
