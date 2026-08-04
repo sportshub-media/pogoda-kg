@@ -7,7 +7,7 @@
   --accent-blue: #3867D6;
   --accent-purple: #6C5CE7;
   
-  --bg-light: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  --bg-light: #F4F7FA;
   --bg-gradient-light: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   --surface-light: rgba(255, 255, 255, 0.4);
   --card-bg-light: rgba(255, 255, 255, 0.6);
@@ -28,7 +28,7 @@
   --border-dark: rgba(255, 255, 255, 0.1);
 
   /* Active Theme Colors */
-  --bg-main: var(--bg-gradient-light);
+  --bg-main: var(--bg-light);
   --surface: var(--surface-light);
   --card-bg: var(--card-bg-light);
   --glass-bg: var(--glass-bg-light);
@@ -43,7 +43,7 @@
 }
 
 .dark-theme, [data-theme="dark"] {
-  --bg-main: var(--bg-gradient-dark);
+  --bg-main: var(--bg-dark);
   --surface: var(--surface-dark);
   --card-bg: var(--card-bg-dark);
   --glass-bg: var(--glass-bg-dark);
@@ -64,12 +64,9 @@
 body {
   font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-main);
-  background-size: 200% 200%;
-  background-attachment: fixed;
-  animation: liquidBg 15s ease infinite;
   color: var(--text-main);
   line-height: 1.6;
-  transition: background 0.5s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -461,16 +458,15 @@ nav.main-nav a.active::after {
 
 /* Hero Right Weather Summary Card */
 .hero-weather-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--glass-border);
-  color: var(--text-main);
+  background: linear-gradient(135deg, #FFC062 0%, #F89B29 100%);
+  color: #0F172A;
+  border: none;
   border-radius: 36px;
-  padding: 32px;
-  box-shadow: var(--shadow-lg);
+  padding: 32px 40px;
+  box-shadow: 0 20px 40px rgba(248, 155, 41, 0.3);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
   position: relative;
   overflow: hidden;
   min-height: 280px;
@@ -711,7 +707,7 @@ nav.main-nav a.active::after {
 }
 
 .other-countries-container::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 .other-countries-container::-webkit-scrollbar-track {
   background: var(--bg-color);
@@ -800,7 +796,7 @@ nav.main-nav a.active::after {
 }
 
 .ten-day-forecast-container::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 .ten-day-forecast-container::-webkit-scrollbar-track {
   background: var(--bg-color);
