@@ -201,7 +201,7 @@ function renderHeroCard(city, data) {
         <i class="fa-solid fa-droplet" style="color:#00A2FF;"></i> 
         <span>${t.precip_label || 'Precipitation'}</span>
       </div>
-      <div class="metric-right">${today.precipProb}%</div>
+      <div class="metric-right">${today.precip}%</div>
     </div>
 
     <div class="card-divider"></div>

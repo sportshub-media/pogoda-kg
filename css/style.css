@@ -639,7 +639,12 @@ nav.main-nav a.active::after {
   align-items: center;
   gap: 10px;
   overflow-x: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.city-pills-container::-webkit-scrollbar {
+  display: none;
 }
 
 .city-pill {
