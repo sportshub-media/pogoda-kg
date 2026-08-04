@@ -1,15 +1,5 @@
 // Pogoda Kg - Kyrgyzstan Cities & App Configuration
 
-export const OTHER_COUNTRIES = [
-  { id: "sydney", name: "Sydney", nativeName: "Sydney", country: "Australia", lat: -33.8688, lon: 151.2093 },
-  { id: "tokyo", name: "Tokyo", nativeName: "東京", country: "Japan", lat: 35.6762, lon: 139.6503 },
-  { id: "london", name: "London", nativeName: "London", country: "United Kingdom", lat: 51.5074, lon: -0.1278 },
-  { id: "new-york", name: "New York", nativeName: "New York", country: "United States", lat: 40.7128, lon: -74.0060 },
-  { id: "dubai", name: "Dubai", nativeName: "دبي", country: "United Arab Emirates", lat: 25.2048, lon: 55.2708 },
-  { id: "paris", name: "Paris", nativeName: "Paris", country: "France", lat: 48.8566, lon: 2.3522 },
-  { id: "seoul", name: "Seoul", nativeName: "서울", country: "South Korea", lat: 37.5665, lon: 126.9780 },
-  { id: "istanbul", name: "Istanbul", nativeName: "İstanbul", country: "Turkey", lat: 41.0082, lon: 28.9784 }
-];
 export const KYRGYZSTAN_CITIES = [
   {
     id: "bishkek",

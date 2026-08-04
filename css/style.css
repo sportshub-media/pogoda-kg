@@ -722,7 +722,7 @@ nav.main-nav a.active::after {
 }
 
 .other-country-card {
-  flex: 0 0 320px;
+  flex: 0 0 340px;
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -796,6 +796,7 @@ nav.main-nav a.active::after {
   padding-bottom: 16px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+  justify-content: center;
 }
 
 .ten-day-forecast-container::-webkit-scrollbar {
@@ -811,7 +812,7 @@ nav.main-nav a.active::after {
 
 .ten-day-pill {
   flex: 0 0 auto;
-  width: 100px;
+  width: 120px;
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -924,7 +925,7 @@ nav.main-nav a.active::after {
 }
 
 .hourly-card {
-  min-width: 140px;
+  min-width: 160px;
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);

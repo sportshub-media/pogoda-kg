@@ -1,5 +1,5 @@
 // Pogoda Kg - Main Application Logic
-import { KYRGYZSTAN_CITIES, OTHER_COUNTRIES, DEFAULT_CITY } from './config.js';
+import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { applyTranslations, TRANSLATIONS, getCurrentLang, updateLinksForLang, initMobileMenu } from './i18n.js';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSearch();
   setupHourlySlider();
   setupFooterCityLinks();
-  renderOtherCountries();
+  renderOtherCities();
   loadCityWeather(currentCity);
 });
 
@@ -331,49 +331,45 @@ function renderWeeklyForecast(weeklyList) {
   });
 }
 
-// Render Other Countries Section
-async function renderOtherCountries() {
+// Render Other Cities Section
+async function renderOtherCities() {
   const container = document.getElementById('otherCountriesContainer');
   if (!container) return;
   
   container.innerHTML = '';
   
-  // We'll fetch weather for a few selected countries
-  for (const country of OTHER_COUNTRIES) {
+  // Pick some other cities from Kyrgyzstan (e.g., skip current city)
+  const otherCities = KYRGYZSTAN_CITIES.filter(c => c.id !== currentCity.id).slice(0, 8);
+  
+  for (const city of otherCities) {
     try {
-      // Create a dummy structure that loadCityWeather expects
-      const countryCity = {
-        id: country.id,
-        name: country.name,
-        nativeName: country.nativeName,
-        lat: country.lat,
-        lon: country.lon,
-        isCountry: true, // flag to indicate it's not a local city
-        country: country.country
-      };
-      
-      const data = await fetchWeatherData(countryCity.lat, countryCity.lon);
+      const data = await fetchWeatherData(city.lat, city.lon);
       if (!data || !data.current) continue;
       
       const card = document.createElement('div');
       card.className = 'other-country-card';
       card.onclick = () => {
-        // Scroll up to hero section
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        currentCity = countryCity;
+        currentCity = city;
         
-        // Remove active state from all local city pills
-        document.querySelectorAll('.city-pill').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.city-pill').forEach(btn => {
+          if (btn.dataset.cityId === city.id) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
         
         loadCityWeather(currentCity);
+        renderOtherCities(); // Re-render to exclude the new current city
       };
       
       const conditionName = getConditionStr(data.current.conditionKey);
       
       card.innerHTML = `
         <div class="other-country-info">
-          <div class="other-country-name">${country.country}</div>
-          <div class="other-country-city">${country.name}</div>
+          <div class="other-country-name">Kyrgyzstan</div>
+          <div class="other-country-city">${getCityName(city)}</div>
           <div class="other-country-cond">${conditionName}</div>
         </div>
         <div class="other-country-weather">
@@ -387,7 +383,7 @@ async function renderOtherCountries() {
       
       container.appendChild(card);
     } catch (error) {
-      console.error('Error loading country weather:', error);
+      console.error('Error loading city weather:', error);
     }
   }
 }
