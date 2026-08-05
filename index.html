@@ -24,7 +24,7 @@
   <meta name="twitter:title" content="Kyrgyzstan Daily Weather Forecast | Pogoda Kg">
   <meta name="twitter:description" content="Real-time weather forecasts for Kyrgyzstan cities.">
   <meta name="twitter:image" content="https://pogoda-kg.pages.dev/assets/images/hero_mountains.webp">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -70,13 +70,43 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" style="background: #ffffff !important; color: #1e293b !important;">
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <button class="mobile-drawer-close" id="mobileDrawerClose">
+          <i class="fa-solid fa-xmark"></i>
+          <span data-i18n="close_btn">Close</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-search">
+        <input type="text" id="mobileSearchInput" placeholder="Search location in Kyrgyzstan..." data-i18n-placeholder="search_placeholder">
+        <button id="mobileSearchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
       <nav class="mobile-nav">
         <ul>
-          <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
-          <li><a href="blog.html" data-i18n="nav_news">News</a></li>
-          <li><a href="map.html" data-i18n="nav_map">Map</a></li>
-          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li>
+            <a href="index.html" class="active">
+              <span data-i18n="nav_home">Home</span>
+              <span class="mobile-menu-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="blog.html">
+              <span data-i18n="nav_news">News</span>
+              <span class="mobile-menu-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="map.html">
+              <span data-i18n="nav_map">Map</span>
+              <span class="mobile-menu-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <span data-i18n="nav_contact">Contact</span>
+              <span class="mobile-menu-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+          </li>
         </ul>
       </nav>
       <div class="mobile-drawer-footer">

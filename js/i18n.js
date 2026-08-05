@@ -56,6 +56,7 @@ export const TRANSLATIONS = {
     map_desc: "Explore live temperature markers and forecast data across Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, and Talas.",
     cookie_text: "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy.html'>Privacy Policy</a>.",
     cookie_btn: "Got it!",
+    close_btn: "Close",
     faq_title: "Frequently Asked Questions",
     faq_q1: "Q: How often is live weather data updated?",
     faq_a1: "A: Pogoda Kg refreshes weather model data every 15 minutes automatically.",
@@ -132,6 +133,7 @@ export const TRANSLATIONS = {
     map_desc: "Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын жана Таластагы температураны жана аба ырайын көрүңүз.",
     cookie_text: "Биз сизге жакшыраак тажрыйба берүү үчүн тил жана тема тандоолоруңузду сактоо максатында локалдык сактагычты колдонобуз. Бул сайтты колдонууну улантуу менен, сиз биздин <a href='/privacy.html'>Купуялык саясатыбызга</a> макулдугуңузду билдиресиз.",
     cookie_btn: "Түшүндүм!",
+    close_btn: "Жабуу",
     faq_title: "Көп берилүүчү суроолор",
     faq_q1: "С: Аба ырайы тууралуу маалымат канчалык тез-тез жаңыланат?",
     faq_a1: "Ж: Pogoda Kg аба ырайы моделинин маалыматтарын ар бир 15 мүнөт сайын автоматтык түрдө жаңыртып турат.",
@@ -208,6 +210,7 @@ export const TRANSLATIONS = {
     map_desc: "Исследуйте живые температурные маркеры и прогнозы погоды в Бишкеке, Оше, Джалал-Абаде, Караколе, Токмаке, Узгене, Кара-Балте, Балыкчи, Нарыне и Таласе.",
     cookie_text: "Мы используем локальное хранилище для сохранения ваших настроек языка и темы, чтобы сделать ваш опыт лучше. Продолжая использовать этот сайт, вы соглашаетесь с нашей <a href='/privacy.html'>Политикой конфиденциальности</a>.",
     cookie_btn: "Понятно!",
+    close_btn: "Закрыть",
     faq_title: "Часто задаваемые вопросы",
     faq_q1: "В: Как часто обновляются данные о погоде?",
     faq_a1: "О: Pogoda Kg автоматически обновляет данные метеорологических моделей каждые 15 минут.",
@@ -395,6 +398,27 @@ export function initMobileMenu() {
     drawer.classList.remove('open');
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
+  }
+
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
+  }
+
+  const searchBtn = document.getElementById('mobileSearchBtn');
+  const searchInput = document.getElementById('mobileSearchInput');
+  if (searchBtn && searchInput) {
+    const handleMobileSearch = () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        closeMenu();
+        window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+      }
+    };
+    searchBtn.addEventListener('click', handleMobileSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleMobileSearch();
+    });
   }
 
   toggleBtn.addEventListener('click', (e) => {
