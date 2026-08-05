@@ -4,6 +4,79 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-6-bishkek-weather",
+    slug: "kyrgyzstan-weather-august-6-forecast-bishkek-heatwave",
+    image: "/assets/images/august_6_kyrgyzstan_weather.webp",
+    translations: {
+      EN: {
+        title: "Bishkek Reaches +33°C with Rain Across Issyk-Kul: August 6 Forecast",
+        category: "Weather Forecast",
+        date: "August 5, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek stays clear and hot up to +33°C on August 6, while thunderstorms hit the Issyk-Kul region and mountain areas.",
+        content: `
+          <p>According to Kyrgyzgidromet, dry and warm conditions will prevail in <strong>Bishkek</strong> on August 6. Daytime temperatures are set to reach <strong>+31...+33°C</strong>, with nighttime lows around <strong>+16...+18°C</strong>. Westerly winds will blow at 4–9 m/s.</p>
+          <h3>Regional Weather Breakdown</h3>
+          <p>Overnight, rain and thunderstorms are expected across most of the Issyk-Kul region, with localized showers in Chuy, Osh, and Naryn. Talas, Jalal-Abad, and Batken regions will remain dry overnight.</p>
+          <p>During the day, showers and thunderstorms will persist across Issyk-Kul and higher elevation mountain zones. The agricultural and valley areas of Osh, Batken, Jalal-Abad, and Talas will enjoy clear, dry summer skies.</p>
+          <h3>August 6 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Chuy Region:</strong> Night +13...+18°C, Day +29...+34°C.</li>
+            <li><strong>Talas Region:</strong> Night +10...+15°C, Day +31...+36°C.</li>
+            <li><strong>Osh & Jalal-Abad:</strong> Night +17...+22°C, Day +31...+36°C.</li>
+            <li><strong>Batken Region:</strong> Night +17...+22°C, Day +31...+36°C.</li>
+            <li><strong>Issyk-Kul (Cholpon-Ata):</strong> Periodic rain and thunderstorms. Night +12...+14°C, Day +20...+22°C. Lake water temperature: +21.9...+23.3°C.</li>
+            <li><strong>Naryn Region:</strong> Night +8...+13°C, Day +20...+25°C.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "Бишкекте жаан-чачынсыз +33°С ысык: 6-августка карата аба ырайы",
+        category: "Аба ырайы",
+        date: "5-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "6-августта Бишкекте жаан-чачынсыз +33°Сге чейин ысыйт. Ысык-Көл облусунда жана тоолуу аймактарда жамгыр жаап, күн күркүрөйт.",
+        content: `
+          <p>Кыргызгидрометтин маалыматы боюнча, 6-августта борбор калаабыз <strong>Бишкекте</strong> жаан-чачын күтүлбөйт. Күндүз абанын температурасы <strong>+31...+33°C</strong>, ал эми түнкүсүн <strong>+16...+18°C</strong> болот. Батыштан соккон шамалдын ылдамдыгы 4-9 м/с.</p>
+          <h3>Региондор боюнча сереп</h3>
+          <p>Түнкүсүн Ысык-Көл облусунун көпчүлүк аймактарында, ошондой эле Чүй, Ош жана Нарын облустарынын айрым жерлеринде өткүн өтүп, күн күркүрөйт. Талас, Жалал-Абад жана Баткенде жаан-чачын күтүлбөйт.</p>
+          <p>Күндүз Ысык-Көлдүн көпчүлүк жеринде, Ош, Жалал-Абад, Баткен жана Таластын тоолуу аймактарында жамгыр жаайт. Түштүк облустардын өрөөндөрүндө күн ачык болот.</p>
+          <h3>Абанын температурасы (6-август):</h3>
+          <ul>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +13...+18°C, күндүз +29...+34°C.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +10...+15°C, күндүз +31...+36°C.</li>
+            <li><strong>Ош жана Жалал-Абад:</strong> түнкүсүн +17...+22°C, күндүз +31...+36°C.</li>
+            <li><strong>Баткен облусу:</strong> түнкүсүн +17...+22°C, күндүз +31...+36°C.</li>
+            <li><strong>Ысык-Көл (Чолпон-Ата):</strong> мезгил-мезгили менен жамгыр жаап, күн күркүрөйт. Түнкүсүн +12...+14°C, күндүз +20...+22°C. Суунун температурасы: +21.9...+23.3°C.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +8...+13°C, күндүз +20...+25°C.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "В Бишкеке без осадков, днем жарко до +33° — прогноз погоды на 6 августа",
+        category: "Погода",
+        date: "5 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "В Бишкеке 6 августа без осадков и до +33°C. В Иссык-Кульской области и горных районах дожди с грозами.",
+        content: `
+          <p>По данным Кыргызгидромета, 6 августа в столице Кыргызстана — городе <strong>Бишкек</strong> — осадков не ожидается. Дневная температура воздуха поднимается до <strong>+31...+33°C</strong>, ночная минимальная температура составит <strong>+16...+18°C</strong>. Ветер западный, 4-9 м/с.</p>
+          <h3>Обзор погоды по регионам Кыргызстана</h3>
+          <p>В ночное время на большей части территории Иссык-Кульской области, а также местами в Чуйской, Ошской и Нарынской областях пройдут дожди с грозами. В Таласской, Жалал-Абадской и Баткенской областях осадков не ожидается.</p>
+          <p>Днем дожди и грозы сохранятся на большей части Иссык-Кульской области, а также в горных и предгорных районах. В долинах южных областей (Ош, Баткен, Жалал-Абад) и в зоне земледелия Таласской области осадков не прогнозируется.</p>
+          <h3>Температура воздуха по областям (6 августа):</h3>
+          <ul>
+            <li><strong>Чуйская область:</strong> ночью +13...+18°C, днем +29...+34°C.</li>
+            <li><strong>Таласская область:</strong> ночью +10...+15°C, днем +31...+36°C.</li>
+            <li><strong>Ошская и Жалал-Абадская области:</strong> ночью +17...+22°C, днем +31...+36°C.</li>
+            <li><strong>Баткенская область:</strong> ночью +17...+22°C, днем +31...+36°C.</li>
+            <li><strong>Иссык-Кульская область (Чолпон-Ата):</strong> в Чолпон-Ате временами дождь, гроза. Ночью +12...+14°C, днем +20...+22°C. Температура воды у северного побережья озера Иссык-Куль составляет +21.9...+23.3°C.</li>
+            <li><strong>Нарынская область:</strong> ночью +8...+13°C, днем +20...+25°C.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-3-10",
     slug: "august-3-10-kyrgyzstan-weather-forecast-rain-to-extreme-heat",
     image: "/assets/images/august_weather_split.jpg",
