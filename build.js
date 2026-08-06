@@ -97,7 +97,7 @@ function translateHTML(html, lang, dict, currentUrl) {
   <link rel="alternate" hreflang="ru" href="https://pogoda.kg/ru${baseCleanUrl}" />
   <link rel="alternate" hreflang="ky" href="https://pogoda.kg${baseCleanUrl}" />
   <link rel="alternate" hreflang="en" href="https://pogoda.kg/en${baseCleanUrl}" />
-  <link rel="alternate" hreflang="x-default" href="https://pogoda.kg/ru${baseCleanUrl}" />`;
+  <link rel="alternate" hreflang="x-default" href="https://pogoda.kg${baseCleanUrl}" />`;
     
     // Inject before </head> or after canonical
     result = result.replace(/(<link rel="canonical" href="[^"]+">)/, `$1${hreflangBlock}`);
@@ -162,7 +162,7 @@ htmlFiles.forEach(file => {
   <link rel="alternate" hreflang="ru" href="https://pogoda.kg/ru/${city.id}" />
   <link rel="alternate" hreflang="ky" href="https://pogoda.kg/${city.id}" />
   <link rel="alternate" hreflang="en" href="https://pogoda.kg/en/${city.id}" />
-  <link rel="alternate" hreflang="x-default" href="https://pogoda.kg/ru/${city.id}" />`;
+  <link rel="alternate" hreflang="x-default" href="https://pogoda.kg/${city.id}" />`;
                 cityHtml = cityHtml.replace(/(<link rel="canonical" href="[^"]+">)/, `$1${cityHreflangBlock}`);
                 
                 // Write city file

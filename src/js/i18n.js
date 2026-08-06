@@ -290,7 +290,7 @@ export function syncSeoTagsForPath(newPath) {
     ru: `https://pogoda.kg/ru${baseCleanUrl}`,
     ky: `https://pogoda.kg${baseCleanUrl}`,
     en: `https://pogoda.kg/en${baseCleanUrl}`,
-    'x-default': `https://pogoda.kg/ru${baseCleanUrl}`,
+    'x-default': `https://pogoda.kg${baseCleanUrl}`,
   };
   Object.entries(hreflangHrefs).forEach(([hreflang, href]) => {
     const el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
