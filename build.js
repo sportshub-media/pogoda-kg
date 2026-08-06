@@ -158,7 +158,10 @@ function translateHTML(html, lang, dict, currentUrl) {
     result = result.replace(/(href|src)="css\//g, '$1="/css/');
     result = result.replace(/(href|src)="js\//g, '$1="/js/');
     result = result.replace(/(href|src)="assets\//g, '$1="/assets/');
-    
+    // CSS url() references (e.g. the hero background-image) aren't caught by the
+    // href/src fix above and were 404ing on every /en/* and /ru/* page.
+    result = result.replace(/url\('assets\//g, "url('/assets/");
+
     return result;
 }
 
@@ -221,6 +224,15 @@ htmlFiles.forEach(file => {
                     /<p class="hero-desc" data-i18n="hero_desc">[\s\S]*?<\/p>/,
                     `<p class="hero-desc">${cityHero.desc}</p>`
                 );
+
+                // Use the city's own dedicated photo instead of the generic homepage
+                // hero image, for the background, preload hint, and social share previews.
+                const cityImagePath = `/${city.image}`;
+                const cityImageUrl = `https://pogoda.kg${cityImagePath}`;
+                cityHtml = cityHtml.replace(/url\('\/assets\/images\/hero_mountains\.webp'\)/, `url('${cityImagePath}')`);
+                cityHtml = cityHtml.replace(/<link rel="preload" as="image" href="\/assets\/images\/hero_mountains\.webp" fetchpriority="high">/, `<link rel="preload" as="image" href="${cityImagePath}" fetchpriority="high">`);
+                cityHtml = cityHtml.replace(/<meta property="og:image" content="[^"]+">/, `<meta property="og:image" content="${cityImageUrl}">`);
+                cityHtml = cityHtml.replace(/<meta name="twitter:image" content="[^"]+">/, `<meta name="twitter:image" content="${cityImageUrl}">`);
 
                 // Update Canonical & Hreflang for the City Page
                 cityHtml = cityHtml.replace(/<link rel="canonical" href="[^"]+">/, `<link rel="canonical" href="https://pogoda.kg${cityUrl}">`);
