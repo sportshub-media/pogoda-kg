@@ -45,8 +45,11 @@ async function initKyrgyzstanMap() {
 
 async function renderMarkers() {
   if (!markersLayer || !leafletMap) return;
-  
+
   markersLayer.clearLayers();
+
+  const lang = getCurrentLang();
+  const langPrefix = lang === 'KG' ? '' : `/${lang.toLowerCase()}`;
 
   for (const city of KYRGYZSTAN_CITIES) {
     const data = await fetchWeatherData(city.lat, city.lon);
@@ -76,7 +79,7 @@ async function renderMarkers() {
           <span>💨 ${data.current.windSpeed} km/h</span>
           <span>💧 ${data.current.humidity}%</span>
         </div>
-        <a href="index.html?city=${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">View Full Forecast</a>
+        <a href="${langPrefix}/${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">View Full Forecast</a>
       </div>
     `);
   }

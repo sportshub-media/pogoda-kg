@@ -126,7 +126,9 @@ htmlFiles.forEach(file => {
         // Base URL for this page
         let pageUrl = file === 'index.html' ? '' : `/${file.replace('.html', '')}`;
         let fullUrl = prefix + pageUrl;
-        if (fullUrl === '') fullUrl = '/';
+        // Index pages are served as directories (with a trailing-slash redirect), so
+        // their canonical URL must include the trailing slash to match what's actually served.
+        if (file === 'index.html') fullUrl = fullUrl === '' ? '/' : `${fullUrl}/`;
         
         let translated = translateHTML(rawHtml, lang, dict, fullUrl);
         
@@ -183,12 +185,7 @@ ${sitemapUrls.map(url => `  <url>\n    <loc>https://pogoda.kg${url === '/' ? '' 
 fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), sitemapXml);
 
 // Write _redirects
-const redirects = `# Legacy Query Parameters to Clean URLs
-/index.html?city=:city  /:city  301
-/en/index.html?city=:city  /en/:city  301
-/ru/index.html?city=:city  /ru/:city  301
-
-# Clean URLs
+const redirects = `# Clean URLs
 /kg  /  301
 /kg/*  /:splat  301
 `;

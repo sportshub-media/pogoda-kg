@@ -340,7 +340,6 @@ export function initLangSwitcher(onLangChange) {
     window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
   } else if (!detectedLang && activeLang !== 'KG') {
     let newPath = `/${activeLang.toLowerCase()}${path}`;
-    if (newPath === `/${activeLang.toLowerCase()}/`) newPath = `/${activeLang.toLowerCase()}/index.html`;
     newPath = newPath.replace('//', '/');
     if (newPath !== path) {
       window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
@@ -368,9 +367,10 @@ export function initLangSwitcher(onLangChange) {
       
       let newPath = (targetLang === 'KG' ? '' : `/${targetLang.toLowerCase()}`) + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
       newPath = newPath.replace('//', '/');
-      
-      // Remove trailing slash for root paths e.g. /kg/ -> /kg
-      if (newPath.endsWith('/') && newPath.length > 1) {
+
+      // Home pages are served as directories (trailing-slash redirect), so keep the
+      // trailing slash there; strip it everywhere else (e.g. /en/bishkek).
+      if (currentPath !== '/' && newPath.endsWith('/') && newPath.length > 1) {
           newPath = newPath.slice(0, -1);
       }
       
