@@ -29,6 +29,39 @@ const LANGS = ['KG', 'RU', 'EN'];
 const LANG_CODES = { KG: 'ky', RU: 'ru', EN: 'en' };
 const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 
+// <title> / meta description per static page per language (50-60 / 150-160 chars).
+// EN isn't listed — the source file's own English copy is used as-is for the EN build.
+const PAGE_META = {
+    'index.html': {
+        RU: { title: "Кыргызстан: погода в Бишкеке сегодня и на неделю | Pogoda Kg", description: "Точный ежедневный, почасовой и месячный прогноз погоды для городов Кыргызстана: Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Нарын и другие города." },
+        KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана айлык аба ырайы божомолдору тизмеси." }
+    },
+    'contact.html': {
+        RU: { title: "Связаться с командой Pogoda Kg — вопросы и поддержка", description: "Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана." },
+        KG: { title: "Pogoda Kg тобу менен байланышуу — суроолор жана колдоо", description: "Аба ырайы маалыматтары, кызматташтык сунуштары, пикирлер же Кыргызстандын аба ырайы божомолу тууралуу суроо-талаптарыңыз боюнча Pogoda Kg тобуна кайрылыңыз." }
+    },
+    'map.html': {
+        RU: { title: "Интерактивная карта погоды Кыргызстана | Pogoda Kg", description: "Изучите интерактивную карту погоды Кыргызстана с живыми отметками температуры, данными о ветре и прогнозами для Бишкека, Оша, Каракола, Нарына и других городов." },
+        KG: { title: "Кыргызстандын интерактивдүү аба ырайы картасы | Pogoda Kg", description: "Бишкек, Ош, Каракол, Нарын жана башка шаарлардын температура белгилери, шамал маалыматтары жана божомолдору менен интерактивдүү картадан таанышып чыгыңыз." }
+    },
+    'blog.html': {
+        RU: { title: "Все новости и блог о погоде в Кыргызстане | Pogoda.kg", description: "Читайте последние новости о погоде в Кыргызстане, состоянии горных перевалов, отчёты по озеру Иссык-Куль и сезонные климатические обновления от Pogoda Kg." },
+        KG: { title: "Кыргызстандын аба ырайы жаңылыктары | Pogoda.kg сайты", description: "Кыргызстандын аба ырайы боюнча акыркы жаңылыктарды, тоо ашууларынын абалын, Ысык-Көл жөнүндөгү отчётторду жана мезгилдик климаттык жаңылыктарды окуңуз." }
+    },
+    'terms.html': {
+        RU: { title: "Условия использования сайта Pogoda Kg — прочитайте", description: "Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта." },
+        KG: { title: "Колдонуу шарттары | Pogoda Kg аба ырайы порталы сайты", description: "Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат." }
+    },
+    'privacy.html': {
+        RU: { title: "Политика конфиденциальности сайта Pogoda Kg — читать", description: "Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере." },
+        KG: { title: "Купуялык саясаты | Pogoda Kg аба ырайы порталы сайты", description: "Pogoda Kg кандай маалыматтарды чогултарын, аны кантип колдонорун жана тил менен шаар тандооңуз браузериңизде кантип сакталарын Купуялык саясатыбыздан билиңиз." }
+    },
+    '404.html': {
+        RU: { title: "404 — Такая страница не найдена на сайте Pogoda Kg", description: "Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану." },
+        KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
+    }
+};
+
 // Per-city, per-language <title> and meta description (kept within 50-60 / 150-160 chars)
 function getCityMeta(lang, city) {
     const en = city.name;
@@ -215,7 +248,18 @@ htmlFiles.forEach(file => {
         if (file === 'index.html') fullUrl = fullUrl === '' ? '/' : `${fullUrl}/`;
         
         let translated = translateHTML(rawHtml, lang, dict, fullUrl);
-        
+
+        // Translate <title>/meta description (and matching og:/twitter: tags) per language.
+        const pageMeta = PAGE_META[file] && PAGE_META[file][lang];
+        if (pageMeta) {
+            translated = translated.replace(/<title>.*?<\/title>/, `<title>${pageMeta.title}</title>`);
+            translated = translated.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${pageMeta.description}">`);
+            translated = translated.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${pageMeta.title}">`);
+            translated = translated.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${pageMeta.description}">`);
+            translated = translated.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${pageMeta.title}">`);
+            translated = translated.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${pageMeta.description}">`);
+        }
+
         // Save file
         const outFilePath = file === 'index.html' 
             ? path.join(OUT_DIR, prefix, 'index.html') 
@@ -238,6 +282,10 @@ htmlFiles.forEach(file => {
                 const cityMeta = getCityMeta(lang, city);
                 cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityMeta.title}</title>`);
                 cityHtml = cityHtml.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${cityMeta.description}">`);
+                cityHtml = cityHtml.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${cityMeta.title}">`);
+                cityHtml = cityHtml.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${cityMeta.description}">`);
+                cityHtml = cityHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${cityMeta.title}">`);
+                cityHtml = cityHtml.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${cityMeta.description}">`);
 
                 // Replace the hero heading/intro with real, unique on-page content for this
                 // city (not just meta tags) — this is what makes it a genuine dedicated page
