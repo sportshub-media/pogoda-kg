@@ -67,6 +67,16 @@ function getConditionStr(conditionKey) {
   return TRANSLATIONS[lang] ? TRANSLATIONS[lang][conditionKey] : conditionKey;
 }
 
+// Every city has its own dedicated, statically-generated page — switching cities from
+// search, recent searches, or the "Other Cities" list should navigate there for real
+// instead of swapping content in place, which left the URL/heading out of sync with
+// what was actually displayed.
+function navigateToCityPage(city) {
+  const lang = getCurrentLang();
+  const prefix = lang === 'KG' ? '' : `/${lang.toLowerCase()}`;
+  window.location.href = `${prefix}/${city.id}`;
+}
+
 // 2. Load and render weather for a selected city
 export async function loadCityWeather(city) {
   currentCity = city;
@@ -317,14 +327,8 @@ async function renderOtherCities() {
       
       const card = document.createElement('div');
       card.className = 'other-country-card';
-      card.onclick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        currentCity = city;
-        
-        loadCityWeather(currentCity);
-        renderOtherCities(); // Re-render to exclude the new current city
-      };
-      
+      card.onclick = () => navigateToCityPage(city);
+
       const conditionName = getConditionStr(data.current.conditionKey);
       
       card.innerHTML = `
@@ -390,20 +394,7 @@ function setupSearch() {
     const item = e.target.closest('.search-result-item');
     if (item && item.dataset.cityId) {
       const selected = KYRGYZSTAN_CITIES.find(c => c.id === item.dataset.cityId);
-      if (selected) {
-        // Sync city pill
-        document.querySelectorAll('.city-pill').forEach(p => {
-          p.classList.toggle('active', p.dataset.cityId === selected.id);
-        });
-        loadCityWeather(selected);
-        searchInput.value = '';
-        dropdown.innerHTML = '';
-        dropdown.classList.remove('active');
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }
+      if (selected) navigateToCityPage(selected);
     }
   });
 
@@ -473,16 +464,7 @@ function renderRecentSearches() {
       <div style="font-size:26px; font-weight:800; margin:6px 0; color:#FF9F43;">${data ? data.current.temp + '°' : '--'}</div>
       <div style="font-size:12px; font-weight:600; background:rgba(0,0,0,0.5); padding:2px 8px; border-radius:10px;">${data ? getConditionStr(data.current.conditionKey) : 'View Forecast'}</div>
     `;
-    card.addEventListener('click', () => {
-      document.querySelectorAll('.city-pill').forEach(p => {
-        p.classList.toggle('active', p.dataset.cityId === city.id);
-      });
-      loadCityWeather(city);
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+    card.addEventListener('click', () => navigateToCityPage(city));
     container.appendChild(card);
   });
 }
