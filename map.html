@@ -22,10 +22,14 @@
   <meta name="twitter:title" content="Kyrgyzstan Weather Map | Pogoda Kg">
   <meta name="twitter:description" content="Interactive weather map for Kyrgyzstan cities.">
   <meta name="twitter:image" content="https://pogoda-kg.pages.dev/assets/images/naryn.webp">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="assets/logo-dark.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css?v=7">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="js/map.js?v=5" defer></script>
 </head>
 <body>
 
@@ -187,6 +191,5 @@
     </div>
   </footer>
 
-  <script type="module" src="js/map.js?v=5"></script>
 </body>
 </html>

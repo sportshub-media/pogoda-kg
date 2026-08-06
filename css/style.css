@@ -1872,3 +1872,9 @@ footer.site-footer {
   object-fit: contain;
   display: block;
 }
+
+/* Performance utility for deferring rendering of off-screen content */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
