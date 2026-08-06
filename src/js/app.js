@@ -118,6 +118,32 @@ function getCityHeroContent(lang, city) {
   };
 }
 
+// Same wording as getCitySectionTitles() in build.js.
+function getCitySectionTitles(lang, city) {
+  const en = city.name;
+  const native = city.nativeName || city.name;
+
+  if (lang === 'EN') {
+    return {
+      hourly: `Hourly Update for ${en}`,
+      todayDetails: `Today Weather Details for ${en}`,
+      weekly: `Weekly Weather Forecast for ${en}`
+    };
+  }
+  if (lang === 'RU') {
+    return {
+      hourly: `Почасовой прогноз — ${native}`,
+      todayDetails: `Подробности погоды на сегодня — ${native}`,
+      weekly: `Прогноз погоды на неделю — ${native}`
+    };
+  }
+  return {
+    hourly: `Сааттык божомол — ${native}`,
+    todayDetails: `Бүгүнкү аба ырайы чоо-жайы — ${native}`,
+    weekly: `Бир жумалык божомол — ${native}`
+  };
+}
+
 // Update city titles across sections
 function updateCityInfoDisplay(city) {
   document.querySelectorAll('.current-city-name').forEach(el => {
@@ -127,11 +153,21 @@ function updateCityInfoDisplay(city) {
     el.textContent = `${city.region}, Kyrgyzstan`;
   });
 
-  const hero = getCityHeroContent(getCurrentLang(), city);
+  const lang = getCurrentLang();
+
+  const hero = getCityHeroContent(lang, city);
   const heroTitleEl = document.querySelector('.hero-title');
   if (heroTitleEl) heroTitleEl.textContent = hero.title;
   const heroDescEl = document.querySelector('.hero-desc');
   if (heroDescEl) heroDescEl.textContent = hero.desc;
+
+  const sections = getCitySectionTitles(lang, city);
+  const hourlyTitleEl = document.getElementById('hourlyUpdateTitle');
+  if (hourlyTitleEl) hourlyTitleEl.textContent = sections.hourly;
+  const todayDetailsTitleEl = document.getElementById('todayDetailsTitle');
+  if (todayDetailsTitleEl) todayDetailsTitleEl.textContent = sections.todayDetails;
+  const weeklyTitleEl = document.getElementById('weeklyForecastTitle');
+  if (weeklyTitleEl) weeklyTitleEl.textContent = sections.weekly;
 }
 
 // Render Hero Section Weather Card

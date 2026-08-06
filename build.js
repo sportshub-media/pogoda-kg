@@ -81,6 +81,35 @@ function getCityHeroContent(lang, city) {
     };
 }
 
+// Adds the city name to the "Hourly Update" / "Today Weather Details" / "Weekly Weather
+// Forecast" section headings on city pages. Kept in sync with the identical function in
+// app.js so it stays correct after a client-side language switch.
+function getCitySectionTitles(lang, city) {
+    const en = city.name;
+    const native = city.nativeName || city.name;
+
+    if (lang === 'EN') {
+        return {
+            hourly: `Hourly Update for ${en}`,
+            todayDetails: `Today Weather Details for ${en}`,
+            weekly: `Weekly Weather Forecast for ${en}`
+        };
+    }
+    if (lang === 'RU') {
+        return {
+            hourly: `Почасовой прогноз — ${native}`,
+            todayDetails: `Подробности погоды на сегодня — ${native}`,
+            weekly: `Прогноз погоды на неделю — ${native}`
+        };
+    }
+    // KG
+    return {
+        hourly: `Сааттык божомол — ${native}`,
+        todayDetails: `Бүгүнкү аба ырайы чоо-жайы — ${native}`,
+        weekly: `Бир жумалык божомол — ${native}`
+    };
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -223,6 +252,22 @@ htmlFiles.forEach(file => {
                 cityHtml = cityHtml.replace(
                     /<p class="hero-desc" data-i18n="hero_desc">[\s\S]*?<\/p>/,
                     `<p class="hero-desc">${cityHero.desc}</p>`
+                );
+
+                // Same treatment for the "Hourly Update" / "Today Weather Details" /
+                // "Weekly Weather Forecast" section headings — name the city directly.
+                const citySections = getCitySectionTitles(lang, city);
+                cityHtml = cityHtml.replace(
+                    /<h2 class="section-title" id="hourlyUpdateTitle" data-i18n="hourly_title">[\s\S]*?<\/h2>/,
+                    `<h2 class="section-title" id="hourlyUpdateTitle">${citySections.hourly}</h2>`
+                );
+                cityHtml = cityHtml.replace(
+                    /<h2 class="section-title" id="todayDetailsTitle" data-i18n="today_details_title">[\s\S]*?<\/h2>/,
+                    `<h2 class="section-title" id="todayDetailsTitle">${citySections.todayDetails}</h2>`
+                );
+                cityHtml = cityHtml.replace(
+                    /<h2 class="section-title" id="weeklyForecastTitle" data-i18n="weekly_title">[\s\S]*?<\/h2>/,
+                    `<h2 class="section-title" id="weeklyForecastTitle">${citySections.weekly}</h2>`
                 );
 
                 // Use the city's own dedicated photo instead of the generic homepage
