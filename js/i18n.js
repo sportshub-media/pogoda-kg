@@ -316,11 +316,18 @@ export function initLangSwitcher(onLangChange) {
   const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'KG';
   localStorage.setItem('pogoda_lang', activeLang);
   
-  if (!detectedLang) {
-    let newPath = activeLang === 'KG' ? path : `/${activeLang.toLowerCase()}${path}`;
+  // If the user lands on a /kg URL, redirect to clean URL
+  if (path.startsWith('/kg')) {
+    let cleanPath = path.replace(/^\/kg/, '');
+    if (cleanPath === '') cleanPath = '/';
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  } else if (!detectedLang && activeLang !== 'KG') {
+    let newPath = `/${activeLang.toLowerCase()}${path}`;
     if (newPath === `/${activeLang.toLowerCase()}/`) newPath = `/${activeLang.toLowerCase()}/index.html`;
     newPath = newPath.replace('//', '/');
-    window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+    if (newPath !== path) {
+      window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+    }
   }
 
   applyTranslations(activeLang);
