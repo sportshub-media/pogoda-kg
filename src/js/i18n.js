@@ -281,6 +281,23 @@ export function updateLinksForLang(lang) {
   });
 }
 
+export function syncSeoTagsForPath(newPath) {
+  const canonicalEl = document.querySelector('link[rel="canonical"]');
+  if (canonicalEl) canonicalEl.setAttribute('href', `https://pogoda.kg${newPath}`);
+
+  const baseCleanUrl = newPath.replace(/^\/(ru|en)/, '');
+  const hreflangHrefs = {
+    ru: `https://pogoda.kg/ru${baseCleanUrl}`,
+    ky: `https://pogoda.kg${baseCleanUrl}`,
+    en: `https://pogoda.kg/en${baseCleanUrl}`,
+    'x-default': `https://pogoda.kg/ru${baseCleanUrl}`,
+  };
+  Object.entries(hreflangHrefs).forEach(([hreflang, href]) => {
+    const el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+    if (el) el.setAttribute('href', href);
+  });
+}
+
 export function applyTranslations(lang = getCurrentLang()) {
   const dict = TRANSLATIONS[lang] || TRANSLATIONS['EN'];
 
@@ -327,6 +344,7 @@ export function initLangSwitcher(onLangChange) {
     newPath = newPath.replace('//', '/');
     if (newPath !== path) {
       window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
+      syncSeoTagsForPath(newPath);
     }
   }
 
@@ -357,7 +375,8 @@ export function initLangSwitcher(onLangChange) {
       }
       
       window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
-      
+      syncSeoTagsForPath(newPath);
+
       // Immediately apply translations without reloading the page
       applyTranslations(targetLang);
       
