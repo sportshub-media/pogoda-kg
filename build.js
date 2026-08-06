@@ -29,6 +29,31 @@ const LANGS = ['KG', 'RU', 'EN'];
 const LANG_CODES = { KG: 'ky', RU: 'ru', EN: 'en' };
 const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 
+// Per-city, per-language <title> and meta description (kept within 50-60 / 150-160 chars)
+function getCityMeta(lang, city) {
+    const en = city.name;
+    const native = city.nativeName || city.name;
+
+    if (lang === 'EN') {
+        return {
+            title: `${en} Weather Forecast Today & This Week | Pogoda.kg`,
+            description: `Get today's live weather forecast for ${en}, Kyrgyzstan — current temperature, wind, humidity, and a detailed 7-day outlook, refreshed every 15 minutes.`
+        };
+    }
+    if (lang === 'RU') {
+        const word = native.length <= 3 ? 'самый точный' : 'точный';
+        return {
+            title: `Погода в городе ${native} сегодня и на неделю | Pogoda.kg`,
+            description: `Узнайте ${word} прогноз погоды в ${native}, Кыргызстан: температура, ветер, влажность, почасовой и подробный 7-дневный прогноз, обновляется каждые 15 минут.`
+        };
+    }
+    // KG
+    return {
+        title: `${native} аба ырайы бүгүн жана 7 күндүк божомол | Pogoda.kg`,
+        description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк, 14 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
+    };
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -148,13 +173,12 @@ htmlFiles.forEach(file => {
                 if (prefix === '') cityUrl = `/${city.id}`;
                 
                 let cityHtml = translated;
-                
-                // Update title to include city
-                const titleStr = dict.hero_title || 'Weather Forecast';
-                const cityTitle = `${city.nativeName || city.name} - ${titleStr} | Pogoda.kg`;
-                
-                cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityTitle}</title>`);
-                
+
+                // Update title & meta description to be unique per city (50-60 / 150-160 chars)
+                const cityMeta = getCityMeta(lang, city);
+                cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityMeta.title}</title>`);
+                cityHtml = cityHtml.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${cityMeta.description}">`);
+
                 // Update Canonical & Hreflang for the City Page
                 cityHtml = cityHtml.replace(/<link rel="canonical" href="[^"]+">/, `<link rel="canonical" href="https://pogoda.kg${cityUrl}">`);
                 
