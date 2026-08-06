@@ -102,6 +102,11 @@ function translateHTML(html, lang, dict, currentUrl) {
     // Inject before </head> or after canonical
     result = result.replace(/(<link rel="canonical" href="[^"]+">)/, `$1${hreflangBlock}`);
     
+    // 6. Fix Relative Asset Paths
+    result = result.replace(/(href|src)="css\//g, '$1="/css/');
+    result = result.replace(/(href|src)="js\//g, '$1="/js/');
+    result = result.replace(/(href|src)="assets\//g, '$1="/assets/');
+    
     return result;
 }
 
