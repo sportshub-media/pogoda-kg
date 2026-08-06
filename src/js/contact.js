@@ -1,6 +1,6 @@
 // Pogoda Kg - Contact Page Controller
 import { initTheme } from './theme.js';
-import { initLangSwitcher } from './i18n.js';
+import { initLangSwitcher, getCurrentLang, TRANSLATIONS } from './i18n.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -23,7 +23,8 @@ function setupContactForm() {
     const message = document.getElementById('contactMessage').value.trim();
 
     if (!name || !email || !message) {
-      alert("Please fill in all required form fields.");
+      const lang = getCurrentLang();
+      alert(TRANSLATIONS[lang].contact_required_alert);
       return;
     }
 

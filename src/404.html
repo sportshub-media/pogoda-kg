@@ -99,12 +99,12 @@
 
   <main class="error-page">
     <div class="error-code">404</div>
-    <h1 class="error-title">Page Not Found</h1>
-    <p class="error-desc">
+    <h1 class="error-title" data-i18n="error_title">Page Not Found</h1>
+    <p class="error-desc" data-i18n="error_desc">
       The weather page you're looking for doesn't exist or has been moved. Let's get you back to the forecast.
     </p>
     <a href="/" class="error-btn">
-      <i class="fa-solid fa-house"></i> Back to Weather Home
+      <i class="fa-solid fa-house"></i> <span data-i18n="error_btn">Back to Weather Home</span>
     </a>
   </main>
 
@@ -114,5 +114,20 @@
     </div>
   </footer>
 
+  <script type="module">
+    import { applyTranslations, getCurrentLang, initMobileMenu } from '/js/i18n.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      initMobileMenu();
+      applyTranslations(getCurrentLang());
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const targetLang = e.currentTarget.getAttribute('data-lang');
+          localStorage.setItem('pogoda_lang', targetLang);
+          applyTranslations(targetLang);
+          document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === targetLang));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
