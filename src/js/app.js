@@ -6,6 +6,9 @@ import { TRANSLATIONS, getCurrentLang, initMobileMenu, initLangSwitcher } from '
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
+// True only on a real dedicated city page (e.g. /bishkek, /en/karakol). The homepage
+// itself always shows the generic Kyrgyzstan-wide heading and Bishkek's weather.
+let isDedicatedCityPage = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   // Legacy ?city= links now have real pages (e.g. /bishkek, /en/bishkek) — send
@@ -36,7 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (found) currentCity = found;
   } else if (pathCity) {
     const found = KYRGYZSTAN_CITIES.find(c => c.id === pathCity);
-    if (found) currentCity = found;
+    if (found) {
+      currentCity = found;
+      isDedicatedCityPage = true;
+    }
   }
 
   initLangSwitcher(() => {
@@ -152,6 +158,10 @@ function updateCityInfoDisplay(city) {
   document.querySelectorAll('.current-city-region').forEach(el => {
     el.textContent = `${city.region}, Kyrgyzstan`;
   });
+
+  // The homepage keeps its generic, translated Kyrgyzstan-wide heading and always
+  // shows Bishkek — only a real dedicated city page gets city-named headings.
+  if (!isDedicatedCityPage) return;
 
   const lang = getCurrentLang();
 
