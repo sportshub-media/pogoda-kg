@@ -8,13 +8,26 @@ let currentCity = DEFAULT_CITY;
 let weatherCache = {};
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Legacy ?city= links now have real pages (e.g. /bishkek, /en/bishkek) — send
+  // anyone still landing on the old query-param URL straight to the real page.
+  const legacyCityParam = new URLSearchParams(window.location.search).get('city');
+  if (legacyCityParam) {
+    const legacyCity = KYRGYZSTAN_CITIES.find(c => c.id === legacyCityParam.toLowerCase());
+    if (legacyCity) {
+      const path = window.location.pathname;
+      const prefix = path.startsWith('/en') ? '/en' : (path.startsWith('/ru') ? '/ru' : '');
+      window.location.replace(`${prefix}/${legacyCity.id}`);
+      return;
+    }
+  }
+
   initTheme();
   initMobileMenu();
-  
+
   // Read city from URL if passed from map
   const urlParams = new URLSearchParams(window.location.search);
   const cityParam = urlParams.get('city');
-  
+
   const pathParts = window.location.pathname.split('/').filter(p => p.length > 0 && p !== 'en' && p !== 'ru' && p !== 'kg');
   const pathCity = pathParts[0] ? pathParts[0].replace('.html', '') : null;
 
@@ -40,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSearch();
   setupHourlySlider();
   setupOtherCitiesScroll();
-  setupFooterCityLinks();
   renderOtherCities();
   loadCityWeather(currentCity);
 });
@@ -442,32 +454,6 @@ function renderRecentSearches() {
       }
     });
     container.appendChild(card);
-  });
-}
-
-function setupFooterCityLinks() {
-  document.querySelectorAll('.footer-city-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const cityId = link.getAttribute('data-city-id');
-      if (cityId) {
-        const found = KYRGYZSTAN_CITIES.find(c => c.id === cityId.toLowerCase());
-        if (found) {
-          if (document.getElementById('heroWeatherCard')) {
-            e.preventDefault();
-            const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set('city', found.id);
-            window.history.pushState(null, '', newUrl.toString());
-
-            document.querySelectorAll('.city-pill').forEach(p => {
-              p.classList.toggle('active', p.dataset.cityId === found.id);
-            });
-
-            loadCityWeather(found);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        }
-      }
-    });
   });
 }
 
