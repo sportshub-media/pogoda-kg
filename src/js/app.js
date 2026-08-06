@@ -14,8 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Read city from URL if passed from map
   const urlParams = new URLSearchParams(window.location.search);
   const cityParam = urlParams.get('city');
+  
+  const pathParts = window.location.pathname.split('/').filter(p => p.length > 0 && p !== 'en' && p !== 'ru' && p !== 'kg');
+  const pathCity = pathParts[0] ? pathParts[0].replace('.html', '') : null;
+
   if (cityParam) {
     const found = KYRGYZSTAN_CITIES.find(c => c.id === cityParam);
+    if (found) currentCity = found;
+  } else if (pathCity) {
+    const found = KYRGYZSTAN_CITIES.find(c => c.id === pathCity);
     if (found) currentCity = found;
   }
 
