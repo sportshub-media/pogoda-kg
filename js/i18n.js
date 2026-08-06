@@ -238,12 +238,11 @@ export function getCurrentLang() {
   const path = window.location.pathname;
   if (path.startsWith('/en')) return 'EN';
   if (path.startsWith('/ru')) return 'RU';
-  if (path.startsWith('/kg')) return 'KG';
-  return localStorage.getItem('pogoda_lang') || 'EN';
+  return localStorage.getItem('pogoda_lang') || 'KG';
 }
 
 export function updateLinksForLang(lang) {
-  const prefix = `/${lang.toLowerCase()}`;
+  const prefix = lang === 'KG' ? '' : `/${lang.toLowerCase()}`;
   document.querySelectorAll('a').forEach(a => {
     let href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
@@ -318,7 +317,7 @@ export function initLangSwitcher(onLangChange) {
   localStorage.setItem('pogoda_lang', activeLang);
   
   if (!detectedLang) {
-    let newPath = `/${activeLang.toLowerCase()}${path}`;
+    let newPath = activeLang === 'KG' ? path : `/${activeLang.toLowerCase()}${path}`;
     if (newPath === `/${activeLang.toLowerCase()}/`) newPath = `/${activeLang.toLowerCase()}/index.html`;
     newPath = newPath.replace('//', '/');
     window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
@@ -342,7 +341,7 @@ export function initLangSwitcher(onLangChange) {
       
       if (currentPath === '/en' || currentPath === '/ru' || currentPath === '/kg') currentPath = '/';
       
-      let newPath = `/${targetLang.toLowerCase()}` + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+      let newPath = (targetLang === 'KG' ? '' : `/${targetLang.toLowerCase()}`) + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
       newPath = newPath.replace('//', '/');
       
       // Remove trailing slash for root paths e.g. /kg/ -> /kg
