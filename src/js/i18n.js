@@ -246,7 +246,10 @@ export function updateLinksForLang(lang) {
   document.querySelectorAll('a').forEach(a => {
     let href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
-    
+    // Individual blog articles only exist at the unprefixed /blog/<slug>.html path
+    // (no per-language copies), so leave them alone.
+    if (href.startsWith('/blog/')) return;
+
     // Remove any existing language prefix
     let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
     
@@ -325,16 +328,21 @@ export function applyTranslations(lang = getCurrentLang()) {
 
 export function initLangSwitcher(onLangChange) {
   const path = window.location.pathname;
+  // Individual blog articles live at a single unprefixed URL for all languages
+  // (content is swapped client-side), so never rewrite their URL.
+  const isBlogArticle = /^\/blog\/.+\.html$/.test(path);
   let detectedLang = null;
   if (path.startsWith('/en')) detectedLang = 'EN';
   else if (path.startsWith('/ru')) detectedLang = 'RU';
   else if (path.startsWith('/kg')) detectedLang = 'KG';
-  
+
   const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'KG';
   localStorage.setItem('pogoda_lang', activeLang);
-  
+
   // If the user lands on a /kg URL, redirect to clean URL
-  if (path.startsWith('/kg')) {
+  if (isBlogArticle) {
+    // no URL change
+  } else if (path.startsWith('/kg')) {
     let cleanPath = path.replace(/^\/kg/, '');
     if (cleanPath === '') cleanPath = '/';
     window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
@@ -353,29 +361,31 @@ export function initLangSwitcher(onLangChange) {
     btn.addEventListener('click', (e) => {
       const targetLang = e.currentTarget.getAttribute('data-lang');
       localStorage.setItem('pogoda_lang', targetLang);
-      
-      let currentPath = window.location.pathname;
-      
-      // Remove trailing index.html if present
-      if (currentPath.endsWith('index.html')) currentPath = currentPath.replace('index.html', '');
-      
-      if (currentPath.startsWith('/en/')) currentPath = currentPath.replace('/en/', '/');
-      else if (currentPath.startsWith('/ru/')) currentPath = currentPath.replace('/ru/', '/');
-      else if (currentPath.startsWith('/kg/')) currentPath = currentPath.replace('/kg/', '/');
-      
-      if (currentPath === '/en' || currentPath === '/ru' || currentPath === '/kg') currentPath = '/';
-      
-      let newPath = (targetLang === 'KG' ? '' : `/${targetLang.toLowerCase()}`) + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
-      newPath = newPath.replace('//', '/');
 
-      // Home pages are served as directories (trailing-slash redirect), so keep the
-      // trailing slash there; strip it everywhere else (e.g. /en/bishkek).
-      if (currentPath !== '/' && newPath.endsWith('/') && newPath.length > 1) {
-          newPath = newPath.slice(0, -1);
+      if (!isBlogArticle) {
+        let currentPath = window.location.pathname;
+
+        // Remove trailing index.html if present
+        if (currentPath.endsWith('index.html')) currentPath = currentPath.replace('index.html', '');
+
+        if (currentPath.startsWith('/en/')) currentPath = currentPath.replace('/en/', '/');
+        else if (currentPath.startsWith('/ru/')) currentPath = currentPath.replace('/ru/', '/');
+        else if (currentPath.startsWith('/kg/')) currentPath = currentPath.replace('/kg/', '/');
+
+        if (currentPath === '/en' || currentPath === '/ru' || currentPath === '/kg') currentPath = '/';
+
+        let newPath = (targetLang === 'KG' ? '' : `/${targetLang.toLowerCase()}`) + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
+        newPath = newPath.replace('//', '/');
+
+        // Home pages are served as directories (trailing-slash redirect), so keep the
+        // trailing slash there; strip it everywhere else (e.g. /en/bishkek).
+        if (currentPath !== '/' && newPath.endsWith('/') && newPath.length > 1) {
+            newPath = newPath.slice(0, -1);
+        }
+
+        window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
+        syncSeoTagsForPath(newPath);
       }
-      
-      window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
-      syncSeoTagsForPath(newPath);
 
       // Immediately apply translations without reloading the page
       applyTranslations(targetLang);
