@@ -164,8 +164,9 @@ htmlFiles.forEach(file => {
             
         fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
         fs.writeFileSync(outFilePath, translated);
-        sitemapUrls.push(fullUrl);
-        
+        // The 404 page isn't a real, indexable page — don't submit it to Google via the sitemap.
+        if (file !== '404.html') sitemapUrls.push(fullUrl);
+
         // Special Case: If it's index.html, generate city pages!
         if (file === 'index.html') {
             CITIES.forEach(city => {
@@ -201,12 +202,24 @@ htmlFiles.forEach(file => {
     });
 });
 
+// Blog articles each live at a single unprefixed URL (no per-language copies) — include them too.
+if (fs.existsSync(path.join(SRC_DIR, 'blog'))) {
+    fs.readdirSync(path.join(SRC_DIR, 'blog'))
+        .filter(f => f.endsWith('.html'))
+        .forEach(f => sitemapUrls.push(`/blog/${f.replace('.html', '')}`));
+}
+
 // Generate Sitemap
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${sitemapUrls.map(url => `  <url>\n    <loc>https://pogoda.kg${url === '/' ? '' : url}</loc>\n  </url>`).join('\n')}
+${sitemapUrls.map(url => `  <url>\n    <loc>https://pogoda.kg${url}</loc>\n  </url>`).join('\n')}
 </urlset>`;
 fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), sitemapXml);
+
+// Copy robots.txt into the build output
+if (fs.existsSync(path.join(__dirname, 'robots.txt'))) {
+    fs.copyFileSync(path.join(__dirname, 'robots.txt'), path.join(OUT_DIR, 'robots.txt'));
+}
 
 // Write _redirects
 const redirects = `# Clean URLs
