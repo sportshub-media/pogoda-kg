@@ -54,6 +54,33 @@ function getCityMeta(lang, city) {
     };
 }
 
+// Unique, visible on-page hero heading/intro for each city page (not just meta tags),
+// so each city page is genuinely distinct content rather than a shared template with
+// only the URL/meta swapped. Kept in sync with the identical logic in app.js so the
+// text stays consistent whether it's server-rendered or updated client-side.
+function getCityHeroContent(lang, city) {
+    const en = city.name;
+    const native = city.nativeName || city.name;
+
+    if (lang === 'EN') {
+        return {
+            title: `${en} Weather Forecast`,
+            desc: `Get the latest real-time weather forecast for ${en}, Kyrgyzstan — current temperature, precipitation, wind speed, and a detailed 7-day outlook, updated every 15 minutes.`
+        };
+    }
+    if (lang === 'RU') {
+        return {
+            title: `Погода в городе ${native}`,
+            desc: `Актуальный прогноз погоды для города ${native}: температура, осадки, скорость ветра и подробный прогноз на 7 дней, обновляется каждые 15 минут.`
+        };
+    }
+    // KG
+    return {
+        title: `${native} аба ырайынын божомолу`,
+        desc: `${native} үчүн азыркы аба ырайынын божомолу: температура, жаан-чачын, шамал ылдамдыгы жана 7 күндүк так божомол, ар 15 мүнөт сайын жаңыртылат.`
+    };
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -179,6 +206,21 @@ htmlFiles.forEach(file => {
                 const cityMeta = getCityMeta(lang, city);
                 cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityMeta.title}</title>`);
                 cityHtml = cityHtml.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${cityMeta.description}">`);
+
+                // Replace the hero heading/intro with real, unique on-page content for this
+                // city (not just meta tags) — this is what makes it a genuine dedicated page
+                // rather than the homepage template with only the URL swapped. The data-i18n
+                // attributes are dropped so the client-side translator can't overwrite them;
+                // app.js keeps this text in sync client-side using the same wording.
+                const cityHero = getCityHeroContent(lang, city);
+                cityHtml = cityHtml.replace(
+                    /<h1 class="hero-title" data-i18n="hero_title">[\s\S]*?<\/h1>/,
+                    `<h1 class="hero-title">${cityHero.title}</h1>`
+                );
+                cityHtml = cityHtml.replace(
+                    /<p class="hero-desc" data-i18n="hero_desc">[\s\S]*?<\/p>/,
+                    `<p class="hero-desc">${cityHero.desc}</p>`
+                );
 
                 // Update Canonical & Hreflang for the City Page
                 cityHtml = cityHtml.replace(/<link rel="canonical" href="[^"]+">/, `<link rel="canonical" href="https://pogoda.kg${cityUrl}">`);

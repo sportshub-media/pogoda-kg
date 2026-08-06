@@ -84,6 +84,30 @@ export async function loadCityWeather(city) {
   renderRecentSearches();
 }
 
+// Same wording as getCityHeroContent() in build.js, kept in sync so the hero heading/intro
+// baked into each static city page still matches after a client-side language or city switch.
+function getCityHeroContent(lang, city) {
+  const en = city.name;
+  const native = city.nativeName || city.name;
+
+  if (lang === 'EN') {
+    return {
+      title: `${en} Weather Forecast`,
+      desc: `Get the latest real-time weather forecast for ${en}, Kyrgyzstan — current temperature, precipitation, wind speed, and a detailed 7-day outlook, updated every 15 minutes.`
+    };
+  }
+  if (lang === 'RU') {
+    return {
+      title: `Погода в городе ${native}`,
+      desc: `Актуальный прогноз погоды для города ${native}: температура, осадки, скорость ветра и подробный прогноз на 7 дней, обновляется каждые 15 минут.`
+    };
+  }
+  return {
+    title: `${native} аба ырайынын божомолу`,
+    desc: `${native} үчүн азыркы аба ырайынын божомолу: температура, жаан-чачын, шамал ылдамдыгы жана 7 күндүк так божомол, ар 15 мүнөт сайын жаңыртылат.`
+  };
+}
+
 // Update city titles across sections
 function updateCityInfoDisplay(city) {
   document.querySelectorAll('.current-city-name').forEach(el => {
@@ -92,6 +116,12 @@ function updateCityInfoDisplay(city) {
   document.querySelectorAll('.current-city-region').forEach(el => {
     el.textContent = `${city.region}, Kyrgyzstan`;
   });
+
+  const hero = getCityHeroContent(getCurrentLang(), city);
+  const heroTitleEl = document.querySelector('.hero-title');
+  if (heroTitleEl) heroTitleEl.textContent = hero.title;
+  const heroDescEl = document.querySelector('.hero-desc');
+  if (heroDescEl) heroDescEl.textContent = hero.desc;
 }
 
 // Render Hero Section Weather Card
