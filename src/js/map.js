@@ -2,7 +2,7 @@
 import { KYRGYZSTAN_CITIES } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
-import { initLangSwitcher, TRANSLATIONS, getCurrentLang } from './i18n.js';
+import { initLangSwitcher, TRANSLATIONS, getCurrentLang, getRegionName } from './i18n.js';
 
 let leafletMap = null;
 let markersLayer = null;
@@ -74,14 +74,14 @@ async function renderMarkers() {
     marker.bindPopup(`
       <div style="padding:8px; font-family:sans-serif; text-align:center;">
         <h3 style="margin:0 0 4px 0; font-size:18px;">${displayName} <small>(${getCurrentLang() === 'EN' ? city.nativeName : city.name})</small></h3>
-        <div style="font-size:12px; color:#64748B;">${city.region}</div>
+        <div style="font-size:12px; color:#64748B;">${getRegionName(city, lang)}</div>
         <div style="font-size:32px; font-weight:800; color:#FF9F43; margin:8px 0;">${data.current.temp}°C</div>
         <div style="font-size:14px; font-weight:600;">${getConditionStr(data.current.conditionKey)}</div>
         <div style="font-size:12px; margin-top:8px; display:flex; justify-content:space-around;">
           <span>💨 ${data.current.windSpeed} km/h</span>
           <span>💧 ${data.current.humidity}%</span>
         </div>
-        <a href="${langPrefix}/${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">View Full Forecast</a>
+        <a href="${langPrefix}/${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">${TRANSLATIONS[lang].view_forecast_btn}</a>
       </div>
     `);
   }

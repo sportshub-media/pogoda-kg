@@ -2,7 +2,7 @@
 import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
-import { TRANSLATIONS, getCurrentLang, initMobileMenu, initLangSwitcher } from './i18n.js';
+import { TRANSLATIONS, getCurrentLang, initMobileMenu, initLangSwitcher, getRegionName } from './i18n.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -156,7 +156,8 @@ function updateCityInfoDisplay(city) {
     el.textContent = getCityName(city);
   });
   document.querySelectorAll('.current-city-region').forEach(el => {
-    el.textContent = `${city.region}, Kyrgyzstan`;
+    const lang = getCurrentLang();
+    el.textContent = `${getRegionName(city, lang)}, ${TRANSLATIONS[lang].kyrgyzstan_label}`;
   });
 
   // The homepage keeps its generic, translated Kyrgyzstan-wide heading and always
@@ -365,7 +366,8 @@ async function renderOtherCities() {
   
   // Pick some other cities from Kyrgyzstan (e.g., skip current city)
   const otherCities = KYRGYZSTAN_CITIES.filter(c => c.id !== currentCity.id).slice(0, 8);
-  
+  const lang = getCurrentLang();
+
   for (const city of otherCities) {
     try {
       const data = await fetchWeatherData(city.lat, city.lon);
@@ -379,7 +381,7 @@ async function renderOtherCities() {
       
       card.innerHTML = `
         <div class="other-country-info">
-          <div class="other-country-name">Kyrgyzstan</div>
+          <div class="other-country-name">${TRANSLATIONS[lang].kyrgyzstan_label}</div>
           <div class="other-country-city">${getCityName(city)}</div>
           <div class="other-country-cond">${conditionName}</div>
         </div>
@@ -413,22 +415,24 @@ function setupSearch() {
       return;
     }
 
-    const matches = KYRGYZSTAN_CITIES.filter(c => 
-      c.name.toLowerCase().includes(query) || 
+    const matches = KYRGYZSTAN_CITIES.filter(c =>
+      c.name.toLowerCase().includes(query) ||
       c.nativeName.toLowerCase().includes(query) ||
-      c.region.toLowerCase().includes(query)
+      c.region.toLowerCase().includes(query) ||
+      getRegionName(c).toLowerCase().includes(query)
     );
 
+    const lang = getCurrentLang();
     if (matches.length === 0) {
-      dropdown.innerHTML = `<div class="search-result-item" style="cursor:default;">No Kyrgyzstan location found</div>`;
+      dropdown.innerHTML = `<div class="search-result-item" style="cursor:default;">${TRANSLATIONS[lang].search_no_results}</div>`;
     } else {
       dropdown.innerHTML = matches.map(city => `
         <div class="search-result-item" data-city-id="${city.id}">
           <div>
-            <strong>${getCityName(city)}</strong> <small>(${getCurrentLang() === 'EN' ? city.nativeName : city.name})</small>
-            <div style="font-size:12px; color:var(--text-sub);">${city.region}</div>
+            <strong>${getCityName(city)}</strong> <small>(${lang === 'EN' ? city.nativeName : city.name})</small>
+            <div style="font-size:12px; color:var(--text-sub);">${getRegionName(city, lang)}</div>
           </div>
-          <span style="font-size:12px; font-weight:600; color:var(--primary);">Select</span>
+          <span style="font-size:12px; font-weight:600; color:var(--primary);">${TRANSLATIONS[lang].select_label}</span>
         </div>
       `).join('');
     }
@@ -506,9 +510,9 @@ function renderRecentSearches() {
     `;
     card.innerHTML = `
       <div style="font-size:16px; font-weight:700;">${getCityName(city)}</div>
-      <div style="font-size:11px; opacity:0.85;">${city.region}</div>
+      <div style="font-size:11px; opacity:0.85;">${getRegionName(city)}</div>
       <div style="font-size:26px; font-weight:800; margin:6px 0; color:#FF9F43;">${data ? data.current.temp + '°' : '--'}</div>
-      <div style="font-size:12px; font-weight:600; background:rgba(0,0,0,0.5); padding:2px 8px; border-radius:10px;">${data ? getConditionStr(data.current.conditionKey) : 'View Forecast'}</div>
+      <div style="font-size:12px; font-weight:600; background:rgba(0,0,0,0.5); padding:2px 8px; border-radius:10px;">${data ? getConditionStr(data.current.conditionKey) : TRANSLATIONS[getCurrentLang()].view_forecast_short}</div>
     `;
     card.addEventListener('click', () => navigateToCityPage(city));
     container.appendChild(card);

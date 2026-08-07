@@ -124,7 +124,19 @@ export const TRANSLATIONS = {
     cond_foggy: "Foggy",
     cond_rain: "Rain Showers",
     cond_snow: "Snowfall",
-    cond_thunder: "Thunderstorm"
+    cond_thunder: "Thunderstorm",
+    // Regions & map popup
+    kyrgyzstan_label: "Kyrgyzstan",
+    view_forecast_btn: "View Full Forecast",
+    view_forecast_short: "View Forecast",
+    region_chuy: "Chuy Region",
+    region_osh: "Osh Region",
+    region_jalalabad: "Jalal-Abad Region",
+    region_issykkul: "Issyk-Kul Region",
+    region_naryn: "Naryn Region",
+    region_talas: "Talas Region",
+    search_no_results: "No Kyrgyzstan location found",
+    select_label: "Select"
   },
   KG: {
     nav_home: "Башкы",
@@ -249,7 +261,19 @@ export const TRANSLATIONS = {
     cond_foggy: "Туман",
     cond_rain: "Жамгыр",
     cond_snow: "Кар",
-    cond_thunder: "Чагылган"
+    cond_thunder: "Чагылган",
+    // Regions & map popup
+    kyrgyzstan_label: "Кыргызстан",
+    view_forecast_btn: "Толук божомолду көрүү",
+    view_forecast_short: "Божомол",
+    region_chuy: "Чүй облусу",
+    region_osh: "Ош облусу",
+    region_jalalabad: "Жалал-Абад облусу",
+    region_issykkul: "Ысык-Көл облусу",
+    region_naryn: "Нарын облусу",
+    region_talas: "Талас облусу",
+    search_no_results: "Кыргызстандан жайгашкан жер табылган жок",
+    select_label: "Тандоо"
   },
   RU: {
     nav_home: "Главная",
@@ -374,7 +398,19 @@ export const TRANSLATIONS = {
     cond_foggy: "Туман",
     cond_rain: "Дождь",
     cond_snow: "Снегопад",
-    cond_thunder: "Гроза"
+    cond_thunder: "Гроза",
+    // Regions & map popup
+    kyrgyzstan_label: "Кыргызстан",
+    view_forecast_btn: "Смотреть полный прогноз",
+    view_forecast_short: "Прогноз",
+    region_chuy: "Чуйская область",
+    region_osh: "Ошская область",
+    region_jalalabad: "Джалал-Абадская область",
+    region_issykkul: "Иссык-Кульская область",
+    region_naryn: "Нарынская область",
+    region_talas: "Таласская область",
+    search_no_results: "Локация в Кыргызстане не найдена",
+    select_label: "Выбрать"
   }
 };
 
@@ -383,6 +419,11 @@ export function getCurrentLang() {
   if (path.startsWith('/en')) return 'EN';
   if (path.startsWith('/ru')) return 'RU';
   return localStorage.getItem('pogoda_lang') || 'KG';
+}
+
+export function getRegionName(city, lang = getCurrentLang()) {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.EN;
+  return dict[`region_${city.regionKey}`] || city.region;
 }
 
 export function updateLinksForLang(lang) {
