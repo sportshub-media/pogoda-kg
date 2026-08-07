@@ -277,6 +277,9 @@ htmlFiles.forEach(file => {
                 if (prefix === '') cityUrl = `/${city.id}`;
                 
                 let cityHtml = translated;
+                // The Yandex site-verification tag only belongs on the homepage, not on
+                // every generated city page.
+                cityHtml = cityHtml.replace(/\s*<meta name="yandex-verification" content="[^"]*"\s*\/>\n?/, '\n');
 
                 // Update title & meta description to be unique per city (50-60 / 150-160 chars)
                 const cityMeta = getCityMeta(lang, city);
