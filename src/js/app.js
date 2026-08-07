@@ -211,12 +211,12 @@ function renderHeroCard(city, data) {
 
     <div class="card-minmax-row">
       <div class="minmax-col">
-        <div class="minmax-label">${t.min_temp || 'MIN'}</div>
+        <div class="minmax-label"><i class="fa-solid fa-moon" style="color:#93C5FD; margin-right:4px;"></i>${t.min_temp || 'MIN'}</div>
         <div class="minmax-value">${today.minTemp > 0 ? '+' : ''}${today.minTemp}°</div>
       </div>
       <div class="minmax-vert-divider"></div>
       <div class="minmax-col">
-        <div class="minmax-label">${t.max_temp || 'MAX'}</div>
+        <div class="minmax-label"><i class="fa-solid fa-sun" style="color:#FF9F43; margin-right:4px;"></i>${t.max_temp || 'MAX'}</div>
         <div class="minmax-value">${today.maxTemp > 0 ? '+' : ''}${today.maxTemp}°</div>
       </div>
     </div>
