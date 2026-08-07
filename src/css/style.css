@@ -998,7 +998,7 @@ body:not(.dark-theme) nav.main-nav a.active::after {
 .hourly-time {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-sub);
+  color: #FFFFFF;
 }
 
 /* Today Weather Details Section (Matching screenshot design) */
