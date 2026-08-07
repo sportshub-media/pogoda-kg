@@ -32,6 +32,8 @@ async function initKyrgyzstanMap() {
 
   // Initialize Leaflet Map over Kyrgyzstan
   leafletMap = L.map('kyrgyzstanWeatherMap').setView([41.5000, 74.8000], 7);
+  // Drop Leaflet's default "🇺🇦 Leaflet" branding prefix, keep only our own attribution.
+  leafletMap.attributionControl.setPrefix(false);
 
   // Add OpenStreetMap base tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -55,16 +57,16 @@ async function renderMarkers() {
     const data = await fetchWeatherData(city.lat, city.lon);
     const displayName = getCityName(city);
     
-    // Custom HTML Marker Icon
+    // Custom HTML Marker Icon. No fixed iconSize — labels vary a lot in length
+    // (city name + temperature), so the pill must size itself to its own text
+    // instead of being stretched/clipped to a fixed box.
     const customIcon = L.divIcon({
       className: 'custom-weather-marker',
       html: `
-        <div style="background:var(--primary); color:white; padding:6px 12px; border-radius:20px; font-weight:700; font-size:13px; box-shadow:0 4px 12px rgba(0,0,0,0.3); white-space:nowrap; border:2px solid white;">
+        <div style="display:inline-block; background:var(--primary); color:white; padding:6px 12px; border-radius:20px; font-weight:700; font-size:13px; box-shadow:0 4px 12px rgba(0,0,0,0.3); white-space:nowrap; border:2px solid white; transform:translate(-50%, -50%);">
           ${displayName}: ${data.current.temp}°C
         </div>
-      `,
-      iconSize: [100, 30],
-      iconAnchor: [50, 15]
+      `
     });
 
     const marker = L.marker([city.lat, city.lon], { icon: customIcon }).addTo(markersLayer);
