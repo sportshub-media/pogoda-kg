@@ -2,7 +2,7 @@
 import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
-import { TRANSLATIONS, getCurrentLang, initMobileMenu, initLangSwitcher, getRegionName } from './i18n.js';
+import { TRANSLATIONS, getCurrentLang, initLangSwitcher, getRegionName } from './i18n.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initTheme();
-  initMobileMenu();
+  // initLangSwitcher() calls initMobileMenu() itself (same as every other page's
+  // controller) — calling it again here double-attaches the toggle's click
+  // listener, which opens then immediately closes the drawer on every click.
 
   // Read city from URL if passed from map
   const urlParams = new URLSearchParams(window.location.search);
