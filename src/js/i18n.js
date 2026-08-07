@@ -415,6 +415,9 @@ export function updateLinksForLang(lang) {
     let match = onclick.match(/window\.location\.href='([^']+)'/);
     if (match) {
         let href = match[1];
+        // Same as the <a> handler above: blog articles only exist at the unprefixed
+        // /blog/<slug>.html path, so leave links to them alone.
+        if (href.startsWith('/blog/') || href.startsWith('blog/')) return;
         let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
         if (!cleanHref.startsWith('/')) {
             let currentPath = window.location.pathname;
