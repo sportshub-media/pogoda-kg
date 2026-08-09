@@ -386,6 +386,12 @@ if (fs.existsSync(path.join(__dirname, 'llms.txt'))) {
 const redirects = `# Clean URLs
 /kg  /  301
 /kg/*  /:splat  301
+
+# Blog articles only exist at the unprefixed /blog/<slug> URL (single page,
+# language switched client-side) — redirect any language-prefixed guesses
+# to the canonical URL instead of 404ing.
+/ru/blog/*  /blog/:splat  301
+/en/blog/*  /blog/:splat  301
 `;
 fs.writeFileSync(path.join(OUT_DIR, '_redirects'), redirects);
 
