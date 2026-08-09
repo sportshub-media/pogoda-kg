@@ -213,12 +213,12 @@ function renderHeroCard(city, data) {
 
     <div class="card-minmax-row">
       <div class="minmax-col">
-        <div class="minmax-label"><i class="fa-solid fa-moon" style="color:#93C5FD; margin-right:4px;"></i>${t.min_temp || 'MIN'}</div>
+        <div class="minmax-label"><svg class="icon" style="color:#93C5FD; margin-right:4px;"><use href="#icon-moon"></use></svg>${t.min_temp || 'MIN'}</div>
         <div class="minmax-value">${today.minTemp > 0 ? '+' : ''}${today.minTemp}°</div>
       </div>
       <div class="minmax-vert-divider"></div>
       <div class="minmax-col">
-        <div class="minmax-label"><i class="fa-solid fa-sun" style="color:#FF9F43; margin-right:4px;"></i>${t.max_temp || 'MAX'}</div>
+        <div class="minmax-label"><svg class="icon" style="color:#FF9F43; margin-right:4px;"><use href="#icon-sun"></use></svg>${t.max_temp || 'MAX'}</div>
         <div class="minmax-value">${today.maxTemp > 0 ? '+' : ''}${today.maxTemp}°</div>
       </div>
     </div>
@@ -227,7 +227,7 @@ function renderHeroCard(city, data) {
 
     <div class="card-metrics-row">
       <div class="metric-left">
-        <i class="fa-solid fa-droplet" style="color:#00A2FF;"></i> 
+        <svg class="icon" style="color:#00A2FF;"><use href="#icon-droplet"></use></svg> 
         <span>${t.precip_label || 'Precipitation'}</span>
       </div>
       <div class="metric-right">${today.precip}%</div>
@@ -237,7 +237,7 @@ function renderHeroCard(city, data) {
 
     <div class="card-metrics-row">
       <div class="metric-left">
-        <i class="fa-solid fa-wind" style="color:#94A3B8;"></i> 
+        <svg class="icon" style="color:#94A3B8;"><use href="#icon-wind"></use></svg> 
         <span>${t.wind_label || 'Wind'}</span>
       </div>
       <div class="metric-right">${t.wind_prefix || 'up to'} ${current.windSpeed} ${t.wind_unit || 'm/s'}</div>

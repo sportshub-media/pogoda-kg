@@ -19,7 +19,7 @@ export function initCookieConsent() {
   banner.className = 'cookie-banner';
   banner.innerHTML = `
     <div class="cookie-banner-content">
-      <div class="cookie-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+      <div class="cookie-icon"><svg class="icon"><use href="#icon-cookie-bite"></use></svg></div>
       <p id="cookieText">${text}</p>
     </div>
     <button id="cookieAcceptBtn" class="btn-primary cookie-btn">${btnText}</button>

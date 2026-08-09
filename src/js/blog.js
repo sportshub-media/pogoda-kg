@@ -435,8 +435,8 @@ function renderBlogPosts(posts, lang = 'KG') {
             <h3 class="news-title" style="font-size:18px;">${data.title}</h3>
             <p style="font-size:13px; opacity:0.85; margin-bottom:10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${data.excerpt}</p>
             <div class="news-meta">
-              <span><i class="fa-solid fa-user"></i> ${data.author}</span>
-              <span><i class="fa-solid fa-calendar"></i> ${data.date}</span>
+              <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
+              <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>
             </div>
           </div>
         </div>
@@ -463,7 +463,7 @@ function initSingleArticle(lang = 'KG') {
   const backBtn = document.querySelector('.back-btn');
   if (backBtn) {
     const backText = lang === 'KG' ? 'Жаңылыктарга кайтуу' : (lang === 'RU' ? 'Назад к новостям' : 'Back to News');
-    backBtn.innerHTML = `<i class="fa-solid fa-arrow-left"></i> ${backText}`;
+    backBtn.innerHTML = `<svg class="icon"><use href="#icon-arrow-left"></use></svg> ${backText}`;
   }
 
   // News tag
@@ -478,8 +478,8 @@ function initSingleArticle(lang = 'KG') {
   const postMeta = document.querySelector('.post-meta');
   if (postMeta) {
     postMeta.innerHTML = `
-      <span><i class="fa-solid fa-user"></i> ${data.author}</span>
-      <span><i class="fa-solid fa-calendar"></i> ${data.date}</span>
+      <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
+      <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>
     `;
   }
 

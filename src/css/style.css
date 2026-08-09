@@ -1878,3 +1878,12 @@ footer.site-footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
+
+/* Inline SVG icon sprite (replaces Font Awesome webfont) */
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -0.125em;
+}
