@@ -377,6 +377,11 @@ if (fs.existsSync(path.join(__dirname, 'favicon.ico'))) {
     fs.copyFileSync(path.join(__dirname, 'favicon.ico'), path.join(OUT_DIR, 'favicon.ico'));
 }
 
+// Copy llms.txt into the build output
+if (fs.existsSync(path.join(__dirname, 'llms.txt'))) {
+    fs.copyFileSync(path.join(__dirname, 'llms.txt'), path.join(OUT_DIR, 'llms.txt'));
+}
+
 // Write _redirects
 const redirects = `# Clean URLs
 /kg  /  301

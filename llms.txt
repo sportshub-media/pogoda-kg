@@ -1,0 +1,37 @@
+# Pogoda.kg
+
+> Pogoda.kg is Kyrgyzstan's primary weather forecast portal, providing real-time,
+> hourly, weekly, and monthly weather forecasts for the 10 major cities of
+> Kyrgyzstan. Weather data is sourced from the Open-Meteo API and refreshed
+> automatically every 15 minutes. The site is available in three languages:
+> Kyrgyz (default, unprefixed URLs), Russian (/ru), and English (/en).
+
+## Main Pages
+
+- [Homepage (Kyrgyz)](https://pogoda.kg/): Live weather for Bishkek plus quick access to every city.
+- [Homepage (English)](https://pogoda.kg/en/): English-language homepage.
+- [Homepage (Russian)](https://pogoda.kg/ru/): Russian-language homepage.
+- [Interactive Weather Map](https://pogoda.kg/map): Live temperature markers for all 10 cities on a map of Kyrgyzstan.
+- [Weather News](https://pogoda.kg/blog): Kyrgyzstan weather news, mountain pass conditions, and seasonal climate updates.
+- [Contact](https://pogoda.kg/contact): Contact form for weather data inquiries, partnerships, and feedback.
+- [Privacy Policy](https://pogoda.kg/privacy)
+- [Terms of Service](https://pogoda.kg/terms)
+
+## City Forecast Pages
+
+Each of the 10 cities below has its own dedicated forecast page (current
+conditions, hourly forecast, and 7-day outlook), available at the root path
+in Kyrgyz, and under /en/ and /ru/ for English and Russian:
+
+Bishkek (capital), Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta,
+Balykchy, Naryn, Talas.
+
+Example: https://pogoda.kg/bishkek (Kyrgyz), https://pogoda.kg/en/bishkek
+(English), https://pogoda.kg/ru/bishkek (Russian).
+
+## Notes for AI Agents
+
+- Weather values (temperature, wind, precipitation, etc.) are live data
+  fetched client-side from the Open-Meteo API and change continuously —
+  treat any specific numbers you observe as a snapshot, not static content.
+- The sitemap at https://pogoda.kg/sitemap.xml lists every indexable URL.
