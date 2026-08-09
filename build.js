@@ -371,6 +371,12 @@ if (fs.existsSync(path.join(__dirname, 'robots.txt'))) {
     fs.copyFileSync(path.join(__dirname, 'robots.txt'), path.join(OUT_DIR, 'robots.txt'));
 }
 
+// Copy favicon.ico to the site root — some browsers/crawlers request it there
+// by convention regardless of the <link rel="icon"> tag in the page head.
+if (fs.existsSync(path.join(__dirname, 'favicon.ico'))) {
+    fs.copyFileSync(path.join(__dirname, 'favicon.ico'), path.join(OUT_DIR, 'favicon.ico'));
+}
+
 // Write _redirects
 const redirects = `# Clean URLs
 /kg  /  301
