@@ -258,7 +258,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-3-10",
     slug: "august-3-10-kyrgyzstan-weather-forecast-rain-to-extreme-heat",
-    image: "/assets/images/august_weather_split.jpg",
+    image: "/assets/images/august_weather_split.webp",
     translations: {
       EN: {
         title: "From Rain to Extreme Heat: Kyrgyzstan Weather Forecast for August 3-10",
@@ -325,7 +325,7 @@ export const BLOG_POSTS = [
   {
     id: "post-0",
     slug: "bishkek-temperature-drop-across-kyrgyzstan-regions",
-    image: "/assets/images/bishkek-temp-drop.jpg",
+    image: "/assets/images/bishkek-temp-drop.webp",
     translations: {
       EN: {
         title: "Bishkek Drops 5°C as Regional Cooling Front Spreads Across Kyrgyzstan",

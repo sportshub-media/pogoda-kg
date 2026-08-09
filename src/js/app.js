@@ -370,36 +370,42 @@ async function renderOtherCities() {
   const otherCities = KYRGYZSTAN_CITIES.filter(c => c.id !== currentCity.id).slice(0, 8);
   const lang = getCurrentLang();
 
-  for (const city of otherCities) {
+  // Fetch all cities' weather in parallel instead of one-at-a-time —
+  // sequential awaits here multiplied page load time by up to 8x.
+  const results = await Promise.all(otherCities.map(async (city) => {
     try {
-      const data = await fetchWeatherData(city.lat, city.lon);
-      if (!data || !data.current) continue;
-      
-      const card = document.createElement('div');
-      card.className = 'other-country-card';
-      card.onclick = () => navigateToCityPage(city);
-
-      const conditionName = getConditionStr(data.current.conditionKey);
-      
-      card.innerHTML = `
-        <div class="other-country-info">
-          <div class="other-country-name">${TRANSLATIONS[lang].kyrgyzstan_label}</div>
-          <div class="other-country-city">${getCityName(city)}</div>
-          <div class="other-country-cond">${conditionName}</div>
-        </div>
-        <div class="other-country-weather">
-          <div class="other-country-icon">${data.current.svg}</div>
-          <div style="text-align:right;">
-            <div class="other-country-temp">${data.current.temp}°</div>
-            <div class="other-country-min">${data.weekly[0].minTemp}°</div>
-          </div>
-        </div>
-      `;
-      
-      container.appendChild(card);
+      return { city, data: await fetchWeatherData(city.lat, city.lon) };
     } catch (error) {
       console.error('Error loading city weather:', error);
+      return { city, data: null };
     }
+  }));
+
+  for (const { city, data } of results) {
+    if (!data || !data.current) continue;
+
+    const card = document.createElement('div');
+    card.className = 'other-country-card';
+    card.onclick = () => navigateToCityPage(city);
+
+    const conditionName = getConditionStr(data.current.conditionKey);
+
+    card.innerHTML = `
+      <div class="other-country-info">
+        <div class="other-country-name">${TRANSLATIONS[lang].kyrgyzstan_label}</div>
+        <div class="other-country-city">${getCityName(city)}</div>
+        <div class="other-country-cond">${conditionName}</div>
+      </div>
+      <div class="other-country-weather">
+        <div class="other-country-icon">${data.current.svg}</div>
+        <div style="text-align:right;">
+          <div class="other-country-temp">${data.current.temp}°</div>
+          <div class="other-country-min">${data.weekly[0].minTemp}°</div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
   }
 }
 
