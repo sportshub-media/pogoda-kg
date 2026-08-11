@@ -6,7 +6,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-11-outlook-heat-cooldown",
     slug: "kyrgyzstan-weather-outlook-heat-cooldown-august-14",
-    image: "/assets/images/blogart-outlook-heat-cooldown.svg",
+    image: "/assets/images/blogphoto-outlook-heat-cooldown.webp",
     translations: {
       EN: {
         title: "Kyrgyzstan Heat Holds to Aug 13, Cooldown Starts Aug 14",
@@ -61,7 +61,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-11-rain-thunderstorms",
     slug: "august-11-forecast-kyrgyzstan-rain-thunderstorms",
-    image: "/assets/images/blogart-aug-11-thunderstorms.svg",
+    image: "/assets/images/blogphoto-aug-11-thunderstorms.webp",
     translations: {
       EN: {
         title: "Aug 11 Forecast: Thunderstorms Return as Heat Hits +38°C",
@@ -137,7 +137,7 @@ export const BLOG_POSTS = [
   {
     id: "post-rain-naryn-issyk-kul-aug-8",
     slug: "rain-thunder-return-naryn-issyk-kul-overnight-august-8",
-    image: "/assets/images/blogart-rain-naryn-issykkul.svg",
+    image: "/assets/images/blogphoto-rain-naryn-issykkul.webp",
     translations: {
       EN: {
         title: "Rain and Thunder Return to Naryn and Issyk-Kul Overnight August 8",
@@ -188,7 +188,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-9-regional-forecast",
     slug: "august-9-regional-forecast-kyrgyzstan-temperature-spread",
-    image: "/assets/images/blogart-aug-9-regional-forecast.svg",
+    image: "/assets/images/blogphoto-aug-9-regional-forecast.webp",
     translations: {
       EN: {
         title: "August 9 Regional Forecast: +27°C in Issyk-Kul to +39°C in the South",
@@ -264,7 +264,7 @@ export const BLOG_POSTS = [
   {
     id: "post-heatwave-peak-39",
     slug: "kyrgyzstan-heatwave-peaks-39-degrees-relief-expected",
-    image: "/assets/images/blogart-heatwave-peak-39.svg",
+    image: "/assets/images/blogphoto-heatwave-peak-39.webp",
     translations: {
       EN: {
         title: "Kyrgyzstan Heatwave Peaks at +39°C, Relief Expected by August 8",
@@ -316,7 +316,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-6-bishkek-weather",
     slug: "kyrgyzstan-weather-august-6-forecast-bishkek-heatwave",
-    image: "/assets/images/blogart-aug-6-bishkek.svg",
+    image: "/assets/images/blogphoto-aug-6-bishkek.webp",
     translations: {
       EN: {
         title: "Bishkek Reaches +33°C with Rain Across Issyk-Kul: August 6 Forecast",
@@ -389,7 +389,7 @@ export const BLOG_POSTS = [
   {
     id: "post-aug-3-10",
     slug: "august-3-10-kyrgyzstan-weather-forecast-rain-to-extreme-heat",
-    image: "/assets/images/blogart-aug-3-10-range.svg",
+    image: "/assets/images/blogphoto-aug-3-10-range.webp",
     translations: {
       EN: {
         title: "From Rain to Extreme Heat: Kyrgyzstan Weather Forecast for August 3-10",
@@ -456,7 +456,7 @@ export const BLOG_POSTS = [
   {
     id: "post-0",
     slug: "bishkek-temperature-drop-across-kyrgyzstan-regions",
-    image: "/assets/images/blogart-bishkek-temp-drop.svg",
+    image: "/assets/images/blogphoto-bishkek-temp-drop.webp",
     translations: {
       EN: {
         title: "Bishkek Drops 5°C as Regional Cooling Front Spreads Across Kyrgyzstan",
