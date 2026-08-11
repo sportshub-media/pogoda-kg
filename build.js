@@ -33,7 +33,7 @@ const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 // EN isn't listed — the source file's own English copy is used as-is for the EN build.
 const PAGE_META = {
     'index.html': {
-        RU: { title: "Кыргызстан: погода в Бишкеке сегодня и на неделю | Pogoda Kg", description: "Точный ежедневный, почасовой и месячный прогноз погоды для городов Кыргызстана: Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Нарын и другие города." },
+        RU: { title: "Погода в Бишкеке сегодня, на неделю и месяц | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю, на 10 дней и на месяц. Ош, Каракол, Нарын и другие." },
         KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана айлык аба ырайы божомолдору тизмеси." }
     },
     'contact.html': {
@@ -62,6 +62,27 @@ const PAGE_META = {
     }
 };
 
+// Russian city names in nominative + prepositional case. config.js's nativeName is
+// the Kyrgyz spelling (Өзгөн, Жалал-Абад), which shouldn't appear on Russian pages.
+// The prepositional form matters for SEO: people search "погода в бишкеке", not
+// "погода город бишкек" — see docs/seo-keywords.md.
+const RU_CITY_FORMS = {
+    'bishkek':    { nom: 'Бишкек',     prep: 'Бишкеке' },
+    'osh':        { nom: 'Ош',         prep: 'Оше' },
+    'jalal-abad': { nom: 'Джалал-Абад', prep: 'Джалал-Абаде' },
+    'karakol':    { nom: 'Каракол',    prep: 'Караколе' },
+    'tokmok':     { nom: 'Токмок',     prep: 'Токмоке' },
+    'uzgen':      { nom: 'Узген',      prep: 'Узгене' },
+    'kara-balta': { nom: 'Кара-Балта', prep: 'Кара-Балте' },
+    'balykchy':   { nom: 'Балыкчы',    prep: 'Балыкчы' },
+    'naryn':      { nom: 'Нарын',      prep: 'Нарыне' },
+    'talas':      { nom: 'Талас',      prep: 'Таласе' }
+};
+
+function ruCity(city) {
+    return RU_CITY_FORMS[city.id] || { nom: city.nativeName || city.name, prep: city.nativeName || city.name };
+}
+
 // Per-city, per-language <title> and meta description (kept within 50-60 / 150-160 chars)
 function getCityMeta(lang, city) {
     const en = city.name;
@@ -74,10 +95,10 @@ function getCityMeta(lang, city) {
         };
     }
     if (lang === 'RU') {
-        const word = native.length <= 3 ? 'самый точный' : 'точный';
+        const ru = ruCity(city);
         return {
-            title: `Погода в городе ${native} сегодня и на неделю | Pogoda.kg`,
-            description: `Узнайте ${word} прогноз погоды в ${native}, Кыргызстан: температура, ветер, влажность, почасовой и подробный 7-дневный прогноз, обновляется каждые 15 минут.`
+            title: `Погода в ${ru.prep} сегодня, на неделю и месяц | Pogoda.kg`,
+            description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю, на 10 дней и на месяц. Обновляется каждые 15 минут.`
         };
     }
     // KG
@@ -102,9 +123,10 @@ function getCityHeroContent(lang, city) {
         };
     }
     if (lang === 'RU') {
+        const ru = ruCity(city);
         return {
-            title: `Погода в городе ${native}`,
-            desc: `Актуальный прогноз погоды для города ${native}: температура, осадки, скорость ветра и подробный прогноз на 7 дней, обновляется каждые 15 минут.`
+            title: `Погода в ${ru.prep}`,
+            desc: `Актуальный прогноз погоды в ${ru.prep}, Киргизия: температура, осадки, скорость ветра, почасовой прогноз и подробный прогноз на неделю, обновляется каждые 15 минут.`
         };
     }
     // KG
@@ -129,10 +151,11 @@ function getCitySectionTitles(lang, city) {
         };
     }
     if (lang === 'RU') {
+        const ru = ruCity(city);
         return {
-            hourly: `Почасовой прогноз — ${native}`,
-            todayDetails: `Подробности погоды на сегодня — ${native}`,
-            weekly: `Прогноз погоды на неделю — ${native}`
+            hourly: `Почасовой прогноз погоды в ${ru.prep}`,
+            todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
+            weekly: `Прогноз погоды в ${ru.prep} на неделю`
         };
     }
     // KG

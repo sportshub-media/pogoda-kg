@@ -102,6 +102,25 @@ export async function loadCityWeather(city) {
   renderRecentSearches();
 }
 
+// Same map as RU_CITY_FORMS in build.js — Russian city names with the prepositional
+// case, so RU pages don't show the Kyrgyz spelling and match how people search.
+const RU_CITY_FORMS = {
+  'bishkek':    { nom: 'Бишкек',      prep: 'Бишкеке' },
+  'osh':        { nom: 'Ош',          prep: 'Оше' },
+  'jalal-abad': { nom: 'Джалал-Абад', prep: 'Джалал-Абаде' },
+  'karakol':    { nom: 'Каракол',     prep: 'Караколе' },
+  'tokmok':     { nom: 'Токмок',      prep: 'Токмоке' },
+  'uzgen':      { nom: 'Узген',       prep: 'Узгене' },
+  'kara-balta': { nom: 'Кара-Балта',  prep: 'Кара-Балте' },
+  'balykchy':   { nom: 'Балыкчы',     prep: 'Балыкчы' },
+  'naryn':      { nom: 'Нарын',       prep: 'Нарыне' },
+  'talas':      { nom: 'Талас',       prep: 'Таласе' }
+};
+
+function ruCity(city) {
+  return RU_CITY_FORMS[city.id] || { nom: city.nativeName || city.name, prep: city.nativeName || city.name };
+}
+
 // Same wording as getCityHeroContent() in build.js, kept in sync so the hero heading/intro
 // baked into each static city page still matches after a client-side language or city switch.
 function getCityHeroContent(lang, city) {
@@ -115,9 +134,10 @@ function getCityHeroContent(lang, city) {
     };
   }
   if (lang === 'RU') {
+    const ru = ruCity(city);
     return {
-      title: `Погода в городе ${native}`,
-      desc: `Актуальный прогноз погоды для города ${native}: температура, осадки, скорость ветра и подробный прогноз на 7 дней, обновляется каждые 15 минут.`
+      title: `Погода в ${ru.prep}`,
+      desc: `Актуальный прогноз погоды в ${ru.prep}, Киргизия: температура, осадки, скорость ветра, почасовой прогноз и подробный прогноз на неделю, обновляется каждые 15 минут.`
     };
   }
   return {
@@ -139,10 +159,11 @@ function getCitySectionTitles(lang, city) {
     };
   }
   if (lang === 'RU') {
+    const ru = ruCity(city);
     return {
-      hourly: `Почасовой прогноз — ${native}`,
-      todayDetails: `Подробности погоды на сегодня — ${native}`,
-      weekly: `Прогноз погоды на неделю — ${native}`
+      hourly: `Почасовой прогноз погоды в ${ru.prep}`,
+      todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
+      weekly: `Прогноз погоды в ${ru.prep} на неделю`
     };
   }
   return {
