@@ -10,6 +10,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Kyrgyzstan Heat Holds to Aug 13, Cooldown Starts Aug 14",
+        seoTitle: "Kyrgyzstan Heat Holds to Aug 13, Cooldown Starts Aug 14",
+        seoDesc: "Bishkek and the south stay hot near +38-39°C through August 13, then a cold front brings gradual cooling to around +25-30°C by August 17, Kyrgyzhydromet says.",
         category: "Weather Outlook",
         date: "August 11, 2026",
         author: "Pogoda Weather Team",
@@ -26,6 +28,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Кыргызстанда ысык 13-августка чейин сакталат, 14-августтан салкындайт",
+        seoTitle: "Ысык 13-августка чейин, 14-августтан баштап салкындайт",
+        seoDesc: "Бишкекте жана түштүктө +38-39°C ысык 13-августка чейин сакталат, андан кийин муздак фронт 17-августка карай температураны +25-30°Cге чейин жайлап түшүрөт.",
         category: "Аба ырайы божомолу",
         date: "11-август, 2026",
         author: "Pogoda Weather Team",
@@ -42,6 +46,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "Жара в Кыргызстане сохранится до 13 августа, похолодание — с 14-го",
+        seoTitle: "Жара в Киргизии до 13 августа, похолодание с 14-го",
+        seoDesc: "В Бишкеке и на юге Киргизии жара до +38-39°C продержится до 13 августа, затем холодный фронт снизит температуру до +25-30°C к 17 августа — прогноз погоды.",
         category: "Прогноз погоды",
         date: "11 августа 2026",
         author: "Pogoda Weather Team",
@@ -65,6 +71,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Aug 11 Forecast: Thunderstorms Return as Heat Hits +38°C",
+        seoTitle: "Aug 11 Forecast: Thunderstorms Return as Heat Hits +38°C",
+        seoDesc: "Kyrgyzstan sees thunderstorms in several regions today as heat holds at +37-38°C in Bishkek and the south, while Naryn and Issyk-Kul stay cooler with rain risk.",
         category: "Weather Forecast",
         date: "August 11, 2026",
         author: "Pogoda Weather Team",
@@ -88,6 +96,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "11-августка карата божомол: күн күркүрөө кайтат, ысык +38°",
+        seoTitle: "11-августка карата божомол: күн күркүрөйт, ысык +38°C",
+        seoDesc: "Бишкек жана Кыргызстан боюнча 11-августка карата божомол: айрым региондордо күн күркүрөйт, түштүктө +37-38°C ысык, Нарын менен Ысык-Көлдө салкыныраак.",
         category: "Аба ырайы божомолу",
         date: "11-август, 2026",
         author: "Pogoda Weather Team",
@@ -111,6 +121,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "Прогноз на 11 августа: грозы возвращаются, жара до +38°",
+        seoTitle: "Погода 11 августа: грозы в Киргизии, жара до +38°C",
+        seoDesc: "Прогноз погоды в Бишкеке и по Киргизии на 11 августа: грозы в ряде регионов, жара до +37-38°C на юге, в Нарыне и на Иссык-Куле прохладнее, возможны дожди.",
         category: "Прогноз погоды",
         date: "11 августа 2026",
         author: "Pogoda Weather Team",
@@ -141,6 +153,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Rain and Thunder Return to Naryn and Issyk-Kul Overnight August 8",
+        seoTitle: "Rain and Thunder Return to Naryn, Issyk-Kul Overnight",
+        seoDesc: "After a hot, dry start to August, rising clouds bring rain and storms to Naryn and Issyk-Kul overnight into August 8, ending a run of clear highland skies.",
         category: "Mountain Weather",
         date: "August 9, 2026",
         author: "Pogoda Weather Team",
@@ -156,6 +170,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Нарын жана Ысык-Көлгө түнкүсүн жамгыр менен күркүрөө кайтты",
+        seoTitle: "Нарын жана Ысык-Көлгө жамгыр менен күркүрөө кайтты",
+        seoDesc: "Августтун кургак, ысык башталышынан кийин Нарын жана Ысык-Көл облустарына 8-августка карай түнкүсүн жамгыр менен күн күркүрөө кайтып келди — тоо божомолу.",
         category: "Тоо аба ырайы",
         date: "9-август, 2026",
         author: "Pogoda Weather Team",
@@ -170,6 +186,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "Дождь и гроза вернулись в Нарын и на Иссык-Куль ночью",
+        seoTitle: "Дожди и грозы вернулись в Нарын и на Иссык-Куль ночью",
+        seoDesc: "После сухого и жаркого начала августа в Нарынскую и Иссык-Кульскую области Киргизии вернулись дожди с грозами в ночь на 8 августа — прогноз погоды в горах.",
         category: "Погода в горах",
         date: "9 августа 2026",
         author: "Pogoda Weather Team",
@@ -192,6 +210,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "August 9 Regional Forecast: +27°C in Issyk-Kul to +39°C in the South",
+        seoTitle: "Aug 9 Forecast: +27°C in Issyk-Kul to +39°C in South",
+        seoDesc: "Kyrgyzstan sees another hot day: up to +39°C in Osh, Jalal-Abad and Batken versus +27°C in Issyk-Kul, plus +37°C in Bishkek and rain forecast for Naryn.",
         category: "Regional Forecast",
         date: "August 9, 2026",
         author: "Pogoda Weather Team",
@@ -215,6 +235,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "9-августка карата божомол: Ысык-Көлдө +27°C, түштүктө +39°C",
+        seoTitle: "9-августка карата аба ырайы: +27°Cден +39°Cге чейин",
+        seoDesc: "Кыргызстанда 9-августка карата аба ырайы божомолу: Ош, Жалал-Абад жана Баткенде +39°C, Бишкекте +37°C, Ысык-Көлдө эң салкын +27°C, Нарында жамгыр болот.",
         category: "Региондук божомол",
         date: "9-август, 2026",
         author: "Pogoda Weather Team",
@@ -238,6 +260,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "Прогноз на 9 августа: +27° на Иссык-Куле, +39° на юге",
+        seoTitle: "Прогноз на 9 августа: от +27°C до +39°C по Киргизии",
+        seoDesc: "Погода в Киргизии на 9 августа: до +39°C в Оше, Джалал-Абаде и Баткене, +37°C в Бишкеке, прохладнее всего на Иссык-Куле +27°C, в Нарыне ожидаются дожди.",
         category: "Региональный прогноз",
         date: "9 августа 2026",
         author: "Pogoda Weather Team",
@@ -268,6 +292,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Kyrgyzstan Heatwave Peaks at +39°C, Relief Expected by August 8",
+        seoTitle: "Kyrgyzstan Heatwave Peaks at +39°C, Eases by Aug 8",
+        seoDesc: "Kyrgyzhydromet recorded highs up to +39°C in southern Kyrgyzstan in early August, hitting Osh and Jalal-Abad hardest, with heat expected to ease by August 8.",
         category: "Heatwave",
         date: "August 9, 2026",
         author: "Pogoda Weather Team",
@@ -283,6 +309,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Кыргызстанда ысык +39°Сге жетти, 8-августка карай басаңдайт",
+        seoTitle: "Кыргызстанда ысык +39°Cге жетти, 8-августта басаңдайт",
+        seoDesc: "Кыргызгидромет август айынын башында түштүк Кыргызстанда +39°Cге чейинки ысыкты каттады: Ош менен Жалал-Абадда эң катуу сезилди, 8-августка карай басаңдайт.",
         category: "Ысык аба ырайы",
         date: "9-август, 2026",
         author: "Pogoda Weather Team",
@@ -298,6 +326,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "Жара в Кыргызстане достигла +39°, спадёт к 8 августа",
+        seoTitle: "Жара в Киргизии достигла +39°C, спадёт к 8 августа",
+        seoDesc: "Кыргызгидромет зафиксировал до +39°C на юге Киргизии в начале августа: сильнее всего жара ощущалась в Оше и Джалал-Абаде, спад ожидается уже к 8 августа.",
         category: "Жара",
         date: "9 августа 2026",
         author: "Pogoda Weather Team",
@@ -320,6 +350,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Bishkek Reaches +33°C with Rain Across Issyk-Kul: August 6 Forecast",
+        seoTitle: "Bishkek Hits +33°C with Rain Across Issyk-Kul: Aug 6",
+        seoDesc: "Bishkek stays clear and hot up to +33°C on August 6 while rain and storms sweep the Issyk-Kul region and mountain zones across Kyrgyzstan — full forecast.",
         category: "Weather Forecast",
         date: "August 5, 2026",
         author: "Pogoda Weather Team",
@@ -342,6 +374,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Бишкекте жаан-чачынсыз +33°С ысык: 6-августка карата аба ырайы",
+        seoTitle: "Бишкекте +33°C ысык: 6-августка карата толук божомол",
+        seoDesc: "Кыргызстан боюнча 6-августка карата толук аба ырайы божомолу: Бишкекте жаан-чачынсыз +33°Cге чейин ысык, Ысык-Көл облусунда жамгыр жана күн күркүрөйт.",
         category: "Аба ырайы",
         date: "5-август, 2026",
         author: "Pogoda Weather Team",
@@ -364,6 +398,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "В Бишкеке без осадков, днем жарко до +33° — прогноз погоды на 6 августа",
+        seoTitle: "Бишкек: до +33°C, без осадков — прогноз на 6 августа",
+        seoDesc: "Подробный прогноз погоды по Киргизии на 6 августа: в Бишкеке без осадков и жара до +33°C, в Иссык-Кульской области дожди и грозы, в горах местами осадки.",
         category: "Погода",
         date: "5 августа 2026",
         author: "Pogoda Weather Team",
@@ -393,6 +429,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "From Rain to Extreme Heat: Kyrgyzstan Weather Forecast for August 3-10",
+        seoTitle: "Kyrgyzstan Weather Aug 3-10: Rain Turns to Extreme Heat",
+        seoDesc: "Kyrgyzstan shifts from rainy, unsettled weather to intense scorching heat of up to +38°C by August 10 as an anticyclone strengthens over the region — forecast.",
         category: "Weather Forecast",
         date: "August 4, 2026",
         author: "Pogoda Weather Team",
@@ -413,6 +451,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Жамгырдан катуу ысыкка чейин: Кыргызстанда 3-10-августка карата аба ырайы",
+        seoTitle: "Кыргызстанда 3-10-август: жамгырдан катуу ысыкка өтөт",
+        seoDesc: "Кыргызстан боюнча 3-10-августка карата божомол: жамгырлуу, туруксуз аба ырайы антициклондун күчөшү менен 10-августка карай +38°C катуу ысыкка алмашат.",
         category: "Аба ырайы",
         date: "4-август, 2026",
         author: "Pogoda Weather Team",
@@ -433,6 +473,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "От дождей к аномальной жаре: Прогноз погоды в Кыргызстане на 3-10 августа",
+        seoTitle: "Погода в Киргизии 3-10 августа: от дождей к сильной жаре",
+        seoDesc: "Прогноз погоды по Киргизии на 3-10 августа: дождливая и неустойчивая погода сменится сильной жарой до +38°C к 10 августа по мере усиления антициклона.",
         category: "Прогноз погоды",
         date: "4 августа, 2026",
         author: "Pogoda Weather Team",
@@ -460,6 +502,8 @@ export const BLOG_POSTS = [
     translations: {
       EN: {
         title: "Bishkek Drops 5°C as Regional Cooling Front Spreads Across Kyrgyzstan",
+        seoTitle: "Bishkek Drops 5°C as Regional Cooling Front Spreads",
+        seoDesc: "Morning temperatures in Bishkek fall to +24°C with light drizzle as cool alpine air lowers readings by 2°C to 5°C across all major cities in Kyrgyzstan today.",
         category: "Regional Weather",
         date: "August 4, 2026",
         author: "Pogoda Weather Team",
@@ -481,6 +525,8 @@ export const BLOG_POSTS = [
       },
       KG: {
         title: "Бишкекте абанын температурасы кечээкиге караганда 5°Cге төмөндөдү — салкындоо бардык региондорду каптады",
+        seoTitle: "Бишкекте 5°C салкындады, муздак фронт өлкө боюнча жүрөт",
+        seoDesc: "Бишкекте эртең мененки температура +24°Cге чейин төмөндөдү: салкын тоо абасы Кыргызстандын бардык ири шаарларында көрсөткүчтөрдү 2-5°Cге чейин түшүрдү.",
         category: "Аймактык аба ырайы",
         date: "4-август, 2026",
         author: "Pogoda синоптиктер тобу",
@@ -503,6 +549,8 @@ export const BLOG_POSTS = [
       },
       RU: {
         title: "В Бишкеке температура опустилась на 5°C по сравнению со вчерашним днем — похолодание охватило все регионы КР",
+        seoTitle: "Бишкек: похолодание на 5°C, фронт идёт по Киргизии",
+        seoDesc: "Утренняя температура в Бишкеке опустилась до +24°C с мелким дождём: прохладный горный воздух снизил показатели на 2-5°C во всех крупных городах Киргизии.",
         category: "Региональная погода",
         date: "4 августа 2026",
         author: "Команда Pogoda",
@@ -582,6 +630,16 @@ function initSingleArticle(lang = 'KG') {
   if (!post) return;
 
   const data = post.translations[lang] || post.translations.EN;
+
+  // Articles live at one unprefixed URL and swap language client-side, so the
+  // <title>/description baked into the HTML would otherwise stay in the source
+  // language no matter which language the reader picked.
+  if (data.seoTitle) document.title = data.seoTitle;
+  if (data.seoDesc) {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', data.seoDesc);
+  }
+  document.documentElement.lang = lang === 'KG' ? 'ky' : lang.toLowerCase();
 
   // Breadcrumbs
   const breadcrumbsSpans = document.querySelectorAll('.breadcrumbs-container span');
