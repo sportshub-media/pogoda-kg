@@ -560,6 +560,7 @@ function renderBlogPosts(posts, lang = 'KG') {
     return `
       <a href="/blog/${post.slug}.html" style="text-decoration: none; color: inherit;">
         <div class="news-card" style="min-height: 220px;">
+          <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy">
           <div class="news-card-overlay">
             <span class="news-tag">${data.category}</span>
             <h3 class="news-title" style="font-size:18px;">${data.title}</h3>

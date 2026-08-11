@@ -1204,6 +1204,20 @@ body:not(.dark-theme) nav.main-nav a.active::after {
   justify-content: flex-end;
 }
 
+/* Blog listing cards: image on top, solid content panel below (not an
+   overlay — the excerpt needs a plain readable background) */
+.blog-grid .news-card {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.blog-grid .news-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
 .news-tag {
   background: var(--primary);
   color: white;
