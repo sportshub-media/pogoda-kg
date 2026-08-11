@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="gHeat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107"/>
+<stop offset="50%" stop-color="#FF9F43"/>
+<stop offset="100%" stop-color="#FF5A36"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#gHeat)"/>
+  
+<path d="M0,725 L0,635 L220,535 L460,615 L680,515 L900,605 L1120,545 L1200,625 L1200,725 Z" fill="#4a1503" opacity="0.35"/>
+<circle cx="600" cy="250" r="110" fill="#FFC107" opacity="1"/>
+<line x1="724.0" y1="250.0" x2="758.0" y2="250.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="700.3" y1="322.9" x2="727.8" y2="342.9" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="638.3" y1="367.9" x2="648.8" y2="400.3" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="561.7" y1="367.9" x2="551.2" y2="400.3" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="499.7" y1="322.9" x2="472.2" y2="342.9" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="476.0" y1="250.0" x2="442.0" y2="250.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="499.7" y1="177.1" x2="472.2" y2="157.1" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="561.7" y1="132.1" x2="551.2" y2="99.7" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="638.3" y1="132.1" x2="648.8" y2="99.7" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="700.3" y1="177.1" x2="727.8" y2="157.1" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+
+      <rect x="963" y="144" width="34" height="286" rx="17" fill="none" stroke="#FFFFFF" stroke-width="7" opacity="0.9"/>
+      <circle cx="980" cy="430" r="44" fill="#FF4B2B"/>
+      <rect x="969" y="167" width="22" height="263" rx="11" fill="#FF4B2B"/>
+      <line x1="1071" y1="175" x2="1071" y2="301" stroke="#FF4B2B" stroke-width="13" stroke-linecap="round"/><polygon points="1042,180 1100,180 1071,136" fill="#FF4B2B"/>
+    
+<path d="M0,725 L0,605 L180,465 L340,565 L520,435 L720,575 L900,455 L1080,555 L1200,495 L1200,725 Z" fill="#0F172A" opacity="1.0"/>
+
+</svg>

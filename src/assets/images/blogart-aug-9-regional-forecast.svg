@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="gRegional" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4FA8E0"/>
+<stop offset="55%" stop-color="#3E8FD0"/>
+<stop offset="100%" stop-color="#FF9F43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#gRegional)"/>
+  
+<path d="M0,725 L0,635 L220,535 L460,615 L680,515 L900,605 L1120,545 L1200,625 L1200,725 Z" fill="#0e2a4a" opacity="0.5"/>
+<circle cx="950" cy="190" r="66" fill="#FFC107" opacity="1"/>
+<line x1="1030.0" y1="190.0" x2="1052.0" y2="190.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="1006.6" y1="246.6" x2="1022.1" y2="262.1" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="950.0" y1="270.0" x2="950.0" y2="292.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="893.4" y1="246.6" x2="877.9" y2="262.1" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="870.0" y1="190.0" x2="848.0" y2="190.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="893.4" y1="133.4" x2="877.9" y2="117.9" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="950.0" y1="110.0" x2="950.0" y2="88.0" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<line x1="1006.6" y1="133.4" x2="1022.1" y2="117.9" stroke="#FFC107" stroke-width="7" stroke-linecap="round" opacity="1"/>
+<g opacity="0.9">
+      <ellipse cx="184" cy="220" rx="70" ry="50" fill="#FFFFFF"/>
+      <ellipse cx="280" cy="188" rx="98" ry="74" fill="#FFFFFF"/>
+      <ellipse cx="378" cy="217" rx="79" ry="55" fill="#FFFFFF"/>
+      <rect x="117" y="210" width="326" height="67" rx="34" fill="#FFFFFF"/>
+    </g>
+
+      <rect x="584" y="136" width="31" height="264" rx="16" fill="none" stroke="#FFFFFF" stroke-width="7" opacity="0.9"/>
+      <circle cx="600" cy="400" r="41" fill="#FF6B4A"/>
+      <rect x="590" y="210" width="19" height="190" rx="10" fill="#FF6B4A"/>
+      <line x1="684" y1="165" x2="684" y2="281" stroke="#FF6B4A" stroke-width="12" stroke-linecap="round"/><polygon points="658,170 710,170 684,129" fill="#FF6B4A"/>
+    
+<path d="M0,725 L0,605 L180,465 L340,565 L520,435 L720,575 L900,455 L1080,555 L1200,495 L1200,725 Z" fill="#0F172A" opacity="1.0"/>
+
+</svg>
