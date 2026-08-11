@@ -4,6 +4,137 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-11-outlook-heat-cooldown",
+    slug: "kyrgyzstan-weather-outlook-heat-cooldown-august-14",
+    image: "/assets/images/gallery_bishkek.webp",
+    translations: {
+      EN: {
+        title: "Kyrgyzstan Heat Holds to Aug 13, Cooldown Starts Aug 14",
+        category: "Weather Outlook",
+        date: "August 11, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek and the south stay hot near +38-39°C through August 13, then a cold front brings gradual cooling to around +25-30°C by August 17, Kyrgyzhydromet says.",
+        content: `
+          <p>Kyrgyzhydromet's outlook for the coming week shows the current hot, dry spell holding through <strong>August 13</strong> before a cold front finally brings relief. <strong>Bishkek</strong> is on track to peak at <strong>+39°C</strong> during the hot stretch, with southern regions close behind at up to +37°C.</p>
+          <h3>Why the Heat Is Sticking Around</h3>
+          <p>A warm air mass is sitting directly over Kyrgyzstan, while the cold front that would normally break the heat is instead tracking north across Kazakhstan and Siberia rather than reaching the country directly. That keeps skies mostly clear and dry through the middle of next week, with only light drizzle or brief showers possible in scattered spots.</p>
+          <h3>Cooldown Begins August 14</h3>
+          <p>The pattern shifts on <strong>August 14</strong>, when a cold front approaching from the Caspian Sea region starts pushing temperatures down. Kyrgyzhydromet expects a gradual decline to around <strong>+29°C to +30°C</strong>, with Bishkek cooling further to roughly <strong>+25°C</strong> by <strong>August 17</strong> as high pressure settles in behind the front.</p>
+          <h3>Naryn and Issyk-Kul Stay Mild Throughout</h3>
+          <p>As usual, the highlands see the smallest swings: <strong>Naryn</strong> and <strong>Issyk-Kul</strong> regions are expected to hold between +20°C and +27°C for most of the week, both before and after the cooldown arrives.</p>
+        `
+      },
+      KG: {
+        title: "Кыргызстанда ысык 13-августка чейин сакталат, 14-августтан салкындайт",
+        category: "Аба ырайы божомолу",
+        date: "11-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бишкек жана түштүк 13-августка чейин +38-39°C ысыкта калат, андан кийин муздак фронт 17-августка карай температураны +25-30°Cге чейин акырындык менен түшүрөт деп Кыргызгидромет билдирди.",
+        content: `
+          <p>Кыргызгидметтин божомолуна ылайык, азыркы ысык жана кургак аба ырайы <strong>13-августка</strong> чейин сакталат, андан кийин гана муздак фронт жеңилдик алып келет. <strong>Бишкек</strong> ысыктын чегинде <strong>+39°C</strong>ге чейин жетиши мүмкүн, ал эми түштүк региондор бир аз салкыныраак — +37°Cге чейин.</p>
+          <h3>Ысык эмне үчүн сакталып жатат</h3>
+          <p>Жылуу аба массасы түздөн-түз Кыргызстандын үстүндө орношту, ал эми адатта жеңилдик алып келүүчү муздак фронт өлкөнү түздөн-түз кыйгабай, Казахстан менен Сибирь аркылуу түндүктөрөөк өтүп жатат. Ошондуктан асман кийинки жуманын ортосуна чейин негизинен ачык жана кургак бойдон калат, айрым жерлерде гана жеңил чолпу же кыска мөөнөттүү жамгыр мүмкүн.</p>
+          <h3>Салкындоо 14-августта башталат</h3>
+          <p>Аба ырайы <strong>14-августта</strong> өзгөрөт, Каспий деңизи тарабынан жакындаган муздак фронт температураны төмөндөтө баштайт. Кыргызгидромет <strong>+29...+30°C</strong>ге чейин акырындык менен төмөндөйт деп божомолдоп жатат, Бишкекте болсо фронттон кийин жогорку басым орношкондон улам <strong>17-августка</strong> карай температура болжол менен <strong>+25°C</strong>ге чейин түшөт.</p>
+          <h3>Нарын жана Ысык-Көлдө кескин өзгөрүү болбойт</h3>
+          <p>Адаттагыдай эле, тоолуу аймактарда температуранын термелиши эң аз: <strong>Нарын</strong> жана <strong>Ысык-Көл</strong> облустарында жума бою, салкындоого чейин да, андан кийин да +20...+27°C сакталат деп күтүлүүдө.</p>
+        `
+      },
+      RU: {
+        title: "Жара в Кыргызстане сохранится до 13 августа, похолодание — с 14-го",
+        category: "Прогноз погоды",
+        date: "11 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бишкек и юг страны останутся жаркими, около +38...+39°C, до 13 августа, после чего холодный фронт постепенно снизит температуру до +25...+30°C к 17 августа, сообщает Кыргызгидромет.",
+        content: `
+          <p>По данным Кыргызгидромета, нынешняя жаркая и сухая погода сохранится до <strong>13 августа</strong>, прежде чем похолодание наконец принесёт облегчение. <strong>Бишкек</strong> может подняться до <strong>+39°C</strong> в разгар жаркого периода, а южные регионы останутся немногим прохладнее — до +37°C.</p>
+          <h3>Почему жара держится</h3>
+          <p>Тёплая воздушная масса закрепилась прямо над Кыргызстаном, а холодный фронт, который обычно приносит облегчение, движется севернее — через Казахстан и Сибирь, — не затрагивая республику напрямую. Поэтому небо остаётся преимущественно ясным и сухим до середины следующей недели, лишь местами возможна небольшая морось или кратковременные дожди.</p>
+          <h3>Похолодание начнётся 14 августа</h3>
+          <p>Погода начнёт меняться <strong>14 августа</strong>, когда приближающийся со стороны Каспия холодный фронт начнёт снижать температуру. Кыргызгидромет ожидает постепенное понижение до <strong>+29...+30°C</strong>, а в Бишкеке — до примерно <strong>+25°C</strong> к <strong>17 августа</strong>, когда за фронтом установится область высокого давления.</p>
+          <h3>В Нарынской и Иссык-Кульской областях без резких перепадов</h3>
+          <p>Как обычно, в горных регионах колебания температуры минимальны: в <strong>Нарынской</strong> и <strong>Иссык-Кульской</strong> областях большую часть недели ожидается +20...+27°C — как до похолодания, так и после него.</p>
+        `
+      }
+    }
+  },
+  {
+    id: "post-aug-11-rain-thunderstorms",
+    slug: "august-11-forecast-kyrgyzstan-rain-thunderstorms",
+    image: "/assets/images/blog_rain.webp",
+    translations: {
+      EN: {
+        title: "Aug 11 Forecast: Thunderstorms Return as Heat Hits +38°C",
+        category: "Weather Forecast",
+        date: "August 11, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzstan sees thunderstorms in several regions today as heat holds at +37-38°C in Bishkek and the south, while Naryn and Issyk-Kul stay cooler with rain risk.",
+        content: `
+          <p>Kyrgyzhydromet is forecasting a return of thunderstorms across parts of Kyrgyzstan today, even as daytime temperatures hold in the high +30s in the lowlands. <strong>Bishkek</strong> and the <strong>Chuy, Osh, Jalal-Abad and Batken</strong> regions stay hot at <strong>+37°C to +38°C</strong>, with the heat and humidity together raising the risk of afternoon storms.</p>
+          <h3>Naryn and Issyk-Kul Stay Coolest</h3>
+          <p><strong>Naryn</strong> region remains the coolest part of the country, with a daytime high of just +25°C after an overnight low of +12°C. <strong>Issyk-Kul</strong> region is only slightly warmer at +26°C, while <strong>Talas</strong> region sits in between at +34°C.</p>
+          <h3>Storm Risk Highest in the Afternoon</h3>
+          <p>Forecasters expect the thunderstorm risk to build through the day as heat and moisture combine, with the best chances for rain in the mountain and foothill zones. Residents in low-lying areas should watch for sudden wind gusts and brief heavy downpours.</p>
+          <h3>August 11 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Night +22°C, Day +37°C.</li>
+            <li><strong>Chuy Region:</strong> Night +20°C, Day +38°C.</li>
+            <li><strong>Osh, Jalal-Abad, Batken:</strong> Night +20°C, Day +38°C.</li>
+            <li><strong>Talas Region:</strong> Night +16°C, Day +34°C.</li>
+            <li><strong>Issyk-Kul Region:</strong> Night +15°C, Day +26°C.</li>
+            <li><strong>Naryn Region:</strong> Night +12°C, Day +25°C.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "11-августка карата божомол: күн күркүрөө кайтат, ысык +38°",
+        category: "Аба ырайы божомолу",
+        date: "11-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет бүгүн Кыргызстандын айрым региондорунда күн күркүрөйт деп божомолдоп жатат, ал эми Бишкек жана түштүктө ысык +37-38°C сакталат, Нарын менен Ысык-Көлдө болсо салкыныраак жана жамгыр мүмкүн.",
+        content: `
+          <p>Кыргызгидромет бүгүн Кыргызстандын айрым аймактарында күн күркүрөшүн кайра божомолдоп жатат, ал эми ойдуң аймактарда күндүзгү температура +37...+38°C бойдон калууда. <strong>Бишкекте</strong> жана <strong>Чүй, Ош, Жалал-Абад, Баткен</strong> облустарында ысык сакталат, ал эми ысыктык менен нымдуулуктун айкалышы түштөн кийинки күн күркүрөөсүнүн коркунучун жогорулатат.</p>
+          <h3>Нарын жана Ысык-Көл эң салкын бойдон калууда</h3>
+          <p><strong>Нарын</strong> облусу өлкөнүн эң салкын аймагы бойдон калууда: түнкүсүн +12°C, күндүз болгону +25°C. <strong>Ысык-Көл</strong> облусунда бир аз жылуураак — +26°C, ал эми <strong>Талас</strong> облусунда +34°C.</p>
+          <h3>Күн күркүрөө коркунучу түштөн кийин жогору</h3>
+          <p>Синоптиктердин айтымында, ысыктык менен нымдуулук күчөгөн сайын күн күркүрөө коркунучу күн бою өсөт, эң жогорку ыктымалдык тоолуу жана тоо этегиндеги аймактарда болот. Ойдуң аймактардын тургундарына капысынан күчөгөн шамалга жана кыска мөөнөттүү катуу жамгырга даяр болуу сунушталат.</p>
+          <h3>11-августка карата региондук температура</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> түнкүсүн +22°C, күндүз +37°C.</li>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +20°C, күндүз +38°C.</li>
+            <li><strong>Ош, Жалал-Абад, Баткен:</strong> түнкүсүн +20°C, күндүз +38°C.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +16°C, күндүз +34°C.</li>
+            <li><strong>Ысык-Көл облусу:</strong> түнкүсүн +15°C, күндүз +26°C.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +12°C, күндүз +25°C.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 11 августа: грозы возвращаются, жара до +38°",
+        category: "Прогноз погоды",
+        date: "11 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет прогнозирует грозы в ряде регионов при сохранении жары до +37-38°C в Бишкеке и на юге, тогда как в Нарынской и Иссык-Кульской областях прохладнее и также возможен дождь.",
+        content: `
+          <p>Кыргызгидромет прогнозирует возвращение гроз в отдельных районах Кыргызстана сегодня, при этом дневная температура в низменных районах остаётся на уровне +37...+38°C. В <strong>Бишкеке</strong> и в <strong>Чуйской, Ошской, Джалал-Абадской и Баткенской</strong> областях сохраняется жара, а сочетание тепла и влажности повышает риск послеобеденных гроз.</p>
+          <h3>В Нарынской и Иссык-Кульской областях прохладнее всего</h3>
+          <p><strong>Нарынская</strong> область остаётся самым прохладным регионом страны: днём всего +25°C после ночных +12°C. В <strong>Иссык-Кульской</strong> области немного теплее — +26°C, а в <strong>Таласской</strong> области — +34°C.</p>
+          <h3>Риск гроз выше во второй половине дня</h3>
+          <p>Синоптики ожидают, что риск гроз будет нарастать в течение дня по мере усиления жары и влажности, а наибольшая вероятность осадков сохранится в горных и предгорных зонах. Жителям низменных районов стоит быть готовыми к внезапным порывам ветра и кратковременным ливням.</p>
+          <h3>Температура воздуха по областям (11 августа)</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ночью +22°C, днём +37°C.</li>
+            <li><strong>Чуйская область:</strong> ночью +20°C, днём +38°C.</li>
+            <li><strong>Ош, Джалал-Абад, Баткен:</strong> ночью +20°C, днём +38°C.</li>
+            <li><strong>Таласская область:</strong> ночью +16°C, днём +34°C.</li>
+            <li><strong>Иссык-Кульская область:</strong> ночью +15°C, днём +26°C.</li>
+            <li><strong>Нарынская область:</strong> ночью +12°C, днём +25°C.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-rain-naryn-issyk-kul-aug-8",
     slug: "rain-thunder-return-naryn-issyk-kul-overnight-august-8",
     image: "/assets/images/news_heavy_rain.webp",
