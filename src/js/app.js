@@ -121,6 +121,14 @@ function ruCity(city) {
   return RU_CITY_FORMS[city.id] || { nom: city.nativeName || city.name, prep: city.nativeName || city.name };
 }
 
+// config.js stores image paths relative ("assets/images/x.webp"). On the
+// language-prefixed pages (/ru/…, /en/…) a relative URL resolves to
+// /ru/assets/… and 404s, so always resolve it from the site root.
+function cityImageUrl(city) {
+  if (!city || !city.image) return '';
+  return city.image.startsWith('/') ? city.image : `/${city.image}`;
+}
+
 // Same wording as getCityHeroContent() in build.js, kept in sync so the hero heading/intro
 // baked into each static city page still matches after a client-side language or city switch.
 function getCityHeroContent(lang, city) {
@@ -533,7 +541,7 @@ function renderRecentSearches() {
       position: relative;
       overflow: hidden;
       min-width: 160px;
-      background: linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0.4)), url('${city.image}') center/cover no-repeat;
+      background: linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0.4)), url('${cityImageUrl(city)}') center/cover no-repeat;
       color: white;
       border-color: rgba(255,255,255,0.2);
     `;

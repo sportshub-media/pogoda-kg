@@ -418,4 +418,23 @@ const redirects = `# Clean URLs
 `;
 fs.writeFileSync(path.join(OUT_DIR, '_redirects'), redirects);
 
+// Write _headers (Cloudflare Pages). Cloudflare already sends
+// x-content-type-options and referrer-policy; the rest were missing.
+//
+// The CSP origins below are the complete set the site actually talks to,
+// captured from a real browser run: GTM/GA + Yandex Metrika (analytics),
+// unpkg (Leaflet), OpenStreetMap (map tiles), Google Fonts, Open-Meteo
+// (forecast API), plus the Metrika Webvisor WebSocket. 'unsafe-inline' is unavoidable here — the GTM, Metrika
+// and gtag snippets are inline by design, and the markup uses inline
+// styles and onclick handlers throughout.
+const headers = `/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: geolocation=(self), microphone=(), camera=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://mc.yandex.ru https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.open-meteo.com https://www.googletagmanager.com https://www.google-analytics.com https://mc.yandex.ru https://yandex.ru https://cm.g.doubleclick.net https://stats.g.doubleclick.net wss://mc.yandex.ru; frame-src https://www.googletagmanager.com https://mc.yandex.ru; object-src 'none'; base-uri 'self'; form-action 'self'
+`;
+fs.writeFileSync(path.join(OUT_DIR, '_headers'), headers);
+
 console.log('Build complete. Output generated in out/ folder.');
