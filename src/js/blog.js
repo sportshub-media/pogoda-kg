@@ -4,6 +4,167 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-heat-safety-tips",
+    slug: "kyrgyzstan-heat-safety-tips-extreme-temperatures",
+    image: "/assets/images/blogphoto-heat-safety-advisory.webp",
+    translations: {
+      EN: {
+        title: "Heat Safety Tips as Kyrgyzstan Hits +39°C This Week",
+        seoTitle: "Heat Safety Tips as Kyrgyzstan Hits +39°C This Week",
+        seoDesc: "With daytime highs near +39°C in southern Kyrgyzstan, the Health Ministry urges residents to hydrate, avoid midday sun, and watch for heat exhaustion symptoms.",
+        category: "Health & Safety",
+        date: "August 13, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "With daytime highs near +39°C in southern Kyrgyzstan, the Health Ministry urges residents to hydrate, avoid midday sun, and watch for heat exhaustion symptoms.",
+        content: `
+          <p>With daytime highs pushing <strong>+38°C to +39°C</strong> across southern Kyrgyzstan this week and little overnight relief, the Ministry of Health is renewing its call for residents to take basic precautions against heat-related illness. The advice is simple, but health officials say it matters most during exactly this kind of prolonged, dry heat spell.</p>
+          <h3>Avoid the Midday Sun</h3>
+          <p>Officials recommend staying out of direct sunlight between <strong>11:00 and 16:00</strong>, when the sun is strongest and heat stress builds fastest. If you must be outside during these hours, seek shade regularly and limit strenuous activity.</p>
+          <h3>Drink More Water Than You Think You Need</h3>
+          <p>Hydration is the single most repeated recommendation: drink water consistently through the day rather than waiting until you feel thirsty, since thirst is already a sign of mild dehydration. Health officials also advise avoiding alcohol, which speeds up fluid loss and makes the body less able to cope with heat.</p>
+          <h3>Dress for the Heat</h3>
+          <p>Loose-fitting clothing made from natural fabrics like cotton or linen helps air circulate and sweat evaporate, both of which cool the body more effectively than tight or synthetic clothing. A light-colored hat or head covering is also recommended for anyone spending time outdoors.</p>
+          <h3>Know the Warning Signs</h3>
+          <p>The Ministry of Health is asking people to watch for early symptoms of heat exhaustion, including <strong>weakness, unusual lethargy, dizziness, excessive sweating, persistent thirst, headache, and nausea or vomiting</strong>. Anyone experiencing these symptoms should move to a cool or shaded area immediately, drink water, and rest — and seek medical attention if symptoms don't improve.</p>
+          <h3>Who Should Take Extra Care</h3>
+          <p>Children, older adults, and anyone with chronic heart or respiratory conditions face a higher risk during extended heat and should limit outdoor activity as much as possible while the current pattern holds across the south.</p>
+        `
+      },
+      KG: {
+        title: "Ысыктан сак болуу: Кыргызстанда бул жума +39°Cге чейин жетти",
+        seoTitle: "Ысыктан сак болуу: Кыргызстанда +39°Cге чейин жетти",
+        seoDesc: "Түштүктө +39°Cге чейин ысыктын уланышына байланыштуу Ден соолук сактоо министрлиги көп суу ичүүнү, түшкү 11:00дөн 16:00гө чейин күндөн алыс болууну сунуштайт.",
+        category: "Ден соолук жана коопсуздук",
+        date: "13-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Түштүктө +39°Cге чейин ысыктын уланышына байланыштуу Ден соолук сактоо министрлиги көп суу ичүүнү, түшкү 11:00дөн 16:00гө чейин күндөн алыс болууну сунуштайт.",
+        content: `
+          <p>Кыргызстандын түштүгүндө бул жума күндүзгү температура <strong>+38...+39°C</strong>ге жетип, түнкүсүн да олуттуу салкындоо болбой жатканына байланыштуу, Ден соолук сактоо министрлиги ысыктан улам келип чыгуучу ооруларга каршы жөнөкөй сактык чараларын кайра эскертти. Сунуштар жөнөкөй, бирок дал ушундай узакка созулган, кургак ысык мезгилде алар эң маанилүү болот деп министрлик белгилейт.</p>
+          <h3>Түшкү күндөн алыс болуңуз</h3>
+          <p>Адистер <strong>саат 11:00дөн 16:00гө чейин</strong> түз күн нурунан алыс болууну сунуштайт, себеби бул мезгилде күн эң күчтүү жана ысыктык стресси тезирээк өсөт. Ушул саттарда сыртта болууга туура келсе, тынымсыз көлөкөгө өтүп, оор жумуштардан алыс болуңуз.</p>
+          <h3>Ойлогондон көбүрөөк суу ичиңиз</h3>
+          <p>Эң көп кайталанган сунуш — суусундук: чаңкоону күтпөй, күн бою тынымсыз суу ичиңиз, анткени чаңкоо дене суусундан жетишсиз экенинин белгиси болуп саналат. Ден соолук сактоо адистери алкоголдон алыс болууну да сунуштайт, анткени ал суюктуктун тезирээк жоголушуна алып келип, денени ысыкка туруштук берүүгө жарамсыз кылат.</p>
+          <h3>Ысыкка ылайык кийиминиз</h3>
+          <p>Пахта же зыгыр сыяктуу табигый кездемеден жасалган кенен кийимдер аба алмашууга жана терди буулантууга жардам берип, катуу же синтетикалык кийимге караганда денени жакшыраак муздатат. Сыртта көп болгондорго ачык түстөгү баш кийим да сунушталат.</p>
+          <h3>Коркунучтуу белгилерди билиңиз</h3>
+          <p>Ден соолук сактоо министрлиги ысыктан чарчоонун алгачкы белгилерине көңүл буруңуз деп сунуштайт: <strong>алсыздык, көнбөгөн жалкоолук, баш айлануу, катуу терлөө, тынымсыз чаңкоо, баш оору, жүрөк айлануу же кусуу</strong>. Бул белгилер байкалса, дароо салкын же көлөкөлүү жерге өтүп, суу ичип, эс алуу керек — белгилер жоголбосо, дарыгерге кайрылуу зарыл.</p>
+          <h3>Кимдер өзгөчө этияттык керек</h3>
+          <p>Балдар, улгайган адамдар, ошондой эле жүрөк же дем алуу жолдорунун созулмалуу оорулары бар адамдар узакка созулган ысыкта жогорку тобокелдикке дуушар болушат жана азыркы аба ырайы уланганда сыртта болууну мүмкүн болушунча чектеши керек.</p>
+        `
+      },
+      RU: {
+        title: "Советы по жаре: в Кыргызстане до +39°C на этой неделе",
+        seoTitle: "Советы по жаре: в Киргизии до +39°C на этой неделе",
+        seoDesc: "На фоне жары до +39°C на юге Киргизии Минздрав призывает пить больше воды, избегать солнца с 11:00 до 16:00 и следить за признаками теплового удара.",
+        category: "Здоровье и безопасность",
+        date: "13 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "На фоне жары до +39°C на юге Киргизии Минздрав призывает пить больше воды, избегать солнца с 11:00 до 16:00 и следить за признаками теплового удара.",
+        content: `
+          <p>На фоне того, что дневная температура на юге Кыргызстана на этой неделе держится на уровне <strong>+38...+39°C</strong>, а ночи не приносят заметного облегчения, Министерство здравоохранения вновь призывает жителей соблюдать простые меры предосторожности против болезней, связанных с жарой. Советы несложные, но, по словам врачей, именно в такой продолжительный сухой зной они особенно важны.</p>
+          <h3>Избегайте полуденного солнца</h3>
+          <p>Специалисты рекомендуют не находиться под прямыми солнечными лучами с <strong>11:00 до 16:00</strong>, когда солнце наиболее активно, а тепловая нагрузка на организм нарастает быстрее всего. Если в эти часы всё же нужно быть на улице, стоит регулярно уходить в тень и избегать тяжёлых физических нагрузок.</p>
+          <h3>Пейте больше воды, чем кажется нужным</h3>
+          <p>Самая частая рекомендация — питьевой режим: пить воду равномерно в течение дня, не дожидаясь чувства жажды, поскольку жажда уже говорит о лёгком обезвоживании. Врачи также советуют избегать алкоголя, который ускоряет потерю жидкости и снижает способность организма переносить жару.</p>
+          <h3>Одевайтесь по погоде</h3>
+          <p>Свободная одежда из натуральных тканей — хлопка или льна — улучшает циркуляцию воздуха и испарение пота, что охлаждает тело эффективнее, чем плотная или синтетическая одежда. Тем, кто много времени проводит на улице, также рекомендуют светлый головной убор.</p>
+          <h3>Знайте тревожные признаки</h3>
+          <p>Минздрав просит обращать внимание на первые симптомы теплового истощения: <strong>слабость, необычную вялость, головокружение, сильное потоотделение, постоянную жажду, головную боль, тошноту или рвоту</strong>. При появлении этих симптомов нужно немедленно перейти в прохладное или тенистое место, выпить воды и отдохнуть — а если состояние не улучшается, обратиться за медицинской помощью.</p>
+          <h3>Кому стоит быть особенно осторожным</h3>
+          <p>Дети, пожилые люди, а также люди с хроническими заболеваниями сердца или органов дыхания подвержены повышенному риску в период продолжительной жары и должны по возможности ограничить время на улице, пока сохраняется текущая погода.</p>
+        `
+      }
+    }
+  },
+  {
+    id: "post-aug-13-forecast-storms-heat",
+    slug: "august-13-forecast-kyrgyzstan-storms-extreme-heat",
+    image: "/assets/images/blogphoto-aug-13-storms-heat.webp",
+    translations: {
+      EN: {
+        title: "Aug 13 Forecast: Storms in the Highlands, Heat to +39°C",
+        seoTitle: "Aug 13 Forecast: Storms in the Highlands, Heat to +39°C",
+        seoDesc: "Kyrgyzstan sees rain and thunderstorms today in Chuy, Naryn and Issyk-Kul while the south bakes at +38-39°C in Osh, Jalal-Abad and Batken, Kyrgyzhydromet says.",
+        category: "Weather Forecast",
+        date: "August 13, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzstan sees rain and thunderstorms today in Chuy, Naryn and Issyk-Kul while the south bakes at +38-39°C in Osh, Jalal-Abad and Batken, Kyrgyzhydromet says.",
+        content: `
+          <p>Kyrgyzhydromet is forecasting a split-weather day across Kyrgyzstan: rain and thunderstorms in the north and highlands, while the south continues to bake under near-record heat. <strong>Chuy, Naryn and Issyk-Kul</strong> regions can expect showers and isolated storms, while <strong>Osh, Jalal-Abad and Batken</strong> stay dry and hold at a scorching <strong>+38°C to +39°C</strong>.</p>
+          <h3>Storm Risk Concentrated in the Foothills</h3>
+          <p>Forecasters say the thunderstorm threat is greatest in the foothill and mountain zones of <strong>Chuy, Talas, Osh, Jalal-Abad and Batken</strong>, where rising heat combined with mountain airflow tends to trigger sharp afternoon storm cells. Bishkek itself stays mostly dry but hot, with a high near +37°C after an overnight low of +20°C.</p>
+          <h3>South Stays in Extreme Heat</h3>
+          <p>Despite the unsettled weather up north, the southern lowlands see no real break from the heat. Osh, Jalal-Abad and Batken all hold at +38°C to +39°C during the day, with warm nights around +20°C offering little relief before the next hot afternoon.</p>
+          <h3>Coolest Air Stays in the Mountains</h3>
+          <p><strong>Naryn</strong> remains the coolest region by a wide margin, with a daytime high of only +26°C after a chilly +8°C night. <strong>Issyk-Kul</strong> is a bit milder at +29°C, while <strong>Talas</strong> sits in the middle at +34°C.</p>
+          <h3>August 13 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Night +20°C, Day +37°C.</li>
+            <li><strong>Chuy Region:</strong> Night +18°C, Day +38°C, rain and storms possible.</li>
+            <li><strong>Osh, Jalal-Abad, Batken:</strong> Night +20°C, Day +39°C.</li>
+            <li><strong>Talas Region:</strong> Night +13°C, Day +34°C.</li>
+            <li><strong>Issyk-Kul Region:</strong> Night +12°C, Day +29°C, rain possible.</li>
+            <li><strong>Naryn Region:</strong> Night +8°C, Day +26°C, rain possible.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "13-августка карата божомол: тоодо күн күркүрөйт, ысык +39°C",
+        seoTitle: "13-августка карата божомол: тоодо күркүрөө, ысык +39°C",
+        seoDesc: "Кыргызгидромет бүгүн Чүй, Нарын жана Ысык-Көлдө жамгыр менен күн күркүрөйт дейт, түштүктө Ош, Жалал-Абад, Баткенде +39°Cге чейин ысык болот деп божомолдонууда.",
+        category: "Аба ырайы божомолу",
+        date: "13-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет бүгүн Чүй, Нарын жана Ысык-Көлдө жамгыр менен күн күркүрөйт дейт, түштүктө Ош, Жалал-Абад, Баткенде +39°Cге чейин ысык болот деп божомолдонууда.",
+        content: `
+          <p>Кыргызгидромет бүгүн өлкө боюнча эки башка аба ырайын божомолдоп жатат: түндүктө жана тоолуу аймактарда жамгыр менен күн күркүрөйт, ал эми түштүктө рекорддук ысыкка жакын аба ырайы уланат. <strong>Чүй, Нарын жана Ысык-Көл</strong> облустарында чолпу жана айрым жерлерде күн күркүрөшү мүмкүн, ал эми <strong>Ош, Жалал-Абад, Баткен</strong> облустарында аба ырайы кургак бойдон калып, <strong>+38...+39°C</strong>ге чейин ысык болот.</p>
+          <h3>Күн күркүрөө коркунучу тоо этегинде күчтүү</h3>
+          <p>Синоптиктердин айтымында, күн күркүрөө коркунучу <strong>Чүй, Талас, Ош, Жалал-Абад, Баткен</strong> облустарынын тоо этегиндеги жана тоолуу аймактарында эң жогору, анткени өсүп жаткан ысыктык тоо желдери менен айкалышып, түштөн кийин катуу бороон булуттарын пайда кылат. Бишкекте аба ырайы негизинен кургак, бирок ысык бойдон калат: түнкүсүн +20°C, күндүз +37°Cге чейин.</p>
+          <h3>Түштүктө ысык уланууда</h3>
+          <p>Түндүктөгү туруксуз аба ырайына карабастан, түштүктөгү ойдуң аймактарда ысыктан эч кандай жеңилдик жок. Ош, Жалал-Абад жана Баткенде күндүз +38...+39°C сакталат, түнкүсүн +20°C тегерегиндеги жылуулук кийинки ысык күндөн мурун анча деле жеңилдик бербейт.</p>
+          <h3>Эң салкын аба тоолордо сакталууда</h3>
+          <p><strong>Нарын</strong> облусу өлкөнүн эң салкын аймагы бойдон калууда: түнкүсүн +8°C муздак, күндүз болгону +26°C. <strong>Ысык-Көл</strong> облусунда бир аз жылуураак — +29°C, ал эми <strong>Талас</strong> облусунда ортоңку — +34°C.</p>
+          <h3>13-августка карата региондук температура</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> түнкүсүн +20°C, күндүз +37°C.</li>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +18°C, күндүз +38°C, жамгыр жана күн күркүрөшү мүмкүн.</li>
+            <li><strong>Ош, Жалал-Абад, Баткен:</strong> түнкүсүн +20°C, күндүз +39°C.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +13°C, күндүз +34°C.</li>
+            <li><strong>Ысык-Көл облусу:</strong> түнкүсүн +12°C, күндүз +29°C, жамгыр мүмкүн.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +8°C, күндүз +26°C, жамгыр мүмкүн.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 13 августа: грозы в горах, жара до +39°C",
+        seoTitle: "Прогноз на 13 августа: грозы в горах, жара до +39°C",
+        seoDesc: "Кыргызгидромет прогнозирует дожди и грозы в Чуйской, Нарынской и Иссык-Кульской областях, тогда как юг Киргизии остаётся жарким — до +39°C в Оше и Джалал-Абаде.",
+        category: "Прогноз погоды",
+        date: "13 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет прогнозирует дожди и грозы в Чуйской, Нарынской и Иссык-Кульской областях, тогда как юг Киргизии остаётся жарким — до +39°C в Оше и Джалал-Абаде.",
+        content: `
+          <p>Кыргызгидромет прогнозирует на сегодня разную погоду по стране: на севере и в горах — дожди и грозы, тогда как на юге сохраняется жара, близкая к рекордной. В <strong>Чуйской, Нарынской и Иссык-Кульской</strong> областях возможны осадки и отдельные грозы, а в <strong>Ошской, Джалал-Абадской и Баткенской</strong> областях погода останется сухой при изнуряющей жаре до <strong>+38...+39°C</strong>.</p>
+          <h3>Риск гроз выше всего в предгорьях</h3>
+          <p>По словам синоптиков, наибольшая вероятность гроз сохраняется в предгорных и горных зонах <strong>Чуйской, Таласской, Ошской, Джалал-Абадской и Баткенской</strong> областей, где растущая жара в сочетании с горными потоками воздуха провоцирует резкие послеобеденные грозовые очаги. В самом Бишкеке погода останется в основном сухой, но жаркой: ночью +20°C, днём до +37°C.</p>
+          <h3>Юг остаётся в экстремальной жаре</h3>
+          <p>Несмотря на неустойчивую погоду на севере, южные низменные районы не получат заметного облегчения от жары. В Оше, Джалал-Абаде и Баткене днём сохранится +38...+39°C, а тёплые ночи около +20°C почти не приносят прохлады перед следующим жарким днём.</p>
+          <h3>Самый прохладный воздух — в горах</h3>
+          <p><strong>Нарынская</strong> область остаётся заметно самым прохладным регионом страны: ночью всего +8°C, днём — +26°C. В <strong>Иссык-Кульской</strong> области немного теплее — +29°C, а в <strong>Таласской</strong> — среднее значение +34°C.</p>
+          <h3>Температура воздуха по областям (13 августа)</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ночью +20°C, днём +37°C.</li>
+            <li><strong>Чуйская область:</strong> ночью +18°C, днём +38°C, возможны дожди и грозы.</li>
+            <li><strong>Ош, Джалал-Абад, Баткен:</strong> ночью +20°C, днём +39°C.</li>
+            <li><strong>Таласская область:</strong> ночью +13°C, днём +34°C.</li>
+            <li><strong>Иссык-Кульская область:</strong> ночью +12°C, днём +29°C, возможен дождь.</li>
+            <li><strong>Нарынская область:</strong> ночью +8°C, днём +26°C, возможен дождь.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-11-outlook-heat-cooldown",
     slug: "kyrgyzstan-weather-outlook-heat-cooldown-august-14",
     image: "/assets/images/blogphoto-outlook-heat-cooldown.webp",
