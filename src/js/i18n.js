@@ -414,6 +414,89 @@ export const TRANSLATIONS = {
   }
 };
 
+// <title>/description per static page per language — same copy as PAGE_META in
+// build.js. The server-rendered HTML already has the correct pair baked in for
+// whichever URL was requested, but a client-side language switch (or an initial
+// load where localStorage silently rewrites the URL to a different language)
+// left the <title>/meta tags stuck in the originally-served language. This is
+// the client-side mirror needed to correct them in place.
+const PAGE_META = {
+  home: {
+    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, weekly, and monthly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn." },
+    RU: { title: "Погода в Бишкеке сегодня, на неделю и месяц | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю, на 10 дней и на месяц. Ош, Каракол, Нарын и другие." },
+    KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана айлык аба ырайы божомолдору тизмеси." }
+  },
+  map: {
+    EN: { title: "Pogoda Kg | Interactive Kyrgyzstan Weather Map & Radar", description: "Explore our interactive Kyrgyzstan weather map with live temperature markers, wind data, and forecasts for Bishkek, Osh, Karakol, Naryn, and more cities." },
+    RU: { title: "Интерактивная карта погоды Кыргызстана | Pogoda Kg", description: "Изучите интерактивную карту погоды Кыргызстана с живыми отметками температуры, данными о ветре и прогнозами для Бишкека, Оша, Каракола, Нарына и других городов." },
+    KG: { title: "Кыргызстандын интерактивдүү аба ырайы картасы | Pogoda Kg", description: "Бишкек, Ош, Каракол, Нарын жана башка шаарлардын температура белгилери, шамал маалыматтары жана божомолдору менен интерактивдүү картадан таанышып чыгыңыз." }
+  },
+  contact: {
+    EN: { title: "Contact Pogoda Kg | Weather Data & Support Inquiries", description: "Contact the Pogoda Kg team for weather data inquiries, partnership proposals, feedback, or general questions about our Kyrgyzstan weather forecast service." },
+    RU: { title: "Связаться с командой Pogoda Kg — вопросы и поддержка", description: "Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана." },
+    KG: { title: "Pogoda Kg тобу менен байланышуу — суроолор жана колдоо", description: "Аба ырайы маалыматтары, кызматташтык сунуштары, пикирлер же Кыргызстандын аба ырайы божомолу тууралуу суроо-талаптарыңыз боюнча Pogoda Kg тобуна кайрылыңыз." }
+  },
+  terms: {
+    EN: { title: "Terms of Service | Pogoda Kg Weather Forecast Site", description: "Read the Terms of Service for Pogoda Kg, the Kyrgyzstan weather forecast portal, including our weather data disclaimer and acceptable use guidelines here." },
+    RU: { title: "Условия использования сайта Pogoda Kg — прочитайте", description: "Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта." },
+    KG: { title: "Колдонуу шарттары | Pogoda Kg аба ырайы порталы сайты", description: "Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат." }
+  },
+  privacy: {
+    EN: { title: "Privacy Policy | Pogoda Kg Weather Forecast Portal", description: "Read the Pogoda Kg Privacy Policy to learn what data we collect, how we use it, and how your language and city preferences are stored in your browser." },
+    RU: { title: "Политика конфиденциальности сайта Pogoda Kg — читать", description: "Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере." },
+    KG: { title: "Купуялык саясаты | Pogoda Kg аба ырайы порталы сайты", description: "Pogoda Kg кандай маалыматтарды чогултарын, аны кантип колдонорун жана тил менен шаар тандооңуз браузериңизде кантип сакталарын Купуялык саясатыбыздан билиңиз." }
+  },
+  blog: {
+    EN: { title: "Pogoda Kg | Kyrgyzstan Weather News & Climate Blog", description: "Read the latest Kyrgyzstan weather forecast news, mountain pass conditions, Issyk-Kul lake reports, and seasonal climate updates from the Pogoda Kg team." },
+    RU: { title: "Все новости и блог о погоде в Кыргызстане | Pogoda.kg", description: "Читайте последние новости о погоде в Кыргызстане, состоянии горных перевалов, отчёты по озеру Иссык-Куль и сезонные климатические обновления от Pogoda Kg." },
+    KG: { title: "Кыргызстандын аба ырайы жаңылыктары | Pogoda.kg сайты", description: "Кыргызстандын аба ырайы боюнча акыркы жаңылыктарды, тоо ашууларынын абалын, Ысык-Көл жөнүндөгү отчётторду жана мезгилдик климаттык жаңылыктарды окуңуз." }
+  },
+  '404': {
+    EN: { title: "404 — Page Not Found | Pogoda Kg Weather Forecast Portal", description: "The weather page you're looking for doesn't exist on Pogoda Kg. Return to our homepage for the latest daily Kyrgyzstan weather forecasts and city guides." },
+    RU: { title: "404 — Такая страница не найдена на сайте Pogoda Kg", description: "Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану." },
+    KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
+  }
+};
+
+// Maps a pathname (any language prefix, with or without trailing .html) to a
+// PAGE_META key. Returns null for city pages and blog articles — those carry
+// their own dynamic per-page meta, set elsewhere (app.js / blog.js).
+function getStaticPageKey(pathname) {
+  let p = pathname.replace(/^\/(en|ru|kg)(?=\/|$)/, '');
+  p = p.replace(/\.html$/, '');
+  if (p === '' || p === '/') return 'home';
+  if (p === '/map') return 'map';
+  if (p === '/contact') return 'contact';
+  if (p === '/terms') return 'terms';
+  if (p === '/privacy') return 'privacy';
+  if (p === '/blog') return 'blog';
+  if (p === '/404') return '404';
+  return null;
+}
+
+// Corrects <html lang>, <title>, meta description, and the matching og:/twitter:
+// tags for the current URL after a client-side language change. Safe to call
+// unconditionally — it's a no-op (sets the same values) when the page's
+// server-rendered head already matches.
+export function syncPageHeadForLang(lang) {
+  document.documentElement.lang = lang === 'KG' ? 'ky' : lang.toLowerCase();
+
+  const pageKey = getStaticPageKey(window.location.pathname);
+  const meta = pageKey && PAGE_META[pageKey] && PAGE_META[pageKey][lang];
+  if (!meta) return;
+
+  document.title = meta.title;
+  const setContent = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  };
+  setContent('meta[name="description"]', meta.description);
+  setContent('meta[property="og:title"]', meta.title);
+  setContent('meta[property="og:description"]', meta.description);
+  setContent('meta[name="twitter:title"]', meta.title);
+  setContent('meta[name="twitter:description"]', meta.description);
+}
+
 export function getCurrentLang() {
   const path = window.location.pathname;
   if (path.startsWith('/en')) return 'EN';
@@ -543,6 +626,12 @@ export function initLangSwitcher(onLangChange) {
     }
   }
 
+  // Covers the case above where localStorage held a different language than the
+  // page was actually served in — the URL just got silently rewritten, but the
+  // <title>/meta tags baked into this HTML still reflect the originally-served
+  // language until this runs.
+  syncPageHeadForLang(activeLang);
+
   applyTranslations(activeLang);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -574,6 +663,10 @@ export function initLangSwitcher(onLangChange) {
         window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
         syncSeoTagsForPath(newPath);
       }
+
+      // Correct <html lang>, <title>, meta description, and og:/twitter: tags —
+      // applyTranslations() below only updates visible body text.
+      syncPageHeadForLang(targetLang);
 
       // Immediately apply translations without reloading the page
       applyTranslations(targetLang);

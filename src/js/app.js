@@ -129,6 +129,32 @@ function cityImageUrl(city) {
   return city.image.startsWith('/') ? city.image : `/${city.image}`;
 }
 
+// Same wording as getCityMeta() in build.js, kept in sync so a client-side language
+// switch on a city page updates <title>/description to match, instead of leaving
+// them stuck in whichever language the page was originally served in.
+function getCityMeta(lang, city) {
+  const en = city.name;
+  const native = city.nativeName || city.name;
+
+  if (lang === 'EN') {
+    return {
+      title: `${en} Weather Forecast Today & This Week | Pogoda.kg`,
+      description: `Get today's live weather forecast for ${en}, Kyrgyzstan — current temperature, wind, humidity, and a detailed 7-day outlook, refreshed every 15 minutes.`
+    };
+  }
+  if (lang === 'RU') {
+    const ru = ruCity(city);
+    return {
+      title: `Погода в ${ru.prep} сегодня, на неделю и месяц | Pogoda.kg`,
+      description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю, на 10 дней и на месяц. Обновляется каждые 15 минут.`
+    };
+  }
+  return {
+    title: `${native} аба ырайы бүгүн жана 7 күндүк божомол | Pogoda.kg`,
+    description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк, 14 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
+  };
+}
+
 // Same wording as getCityHeroContent() in build.js, kept in sync so the hero heading/intro
 // baked into each static city page still matches after a client-side language or city switch.
 function getCityHeroContent(lang, city) {
@@ -202,6 +228,22 @@ function updateCityInfoDisplay(city) {
   if (heroTitleEl) heroTitleEl.textContent = hero.title;
   const heroDescEl = document.querySelector('.hero-desc');
   if (heroDescEl) heroDescEl.textContent = hero.desc;
+
+  // <title>/meta description are baked in for whichever language the page was
+  // originally served in — a client-side language switch needs to update them
+  // too, or they stay stuck (e.g. an English-built page switched to Russian
+  // keeps showing the English <title> in the browser tab and search snippets).
+  const cityMeta = getCityMeta(lang, city);
+  document.title = cityMeta.title;
+  const setMetaContent = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  };
+  setMetaContent('meta[name="description"]', cityMeta.description);
+  setMetaContent('meta[property="og:title"]', cityMeta.title);
+  setMetaContent('meta[property="og:description"]', cityMeta.description);
+  setMetaContent('meta[name="twitter:title"]', cityMeta.title);
+  setMetaContent('meta[name="twitter:description"]', cityMeta.description);
 
   const sections = getCitySectionTitles(lang, city);
   const hourlyTitleEl = document.getElementById('hourlyUpdateTitle');
