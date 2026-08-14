@@ -4,6 +4,155 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-issyk-kul-swimming-guide",
+    slug: "issyk-kul-lake-weather-guide-swimming-season",
+    image: "/assets/images/blogphoto-issyk-kul-swimming.webp",
+    translations: {
+      EN: {
+        title: "Issyk-Kul This Week: Air Near +27°C, Warm to Swim",
+        seoTitle: "Issyk-Kul This Week: Air Near +27°C, Warm to Swim",
+        seoDesc: "With daytime air near +27°C around Lake Issyk-Kul this week, the water is warm enough for swimming along the resort coast despite occasional showers.",
+        category: "Travel & Weather",
+        date: "August 14, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "With daytime air near +27°C around Lake Issyk-Kul this week, the water is warm enough for swimming along the resort coast despite occasional showers.",
+        content: `
+          <p>With the current heatwave pushing much of Kyrgyzstan past +35°C, <strong>Lake Issyk-Kul</strong> remains one of the most popular escapes — and this week's conditions make it an especially good time to go. Daytime air along the lake's coast is running near <strong>+27°C</strong>, while the water itself is warm enough for a comfortable swim.</p>
+          <h3>Water Warm Enough Across the Coast</h3>
+          <p>By mid-August, the lake's surface typically warms to around <strong>+20°C to +24°C</strong>, with the warmest water usually found on the northern shore near <strong>Cholpon-Ata</strong> and <strong>Bosteri</strong>, and slightly cooler conditions toward <strong>Kadzhi-Sai</strong> on the southern shore. That's comfortably warm enough for swimming, and gentle enough that families with small children commonly use the lake's shallow bays.</p>
+          <h3>Mostly Calm, With a Few Rain Days</h3>
+          <p>August is typically one of the wetter months at the lake, so scattered showers can interrupt an otherwise sunny stretch. Wind is usually light this time of year, but Issyk-Kul is occasionally hit by a strong local wind known as the <strong>"ulan,"</strong> so it's worth checking conditions before heading far from shore or renting water sports equipment.</p>
+          <h3>Best Time to Go</h3>
+          <p>The swimming season on Issyk-Kul typically runs from late June through the end of August, and mid-August still offers close to the warmest water of the year. With cooler autumn air arriving by September, this week is one of the last strong windows for a lakeside trip before the season winds down.</p>
+        `
+      },
+      KG: {
+        title: "Ысык-Көлдө бул жума: аба +27°C, суу сүзүүгө жылуу",
+        seoTitle: "Ысык-Көлдө бул жума: аба +27°C, суу сүзүүгө жылуу",
+        seoDesc: "Ысыктын айынан Ысык-Көлдүн жээгинде аба +27°Cге чейин жылыды, суу да сүзүүгө жетиштүү жылуу, бирок кыска мөөнөттүү жамгыр жана күчтүү шамал болушу мүмкүн.",
+        category: "Саякат жана аба ырайы",
+        date: "14-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Ысыктын айынан Ысык-Көлдүн жээгинде аба +27°Cге чейин жылыды, суу да сүзүүгө жетиштүү жылуу, бирок кыска мөөнөттүү жамгыр жана күчтүү шамал болушу мүмкүн.",
+        content: `
+          <p>Кыргызстандын көпчүлүк бөлүгү +35°Cден жогору ысыганына байланыштуу, <strong>Ысык-Көл</strong> эң популярдуу эс алуу жайларынын бири бойдон калууда — жана бул жумадагы аба ырайы сапарды өзгөчө ыңгайлуу кылат. Көлдүн жээгинде күндүз аба температурасы <strong>+27°C</strong> тегерегинде, ал эми суу жайкана сүзүүгө жетиштүү жылытты.</p>
+          <h3>Жээк бою суу жетиштүү жылуу</h3>
+          <p>Августтун орто ченинде көлдүн беттеги суусу адатта <strong>+20...+24°C</strong>ге чейин жылыйт, эң жылуу суу салтка ылайык түндүк жээкте — <strong>Чолпон-Ата</strong> жана <strong>Бостери</strong> тарапта, ал эми түштүк жээкте, <strong>Каджи-Сайга</strong> жакын жерде суу бир аз салкыныраак. Бул сүзүү үчүн жетиштүү жылуу, ошондуктан көлдүн тайыз булуңдарын көбүнчө кичине балдары бар үй-бүлөлөр тандашат.</p>
+          <h3>Негизинен тынч, бирок жамгыр күндөрү болушу мүмкүн</h3>
+          <p>Август салтка ылайык көлдө эң көп жамгыр жаачу айлардын бири, ошондуктан жалпысынан күн ачык мезгилде да алсыз жамгырлар болуп калышы мүмкүн. Бул мезгилде шамал адатта алсыз, бирок Ысык-Көлдү убакыт-убакыты менен <strong>«улан»</strong> деп аталган күчтүү жергиликтүү шамал каптап калат, ошондуктан жээктен алыс сүзүүдөн же суу спорт буюмдарын ижарага алуудан мурун абалды тактап алган жөн.</p>
+          <h3>Барууга эң ыңгайлуу убакыт</h3>
+          <p>Ысык-Көлдө сүзүү мезгили адатта июндун аягынан августтун аягына чейин созулат, ал эми августтун орто ченинде суунун эң жылуу мезгилдеринин бирине туш келет. Сентябрда салкыныраак күз аба ырайы келгенге чейин, бул жума көл боюна баруу үчүн мезгилдин акыркы ыңгайлуу мүмкүнчүлүктөрүнүн бири.</p>
+        `
+      },
+      RU: {
+        title: "Иссык-Куль на этой неделе: воздух до +27°C, вода тёплая",
+        seoTitle: "Иссык-Куль на этой неделе: воздух до +27°C, вода тёплая",
+        seoDesc: "На фоне жары воздух у Иссык-Куля прогрелся до +27°C, а вода вдоль курортного побережья уже достаточно тёплая для купания, несмотря на редкие дожди.",
+        category: "Туризм и погода",
+        date: "14 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "На фоне жары воздух у Иссык-Куля прогрелся до +27°C, а вода вдоль курортного побережья уже достаточно тёплая для купания, несмотря на редкие дожди.",
+        content: `
+          <p>На фоне текущей жары, из-за которой большая часть Кыргызстана прогрелась выше +35°C, <strong>озеро Иссык-Куль</strong> остаётся одним из самых популярных мест для отдыха — и погода на этой неделе делает поездку особенно удачной. Днём воздух на побережье озера держится около <strong>+27°C</strong>, а вода прогрелась достаточно, чтобы комфортно купаться.</p>
+          <h3>Вода прогрета по всему побережью</h3>
+          <p>К середине августа поверхность озера обычно прогревается до <strong>+20...+24°C</strong>, самая тёплая вода традиционно на северном берегу — у <strong>Чолпон-Аты</strong> и <strong>Бостери</strong>, а на южном берегу, ближе к <strong>Каджи-Саю</strong>, вода чуть прохладнее. Этого достаточно для комфортного купания, а мелководные бухты озера часто выбирают семьи с маленькими детьми.</p>
+          <h3>В основном спокойно, но возможны дожди</h3>
+          <p>Август традиционно один из самых дождливых месяцев на озере, поэтому отдельные ливни могут прерывать в целом солнечную погоду. Ветер в это время года обычно слабый, однако Иссык-Куль время от времени накрывает сильный местный ветер, известный как <strong>«улан»</strong>, поэтому перед тем как заплывать далеко от берега или арендовать водный инвентарь, стоит уточнить обстановку.</p>
+          <h3>Лучшее время для поездки</h3>
+          <p>Купальный сезон на Иссык-Куле обычно длится с конца июня по конец августа, и середина августа — это ещё период одной из самых тёплых температур воды за весь год. С приходом более прохладного осеннего воздуха в сентябре эта неделя — одно из последних удачных окон для поездки на озеро в этом сезоне.</p>
+        `
+      }
+    }
+  },
+  {
+    id: "post-aug-14-forecast-storms-spread",
+    slug: "august-14-forecast-kyrgyzstan-storms-spread-heat-holds",
+    image: "/assets/images/blogphoto-aug-14-storms-spread.webp",
+    translations: {
+      EN: {
+        title: "Aug 14 Forecast: Storms Widen as South Holds at +39°C",
+        seoTitle: "Aug 14 Forecast: Storms Widen as South Holds at +39°C",
+        seoDesc: "Kyrgyzhydromet expects storms to spread into Talas, Chuy, Issyk-Kul and Naryn today, while Osh, Jalal-Abad and Batken hold at up to +39°C in the south.",
+        category: "Weather Forecast",
+        date: "August 14, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzhydromet expects storms to spread into Talas, Chuy, Issyk-Kul and Naryn today, while Osh, Jalal-Abad and Batken hold at up to +39°C in the south.",
+        content: `
+          <p>Kyrgyzhydromet is forecasting a wider spread of rain and thunderstorms today, with wet weather now reaching <strong>Chuy, Talas, Issyk-Kul and Naryn</strong> regions as well as the mountain zones of the south. Meanwhile <strong>Osh, Jalal-Abad and Batken</strong> stay locked in extreme heat at up to <strong>+39°C</strong>.</p>
+          <h3>Storm Zone Grows to Cover the North and West</h3>
+          <p>After yesterday's storms were mostly confined to the eastern half of the country, forecasters now expect showers and thunderstorms in <strong>Talas</strong> region as well, joining Chuy, Naryn and Issyk-Kul. Bishkek stays largely dry but slightly cooler than earlier in the week, with a high near +35°C.</p>
+          <h3>South Still Locked in Extreme Heat</h3>
+          <p>The south of the country sees no relief: Osh, Jalal-Abad and Batken all hold at up to +39°C during the day, with mountain and foothill zones there also at risk of afternoon thunderstorms.</p>
+          <h3>Naryn and Issyk-Kul Remain Coolest</h3>
+          <p><strong>Naryn</strong> stays the coolest region at +27°C, while <strong>Issyk-Kul</strong> is similar at +27°C after a mild overnight low of +17°C.</p>
+          <h3>August 14 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Night +23°C, Day +35°C.</li>
+            <li><strong>Chuy Region:</strong> Night +24°C, Day +36°C, rain and storms possible.</li>
+            <li><strong>Osh, Jalal-Abad, Batken:</strong> Night +20°C, Day +39°C, storms possible in the mountains.</li>
+            <li><strong>Talas Region:</strong> Night +18°C, Day +35°C, rain and storms possible.</li>
+            <li><strong>Issyk-Kul Region:</strong> Night +17°C, Day +27°C, rain possible.</li>
+            <li><strong>Naryn Region:</strong> Night +12°C, Day +27°C, rain possible.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "14-августка карата божомол: күркүрөө кеңейет, түштүктө +39°C",
+        seoTitle: "14-августка карата божомол: күркүрөө кеңейет, түштүктө +39°C",
+        seoDesc: "Кыргызгидромет бүгүн Талас, Чүй, Ысык-Көл жана Нарында жамгыр менен күн күркүрөө күчөйт дейт, ал эми Ош, Жалал-Абад, Баткенде +39°Cге чейин ысык сакталат.",
+        category: "Аба ырайы божомолу",
+        date: "14-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет бүгүн Талас, Чүй, Ысык-Көл жана Нарында жамгыр менен күн күркүрөө күчөйт дейт, ал эми Ош, Жалал-Абад, Баткенде +39°Cге чейин ысык сакталат.",
+        content: `
+          <p>Кыргызгидромет бүгүн жамгыр менен күн күркүрөө зонасынын кеңейишин билдирүүдө: жамгыр <strong>Чүй, Талас, Ысык-Көл жана Нарын</strong> облустарын, ошондой эле түштүктүн тоолуу райондорун камтыйт. Ал эми <strong>Ош, Жалал-Абад, Баткен</strong> облустарында <strong>+39°C</strong>ге чейин экстремалдык ысык сакталууда.</p>
+          <h3>Күн күркүрөө зонасы түндүк-батышка карай кеңейүүдө</h3>
+          <p>Кечээ күн күркүрөө негизинен өлкөнүн чыгыш бөлүгүндө болгон, бирок бүгүн синоптиктер <strong>Талас</strong> облусунда да жамгыр менен күн күркүрөөнү күтүшүүдө — Чүй, Нарын, Ысык-Көл менен кошо. Бишкекте аба ырайы негизинен кургак бойдон калат, бирок жуманын башындагыдан бир аз салкыныраак: күндүз болжол менен +35°C.</p>
+          <h3>Түштүктө ысык дагы деле уланууда</h3>
+          <p>Түштүктө эч кандай жеңилдик жок: Ош, Жалал-Абад, Баткенде күндүз +39°Cге чейин сакталат, ал эми ошол жердеги тоолуу жана тоо этегиндеги райондордо да түштөн кийинки күн күркүрөө коркунучу бар.</p>
+          <h3>Нарын жана Ысык-Көлдө эң салкын</h3>
+          <p><strong>Нарын</strong> облусунда эң салкын аба ырайы сакталууда — +27°C, ал эми <strong>Ысык-Көл</strong> облусунда да окшош көрсөткүч — жумшак түндөн кийин күндүз +27°C.</p>
+          <h3>14-августка карата региондук температура</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> түнкүсүн +23°C, күндүз +35°C.</li>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +24°C, күндүз +36°C, жамгыр жана күн күркүрөшү мүмкүн.</li>
+            <li><strong>Ош, Жалал-Абад, Баткен:</strong> түнкүсүн +20°C, күндүз +39°C, тоолордо күн күркүрөшү мүмкүн.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +18°C, күндүз +35°C, жамгыр жана күн күркүрөшү мүмкүн.</li>
+            <li><strong>Ысык-Көл облусу:</strong> түнкүсүн +17°C, күндүз +27°C, жамгыр мүмкүн.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +12°C, күндүз +27°C, жамгыр мүмкүн.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 14 августа: грозы расширяются, юг — до +39°C",
+        seoTitle: "Прогноз на 14 августа: грозы расширяются, юг — до +39°C",
+        seoDesc: "Кыргызгидромет прогнозирует дожди и грозы в Таласе, Чуе, на Иссык-Куле и в Нарыне, тогда как юг Киргизии — Ош, Джалал-Абад и Баткен — держит жару до +39°C.",
+        category: "Прогноз погоды",
+        date: "14 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет прогнозирует дожди и грозы в Таласе, Чуе, на Иссык-Куле и в Нарыне, тогда как юг Киргизии — Ош, Джалал-Абад и Баткен — держит жару до +39°C.",
+        content: `
+          <p>Кыргызгидромет сообщает о расширении зоны дождей и гроз на сегодня: осадки охватят <strong>Чуйскую, Таласскую, Иссык-Кульскую и Нарынскую</strong> области, а также горные районы юга. При этом в <strong>Ошской, Джалал-Абадской и Баткенской</strong> областях сохраняется экстремальная жара до <strong>+39°C</strong>.</p>
+          <h3>Зона гроз расширяется на север и запад</h3>
+          <p>Вчера грозы были сосредоточены в основном в восточной части страны, но сегодня синоптики ожидают дожди и грозы также в <strong>Таласской</strong> области — вместе с Чуйской, Нарынской и Иссык-Кульской. В Бишкеке погода останется в основном сухой, но чуть прохладнее, чем в начале недели: днём около +35°C.</p>
+          <h3>Юг по-прежнему в экстремальной жаре</h3>
+          <p>На юге облегчения не предвидится: в Оше, Джалал-Абаде и Баткене днём сохранится до +39°C, а в горных и предгорных районах там также возможны послеобеденные грозы.</p>
+          <h3>Самая прохладная погода — в Нарыне и на Иссык-Куле</h3>
+          <p>В <strong>Нарынской</strong> области сохраняется самая прохладная погода — +27°C, похожие показатели и в <strong>Иссык-Кульской</strong> области — +27°C после мягкой ночи с температурой +17°C.</p>
+          <h3>Температура воздуха по областям (14 августа)</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ночью +23°C, днём +35°C.</li>
+            <li><strong>Чуйская область:</strong> ночью +24°C, днём +36°C, возможны дожди и грозы.</li>
+            <li><strong>Ош, Джалал-Абад, Баткен:</strong> ночью +20°C, днём +39°C, в горах возможны грозы.</li>
+            <li><strong>Таласская область:</strong> ночью +18°C, днём +35°C, возможны дожди и грозы.</li>
+            <li><strong>Иссык-Кульская область:</strong> ночью +17°C, днём +27°C, возможен дождь.</li>
+            <li><strong>Нарынская область:</strong> ночью +12°C, днём +27°C, возможен дождь.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-heat-safety-tips",
     slug: "kyrgyzstan-heat-safety-tips-extreme-temperatures",
     image: "/assets/images/blogphoto-heat-safety-advisory.webp",
