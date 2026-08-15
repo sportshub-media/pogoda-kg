@@ -180,7 +180,9 @@ function getCityHeroContent(lang, city) {
   };
 }
 
-// Same wording as getCitySectionTitles() in build.js.
+// Same wording as getCitySectionTitles() in build.js — including the description
+// paragraphs, not just the headings, so a client-side language switch doesn't fall
+// back to the generic (non-city-specific) sentence baked into the static HTML.
 function getCitySectionTitles(lang, city) {
   const en = city.name;
   const native = city.nativeName || city.name;
@@ -188,22 +190,31 @@ function getCitySectionTitles(lang, city) {
   if (lang === 'EN') {
     return {
       hourly: `Hourly Update for ${en}`,
+      hourlyDesc: `Track ${en}'s hour-by-hour forecast — temperature, precipitation chance, and wind, updated every 15 minutes.`,
       todayDetails: `Today Weather Details for ${en}`,
-      weekly: `Weekly Weather Forecast for ${en}`
+      todayDetailsDesc: `A closer look at current conditions in ${en} — wind speed, humidity, visibility, and today's daylight hours.`,
+      weekly: `Weekly Weather Forecast for ${en}`,
+      weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and wind for the next 7 days.`
     };
   }
   if (lang === 'RU') {
     const ru = ruCity(city);
     return {
       hourly: `Почасовой прогноз погоды в ${ru.prep}`,
+      hourlyDesc: `Следите за почасовым прогнозом в ${ru.prep}: температура, вероятность осадков и ветер — обновляется каждые 15 минут.`,
       todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
-      weekly: `Прогноз погоды в ${ru.prep} на неделю`
+      todayDetailsDesc: `Подробный обзор текущих условий в ${ru.prep}: скорость ветра, влажность, видимость и продолжительность светового дня.`,
+      weekly: `Прогноз погоды в ${ru.prep} на неделю`,
+      weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и ветер на ближайшие 7 дней.`
     };
   }
   return {
     hourly: `Сааттык божомол — ${native}`,
+    hourlyDesc: `${native} үчүн сааттык божомолду көзөмөлдөңүз: температура, жамгыр ыктымалдыгы жана шамал ар 15 мүнөт сайын жаңыртылат.`,
     todayDetails: `Бүгүнкү аба ырайы чоо-жайы — ${native}`,
-    weekly: `Бир жумалык божомол — ${native}`
+    todayDetailsDesc: `${native} үчүн азыркы шарттардын толук сереби: шамал ылдамдыгы, нымдуулук, көрүнүү аралыгы жана бүгүнкү күндүн узактыгы.`,
+    weekly: `Бир жумалык божомол — ${native}`,
+    weeklyDesc: `${native} үчүн алдыдагы жуманы билиңиз: күндүзгү жана түнкү температуралар, аба ырайы шарттары жана 7 күндүк шамал көрсөткүчтөрү.`
   };
 }
 
@@ -248,10 +259,16 @@ function updateCityInfoDisplay(city) {
   const sections = getCitySectionTitles(lang, city);
   const hourlyTitleEl = document.getElementById('hourlyUpdateTitle');
   if (hourlyTitleEl) hourlyTitleEl.textContent = sections.hourly;
+  const hourlyDescEl = document.getElementById('hourlyUpdateDesc');
+  if (hourlyDescEl) hourlyDescEl.textContent = sections.hourlyDesc;
   const todayDetailsTitleEl = document.getElementById('todayDetailsTitle');
   if (todayDetailsTitleEl) todayDetailsTitleEl.textContent = sections.todayDetails;
+  const todayDetailsDescEl = document.getElementById('todayDetailsDesc');
+  if (todayDetailsDescEl) todayDetailsDescEl.textContent = sections.todayDetailsDesc;
   const weeklyTitleEl = document.getElementById('weeklyForecastTitle');
   if (weeklyTitleEl) weeklyTitleEl.textContent = sections.weekly;
+  const weeklyDescEl = document.getElementById('weeklyForecastDesc');
+  if (weeklyDescEl) weeklyDescEl.textContent = sections.weeklyDesc;
 }
 
 // Render Hero Section Weather Card

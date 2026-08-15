@@ -137,8 +137,11 @@ function getCityHeroContent(lang, city) {
 }
 
 // Adds the city name to the "Hourly Update" / "Today Weather Details" / "Weekly Weather
-// Forecast" section headings on city pages. Kept in sync with the identical function in
-// app.js so it stays correct after a client-side language switch.
+// Forecast" section headings AND the description paragraph under each one, on city
+// pages — the paragraphs used to be the same generic sentence on every city page,
+// which is exactly the kind of thin/duplicate content Google flags across templated
+// pages. Kept in sync with the identical function in app.js so it stays correct after
+// a client-side language switch.
 function getCitySectionTitles(lang, city) {
     const en = city.name;
     const native = city.nativeName || city.name;
@@ -146,23 +149,34 @@ function getCitySectionTitles(lang, city) {
     if (lang === 'EN') {
         return {
             hourly: `Hourly Update for ${en}`,
+            hourlyDesc: `Track ${en}'s hour-by-hour forecast — temperature, precipitation chance, and wind, updated every 15 minutes.`,
             todayDetails: `Today Weather Details for ${en}`,
-            weekly: `Weekly Weather Forecast for ${en}`
+            todayDetailsDesc: `A closer look at current conditions in ${en} — wind speed, humidity, visibility, and today's daylight hours.`,
+            weekly: `Weekly Weather Forecast for ${en}`,
+            weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and wind for the next 7 days.`
         };
     }
     if (lang === 'RU') {
         const ru = ruCity(city);
         return {
             hourly: `Почасовой прогноз погоды в ${ru.prep}`,
+            hourlyDesc: `Следите за почасовым прогнозом в ${ru.prep}: температура, вероятность осадков и ветер — обновляется каждые 15 минут.`,
             todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
-            weekly: `Прогноз погоды в ${ru.prep} на неделю`
+            todayDetailsDesc: `Подробный обзор текущих условий в ${ru.prep}: скорость ветра, влажность, видимость и продолжительность светового дня.`,
+            weekly: `Прогноз погоды в ${ru.prep} на неделю`,
+            weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и ветер на ближайшие 7 дней.`
         };
     }
-    // KG
+    // KG — "${native} үчүн" (for {city}) sidesteps Kyrgyz vowel-harmony suffix
+    // agreement, which a single hardcoded case ending can't get right across
+    // every city name.
     return {
         hourly: `Сааттык божомол — ${native}`,
+        hourlyDesc: `${native} үчүн сааттык божомолду көзөмөлдөңүз: температура, жамгыр ыктымалдыгы жана шамал ар 15 мүнөт сайын жаңыртылат.`,
         todayDetails: `Бүгүнкү аба ырайы чоо-жайы — ${native}`,
-        weekly: `Бир жумалык божомол — ${native}`
+        todayDetailsDesc: `${native} үчүн азыркы шарттардын толук сереби: шамал ылдамдыгы, нымдуулук, көрүнүү аралыгы жана бүгүнкү күндүн узактыгы.`,
+        weekly: `Бир жумалык божомол — ${native}`,
+        weeklyDesc: `${native} үчүн алдыдагы жуманы билиңиз: күндүзгү жана түнкү температуралар, аба ырайы шарттары жана 7 күндүк шамал көрсөткүчтөрү.`
     };
 }
 
@@ -336,12 +350,24 @@ htmlFiles.forEach(file => {
                     `<h2 class="section-title" id="hourlyUpdateTitle">${citySections.hourly}</h2>`
                 );
                 cityHtml = cityHtml.replace(
+                    /<p class="section-desc" id="hourlyUpdateDesc" data-i18n="hourly_desc">[\s\S]*?<\/p>/,
+                    `<p class="section-desc" id="hourlyUpdateDesc">${citySections.hourlyDesc}</p>`
+                );
+                cityHtml = cityHtml.replace(
                     /<h2 class="section-title" id="todayDetailsTitle" data-i18n="today_details_title">[\s\S]*?<\/h2>/,
                     `<h2 class="section-title" id="todayDetailsTitle">${citySections.todayDetails}</h2>`
                 );
                 cityHtml = cityHtml.replace(
+                    /<p class="section-desc" id="todayDetailsDesc" data-i18n="today_details_desc">[\s\S]*?<\/p>/,
+                    `<p class="section-desc" id="todayDetailsDesc">${citySections.todayDetailsDesc}</p>`
+                );
+                cityHtml = cityHtml.replace(
                     /<h2 class="section-title" id="weeklyForecastTitle" data-i18n="weekly_title">[\s\S]*?<\/h2>/,
                     `<h2 class="section-title" id="weeklyForecastTitle">${citySections.weekly}</h2>`
+                );
+                cityHtml = cityHtml.replace(
+                    /<p class="section-desc" id="weeklyForecastDesc" data-i18n="weekly_desc">[\s\S]*?<\/p>/,
+                    `<p class="section-desc" id="weeklyForecastDesc">${citySections.weeklyDesc}</p>`
                 );
 
                 // Use the city's own dedicated photo instead of the generic homepage

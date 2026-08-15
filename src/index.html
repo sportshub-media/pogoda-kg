@@ -218,15 +218,18 @@
 
   <!-- Other Cities Horizontal Scrolling Section -->
   <section class="section-wrapper defer-render" style="padding-top: 10px;">
-    <div class="section-header" style="flex-direction:row; align-items:center; justify-content:space-between; margin-bottom: 20px;">
-      <h2 class="section-title" data-i18n="other_cities_title" style="margin-bottom:0;">Other Cities</h2>
-      <div style="display: flex; gap: 12px; align-items: center;">
+    <div class="section-header" style="flex-direction:row; align-items:flex-start; justify-content:space-between; margin-bottom: 20px;">
+      <div>
+        <h2 class="section-title" style="margin-bottom:8px;" data-i18n="other_cities_title">Other Cities</h2>
+        <p class="section-desc" style="margin-bottom:0;" data-i18n="other_cities_desc">Check current conditions in other major Kyrgyzstan cities without leaving this page.</p>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center; flex-shrink:0;">
         <button id="btnOtherLeft" class="nav-btn" aria-label="Scroll left" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg class="icon"><use href="#icon-chevron-left"></use></svg></button>
         <button id="btnOtherRight" class="nav-btn" aria-label="Scroll right" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg class="icon"><use href="#icon-chevron-right"></use></svg></button>
         <a href="map.html" class="nav-btn" style="background: transparent; border: 2px solid rgba(148, 163, 184, 0.3); color: var(--text-main); text-decoration:none; font-weight:600; font-size:14px; margin-left: 12px; padding: 6px 16px; border-radius: 20px;"><span data-i18n="see_all">See All</span></a>
       </div>
     </div>
-    
+
     <div id="otherCountriesContainer" class="other-countries-container">
       <!-- Cards will be injected here by JS -->
     </div>
@@ -236,7 +239,7 @@
   <section class="section-wrapper defer-render">
     <div class="section-header">
       <h2 class="section-title" id="hourlyUpdateTitle" data-i18n="hourly_title">Hourly Update</h2>
-      <p class="section-desc" data-i18n="hourly_desc">
+      <p class="section-desc" id="hourlyUpdateDesc" data-i18n="hourly_desc">
         Stay up-to-date with hourly weather predictions. Plan your day with detailed temperature and precipitation metrics.
       </p>
     </div>
@@ -252,7 +255,7 @@
   <section class="section-wrapper defer-render">
     <div class="section-header">
       <h2 class="section-title" id="todayDetailsTitle" data-i18n="today_details_title">Today Weather Details</h2>
-      <p class="section-desc" data-i18n="today_details_desc">
+      <p class="section-desc" id="todayDetailsDesc" data-i18n="today_details_desc">
         Comprehensive environmental breakdown including wind speed, relative humidity, atmospheric visibility, and daylight cycle.
       </p>
     </div>
@@ -296,7 +299,7 @@
   <section class="section-wrapper defer-render">
     <div class="section-header">
       <h2 class="section-title" id="weeklyForecastTitle" data-i18n="weekly_title">7 Day Forecast</h2>
-      <p class="section-desc" data-i18n="weekly_desc">
+      <p class="section-desc" id="weeklyForecastDesc" data-i18n="weekly_desc">
         7-day extended outlook with min/max temperatures, condition icons, and expected wind activity.
       </p>
     </div>
