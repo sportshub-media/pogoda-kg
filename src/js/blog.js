@@ -4,6 +4,161 @@ import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 export const BLOG_POSTS = [
   {
+    id: "post-mountain-getaways",
+    slug: "kyrgyzstan-summer-mountain-getaways-escape-the-heat",
+    image: "/assets/images/blogphoto-mountain-getaways.webp",
+    translations: {
+      EN: {
+        title: "Where to Escape the Heat: Kyrgyzstan's Mountain Getaways",
+        seoTitle: "Where to Escape the Heat: Kyrgyzstan's Mountain Getaways",
+        seoDesc: "With lowland cities near +38°C this week, Ala-Archa, Song-Kol and Altyn-Arashan offer cooler air and alpine scenery just hours from Bishkek and Karakol.",
+        category: "Travel & Weather",
+        date: "August 15, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "With lowland cities near +38°C this week, Ala-Archa, Song-Kol and Altyn-Arashan offer cooler air and alpine scenery just hours from Bishkek and Karakol.",
+        content: `
+          <p>With Bishkek and the south baking near <strong>+36°C to +38°C</strong> this week, Kyrgyzstan's mountains offer a genuine escape — often just a few hours away and, in places, 20°C cooler than the lowlands. Here are three of the country's best summer mountain getaways.</p>
+          <h3>Ala-Archa National Park — The Closest Escape</h3>
+          <p>Just <strong>41 km</strong> from Bishkek, Ala-Archa is the easiest mountain escape from the capital, with terrain rising from 1,600 m to nearly 4,900 m at its highest peak. Daytime temperatures in the gorge typically run <strong>+25°C to +30°C</strong> in summer — noticeably cooler than the city — and drop further with every step up the trail, since air temperature falls roughly 0.7°C for every 100 meters of elevation gained. Evenings turn crisp even in August, making it a popular day trip for hikers and picnickers alike.</p>
+          <h3>Song-Kol — Kyrgyzstan's High-Altitude Yurt Camps</h3>
+          <p>For a more dramatic change of scenery, Song-Kol sits at <strong>3,016 m</strong>, Kyrgyzstan's second-largest lake and a summer home for nomadic herders. Daytime highs here often stay around just <strong>+15°C</strong>, and nights can drop below freezing even in August — visitors typically stay in traditional felt yurts heated by wood stoves. It's less an escape from the heat than a full change of climate, best suited to travelers ready for a genuinely alpine experience.</p>
+          <h3>Altyn-Arashan — Hot Springs Above Karakol</h3>
+          <p>Near Karakol, the <strong>Altyn-Arashan</strong> gorge sits at around <strong>2,600 m</strong>, roughly 35 km from town over a rough 4x4 track. The valley has been a hot-springs resort since 1963, with mineral-rich thermal pools set among spruce forest and alpine meadows — a striking contrast of soaking in warm water while surrounded by cool mountain air. It's also the starting point for the popular multi-day trek to Ala-Kol lake.</p>
+          <h3>Plan Ahead for the Altitude</h3>
+          <p>All three destinations sit well above the heat currently gripping the lowlands, so pack layers — even a hot August afternoon in the mountains can turn cold quickly once the sun drops, especially at Song-Kol's altitude.</p>
+        `
+      },
+      KG: {
+        title: "Ысыктан кайда качууга болот: Кыргызстандын тоо багыттары",
+        seoTitle: "Ысыктан кайда качууга болот: Кыргызстандын тоо багыттары",
+        seoDesc: "Түздүктө +38°Cге чейин ысык турганда, Ала-Арча, Сон-Көл жана Алтын-Арашан Бишкек, Каракол шаарларынан бир нече саат алыстыкта салкын тоо абасын сунуштайт.",
+        category: "Саякат жана аба ырайы",
+        date: "15-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Түздүктө +38°Cге чейин ысык турганда, Ала-Арча, Сон-Көл жана Алтын-Арашан Бишкек, Каракол шаарларынан бир нече саат алыстыкта салкын тоо абасын сунуштайт.",
+        content: `
+          <p>Бишкекте жана өлкөнүн түштүгүндө бул жума <strong>+36...+38°C</strong>ге чейин ысык сакталууда, ал эми Кыргызстандын тоолору чыныгы жеңилдик берет — көп учурда бир нече саат жол менен жетүүгө болот, айрым жерлеринде түздүккө караганда 20°Cге чейин салкын. Өлкөнүн эң мыкты үч жайкы тоо багыты — бул жерде.</p>
+          <h3>Ала-Арча — эң жакын жеңилдик</h3>
+          <p>Бишкектен болгону <strong>41 км</strong> алыстыкта жайгашкан Ала-Арча — борбордон эң жеткиликтүү тоо демалышы: рельеф бул жерде 1600 метрден эң бийик чокусундагы 4900 метрге чейин көтөрүлөт. Жайында ущелдеги күндүзгү температура адатта <strong>+25...+30°C</strong> тегерегинде — шаардагыдан бир кыйла салкын — жана жол менен ар бир кадам жогорулаган сайын дагы төмөндөйт, анткени аба температурасы ар бир 100 метр бийиктикке 0,7°Cге чейин түшөт. Кечкурундары августта да салкын болот, ошондуктан парк бир күндүк саякат жана пикник үчүн популярдуу.</p>
+          <h3>Сон-Көл — Кыргызстандын бийик тоолуу боз үй лагерлери</h3>
+          <p>Айлана-чөйрөнүн дагы да курч өзгөрүшү үчүн Сон-Көл ылайыктуу — Кыргызстандын экинчи чоң көлү, <strong>3016 метр</strong> бийиктикте жайгашкан, көчмөн малчылардын жайкы конушу. Бул жерде күндүзгү температура көп учурда болгону <strong>+15°C</strong> тегерегинде, ал эми түнкүсүн августта да нөлдөн төмөн түшүшү мүмкүн — саякатчылар адатта мешме жылытылган салттуу кийиз боз үйлөрдө турушат. Бул ысыктан качуудан көрө, толук климаттык өзгөрүү — чыныгы бийик тоолуу тажрыйбага даяр саякатчылар үчүн ылайыктуу.</p>
+          <h3>Алтын-Арашан — Каракол үстүндөгү ысык булактар</h3>
+          <p>Караколго жакын жерде, болжол менен <strong>2600 метр</strong> бийиктикте <strong>Алтын-Арашан</strong> капчыгайы жайгашкан — шаардан болжол менен 35 км, оор жол менен, ат унаа менен гана жетүүгө болот. Минералдуу ысык булактары бар курорт бул жерде 1963-жылдан бери иштейт: ысык бассейндер карагай токою жана альп шалбаалары арасында жайгашкан — жылуу суу менен салкын тоо абасынын курч карама-каршылыгы. Ушул жерден Ала-Көлгө көп күндүк популярдуу треккинг башталат.</p>
+          <h3>Бийиктикке даяр болуңуз</h3>
+          <p>Бул үч багыттын баары азыркы ысыктык каптап турган түздүктөн бир кыйла бийикте жайгашкан, ошондуктан жылуу кийим алып жүрүңүз — августтагы ысык күн да тоодо кечинде тез эле суукка айланышы мүмкүн, өзгөчө Сон-Көлдүн бийиктигинде.</p>
+        `
+      },
+      RU: {
+        title: "Куда сбежать от жары: горные направления Кыргызстана",
+        seoTitle: "Куда сбежать от жары: горные направления Кыргызстана",
+        seoDesc: "Пока на равнине жара до +38°C, Ала-Арча, Сон-Куль и Алтын-Арашан дарят прохладный воздух и альпийские пейзажи в нескольких часах от Бишкека и Каракола.",
+        category: "Туризм и погода",
+        date: "15 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Пока на равнине жара до +38°C, Ала-Арча, Сон-Куль и Алтын-Арашан дарят прохладный воздух и альпийские пейзажи в нескольких часах от Бишкека и Каракола.",
+        content: `
+          <p>На фоне того, что в Бишкеке и на юге страны на этой неделе держится жара до <strong>+36...+38°C</strong>, горы Кыргызстана предлагают настоящее спасение от зноя — зачастую всего в нескольких часах езды, а местами на 20°C прохладнее, чем на равнине. Вот три лучших летних горных направления страны.</p>
+          <h3>Ала-Арча — самое близкое спасение</h3>
+          <p>Всего в <strong>41 км</strong> от Бишкека, Ала-Арча — самый доступный горный побег от столицы: рельеф здесь поднимается с 1600 м до почти 4900 м на самой высокой вершине. Летом дневная температура в ущелье обычно держится в пределах <strong>+25...+30°C</strong> — заметно прохладнее, чем в городе, — и падает ещё сильнее с каждым шагом вверх по тропе, поскольку температура воздуха снижается примерно на 0,7°C на каждые 100 метров подъёма. Вечера остаются прохладными даже в августе, что делает парк популярным местом для однодневных походов и пикников.</p>
+          <h3>Сон-Куль — высокогорные юрточные лагеря Кыргызстана</h3>
+          <p>Для более разительной перемены обстановки подойдёт Сон-Куль — второе по величине озеро Кыргызстана на высоте <strong>3016 м</strong>, летнее пристанище кочевников-скотоводов. Дневная температура здесь часто держится всего около <strong>+15°C</strong>, а ночью может опускаться ниже нуля даже в августе — путешественники обычно останавливаются в традиционных войлочных юртах с печным отоплением. Это скорее не спасение от жары, а полная смена климата — для тех, кто готов к настоящему высокогорному опыту.</p>
+          <h3>Алтын-Арашан — горячие источники над Караколом</h3>
+          <p>Недалеко от Каракола, на высоте около <strong>2600 м</strong>, находится ущелье <strong>Алтын-Арашан</strong> — примерно в 35 км от города по труднопроходимой дороге, доступной на внедорожнике. Курорт с минеральными термальными источниками работает здесь с 1963 года: горячие бассейны расположены среди елового леса и альпийских лугов — яркий контраст тёплой воды и прохладного горного воздуха. Отсюда же начинается популярный многодневный треккинг к озеру Ала-Кёль.</p>
+          <h3>Берите с собой тёплые вещи</h3>
+          <p>Все три направления находятся значительно выше зоны текущей жары на равнине, поэтому стоит взять с собой слои одежды — даже жарким августовским днём в горах вечером может резко похолодать, особенно на высоте Сон-Куля.</p>
+        `
+      }
+    }
+  },
+  {
+    id: "post-aug-15-forecast-light-rain",
+    slug: "august-15-forecast-kyrgyzstan-light-rain-south-heat",
+    image: "/assets/images/blogphoto-aug-15-light-rain-east.webp",
+    translations: {
+      EN: {
+        title: "Aug 15 Forecast: Light Rain in the East, South Hits +38°C",
+        seoTitle: "Aug 15 Forecast: Light Rain in the East, South Hits +38°C",
+        seoDesc: "Kyrgyzhydromet expects scattered light rain in Issyk-Kul and Naryn today, while Osh, Jalal-Abad and Batken hold at +38°C and Bishkek reaches +36°C.",
+        category: "Weather Forecast",
+        date: "August 15, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzhydromet expects scattered light rain in Issyk-Kul and Naryn today, while Osh, Jalal-Abad and Batken hold at +38°C and Bishkek reaches +36°C.",
+        content: `
+          <p>Kyrgyzhydromet's forecast for today calls for scattered light rain in the <strong>Issyk-Kul and Naryn</strong> regions, while the rest of the country stays dry under continued summer heat. <strong>Osh, Jalal-Abad and Batken</strong> hold at a scorching <strong>+38°C</strong>, with Bishkek not far behind at +36°C.</p>
+          <h3>Light Rain Confined to the East</h3>
+          <p>Unlike the wider storm activity seen earlier this week, today's rain is limited to isolated light showers in Issyk-Kul and Naryn regions, mainly in the mountain zones. Forecasters say the moisture should help ease dry soil conditions in the high pastures without disrupting travel on the main roads.</p>
+          <h3>South and Chuy Stay Hot and Dry</h3>
+          <p>Osh, Jalal-Abad and Batken remain the hottest part of the country at up to +38°C, while Chuy region is close behind at +37°C with a notably warm overnight low of +27°C. Talas also warms up today, reaching +36°C after a much cooler +13°C night.</p>
+          <h3>Naryn and Issyk-Kul Stay Coolest</h3>
+          <p><strong>Naryn</strong> remains the coolest region at +28°C after an overnight low of just +8°C, while <strong>Issyk-Kul</strong> is similar at +26°C.</p>
+          <h3>August 15 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Night +19°C, Day +36°C.</li>
+            <li><strong>Chuy Region:</strong> Night +27°C, Day +37°C.</li>
+            <li><strong>Osh, Jalal-Abad, Batken:</strong> Night +20°C, Day +38°C.</li>
+            <li><strong>Talas Region:</strong> Night +13°C, Day +36°C.</li>
+            <li><strong>Issyk-Kul Region:</strong> Night +10°C, Day +26°C, light rain possible.</li>
+            <li><strong>Naryn Region:</strong> Night +8°C, Day +28°C, light rain possible.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "15-августка карата божомол: чыгышта жамгыр, түштүктө +38°C",
+        seoTitle: "15-августка карата божомол: чыгышта жамгыр, түштүктө +38°C",
+        seoDesc: "Кыргызгидромет бүгүн Ысык-Көл менен Нарында аз жамгыр жаайт дейт, ал эми Ош, Жалал-Абад, Баткенде +38°Cге, Бишкекте +36°Cге чейин ысык сакталат.",
+        category: "Аба ырайы божомолу",
+        date: "15-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет бүгүн Ысык-Көл менен Нарында аз жамгыр жаайт дейт, ал эми Ош, Жалал-Абад, Баткенде +38°Cге, Бишкекте +36°Cге чейин ысык сакталат.",
+        content: `
+          <p>Кыргызгидромет бүгүн <strong>Ысык-Көл жана Нарын</strong> облустарында айрым жерлерде болгону аз жамгыр жаайт деп божомолдоп жатат, өлкөнүн калган бөлүгүндө кургак жайкы ысык сакталат. <strong>Ош, Жалал-Абад, Баткен</strong> облустарында аба ырайы <strong>+38°C</strong>ге чейин ысыйт, Бишкекте — +36°Cге чейин.</p>
+          <h3>Жамгыр — түндүктө гана</h3>
+          <p>Жуманын башындагы кеңири күн күркүрөөлөрдөн айырмаланып, бүгүнкү жамгыр Ысык-Көл жана Нарын облустарынын тоолуу аймактарында гана болжолдонот. Синоптиктердин айтымында, бул нымдуулук негизги жолдордогу кыймылга тоскоол болбостон, жогорку тоо жайыттарынын кургап калган топурагына жардам берет.</p>
+          <h3>Түштүк жана Чүй облусу — ысык жана кургак</h3>
+          <p>Ош, Жалал-Абад, Баткен облустары өлкөнүн эң ысык региондору бойдон калууда — +38°Cге чейин, Чүй облусу андан бир аз артта — +37°C жана бир кыйла жылуу түн +27°C. Талас облусунда да бүгүн жылуураак — +13°C муздак түндөн кийин күндүз +36°C.</p>
+          <h3>Нарын жана Ысык-Көлдө эң салкын</h3>
+          <p><strong>Нарын</strong> облусунда өлкөнүн эң салкын аба ырайы сакталууда — түнкүсүн болгону +8°Cден кийин күндүз +28°C, окшош көрсөткүч <strong>Ысык-Көл</strong> облусунда да — +26°C.</p>
+          <h3>15-августка карата региондук температура</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> түнкүсүн +19°C, күндүз +36°C.</li>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +27°C, күндүз +37°C.</li>
+            <li><strong>Ош, Жалал-Абад, Баткен:</strong> түнкүсүн +20°C, күндүз +38°C.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +13°C, күндүз +36°C.</li>
+            <li><strong>Ысык-Көл облусу:</strong> түнкүсүн +10°C, күндүз +26°C, аз жамгыр мүмкүн.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +8°C, күндүз +28°C, аз жамгыр мүмкүн.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 15 августа: дожди на востоке, юг — до +38°C",
+        seoTitle: "Прогноз на 15 августа: дожди на востоке, юг — до +38°C",
+        seoDesc: "Кыргызгидромет прогнозирует небольшой дождь в Иссык-Кульской и Нарынской областях, тогда как на юге Киргизии сохраняется жара до +38°C, в Бишкеке — до +36°C.",
+        category: "Прогноз погоды",
+        date: "15 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет прогнозирует небольшой дождь в Иссык-Кульской и Нарынской областях, тогда как на юге Киргизии сохраняется жара до +38°C, в Бишкеке — до +36°C.",
+        content: `
+          <p>Кыргызгидромет прогнозирует на сегодня отдельные небольшие дожди в <strong>Иссык-Кульской и Нарынской</strong> областях, тогда как по остальной территории страны сохраняется сухая летняя жара. В <strong>Ошской, Джалал-Абадской и Баткенской</strong> областях столбики термометров поднимутся до <strong>+38°C</strong>, в Бишкеке — до +36°C.</p>
+          <h3>Дожди — только на востоке</h3>
+          <p>В отличие от более обширной грозовой активности в начале недели, сегодняшние осадки ограничатся отдельными небольшими дождями в горных зонах Иссык-Кульской и Нарынской областей. По словам синоптиков, влага поможет подсохшим высокогорным пастбищам, не мешая движению по основным дорогам.</p>
+          <h3>Юг и Чуйская область — жарко и сухо</h3>
+          <p>Ошская, Джалал-Абадская и Баткенская области остаются самыми жаркими регионами страны — до +38°C, немного отстаёт Чуйская область с +37°C и заметно тёплой ночью +27°C. В Таласской области сегодня тоже теплее — до +36°C после гораздо более прохладной ночи в +13°C.</p>
+          <h3>Самая прохладная погода — в Нарыне и на Иссык-Куле</h3>
+          <p>В <strong>Нарынской</strong> области сохраняется самая прохладная погода страны — +28°C днём после ночных +8°C, похожие показатели и в <strong>Иссык-Кульской</strong> области — +26°C.</p>
+          <h3>Температура воздуха по областям (15 августа)</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ночью +19°C, днём +36°C.</li>
+            <li><strong>Чуйская область:</strong> ночью +27°C, днём +37°C.</li>
+            <li><strong>Ош, Джалал-Абад, Баткен:</strong> ночью +20°C, днём +38°C.</li>
+            <li><strong>Таласская область:</strong> ночью +13°C, днём +36°C.</li>
+            <li><strong>Иссык-Кульская область:</strong> ночью +10°C, днём +26°C, возможен небольшой дождь.</li>
+            <li><strong>Нарынская область:</strong> ночью +8°C, днём +28°C, возможен небольшой дождь.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
     id: "post-issyk-kul-swimming-guide",
     slug: "issyk-kul-lake-weather-guide-swimming-season",
     image: "/assets/images/blogphoto-issyk-kul-swimming.webp",
