@@ -3,6 +3,7 @@ import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { TRANSLATIONS, getCurrentLang, initLangSwitcher, getRegionName } from './i18n.js';
+import { BLOG_POSTS } from './blog-posts-data.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -47,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  initLangSwitcher(() => {
+  initLangSwitcher((lang) => {
     updateCityInfoDisplay(currentCity);
+    renderNewsGrid(lang);
     if (weatherCache[currentCity.id]) {
       const data = weatherCache[currentCity.id];
       renderHeroCard(currentCity, data);
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderRecentSearches();
     }
   });
+  renderNewsGrid(getCurrentLang());
   setupSearch();
   setupHourlySlider();
   setupOtherCitiesScroll();
@@ -216,6 +219,33 @@ function getCitySectionTitles(lang, city) {
     weekly: `Бир жумалык божомол — ${native}`,
     weeklyDesc: `${native} үчүн алдыдагы жуманы билиңиз: күндүзгү жана түнкү температуралар, аба ырайы шарттары жана 7 күндүк шамал көрсөткүчтөрү.`
   };
+}
+
+// Same rendering as renderNewsGridHTML() in build.js — the homepage's "Latest
+// Weather Forecast News" grid used to be 5 hardcoded English cards that never
+// changed language on a client-side switch. Re-rendering it here from
+// BLOG_POSTS keeps it correct after a switch, matching what build.js already
+// server-renders on first load.
+function renderNewsGrid(lang) {
+  const grid = document.getElementById('newsBentoGrid');
+  if (!grid) return;
+
+  grid.innerHTML = BLOG_POSTS.slice(0, 5).map((post, i) => {
+    const data = post.translations[lang] || post.translations.EN;
+    const isFeatured = i === 0;
+    return `
+      <div class="news-card${isFeatured ? ' news-card-featured' : ''}" onclick="window.location.href='/blog/${post.slug}.html'">
+        <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
+        <div class="news-card-overlay">
+          <h3 class="news-title">${data.title}</h3>
+          ${isFeatured ? `<p style="font-size:14px; margin-bottom:12px; opacity:0.9; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${data.excerpt}</p>` : ''}
+          <div class="news-meta">
+            <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
+            <span><svg class="icon"><use href="#icon-${isFeatured ? 'clock' : 'calendar'}"></use></svg> ${data.date}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('\n');
 }
 
 // Update city titles across sections

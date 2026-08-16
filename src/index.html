@@ -328,62 +328,10 @@
       </p>
     </div>
 
-    <div class="news-bento-grid">
-      <div class="news-card news-card-featured" onclick="window.location.href='/blog/august-15-forecast-kyrgyzstan-light-rain-south-heat.html'">
-        <img src="assets/images/blogphoto-aug-15-light-rain-east.webp" alt="Sunny golden valley in Kyrgyzstan with an isolated rain shower over distant mountains" class="news-card-img" loading="lazy" width="1536" height="1024">
-        <div class="news-card-overlay">
-          <h3 class="news-title">Aug 15 Forecast: Light Rain in the East, South Hits +38°C</h3>
-          <p style="font-size:14px; margin-bottom:12px; opacity:0.9;">Scattered light rain in Issyk-Kul and Naryn today, while Osh, Jalal-Abad and Batken hold at +38°C and Bishkek reaches +36°C.</p>
-          <div class="news-meta">
-            <span><svg class="icon"><use href="#icon-user"></use></svg> Pogoda Weather Team</span>
-            <span><svg class="icon"><use href="#icon-clock"></use></svg> August 15, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" onclick="window.location.href='/blog/kyrgyzstan-summer-mountain-getaways-escape-the-heat.html'">
-        <img src="assets/images/blogphoto-mountain-getaways.webp" alt="Green alpine gorge with a mountain river and snow-capped peaks in Kyrgyzstan" class="news-card-img" loading="lazy" width="1536" height="1024">
-        <div class="news-card-overlay">
-          <h3 class="news-title">Where to Escape the Heat: Kyrgyzstan's Mountain Getaways</h3>
-          <div class="news-meta">
-            <span><svg class="icon"><use href="#icon-user"></use></svg> Pogoda Weather Team</span>
-            <span><svg class="icon"><use href="#icon-calendar"></use></svg> Aug 15, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" onclick="window.location.href='/blog/august-14-forecast-kyrgyzstan-storms-spread-heat-holds.html'">
-        <img src="assets/images/blogphoto-aug-14-storms-spread.webp" alt="Storm clouds and sunlight over a green valley in Kyrgyzstan" class="news-card-img" loading="lazy" width="1536" height="1024">
-        <div class="news-card-overlay">
-          <h3 class="news-title">Aug 14 Forecast: Storms Widen as South Holds at +39°C</h3>
-          <div class="news-meta">
-            <span><svg class="icon"><use href="#icon-user"></use></svg> Pogoda Weather Team</span>
-            <span><svg class="icon"><use href="#icon-calendar"></use></svg> Aug 14, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" onclick="window.location.href='/blog/issyk-kul-lake-weather-guide-swimming-season.html'">
-        <img src="assets/images/blogphoto-issyk-kul-swimming.webp" alt="Lake Issyk-Kul beach with sun loungers and snow-capped mountains" class="news-card-img" loading="lazy" width="1536" height="1024">
-        <div class="news-card-overlay">
-          <h3 class="news-title">Issyk-Kul This Week: Air Near +27°C, Warm to Swim</h3>
-          <div class="news-meta">
-            <span><svg class="icon"><use href="#icon-user"></use></svg> Pogoda Weather Team</span>
-            <span><svg class="icon"><use href="#icon-calendar"></use></svg> Aug 14, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="news-card" onclick="window.location.href='/blog/august-13-forecast-kyrgyzstan-storms-extreme-heat.html'">
-        <img src="assets/images/blogphoto-aug-13-storms-heat.webp" alt="Storm clouds gathering over green highlands in Kyrgyzstan" class="news-card-img" loading="lazy" width="1536" height="1024">
-        <div class="news-card-overlay">
-          <h3 class="news-title">Aug 13 Forecast: Storms in the Highlands, Heat to +39°C</h3>
-          <div class="news-meta">
-            <span><svg class="icon"><use href="#icon-user"></use></svg> Pogoda Weather Team</span>
-            <span><svg class="icon"><use href="#icon-calendar"></use></svg> Aug 13, 2026</span>
-          </div>
-        </div>
-      </div>
+    <div class="news-bento-grid" id="newsBentoGrid">
+      <!-- Cards are generated from BLOG_POSTS (top 5, newest first): server-rendered
+           per-language by build.js, and re-rendered by app.js on a client-side
+           language switch. Do not hand-edit — see renderNewsGridHTML() in build.js. -->
     </div>
 
     <div style="display: flex; justify-content: center; margin-top: 30px;">

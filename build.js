@@ -24,6 +24,18 @@ if (citiesMatch) {
     throw new Error('Could not find KYRGYZSTAN_CITIES in config.js');
 }
 
+// 2b. Extract Blog Posts (drives the homepage "Latest Weather Forecast News" grid,
+// so it renders in the correct language instead of the hardcoded English it used
+// to be — see renderNewsGridHTML() below)
+const blogJsContent = fs.readFileSync(path.join(SRC_DIR, 'js', 'blog-posts-data.js'), 'utf8');
+const blogPostsMatch = blogJsContent.match(/export const BLOG_POSTS = (\[[\s\S]*?\n\]);/);
+let BLOG_POSTS;
+if (blogPostsMatch) {
+    BLOG_POSTS = eval('(' + blogPostsMatch[1] + ')');
+} else {
+    throw new Error('Could not find BLOG_POSTS in blog.js');
+}
+
 // 3. Define Languages and their mapping
 const LANGS = ['KG', 'RU', 'EN'];
 const LANG_CODES = { KG: 'ky', RU: 'ru', EN: 'en' };
@@ -180,6 +192,30 @@ function getCitySectionTitles(lang, city) {
     };
 }
 
+// Renders the homepage "Latest Weather Forecast News" bento grid (top 5 posts,
+// newest first — post[0] is the featured card) in the given language. Used at
+// build time here, and mirrored client-side in app.js's renderNewsGrid() so a
+// language switch re-renders it correctly instead of leaving it in whichever
+// language index.html was originally served in.
+function renderNewsGridHTML(lang, posts) {
+    return posts.slice(0, 5).map((post, i) => {
+        const data = post.translations[lang] || post.translations.EN;
+        const isFeatured = i === 0;
+        return `
+      <div class="news-card${isFeatured ? ' news-card-featured' : ''}" onclick="window.location.href='/blog/${post.slug}.html'">
+        <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
+        <div class="news-card-overlay">
+          <h3 class="news-title">${data.title}</h3>
+          ${isFeatured ? `<p style="font-size:14px; margin-bottom:12px; opacity:0.9; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${data.excerpt}</p>` : ''}
+          <div class="news-meta">
+            <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
+            <span><svg class="icon"><use href="#icon-${isFeatured ? 'clock' : 'calendar'}"></use></svg> ${data.date}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('\n');
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -295,6 +331,15 @@ htmlFiles.forEach(file => {
             translated = translated.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${pageMeta.description}">`);
             translated = translated.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${pageMeta.title}">`);
             translated = translated.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${pageMeta.description}">`);
+        }
+
+        // Fill in the homepage's news grid with the current top 5 blog posts, in
+        // this build's language.
+        if (file === 'index.html') {
+            translated = translated.replace(
+                /<div class="news-bento-grid" id="newsBentoGrid">[\s\S]*?<\/div>/,
+                `<div class="news-bento-grid" id="newsBentoGrid">${renderNewsGridHTML(lang, BLOG_POSTS)}\n    </div>`
+            );
         }
 
         // Save file
