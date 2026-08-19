@@ -3,6 +3,7 @@ import { initTheme } from './theme.js';
 import { initLangSwitcher, getCurrentLang } from './i18n.js';
 import { KYRGYZSTAN_CITIES } from './config.js';
 import { HOME_FAQ, MORE_GENERAL_FAQ, CITY_FAQ } from './faq-data.js';
+import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 
 // Same map as RU_CITY_FORMS in build.js/app.js — Russian city names with the
 // prepositional case, so RU city headings here don't show the Kyrgyz spelling.
@@ -57,9 +58,11 @@ function renderCitiesFAQ(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initMiniWeather();
   initLangSwitcher((lang) => {
     renderGeneralFAQ(lang);
     renderCitiesFAQ(lang);
+    refreshMiniWeather(lang);
   });
   renderGeneralFAQ(getCurrentLang());
   renderCitiesFAQ(getCurrentLang());

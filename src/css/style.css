@@ -475,6 +475,62 @@ body:not(.dark-theme) nav.main-nav a.active::after {
   background: rgba(255, 159, 67, 0.1);
 }
 
+/* Compact live-weather badge shown in the top-right corner of pages that have
+   no forecast display of their own (FAQ, blog, contact, map, legal, 404).
+   Hidden until data loads (avoids an empty flash), then JS toggles it visible. */
+.breadcrumbs-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mini-weather-widget {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  background: rgba(30, 41, 59, 0.92);
+  color: #FFFFFF;
+  border-radius: 18px;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+
+.mini-weather-widget.is-loaded {
+  display: flex;
+}
+
+.mini-weather-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-weather-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mini-weather-col {
+  text-align: right;
+}
+
+.mini-weather-temp {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mini-weather-feels {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
 /* Hero Right Weather Summary Card */
 .hero-weather-card {
   background: rgba(30, 41, 59, 0.45);

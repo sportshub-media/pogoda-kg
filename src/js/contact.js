@@ -1,10 +1,12 @@
 // Pogoda Kg - Contact Page Controller
 import { initTheme } from './theme.js';
 import { initLangSwitcher, getCurrentLang, TRANSLATIONS } from './i18n.js';
+import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initLangSwitcher();
+  initMiniWeather();
+  initLangSwitcher((lang) => refreshMiniWeather(lang));
   setupContactForm();
 });
 

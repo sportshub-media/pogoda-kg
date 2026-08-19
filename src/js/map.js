@@ -3,15 +3,18 @@ import { KYRGYZSTAN_CITIES } from './config.js';
 import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { initLangSwitcher, TRANSLATIONS, getCurrentLang, getRegionName } from './i18n.js';
+import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 
 let leafletMap = null;
 let markersLayer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initMiniWeather();
   // Pass a callback to re-render markers when language changes
-  initLangSwitcher(() => {
+  initLangSwitcher((lang) => {
     if (leafletMap) renderMarkers();
+    refreshMiniWeather(lang);
   });
   initKyrgyzstanMap();
 });

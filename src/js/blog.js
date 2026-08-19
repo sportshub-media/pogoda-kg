@@ -3,11 +3,13 @@ import { initTheme } from './theme.js';
 import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 import { BLOG_POSTS } from './blog-posts-data.js';
+import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 export { BLOG_POSTS };
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  
+  initMiniWeather();
+
   const currentLang = getCurrentLang() || 'KG';
 
   const gridContainer = document.getElementById('blogCardsGrid');
@@ -15,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderBlogPosts(BLOG_POSTS, currentLang);
     initLangSwitcher((lang) => {
       renderBlogPosts(BLOG_POSTS, lang);
+      refreshMiniWeather(lang);
     });
   } else {
     initSingleArticle(currentLang);
     initLangSwitcher((lang) => {
       initSingleArticle(lang);
+      refreshMiniWeather(lang);
     });
   }
 });

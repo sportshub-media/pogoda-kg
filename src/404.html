@@ -42,7 +42,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <style>
     .error-page {
       min-height: 80vh;
@@ -156,6 +156,10 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
 
+  <div class="breadcrumbs-container" style="max-width:1320px; margin: 20px auto 0; padding: 0 40px;">
+    <div class="mini-weather-widget" id="miniWeatherWidget"></div>
+  </div>
+
   <main class="error-page">
     <div class="error-code">404</div>
     <h1 class="error-title" data-i18n="error_title">Page Not Found</h1>
@@ -175,14 +179,17 @@
 
   <script type="module">
     import { applyTranslations, getCurrentLang, initMobileMenu } from '/js/i18n.js';
+    import { initMiniWeather, refreshMiniWeather } from '/js/mini-weather.js';
     document.addEventListener('DOMContentLoaded', () => {
       initMobileMenu();
       applyTranslations(getCurrentLang());
+      initMiniWeather();
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const targetLang = e.currentTarget.getAttribute('data-lang');
           localStorage.setItem('pogoda_lang', targetLang);
           applyTranslations(targetLang);
+          refreshMiniWeather(targetLang);
           document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === targetLang));
         });
       });
