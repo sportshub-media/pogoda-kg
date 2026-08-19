@@ -40,13 +40,15 @@ if (blogPostsMatch) {
 // plus FAQPage JSON-LD, see renderFAQHTML/renderFAQSchema below)
 const faqJsContent = fs.readFileSync(path.join(SRC_DIR, 'js', 'faq-data.js'), 'utf8');
 const homeFaqMatch = faqJsContent.match(/export const HOME_FAQ = (\{[\s\S]*?\n\});/);
+const moreGeneralFaqMatch = faqJsContent.match(/export const MORE_GENERAL_FAQ = (\{[\s\S]*?\n\});/);
 const cityFaqMatch = faqJsContent.match(/export const CITY_FAQ = (\{[\s\S]*?\n\});/);
-let HOME_FAQ, CITY_FAQ;
-if (homeFaqMatch && cityFaqMatch) {
+let HOME_FAQ, MORE_GENERAL_FAQ, CITY_FAQ;
+if (homeFaqMatch && moreGeneralFaqMatch && cityFaqMatch) {
     HOME_FAQ = eval('(' + homeFaqMatch[1] + ')');
+    MORE_GENERAL_FAQ = eval('(' + moreGeneralFaqMatch[1] + ')');
     CITY_FAQ = eval('(' + cityFaqMatch[1] + ')');
 } else {
-    throw new Error('Could not find HOME_FAQ/CITY_FAQ in faq-data.js');
+    throw new Error('Could not find HOME_FAQ/MORE_GENERAL_FAQ/CITY_FAQ in faq-data.js');
 }
 
 // 3. Define Languages and their mapping
@@ -84,6 +86,10 @@ const PAGE_META = {
     '404.html': {
         RU: { title: "404 — Такая страница не найдена на сайте Pogoda Kg", description: "Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану." },
         KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
+    },
+    'faq.html': {
+        RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
+        KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
     }
 };
 
@@ -272,6 +278,46 @@ function withFAQ(html, faqList) {
     return out.replace('</body>', `  ${renderFAQSchema(faqList)}\n</body>`);
 }
 
+// Same city-heading logic as cityHeadingName() in faq.js — RU uses the
+// prepositional-case table (not the Kyrgyz nativeName), KG/EN use their own
+// name fields directly.
+function faqCityHeadingName(lang, city) {
+    if (lang === 'RU') return ruCity(city).nom;
+    if (lang === 'KG') return city.nativeName || city.name;
+    return city.name;
+}
+
+// Fills the dedicated /faq page's two dynamic sections (#faqGeneralContainer,
+// #faqCitiesContainer) and injects one combined FAQPage schema covering every
+// question actually visible on the page — the general ones, all 10 cities',
+// and the 5 "About Pogoda.kg" ones already baked into the template via
+// data-i18n (siteFaqList is read from the same TRANSLATIONS dict as those).
+function withFullFAQPage(html, lang, siteFaqList) {
+    const generalList = [...(HOME_FAQ[lang] || HOME_FAQ.EN), ...(MORE_GENERAL_FAQ[lang] || MORE_GENERAL_FAQ.EN)];
+    let out = html.replace(
+        /<div id="faqGeneralContainer" class="faq-list">[\s\S]*?<\/div>/,
+        `<div id="faqGeneralContainer" class="faq-list">${renderFAQHTML(generalList)}\n    </div>`
+    );
+
+    const citiesHTML = CITIES.map(city => {
+        const cityFaq = CITY_FAQ[city.id];
+        if (!cityFaq) return '';
+        const list = cityFaq[lang] || cityFaq.EN;
+        return `
+      <div style="margin-bottom: 28px;">
+        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">${faqCityHeadingName(lang, city)}</h3>
+        <div class="faq-list">${renderFAQHTML(list)}</div>
+      </div>`;
+    }).join('\n');
+    out = out.replace(
+        /<div id="faqCitiesContainer">[\s\S]*?<\/div>\s*<\/section>/,
+        `<div id="faqCitiesContainer">${citiesHTML}\n    </div>\n  </section>`
+    );
+
+    const allFaq = [...generalList, ...CITIES.flatMap(city => (CITY_FAQ[city.id] && (CITY_FAQ[city.id][lang] || CITY_FAQ[city.id].EN)) || []), ...siteFaqList];
+    return out.replace('</body>', `  ${renderFAQSchema(allFaq)}\n</body>`);
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -413,6 +459,13 @@ htmlFiles.forEach(file => {
                 a: (dict[`faq_a${n}`] || '').replace(/^[A-ZА-ЯЁӨҮ]:\s*/u, '')
             }));
             pageOutput = pageOutput.replace('</body>', `  ${renderFAQSchema(contactFaqList)}\n</body>`);
+        }
+        if (file === 'faq.html') {
+            const siteFaqList = [1, 2, 3, 4, 5].map(n => ({
+                q: dict[`faq_q${n}_clean`] || '',
+                a: dict[`faq_a${n}_clean`] || ''
+            }));
+            pageOutput = withFullFAQPage(pageOutput, lang, siteFaqList);
         }
 
         // Save file

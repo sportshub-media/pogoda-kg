@@ -25,6 +25,33 @@ export const HOME_FAQ = {
   ]
 };
 
+// Additional general-Kyrgyzstan questions for the dedicated /faq page (kept
+// separate from HOME_FAQ so the homepage section itself stays short — the
+// full FAQ page shows HOME_FAQ + MORE_GENERAL_FAQ together).
+export const MORE_GENERAL_FAQ = {
+  EN: [
+    { q: "Does it rain a lot in Kyrgyzstan?", a: "Not for most of the year — Kyrgyzstan's climate is largely dry, but spring (March through June) is the wettest stretch, with April and May typically bringing the most rain, especially in the foothills. Summers turn hot and dry, particularly in the southern valleys." },
+    { q: "When is the rainy season in Kyrgyzstan?", a: "The rainy season generally runs from March to June, with April and May the wettest months — foothill areas can see 60mm to 150mm of rain in April alone. By July, most regions dry out considerably." },
+    { q: "What should I pack for a trip to Kyrgyzstan?", a: "Pack in layers regardless of season. Even in summer, mountain nights can drop close to 0°C while lowland afternoons reach +30°C, so bring a warm fleece or wool sweater and a windproof, waterproof jacket alongside lighter clothing for the valleys. Sturdy trekking shoes are essential if you're heading into the mountains." },
+    { q: "How much snow does Kyrgyzstan get in winter?", a: "It varies enormously by region — high-altitude areas like Naryn see regular, heavy snowfall through the winter, while some intermountain basins near Issyk-Kul stay comparatively snow-free. Lowland cities like Bishkek typically get light-to-moderate snow on 9 to 11 days a month between December and February." },
+    { q: "What causes mudflows (sel) in Kyrgyzstan's mountains?", a: "Mudflows, known locally as \"sel,\" are triggered by intense rainfall in mountainous and foothill areas, especially during the summer storm season. Kyrgyzstan's Ministry of Emergency Situations regularly issues storm warnings advising against travel into mountain gorges or camping near riverbeds when heavy rain is forecast." }
+  ],
+  RU: [
+    { q: "В Кыргызстане часто идут дожди?", a: "Большую часть года — нет: климат в Кыргызстане в основном сухой, но весна (с марта по июнь) — самый дождливый период, при этом больше всего осадков обычно выпадает в апреле и мае, особенно в предгорьях. Лето становится жарким и сухим, особенно в южных долинах." },
+    { q: "Когда в Кыргызстане сезон дождей?", a: "Сезон дождей обычно длится с марта по июнь, самые дождливые месяцы — апрель и май: в предгорьях в апреле может выпадать от 60 до 150 мм осадков. К июлю большинство регионов заметно подсыхает." },
+    { q: "Что взять с собой в поездку в Кыргызстан?", a: "Берите одежду многослойно, независимо от сезона. Даже летом ночью в горах температура может опускаться почти до 0°C, тогда как днём в долинах бывает до +30°C, поэтому возьмите тёплый флис или шерстяной свитер и непродуваемую непромокаемую куртку вместе с лёгкой одеждой для долин. Если планируете горные походы, обязательно нужна прочная треккинговая обувь." },
+    { q: "Сколько снега выпадает в Кыргызстане зимой?", a: "Это сильно зависит от региона: в высокогорных районах вроде Нарына зимой регулярно выпадает много снега, тогда как некоторые межгорные котловины у Иссык-Куля остаются сравнительно малоснежными. В низинных городах вроде Бишкека обычно бывает небольшой-умеренный снег в течение 9-11 дней в месяц с декабря по февраль." },
+    { q: "Что вызывает сели в горах Кыргызстана?", a: "Сели вызываются интенсивными ливнями в горных и предгорных районах, особенно в летний грозовой сезон. МЧС Кыргызской Республики регулярно объявляет штормовые предупреждения, рекомендуя воздержаться от поездок в горные ущелья и от лагерей у русел рек при прогнозе сильных дождей." }
+  ],
+  KG: [
+    { q: "Кыргызстанда көп жамгыр жаайбы?", a: "Жылдын көпчүлүк бөлүгүндө — жок: Кыргызстандын климаты негизинен кургак, бирок жаз (мартан июнга чейин) эң жамгырлуу мезгил, эң көп жамгыр адатта апрель менен майда жаайт, өзгөчө тоо этектеринде. Жай ысык жана кургак болуп калат, өзгөчө түштүк өрөөндөрдө." },
+    { q: "Кыргызстанда жамгыр мезгили качан?", a: "Жамгыр мезгили адатта мартан июнга чейин созулат, эң жамгырлуу айлар — апрель менен май: тоо этегиндеги аймактарда апрелде 60-150 мм жамгыр жаашы мүмкүн. Июлга карай көпчүлүк региондор кыйла кургайт." },
+    { q: "Кыргызстанга сапарга эмне алып барыш керек?", a: "Мезгилине карабастан катмарлап кийинүү керек. Жайында да тоодо түнкүсүн температура нөлгө жакын түшүшү мүмкүн, ал эми күндүз өрөөндөрдө +30°Cге чейин жетет, ошондуктан жылуу флис же жүн свитер жана шамалдан, жамгырдан коргогон курткасын жеңил кийимдер менен кошо алып жүрүңүз. Тоого чыгууну пландасаңыз, бекем треккинг бут кийими сөзсүз керек." },
+    { q: "Кыргызстанда кышында канча кар жаайт?", a: "Бул региондон региондо катуу айырмаланат: Нарын сыяктуу бийик тоолуу райондордо кышында дайыма көп кар жаайт, ал эми Ысык-Көл жанындагы кээ бир тоо аралык ойдуңдарда кар салыштырмалуу аз болот. Бишкек сыяктуу ойдуң шаарларда адатта декабрдан февралга чейин айына 9-11 күн орточо кар жаайт." },
+    { q: "Кыргызстандын тоолорунда селди эмне пайда кылат?", a: "Сел тоолуу жана тоо этегиндеги райондордогу катуу жамгырлардан пайда болот, өзгөчө жайкы бороон мезгилинде. Кыргыз Республикасынын ӨКМи катуу жамгыр божомолдонгондо тоо капчыгайларына баруудан жана дарыя жээктеринде лагерь тигүүдөн алыс болууну сунуштап, штормдук эскертүүлөрдү үзгүлтүксүз жарыялайт." }
+  ]
+};
+
 export const CITY_FAQ = {
   bishkek: {
     EN: [
