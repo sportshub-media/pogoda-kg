@@ -265,10 +265,10 @@ function renderFAQ(lang) {
   const faqList = cityFaq ? (cityFaq[lang] || cityFaq.EN) : (HOME_FAQ[lang] || HOME_FAQ.EN);
 
   container.innerHTML = faqList.map(item => `
-      <div class="faq-item">
-        <div class="faq-question">${item.q}</div>
+      <details class="faq-item">
+        <summary class="faq-question">${item.q}</summary>
         <div class="faq-answer">${item.a}</div>
-      </div>`).join('\n');
+      </details>`).join('\n');
 }
 
 // Update city titles across sections

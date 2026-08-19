@@ -240,10 +240,10 @@ function renderNewsGridHTML(lang, posts) {
 // language switch.
 function renderFAQHTML(faqList) {
     return faqList.map(item => `
-      <div class="faq-item">
-        <div class="faq-question">${item.q}</div>
+      <details class="faq-item">
+        <summary class="faq-question">${item.q}</summary>
         <div class="faq-answer">${item.a}</div>
-      </div>`).join('\n');
+      </details>`).join('\n');
 }
 
 // FAQPage structured data matching the visible FAQ content above — Google
@@ -305,7 +305,7 @@ function withFullFAQPage(html, lang, siteFaqList) {
         const list = cityFaq[lang] || cityFaq.EN;
         return `
       <div style="margin-bottom: 28px;">
-        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">${faqCityHeadingName(lang, city)}</h3>
+        <h3 style="font-size:18px; font-weight:700; margin-bottom:12px; text-align:center;">${faqCityHeadingName(lang, city)}</h3>
         <div class="faq-list">${renderFAQHTML(list)}</div>
       </div>`;
     }).join('\n');
