@@ -477,7 +477,10 @@ body:not(.dark-theme) nav.main-nav a.active::after {
 
 /* Compact live-weather badge shown in the top-right corner of pages that have
    no forecast display of their own (FAQ, blog, contact, map, legal, 404).
-   Hidden until data loads (avoids an empty flash), then JS toggles it visible. */
+   Pinned to the viewport (not the document) so it stays visible the whole
+   time the reader scrolls, below the sticky header's z-index so the header
+   still layers above it near the top of the page. Hidden until data loads
+   (avoids an empty flash), then JS toggles it visible. */
 .breadcrumbs-container {
   display: flex;
   align-items: center;
@@ -489,16 +492,29 @@ body:not(.dark-theme) nav.main-nav a.active::after {
   display: none;
   align-items: center;
   gap: 10px;
-  margin-left: auto;
+  position: fixed;
+  top: 84px;
+  right: 24px;
+  z-index: 850;
   background: rgba(30, 41, 59, 0.92);
   color: #FFFFFF;
   border-radius: 18px;
   padding: 8px 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   white-space: nowrap;
 }
 
 .mini-weather-widget.is-loaded {
   display: flex;
+}
+
+@media (max-width: 640px) {
+  .mini-weather-widget {
+    top: 100px;
+    right: 12px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
 }
 
 .mini-weather-icon {
