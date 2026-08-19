@@ -5,6 +5,161 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-19-forecast-storms-east",
+    slug: "august-19-forecast-kyrgyzstan-storms-east-heat-south",
+    image: "/assets/images/blogphoto-aug-19-windy-storm-east.webp",
+    translations: {
+      EN: {
+        title: "Aug 19 Forecast: Storms in the East, South Hits +37°C",
+        seoTitle: "Aug 19 Forecast: Storms in the East, South Hits +37°C",
+        seoDesc: "Kyrgyzhydromet expects brief storms in Naryn and Issyk-Kul today, gusty west winds up to 9 m/s, and Osh, Jalal-Abad and Batken holding near +37°C.",
+        category: "Weather Forecast",
+        date: "August 19, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzhydromet expects brief storms in Naryn and Issyk-Kul today, gusty west winds up to 9 m/s, and Osh, Jalal-Abad and Batken holding near +37°C.",
+        content: `
+          <p>Kyrgyzhydromet's forecast for today points to brief storms in the <strong>Naryn and Issyk-Kul</strong> regions, gusty west winds across the country, and no letup in the heat farther south. <strong>Osh, Jalal-Abad and Batken</strong> hold near <strong>+37°C</strong>, while Bishkek reaches +35°C under mostly clear skies.</p>
+          <h3>Naryn and Issyk-Kul See Brief Storms</h3>
+          <p>Short-lived rain and thunderstorms are possible today in the Naryn and Issyk-Kul regions, while the rest of the country stays dry. Forecasters also note a west wind of 4-9 m/s countrywide, breezier than the past several days.</p>
+          <h3>South Holds Near +37°C</h3>
+          <p>Osh, Jalal-Abad and Batken remain the hottest part of the country, with daytime highs ranging from +32°C to +37°C depending on the district. Chuy region isn't far behind at up to +36°C, while Talas stays a bit milder at +28°C to +33°C.</p>
+          <h3>Naryn Still the Coolest by Far</h3>
+          <p><strong>Naryn</strong> region holds the lowest temperatures in the country, with an overnight low of just +6°C and a daytime high of +30°C — the same daytime high as Issyk-Kul, though Issyk-Kul stays milder overnight at +11°C.</p>
+          <h3>August 19 Regional Temperatures</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> Night +18°C, Day +35°C.</li>
+            <li><strong>Chuy Region:</strong> Night +15°C to +20°C, Day +31°C to +36°C.</li>
+            <li><strong>Osh, Jalal-Abad, Batken:</strong> Night +17°C to +22°C, Day +32°C to +37°C.</li>
+            <li><strong>Talas Region:</strong> Night +11°C to +16°C, Day +28°C to +33°C.</li>
+            <li><strong>Issyk-Kul Region:</strong> Night +11°C, Day +30°C, storms possible.</li>
+            <li><strong>Naryn Region:</strong> Night +6°C, Day +30°C, storms possible.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "19-августка карата божомол: чыгышта күркүрөө, түштүктө +37°C",
+        seoTitle: "19-августка карата божомол: чыгышта күркүрөө, түштүктө +37°C",
+        seoDesc: "Кыргызгидромет бүгүн Нарын менен Ысык-Көлдө күн күркүрөйт, 9 м/с чейин катуу шамал болот, ал эми Ош, Жалал-Абад, Баткенде +37°Cге чейин ысык дейт.",
+        category: "Аба ырайы божомолу",
+        date: "19-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет бүгүн Нарын менен Ысык-Көлдө күн күркүрөйт, 9 м/с чейин катуу шамал болот, ал эми Ош, Жалал-Абад, Баткенде +37°Cге чейин ысык дейт.",
+        content: `
+          <p>Кыргызгидромет бүгүн <strong>Нарын жана Ысык-Көл</strong> облустарында кыска мөөнөттүү күн күркүрөөлөрдү, өлкө боюнча катуу батыш шамалын жана түштүктө ысыктын уланышын божомолдоп жатат. <strong>Ош, Жалал-Абад, Баткен</strong> облустарында аба ырайы <strong>+37°C</strong> тегерегинде сакталат, Бишкекте — негизинен ачык асман алдында +35°Cге чейин.</p>
+          <h3>Нарын жана Ысык-Көлдө кыска мөөнөттүү күн күркүрөйт</h3>
+          <p>Бүгүн Нарын жана Ысык-Көл облустарында кыска мөөнөттүү жамгыр менен күн күркүрөшү мүмкүн, ал эми өлкөнүн калган бөлүгүндө кургак аба ырайы сакталат. Синоптиктер ошондой эле бүткүл өлкө боюнча 4-9 м/с батыш шамалын белгилешүүдө — мурунку күндөргө караганда бир кыйла күчтүү.</p>
+          <h3>Түштүк +37°C тегерегинде сакталууда</h3>
+          <p>Ош, Жалал-Абад, Баткен облустары өлкөнүн эң ысык региондору бойдон калууда: күндүз районго жараша +32°Cден +37°Cге чейин. Чүй облусу андан бир аз артта — +36°Cге чейин, ал эми Талас облусунда бир аз салкыныраак — +28°Cден +33°Cге чейин.</p>
+          <h3>Нарын дагы деле эң салкын</h3>
+          <p><strong>Нарын</strong> облусунда өлкөнүн эң төмөнкү температурасы сакталууда: түнкүсүн болгону +6°C, күндүз — +30°C — бул Ысык-Көлдөгү сыяктуу эле көрсөткүч, бирок ал жерде түнкүсүн жылуураак — +11°C.</p>
+          <h3>19-августка карата региондук температура</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> түнкүсүн +18°C, күндүз +35°C.</li>
+            <li><strong>Чүй облусу:</strong> түнкүсүн +15...+20°C, күндүз +31...+36°C.</li>
+            <li><strong>Ош, Жалал-Абад, Баткен:</strong> түнкүсүн +17...+22°C, күндүз +32...+37°C.</li>
+            <li><strong>Талас облусу:</strong> түнкүсүн +11...+16°C, күндүз +28...+33°C.</li>
+            <li><strong>Ысык-Көл облусу:</strong> түнкүсүн +11°C, күндүз +30°C, күн күркүрөшү мүмкүн.</li>
+            <li><strong>Нарын облусу:</strong> түнкүсүн +6°C, күндүз +30°C, күн күркүрөшү мүмкүн.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 19 августа: грозы на востоке, юг — до +37°C",
+        seoTitle: "Прогноз на 19 августа: грозы на востоке, юг — до +37°C",
+        seoDesc: "Кыргызгидромет прогнозирует кратковременные грозы в Нарыне и на Иссык-Куле, порывистый ветер до 9 м/с и жару до +37°C на юге Киргизии.",
+        category: "Прогноз погоды",
+        date: "19 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызгидромет прогнозирует кратковременные грозы в Нарыне и на Иссык-Куле, порывистый ветер до 9 м/с и жару до +37°C на юге Киргизии.",
+        content: `
+          <p>Кыргызгидромет прогнозирует на сегодня кратковременные грозы в <strong>Нарынской и Иссык-Кульской</strong> областях, порывистый западный ветер по всей стране и сохранение жары на юге. В <strong>Ошской, Джалал-Абадской и Баткенской</strong> областях столбики термометров держатся около <strong>+37°C</strong>, в Бишкеке — до +35°C при преимущественно ясном небе.</p>
+          <h3>В Нарыне и на Иссык-Куле — кратковременные грозы</h3>
+          <p>Сегодня в Нарынской и Иссык-Кульской областях возможны кратковременные дожди и грозы, тогда как по остальной территории страны сохранится сухая погода. Синоптики также отмечают западный ветер 4-9 м/с по всей республике — заметно сильнее, чем в предыдущие дни.</p>
+          <h3>Юг держится около +37°C</h3>
+          <p>Ошская, Джалал-Абадская и Баткенская области остаются самыми жаркими регионами страны: днём от +32°C до +37°C в зависимости от района. Чуйская область немного отстаёт — до +36°C, а в Таласской области немного прохладнее — от +28°C до +33°C.</p>
+          <h3>Нарын по-прежнему самый прохладный</h3>
+          <p>В <strong>Нарынской</strong> области сохраняются самые низкие температуры страны: ночью всего +6°C, днём — +30°C — столько же, сколько и на Иссык-Куле, хотя там ночью теплее — +11°C.</p>
+          <h3>Температура воздуха по областям (19 августа)</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ночью +18°C, днём +35°C.</li>
+            <li><strong>Чуйская область:</strong> ночью +15...+20°C, днём +31...+36°C.</li>
+            <li><strong>Ош, Джалал-Абад, Баткен:</strong> ночью +17...+22°C, днём +32...+37°C.</li>
+            <li><strong>Таласская область:</strong> ночью +11...+16°C, днём +28...+33°C.</li>
+            <li><strong>Иссык-Кульская область:</strong> ночью +11°C, днём +30°C, возможны грозы.</li>
+            <li><strong>Нарынская область:</strong> ночью +6°C, днём +30°C, возможны грозы.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-issyk-kul-velvet-season",
+    slug: "issyk-kul-velvet-season-late-summer-guide",
+    image: "/assets/images/blogphoto-issyk-kul-velvet-season.webp",
+    translations: {
+      EN: {
+        title: "Issyk-Kul's Velvet Season Begins as Peak Summer Winds Down",
+        seoTitle: "Issyk-Kul's Velvet Season Begins as Peak Summer Winds Down",
+        seoDesc: "Peak swimming season on Issyk-Kul runs through August 20, and the quieter, cooler 'velvet season' that follows lasts into mid-September with far fewer crowds.",
+        category: "Travel & Weather",
+        date: "August 19, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Peak swimming season on Issyk-Kul runs through August 20, and the quieter, cooler 'velvet season' that follows lasts into mid-September with far fewer crowds.",
+        content: `
+          <p>Peak swimming season on Lake Issyk-Kul traditionally runs through <strong>August 20</strong> — meaning the busiest week of the year is already winding down. What follows is the region's "velvet season," a quieter, cooler stretch that lasts into mid-September and draws a very different kind of visitor than the July crowds.</p>
+          <h3>Fewer Crowds, Same Beautiful Lake</h3>
+          <p>Where resort beaches can see dense crowds at the height of summer, the shoreline empties out dramatically once the velvet season begins — some stretches of coast see only a handful of visitors a day. The lake itself doesn't change: the water stays swimmable for weeks yet, even as the beach towns grow quiet.</p>
+          <h3>Milder Air, Still-Warm Water</h3>
+          <p>September air temperatures around Issyk-Kul typically top out near +18°C to +20°C in the day, noticeably cooler than August's heat, while the lake's surface water — slower to cool than the air — often stays close to +23°C well into the month. That combination makes for comfortable hiking and sightseeing weather paired with water still warm enough for a swim.</p>
+          <h3>Why Travelers Choose the Velvet Season</h3>
+          <p>Without the summer heat or the crowds, September is often considered the more relaxed time to visit Issyk-Kul — better for those who prefer quiet beaches, easier hotel bookings, and comfortable temperatures for walking the coastline or exploring nearby mountain trails.</p>
+          <h3>What to Expect Toward Mid-September</h3>
+          <p>The velvet season doesn't last indefinitely: by mid-September, light autumn winds and occasional rain start to move in, and nights grow noticeably cooler. Travelers hoping for the calmest, mildest window should plan for the final two weeks of August through the first half of September.</p>
+        `
+      },
+      KG: {
+        title: "Ысык-Көлдө бархат сезону башталды: сентябрдын ортосуна чейин",
+        seoTitle: "Ысык-Көлдө бархат сезону башталды: сентябрдын ортосуна чейин",
+        seoDesc: "Ысык-Көлдөгү сүзүү сезонунун чеги 20-августка чейин созулат, андан кийинки бархат сезону сентябрдын ортосуна чейин уланат — эл азыраак, аба салкыныраак.",
+        category: "Саякат жана аба ырайы",
+        date: "19-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Ысык-Көлдөгү сүзүү сезонунун чеги 20-августка чейин созулат, андан кийинки бархат сезону сентябрдын ортосуна чейин уланат — эл азыраак, аба салкыныраак.",
+        content: `
+          <p>Ысык-Көл көлүндөгү сүзүү сезонунун чеги салтка ылайык <strong>20-августка</strong> чейин созулат — демек, жылдын эң элсиз жумасы аяктап баратат. Анын ордуна «бархат сезону» деп аталган, сентябрдын ортосуна чейин созулган, тынч жана салкыныраак мезгил келет, ал июль айынын толгон эл-жамаатынан такыр башка саякатчыларды тартат.</p>
+          <h3>Эл азыраак, ошол эле сулуу көл</h3>
+          <p>Жайдын оргосунда курорттук пляждар эл менен толуп кетсе, бархат сезону башталгандан кийин жээк дароо бошойт — айрым жерлерде күнүнө болгону бир нече адам гана болот. Көлдүн өзү өзгөрбөйт: суу дагы бир нече жума сүзүүгө ылайыктуу бойдон калат, курорттук поселоктор тынчыганда да.</p>
+          <h3>Аба салкыныраак, суу дагы деле жылуу</h3>
+          <p>Сентябрда Ысык-Көлдүн жанындагы күндүзгү аба температурасы адатта +18...+20°Cден ашпайт — августтун ысыгынан бир кыйла салкын, ал эми абадан жайыраак муздачу суунун бети көп учурда ай бою +23°C тегерегинде сакталат. Мындай айкалыш саякат жана көрүнүктүү жерлерди кыдырууга ыңгайлуу аба ырайын, ошондой эле сүзүүгө дагы деле жетиштүү жылуу сууну берет.</p>
+          <h3>Саякатчылар эмне үчүн бархат сезонун тандашат</h3>
+          <p>Жайкы ысыксыз жана элсиз, сентябрь Ысык-Көлгө баруу үчүн көбүнчө тынчыраак мезгил катары эсептелет — бул тынч пляждарды жактыргандар, мейманканага оңой брондоо жана жээк бою же жакынкы тоо жолдорун кыдырууга ыңгайлуу температура каалагандар үчүн ылайыктуу.</p>
+          <h3>Сентябрдын ортосуна карай эмне күтүлөт</h3>
+          <p>Бархат сезону түбөлүккө созулбайт: сентябрдын ортосуна карай жеңил күзгү шамалдар жана мезгил-мезгили менен жамгыр башталат, түндөр байкаларлык суукка айланат. Эң тынч жана жумшак мезгилди көргүсү келгендер августтун акыркы эки жумасынан сентябрдын биринчи жарымына чейинки мезгилге пландаштыруусу керек.</p>
+        `
+      },
+      RU: {
+        title: "На Иссык-Куле начинается бархатный сезон до сентября",
+        seoTitle: "На Иссык-Куле начинается бархатный сезон до сентября",
+        seoDesc: "Пик купального сезона на Иссык-Куле длится до 20 августа, а следующий за ним бархатный сезон продолжается до середины сентября — тише и прохладнее.",
+        category: "Туризм и погода",
+        date: "19 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Пик купального сезона на Иссык-Куле длится до 20 августа, а следующий за ним бархатный сезон продолжается до середины сентября — тише и прохладнее.",
+        content: `
+          <p>Пик купального сезона на озере Иссык-Куль традиционно длится до <strong>20 августа</strong> — а значит, самая многолюдная неделя года уже подходит к концу. На смену ей приходит так называемый «бархатный сезон» — более спокойный и прохладный период, который продолжается до середины сентября и привлекает совсем других туристов, не похожих на июльскую толпу.</p>
+          <h3>Меньше людей, то же красивое озеро</h3>
+          <p>Если в разгар лета курортные пляжи бывают переполнены, то с началом бархатного сезона побережье заметно пустеет — на некоторых участках берега можно встретить лишь несколько человек в день. Само озеро при этом не меняется: вода остаётся пригодной для купания ещё несколько недель, даже когда курортные посёлки затихают.</p>
+          <h3>Воздух прохладнее, вода всё ещё тёплая</h3>
+          <p>В сентябре дневная температура воздуха у Иссык-Куля обычно не превышает +18...+20°C — заметно прохладнее августовской жары, тогда как поверхность воды, которая остывает медленнее воздуха, часто держится около +23°C ещё долго в течение месяца. Такое сочетание создаёт комфортную погоду для прогулок и осмотра достопримечательностей вместе с водой, всё ещё достаточно тёплой для купания.</p>
+          <h3>Почему путешественники выбирают бархатный сезон</h3>
+          <p>Без летней жары и толп туристов сентябрь часто считают более спокойным временем для поездки на Иссык-Куль — он подходит тем, кто предпочитает немноголюдные пляжи, более доступное бронирование отелей и комфортную температуру для прогулок по побережью или ближайшим горным тропам.</p>
+          <h3>Чего ждать к середине сентября</h3>
+          <p>Бархатный сезон длится не бесконечно: к середине сентября начинают появляться лёгкие осенние ветра и периодические дожди, а ночи заметно холодают. Тем, кто хочет застать самое спокойное и мягкое время, стоит планировать поездку на последние две недели августа — первую половину сентября.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-15-forecast-light-rain",
     slug: "august-15-forecast-kyrgyzstan-light-rain-south-heat",
     image: "/assets/images/blogphoto-aug-15-light-rain-east.webp",
