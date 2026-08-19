@@ -5,6 +5,7 @@ import { initTheme } from './theme.js';
 import { TRANSLATIONS, getCurrentLang, initLangSwitcher, getRegionName } from './i18n.js';
 import { BLOG_POSTS } from './blog-posts-data.js';
 import { initScrollReveal } from './reveal.js';
+import { HOME_FAQ, CITY_FAQ } from './faq-data.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLangSwitcher((lang) => {
     updateCityInfoDisplay(currentCity);
     renderNewsGrid(lang);
+    renderFAQ(lang);
     if (weatherCache[currentCity.id]) {
       const data = weatherCache[currentCity.id];
       renderHeroCard(currentCity, data);
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   renderNewsGrid(getCurrentLang());
+  renderFAQ(getCurrentLang());
   setupSearch();
   setupHourlySlider();
   setupOtherCitiesScroll();
@@ -248,6 +251,24 @@ function renderNewsGrid(lang) {
         </div>
       </div>`;
   }).join('\n');
+}
+
+// Same rendering as renderFAQHTML() in build.js — shows the Kyrgyzstan-wide
+// FAQ on the homepage, or the current city's own FAQ on a dedicated city
+// page. Re-rendered here so a language switch updates it correctly instead
+// of leaving it in whichever language the page was originally served in.
+function renderFAQ(lang) {
+  const container = document.getElementById('faqContainer');
+  if (!container) return;
+
+  const cityFaq = isDedicatedCityPage && CITY_FAQ[currentCity.id];
+  const faqList = cityFaq ? (cityFaq[lang] || cityFaq.EN) : (HOME_FAQ[lang] || HOME_FAQ.EN);
+
+  container.innerHTML = faqList.map(item => `
+      <div class="faq-item">
+        <div class="faq-question">${item.q}</div>
+        <div class="faq-answer">${item.a}</div>
+      </div>`).join('\n');
 }
 
 // Update city titles across sections

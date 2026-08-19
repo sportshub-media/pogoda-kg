@@ -36,6 +36,19 @@ if (blogPostsMatch) {
     throw new Error('Could not find BLOG_POSTS in blog.js');
 }
 
+// 2c. Extract Weather FAQ content (homepage + per-city sections — SSR content
+// plus FAQPage JSON-LD, see renderFAQHTML/renderFAQSchema below)
+const faqJsContent = fs.readFileSync(path.join(SRC_DIR, 'js', 'faq-data.js'), 'utf8');
+const homeFaqMatch = faqJsContent.match(/export const HOME_FAQ = (\{[\s\S]*?\n\});/);
+const cityFaqMatch = faqJsContent.match(/export const CITY_FAQ = (\{[\s\S]*?\n\});/);
+let HOME_FAQ, CITY_FAQ;
+if (homeFaqMatch && cityFaqMatch) {
+    HOME_FAQ = eval('(' + homeFaqMatch[1] + ')');
+    CITY_FAQ = eval('(' + cityFaqMatch[1] + ')');
+} else {
+    throw new Error('Could not find HOME_FAQ/CITY_FAQ in faq-data.js');
+}
+
 // 3. Define Languages and their mapping
 const LANGS = ['KG', 'RU', 'EN'];
 const LANG_CODES = { KG: 'ky', RU: 'ru', EN: 'en' };
@@ -216,6 +229,49 @@ function renderNewsGridHTML(lang, posts) {
     }).join('\n');
 }
 
+// Renders the visible FAQ list (homepage: HOME_FAQ, dedicated city pages:
+// CITY_FAQ[city.id]). Mirrored client-side in app.js's renderFAQ() for a
+// language switch.
+function renderFAQHTML(faqList) {
+    return faqList.map(item => `
+      <div class="faq-item">
+        <div class="faq-question">${item.q}</div>
+        <div class="faq-answer">${item.a}</div>
+      </div>`).join('\n');
+}
+
+// FAQPage structured data matching the visible FAQ content above — Google
+// requires FAQ rich-result markup to reflect what's actually shown on the
+// page, so this is generated from the exact same faqList as renderFAQHTML().
+function renderFAQSchema(faqList) {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqList.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a }
+        }))
+    };
+    return `<script type="application/ld+json">\n  ${JSON.stringify(schema)}\n  </script>`;
+}
+
+// Fills #faqContainer and injects FAQPage schema for a given faqList, against
+// a page HTML string whose #faqContainer is still the pristine (comment-only)
+// placeholder from the template. Must run on template-derived HTML BEFORE any
+// other FAQ fill — the rendered .faq-item markup contains nested <div>s, so a
+// non-greedy regex can't safely re-match an already-filled container on a
+// second pass (this is why the homepage's HOME_FAQ fill and each city page's
+// CITY_FAQ fill both branch from the same pristine `translated`, rather than
+// the city branch overwriting an already-filled homepage copy).
+function withFAQ(html, faqList) {
+    let out = html.replace(
+        /<div id="faqContainer" class="faq-list">[\s\S]*?<\/div>/,
+        `<div id="faqContainer" class="faq-list">${renderFAQHTML(faqList)}\n    </div>`
+    );
+    return out.replace('</body>', `  ${renderFAQSchema(faqList)}\n</body>`);
+}
+
 // 4. Utility: copy folder recursively
 function copyFolderSync(from, to) {
     if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
@@ -342,13 +398,30 @@ htmlFiles.forEach(file => {
             );
         }
 
+        // The homepage gets the Kyrgyzstan-wide FAQ (dedicated city pages get
+        // their own city-specific one further down, from the same pristine
+        // #faqContainer placeholder — see withFAQ()'s doc comment). contact.html
+        // already has its own 5 site-usage FAQs baked into the template via
+        // data-i18n — just add matching FAQPage schema so they're eligible for
+        // rich results too, without touching the visible markup.
+        let pageOutput = file === 'index.html'
+            ? withFAQ(translated, HOME_FAQ[lang] || HOME_FAQ.EN)
+            : translated;
+        if (file === 'contact.html') {
+            const contactFaqList = [1, 2, 3, 4, 5].map(n => ({
+                q: (dict[`faq_q${n}`] || '').replace(/^[A-ZА-ЯЁӨҮ]:\s*/u, ''),
+                a: (dict[`faq_a${n}`] || '').replace(/^[A-ZА-ЯЁӨҮ]:\s*/u, '')
+            }));
+            pageOutput = pageOutput.replace('</body>', `  ${renderFAQSchema(contactFaqList)}\n</body>`);
+        }
+
         // Save file
-        const outFilePath = file === 'index.html' 
-            ? path.join(OUT_DIR, prefix, 'index.html') 
+        const outFilePath = file === 'index.html'
+            ? path.join(OUT_DIR, prefix, 'index.html')
             : path.join(OUT_DIR, prefix, file);
-            
+
         fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
-        fs.writeFileSync(outFilePath, translated);
+        fs.writeFileSync(outFilePath, pageOutput);
         // The 404 page isn't a real, indexable page — don't submit it to Google via the sitemap.
         if (file !== '404.html') sitemapUrls.push(fullUrl);
 
@@ -435,7 +508,12 @@ htmlFiles.forEach(file => {
   <link rel="alternate" hreflang="en" href="https://pogoda.kg/en/${city.id}" />
   <link rel="alternate" hreflang="x-default" href="https://pogoda.kg/${city.id}" />`;
                 cityHtml = cityHtml.replace(/(<link rel="canonical" href="[^"]+">)/, `$1${cityHreflangBlock}`);
-                
+
+                // City-specific weather FAQ (real regional climate facts, not
+                // templated stat-swapping) plus matching FAQPage schema.
+                const cityFaqList = (CITY_FAQ[city.id] && (CITY_FAQ[city.id][lang] || CITY_FAQ[city.id].EN)) || HOME_FAQ.EN;
+                cityHtml = withFAQ(cityHtml, cityFaqList);
+
                 // Write city file
                 const cityOutPath = path.join(OUT_DIR, prefix, `${city.id}.html`);
                 fs.mkdirSync(path.dirname(cityOutPath), { recursive: true });
