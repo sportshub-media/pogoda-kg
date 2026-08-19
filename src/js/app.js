@@ -4,6 +4,7 @@ import { fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { TRANSLATIONS, getCurrentLang, initLangSwitcher, getRegionName } from './i18n.js';
 import { BLOG_POSTS } from './blog-posts-data.js';
+import { initScrollReveal } from './reveal.js';
 
 let currentCity = DEFAULT_CITY;
 let weatherCache = {};
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupOtherCitiesScroll();
   renderOtherCities();
   loadCityWeather(currentCity);
+  initScrollReveal();
 });
 
 function getCityName(city) {

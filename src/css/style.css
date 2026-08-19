@@ -1907,6 +1907,28 @@ footer.site-footer {
   contain-intrinsic-size: auto 500px;
 }
 
+/* Subtle scroll-reveal for homepage/city-page sections: fade + lift into place
+   the first time each one nears the viewport. The hidden state only applies
+   once JS adds .reveal-init (see initScrollReveal in reveal.js), so content
+   stays visible by default if JS never runs. Kept to one small, consistent
+   effect site-wide rather than different animations per section. */
+.defer-render.reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.defer-render.reveal-init.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .defer-render.reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Inline SVG icon sprite (replaces Font Awesome webfont) */
 .icon {
   width: 1em;
