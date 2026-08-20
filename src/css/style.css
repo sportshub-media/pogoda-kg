@@ -508,12 +508,11 @@ body:not(.dark-theme) nav.main-nav a.active::after {
   display: flex;
 }
 
+/* Desktop-only — too cramped to sit well over mobile-width page content. */
 @media (max-width: 640px) {
-  .mini-weather-widget {
-    top: 120px;
-    right: 12px;
-    padding: 6px 12px;
-    gap: 8px;
+  .mini-weather-widget,
+  .mini-weather-widget.is-loaded {
+    display: none !important;
   }
 }
 
