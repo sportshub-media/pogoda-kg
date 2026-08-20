@@ -5,6 +5,170 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-20-forecast-weekend-storms",
+    slug: "august-20-forecast-kyrgyzstan-heat-holds-weekend-storms",
+    image: "/assets/images/blogphoto-aug-20-storm-steppe.webp",
+    translations: {
+      EN: {
+        title: "Aug 20 Forecast: Heat Holds Through Friday, Storms Return This Weekend",
+        seoTitle: "Aug 20 Forecast: Heat Holds Through Friday, Storms Return This Weekend",
+        seoDesc: "Bishkek, Osh and Jalal-Abad stay near +33°C to +35°C through Friday, before a wider storm system brings rain and even a thunderstorm at Karakol this weekend.",
+        category: "Weather Forecast",
+        date: "August 20, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek, Osh and Jalal-Abad stay near +33°C to +35°C through Friday, before a wider storm system brings rain and even a thunderstorm at Karakol this weekend.",
+        content: `
+          <p>Today's outlook keeps the heat going in the south and Chuy valley — Bishkek, Osh and Jalal-Abad all sit in the low-to-mid +30s through Friday — while a wetter, cooler pattern is already settling over Issyk-Kul and Naryn. A broader storm system then sweeps the whole country this weekend, before skies clear and nights turn noticeably cooler to close out the month.</p>
+          <h3>Heat Holds Through Friday</h3>
+          <p>Bishkek reaches +33°C both today and Friday, with Osh running hottest at +35°C today and +34°C Friday, and Jalal-Abad close behind at +34°C both days. Skies stay mostly dry across the south and Chuy valley through Friday, with only a slim chance of a passing shower.</p>
+          <h3>Issyk-Kul and Naryn Already Turning Wet</h3>
+          <p>The eastern half of the country is on a different track. Karakol sees rain showers today with temperatures held to just +21°C, and Naryn is unsettled too, with a daytime high of only +25°C and a real chance of drizzle. Both regions stay cooler and wetter through the week while the rest of the country bakes.</p>
+          <h3>Storms Sweep the Whole Country This Weekend</h3>
+          <p>The pattern currently confined to the east spreads countrywide by Saturday and Sunday. Bishkek's rain chance jumps to around 95% on Saturday, Osh and Jalal-Abad both see a 60-80% chance of showers, and Karakol is forecast a thunderstorm on Sunday with highs dropping to just +16°C — a sharp swing from this week's heat. Daytime highs ease everywhere over the weekend, with Bishkek, Osh and Jalal-Abad all slipping into the high +20s.</p>
+          <h3>Cooler, Clearer Skies to Close Out August</h3>
+          <p>Once the storms clear on Monday, drier weather returns for the rest of the week. Bishkek's overnight lows keep falling too, dropping to around +13°C by Wednesday — several degrees cooler than the mid-to-high teens typical of most of August — an early hint that autumn isn't far off.</p>
+          <h3>Five-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +33°C today and Friday, dropping to +29°C with rain Saturday, clearing to +30°C by Wednesday.</li>
+            <li><strong>Osh:</strong> +35°C today, +34°C Friday, showers push highs down to +29°C over the weekend, clear and back up to +33°C by Wednesday.</li>
+            <li><strong>Jalal-Abad:</strong> +34°C through Friday, rain drops highs to around +28-29°C over the weekend, clearing to +33°C by Wednesday.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> Rain showers today at +21°C, a thunderstorm and just +16°C on Sunday, clearing to +21°C by Wednesday.</li>
+            <li><strong>Naryn:</strong> +25°C today with drizzle, staying unsettled through the weekend, clearing to +25°C by Wednesday.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "20-августка карата божомол: ысыктык жумага чейин сакталат, дем алыш күндөрүндө жамгыр",
+        seoTitle: "20-августка карата божомол: ысыктык жумага чейин сакталат, дем алыш күндөрүндө жамгыр",
+        seoDesc: "Бишкек, Ош жана Жалал-Абадда жумага чейин +33...+35°C ысыктык сакталат, дем алыш күндөрү өлкөнү кеңири жамгыр каптайт, Караколдо күн күркүрөйт.",
+        category: "Аба ырайы божомолу",
+        date: "20-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бишкек, Ош жана Жалал-Абадда жумага чейин +33...+35°C ысыктык сакталат, дем алыш күндөрү өлкөнү кеңири жамгыр каптайт, Караколдо күн күркүрөйт.",
+        content: `
+          <p>Бүгүнкү божомол боюнча түштүктө жана Чүй өрөөнүндө ысыктык сакталууда — Бишкек, Ош жана Жалал-Абадда жумага чейин +30...+35°C аралыгында болот, — ал эми Ысык-Көл жана Нарында мурунтан эле салкыныраак жана жамгырлуу аба ырайы орношууда. Дем алыш күндөрү өлкөнүн бардык аймагын кеңири жамгыр каптайт, андан кийин асман ачылып, түндөр айдын аягына карай байкаларлык суукка айланат.</p>
+          <h3>Ысыктык жумага чейин сакталат</h3>
+          <p>Бишкекте бүгүн жана жумада +33°Cге чейин, Ошто эң жогорку көрсөткүч — бүгүн +35°C, жума күнү +34°C, Жалал-Абадда бир аз салкыныраак — эки күнү тең +34°C. Түштүктө жана Чүй өрөөнүндө жумага чейин негизинен кургак аба ырайы сакталат, кыска мөөнөттүү жамгырдын ыктымалдыгы аз.</p>
+          <h3>Ысык-Көл жана Нарында мурунтан эле жамгыр</h3>
+          <p>Өлкөнүн чыгыш бөлүгү башка сценарий боюнча жашап жатат. Караколдо бүгүн жамгыр жаайт, температура болгону +21°C тегерегинде, Нарында да туруксуз — күндүз болгону +25°C жана майда жамгырдын чыныгы ыктымалдыгы бар. Калган өлкө күндүн астында ысыганда, бул эки аймак жума бою салкын жана жамгырлуу бойдон калат.</p>
+          <h3>Дем алыш күндөрү жамгыр бүткүл өлкөнү каптайт</h3>
+          <p>Азырынча чыгышта гана сакталган аба ырайы ишемби жана жекшемби күндөрү бүткүл өлкөгө таралат. Бишкекте ишемби күнү жамгырдын ыктымалдыгы 95% чейин көтөрүлөт, Ош жана Жалал-Абадда — 60-80%, ал эми Караколдо жекшемби күнү күн күркүрөшү күтүлүүдө, температура болгону +16°Cге чейин түшөт — бул жумадагы ысыктыктан кескин айырма. Дем алыш күндөрү бардык жерде күндүзгү температура төмөндөйт: Бишкек, Ош жана Жалал-Абадда +28...+29°Cге чейин.</p>
+          <h3>Августтун аягына карай — салкыныраак жана ачык</h3>
+          <p>Дүйшөмбү күнү жамгыр токтогондон кийин, жуманын калган күндөрүндө кургагыраак аба ырайы кайра орношот. Бишкектеги түнкү температура да андан ары төмөндөйт — шаршемби күнгө карай болжол менен +13°Cге чейин, бул августка мүнөздүү болгон +15...+18°Cден бир нече градуска салкын — күздүн жакындап калгандыгынын алгачкы белгиси.</p>
+          <h3>Шаарлар боюнча беш күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн жана жумада +33°C, ишемби күнү жамгыр менен +29°Cге чейин төмөндөйт, шаршемби күнгө карай ачык, +30°C.</li>
+            <li><strong>Ош:</strong> бүгүн +35°C, жумада +34°C, дем алыш күндөрү жамгыр температураны +29°Cге чейин түшүрөт, шаршемби күнгө карай ачык, кайра +33°C.</li>
+            <li><strong>Жалал-Абад:</strong> жумага чейин +34°C, дем алыш күндөрү жамгыр температураны +28...+29°Cге чейин түшүрөт, шаршемби күнгө карай ачык, +33°C.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн жамгыр, +21°C, жекшемби күнү күн күркүрөйт, болгону +16°C, шаршемби күнгө карай ачык, +21°C.</li>
+            <li><strong>Нарын:</strong> бүгүн майда жамгыр менен +25°C, дем алыш күндөрү да туруксуз бойдон калат, шаршемби күнгө карай ачык, +25°C.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 20 августа: жара держится до пятницы, на выходных — грозы",
+        seoTitle: "Прогноз на 20 августа: жара держится до пятницы, на выходных — грозы",
+        seoDesc: "В Бишкеке, Оше и Джалал-Абаде до пятницы сохраняется +33...+35°C, а на выходных страну накроет широкая зона дождей и гроза в Караколе.",
+        category: "Прогноз погоды",
+        date: "20 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "В Бишкеке, Оше и Джалал-Абаде до пятницы сохраняется +33...+35°C, а на выходных страну накроет широкая зона дождей и гроза в Караколе.",
+        content: `
+          <p>Сегодняшний прогноз сохраняет жару на юге и в Чуйской долине — в Бишкеке, Оше и Джалал-Абаде столбики термометров держатся в пределах +30...+35°C до пятницы включительно, — тогда как на Иссык-Куле и в Нарыне уже устанавливается более прохладная и дождливая погода. На выходных более широкая зона осадков накроет всю страну, после чего небо расчистится, а ночи заметно похолодают к концу месяца.</p>
+          <h3>Жара держится до пятницы</h3>
+          <p>В Бишкеке сегодня и в пятницу до +33°C, в Оше — самые высокие показатели: +35°C сегодня и +34°C в пятницу, в Джалал-Абаде немного прохладнее — +34°C оба дня. На юге и в Чуйской долине до пятницы сохранится преимущественно сухая погода, лишь с небольшой вероятностью кратковременного дождя.</p>
+          <h3>На Иссык-Куле и в Нарыне уже дождливо</h3>
+          <p>Восточная часть страны живёт по другому сценарию. В Караколе сегодня дожди, температура держится на уровне всего +21°C, в Нарыне тоже неустойчиво — днём лишь +25°C и реальная вероятность мороси. Оба региона останутся прохладнее и дождливее в течение недели, пока остальная часть страны прогревается на солнце.</p>
+          <h3>На выходных грозы охватят всю страну</h3>
+          <p>Погода, которая пока держится только на востоке, в субботу и воскресенье распространится по всей стране. В Бишкеке вероятность дождя в субботу вырастет примерно до 95%, в Оше и Джалал-Абаде — до 60-80%, а в Караколе в воскресенье ожидается гроза с понижением температуры всего до +16°C — резкий перепад после жары этой недели. Дневные температуры на выходных снизятся повсюду: в Бишкеке, Оше и Джалал-Абаде — до +28...+29°C.</p>
+          <h3>К концу августа — прохладнее и яснее</h3>
+          <p>После того как в понедельник дожди прекратятся, до конца недели вернётся более сухая погода. Ночные температуры в Бишкеке продолжат снижаться — примерно до +13°C к среде, что на несколько градусов прохладнее типичных для августа +15...+18°C — ранний намёк на приближающуюся осень.</p>
+          <h3>Прогноз на пять дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +33°C сегодня и в пятницу, снижение до +29°C с дождём в субботу, прояснение и +30°C к среде.</li>
+            <li><strong>Ош:</strong> +35°C сегодня, +34°C в пятницу, дожди снижают температуру до +29°C на выходных, ясно и снова +33°C к среде.</li>
+            <li><strong>Джалал-Абад:</strong> +34°C до пятницы, дожди снижают температуру примерно до +28...+29°C на выходных, прояснение до +33°C к среде.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> дожди сегодня при +21°C, гроза и всего +16°C в воскресенье, прояснение до +21°C к среде.</li>
+            <li><strong>Нарын:</strong> +25°C сегодня с моросью, неустойчивая погода сохранится на выходных, прояснение до +25°C к среде.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-osh-melon-season",
+    slug: "kyrgyzstan-watermelon-melon-season-osh-heat",
+    image: "/assets/images/blogphoto-osh-melon-season.webp",
+    translations: {
+      EN: {
+        title: "Kyrgyzstan's Sweetest Season: How August Heat Fuels Osh's Famous Melons",
+        seoTitle: "Kyrgyzstan's Sweetest Season: How August Heat Fuels Osh's Famous Melons",
+        seoDesc: "August is peak watermelon and melon season in Kyrgyzstan, and the same intense heat behind this month's weather warnings is exactly what makes southern Kyrgyzstan's fruit so sweet.",
+        category: "Travel & Weather",
+        date: "August 20, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "August is peak watermelon and melon season in Kyrgyzstan, and the same intense heat behind this month's weather warnings is exactly what makes southern Kyrgyzstan's fruit so sweet.",
+        content: `
+          <p>While this month's relentless heat has driven storm warnings and heat-safety advisories across the country, it's also doing something much sweeter in the south: ripening one of Kyrgyzstan's best-loved late-summer crops. August is peak watermelon and melon season, and nowhere grows them better than the Osh region.</p>
+          <h3>Osh's Melon Country</h3>
+          <p>The Osh region, along with the wider Fergana Valley it borders, has long been known for its watermelons and muskmelons — the same hot, dry, sun-drenched climate that pushes daytime highs into the +30s to +35°C this time of year is exactly what these crops need to thrive. Nationally, Kyrgyzstan's watermelon harvest topped 280,000 tonnes in a recent season, with the bulk of it grown in the country's warmest southern districts.</p>
+          <h3>The Same Heat Behind This Month's Warnings Sweetens the Fruit</h3>
+          <p>Melons need long stretches of intense sun and heat to build up sugar as they ripen — the very conditions that have kept Osh and Jalal-Abad in the mid-+30s through most of August. It's a reminder that the same weather pattern driving this month's heat advisories has an upside: it's producing some of the sweetest fruit of the year.</p>
+          <h3>What's on Sale Right Now</h3>
+          <p>Roadside stands piled high with watermelons and melons are a familiar late-summer sight across southern Kyrgyzstan, and prices stay low through the peak of the season — retail watermelon has recently run around 35 KGS per kilogram in Bishkek markets, with melons a bit pricier at around 70 KGS per kilogram. Osh's Jayma Bazaar, one of Central Asia's largest and oldest markets, is a well-known spot to find the season's best selection.</p>
+          <h3>How to Pick a Good One</h3>
+          <p>A few simple checks help find a ripe melon: a watermelon should sound hollow and deep when thumped, and the pale patch where it sat on the ground should be creamy yellow rather than white. For muskmelons, a sweet smell at the stem end and a slight give when pressed gently are good signs of ripeness.</p>
+          <h3>The Season Won't Last Forever</h3>
+          <p>Watermelon and melon season typically runs through September before tapering off as temperatures cool, so the next few weeks are the best window to catch southern Kyrgyzstan's harvest at its peak.</p>
+        `
+      },
+      KG: {
+        title: "Кыргызстандын эң таттуу мезгили: августтун ысыгы Оштун дыняларын кантип өзгөчө кылат",
+        seoTitle: "Кыргызстандын эң таттуу мезгили: августтун ысыгы Оштун дыняларын кантип өзгөчө кылат",
+        seoDesc: "Август — Кыргызстанда дарбыз жана дыня сезонунун туу чокусу, ушул айда аба ырайы эскертүүлөрүнө себеп болгон ысыктын өзү түштүктүн жемиштерин өзгөчө таттуу кылат.",
+        category: "Саякат жана аба ырайы",
+        date: "20-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Август — Кыргызстанда дарбыз жана дыня сезонунун туу чокусу, ушул айда аба ырайы эскертүүлөрүнө себеп болгон ысыктын өзү түштүктүн жемиштерин өзгөчө таттуу кылат.",
+        content: `
+          <p>Ушул айдагы токтобогон ысыктык өлкө боюнча шторм эскертүүлөрүнө жана ысыктан сак болуу боюнча кеңештерге себеп болуп жатканда, ал түштүктө андан да таттуураак нерсени жасап жатат — Кыргызстандын жайдын аягындагы эң сүйүктүү түшүмдөрүнүн бирин бышырат. Август — дарбыз жана дыня сезонунун туу чокусу, аларды Ош облусундай эч жерде жакшы өстүрүшпөйт.</p>
+          <h3>Ош облусу — дарбыз жана дыня чөйрөсү</h3>
+          <p>Ош облусу, ал жайгашкан кеңири Фергана өрөөнү менен бирге, дарбыз жана дыняларынын аркасынан бир топ убакыттан бери белгилүү — ушул мезгилде күндүзгү температураны +30...+35°Cге көтөргөн ысык, кургак жана күндүү климат так ушул өсүмдүктөргө жакшы өсүш үчүн керек. Өлкө боюнча акыркы сезондордун биринде дарбыз түшүмү 280 000 тоннадан ашкан, анын көпчүлүгү өлкөнүн эң ысык түштүк райондорунда өстүрүлгөн.</p>
+          <h3>Эскертүүгө себеп болгон ысыктын өзү жемиштерди таттуу кылат</h3>
+          <p>Дыня менен дарбызга бышып жетилүү учурунда кант топтоо үчүн узак мезгил бою күчтүү күн жана ысыктык керек — так ушундай шарттар августтун көпчүлүк бөлүгүндө Ош менен Жалал-Абадда, болжол менен +35°C тегерегинде сакталууда. Бул — ушул айда ысыктык эскертүүлөрүнө себеп болгон аба ырайы модели жакшы жагы да бар экенин эске салат: ал жылдын эң таттуу жемиштеринин айрымдарын берип жатат.</p>
+          <h3>Азыр эмне сатылып жатат</h3>
+          <p>Дарбыз менен дыняга толгон жол боюндагы соода тактайлары түштүк Кыргызстандагы жайдын аягынын тааныш көрүнүшү, ал эми сезондун туу чокусунда баалар төмөн бойдон калат — Бишкектеги дүкөндөрдө дарбыздын чекене баасы жакында 1 килограммга болжол менен 35 сомго туура келген, дыня бир аз кымбатыраак — болжол менен 70 сом. Борбор Азиядагы эң чоң жана эң эски базарлардын бири болгон Оштогу Жайма базары — сезондун эң жакшы тандоосун табууга болгон белгилүү жер.</p>
+          <h3>Жакшы жемишти кантип тандоо керек</h3>
+          <p>Бышкан жемишти табууга бир нече жөнөкөй жолдор жардам берет: бышкан дарбыз кагылганда каңгырап, терең үн чыгарышы керек, ал эми жерде жаткан жеринде калган ак так ак эмес, кремдей саргыч болушу керек. Дыня үчүн бышыктыктын жакшы белгиси — сабагынын жанындагы таттуу жыт жана акырын басканда бир аз ийилүү.</p>
+          <h3>Сезон түбөлүккө созулбайт</h3>
+          <p>Дарбыз жана дыня сезону адатта сентябрга чейин уланат, андан кийин аба муздаган сайын азаят, ошондуктан алдыдагы бир нече жума түштүк Кыргызстандын түшүмүн эң мыкты мезгилинде кармоо үчүн эң ыңгайлуу убакыт.</p>
+        `
+      },
+      RU: {
+        title: "Самый сладкий сезон Кыргызстана: как августовская жара делает дыни Оша особенными",
+        seoTitle: "Самый сладкий сезон Кыргызстана: как августовская жара делает дыни Оша особенными",
+        seoDesc: "Август — пик сезона арбузов и дынь в Кыргызстане, и та же изнуряющая жара, из-за которой в этом месяце объявляют предупреждения о погоде, делает южные фрукты особенно сладкими.",
+        category: "Туризм и погода",
+        date: "20 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Август — пик сезона арбузов и дынь в Кыргызстане, и та же изнуряющая жара, из-за которой в этом месяце объявляют предупреждения о погоде, делает южные фрукты особенно сладкими.",
+        content: `
+          <p>Пока изнуряющая жара этого месяца становится поводом для штормовых предупреждений и рекомендаций по безопасности на юге страны, она делает и кое-что куда более приятное — доводит до спелости один из самых любимых позднелетних урожаев Кыргызстана. Август — пик сезона арбузов и дынь, и нигде их не выращивают лучше, чем в Ошской области.</p>
+          <h3>Ошская область — край дынь и арбузов</h3>
+          <p>Ошская область вместе с более широкой Ферганской долиной, к которой она примыкает, издавна славится арбузами и дынями — тот же жаркий, сухой и солнечный климат, который в это время года поднимает дневную температуру до +30...+35°C, как раз и нужен этим культурам для хорошего роста. По стране в целом урожай арбузов в один из недавних сезонов превысил 280 000 тонн, причём основная часть выращена в самых тёплых южных районах.</p>
+          <h3>Та же жара, что вызывает предупреждения, делает плоды слаще</h3>
+          <p>Дыням и арбузам нужны долгие периоды интенсивного солнца и тепла, чтобы накопить сахар при созревании — именно такие условия держатся в Оше и Джалал-Абаде большую часть августа, при температуре около +35°C. Это хорошее напоминание о том, что у погодной модели, из-за которой в этом месяце объявляют предупреждения о жаре, есть и положительная сторона: она даёт одни из самых сладких плодов года.</p>
+          <h3>Что продают прямо сейчас</h3>
+          <p>Придорожные прилавки, заваленные арбузами и дынями, — привычная картина позднего лета на юге Кыргызстана, а цены в разгар сезона остаются низкими: розничная цена на арбузы в Бишкеке недавно держалась на уровне около 35 сомов за килограмм, дыни немного дороже — около 70 сомов за килограмм. Ошский рынок Жайма, один из крупнейших и старейших рынков Центральной Азии, — известное место, где можно найти лучший выбор сезона.</p>
+          <h3>Как выбрать хороший плод</h3>
+          <p>Есть несколько простых способов проверить спелость: спелый арбуз при постукивании должен звучать глухо и объёмно, а бледное пятно в месте, где он лежал на земле, должно быть кремово-жёлтым, а не белым. У дынь хороший признак спелости — сладкий аромат у плодоножки и лёгкая податливость при мягком нажатии.</p>
+          <h3>Сезон не будет длиться вечно</h3>
+          <p>Сезон арбузов и дынь обычно продолжается до сентября, а затем идёт на спад по мере похолодания, так что ближайшие несколько недель — лучшее время застать урожай юга Кыргызстана в его пике.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-19-forecast-storms-east",
     slug: "august-19-forecast-kyrgyzstan-storms-east-heat-south",
     image: "/assets/images/blogphoto-aug-19-windy-storm-east.webp",
