@@ -5,6 +5,170 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-22-forecast-rain-clears-heat-returns",
+    slug: "august-22-forecast-kyrgyzstan-rain-clears-midweek-heat-returns",
+    image: "/assets/images/blogphoto-rain-naryn-issykkul.webp",
+    translations: {
+      EN: {
+        title: "Aug 22 Forecast: Rain Blankets the Country Today, Heat Surges Back by Next Weekend",
+        seoTitle: "Aug 22 Forecast: Rain Blankets the Country Today, Heat Surges Back by Next Weekend",
+        seoDesc: "Bishkek sees a 100% chance of rain today and Karakol just +18°C on Sunday, but skies clear through midweek and temperatures climb to +34°C to +35°C in Osh and Jalal-Abad by next weekend.",
+        category: "Weather Forecast",
+        date: "August 22, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek sees a 100% chance of rain today and Karakol just +18°C on Sunday, but skies clear through midweek and temperatures climb to +34°C to +35°C in Osh and Jalal-Abad by next weekend.",
+        content: `
+          <p>Rain covers nearly the entire country today, with Bishkek seeing a 100% chance and Naryn and Karakol not far behind. The wet pattern lingers into the middle of next week, especially around Issyk-Kul, before a strong warm-up pushes southern Kyrgyzstan back into the mid-+30s by next weekend.</p>
+          <h3>Rain Covers the Country Today</h3>
+          <p>Bishkek's rain chance hits 100% today with a high of just +28°C, Naryn sits at 92%, Karakol at 86%, and Jalal-Abad at 74%. Osh is the driest of the main cities today, still seeing a 55% chance of rain with a high of +29°C.</p>
+          <h3>Karakol Stays Wet and Cool Into Sunday</h3>
+          <p>The Issyk-Kul region doesn't dry out quickly — Karakol's rain chance actually rises to 96% on Sunday, with a high of only +18°C, while Naryn stays unsettled too at 82%.</p>
+          <h3>South Clears First, Chuy Valley Lags Behind</h3>
+          <p>Osh and Jalal-Abad both turn dry by Monday with highs climbing to around +31-32°C, but Bishkek and Karakol stay unsettled longer — Bishkek's rain chance rebounds to 78% on Monday and 69% on Tuesday, and Karakol sees another wet spell around 91% on Tuesday, before both finally clear by Wednesday.</p>
+          <h3>Heat Surges Back by the Weekend</h3>
+          <p>Once the rain clears midweek, temperatures climb quickly. Jalal-Abad and Osh both reach +35°C by Thursday and Friday, and even Bishkek, further from the hottest zone, warms to +34°C by Friday — matching some of the hottest days seen earlier this month.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +28°C today with rain, staying unsettled through Tuesday, clearing and climbing to +34°C by Friday.</li>
+            <li><strong>Osh:</strong> +29°C today with rain, clearing by Monday, rising to +35°C by Thursday.</li>
+            <li><strong>Jalal-Abad:</strong> +29°C today with rain, clearing by Monday, rising to +35°C by Thursday and Friday.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +22°C today with rain, dropping to +18°C Sunday, staying unsettled into Tuesday, clearing to +24°C by Friday.</li>
+            <li><strong>Naryn:</strong> +22°C today with rain, staying unsettled through Sunday, clearing and climbing to +29°C by Friday.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "22-августка карата божомол: бүгүн өлкөнү жамгыр каптайт, кийинки дем алыш күндөрүнө ысыктык кайтат",
+        seoTitle: "22-августка карата божомол: бүгүн өлкөнү жамгыр каптайт, кийинки дем алыш күндөрүнө ысыктык кайтат",
+        seoDesc: "Бүгүн Бишкекте жамгырдын ыктымалдыгы 100%ге жетет, Караколдо жекшемби күнү болгону +18°C, бирок жуманын ортосуна карай асман ачылып, Ош менен Жалал-Абадда кийинки дем алыш күндөрүнө карай кайра +34...+35°C болот.",
+        category: "Аба ырайы божомолу",
+        date: "22-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бүгүн Бишкекте жамгырдын ыктымалдыгы 100%ге жетет, Караколдо жекшемби күнү болгону +18°C, бирок жуманын ортосуна карай асман ачылып, Ош менен Жалал-Абадда кийинки дем алыш күндөрүнө карай кайра +34...+35°C болот.",
+        content: `
+          <p>Бүгүн өлкөнүн дээрлик бүткүл аймагын жамгыр каптап жатат: Бишкекте жамгырдын ыктымалдыгы 100%ге жетет, Нарын менен Каракол андан анча алыс эмес. Нымдуу аба ырайы, өзгөчө Ысык-Көл тарабында, кийинки жуманын ортосуна чейин созулат, андан кийин күчтүү жылуулук түштүк Кыргызстанды кийинки дем алыш күндөрүнө карай кайра +35°Cге чейин көтөрөт.</p>
+          <h3>Бүгүн өлкөнү жамгыр каптайт</h3>
+          <p>Бишкекте бүгүн жамгырдын ыктымалдыгы 100%ге жетет, температура болгону +28°C, Нарында — 92%, Караколдо — 86%, Жалал-Абадда — 74%. Ош бүгүн негизги шаарлардын ичинен эң кургагы — жамгырдын ыктымалдыгы 55%, температура +29°C.</p>
+          <h3>Караколдо жекшембиге чейин жамгыр менен салкын</h3>
+          <p>Ысык-Көл аймагы тез кургабайт — Караколдо жекшемби күнү жамгырдын ыктымалдыгы 96%ге чейин көтөрүлөт, температура болгону +18°C, Нарында да туруксуз аба ырайы сакталат — 82%.</p>
+          <h3>Түштүк биринчи ачылат, Чүй өрөөнү артта калат</h3>
+          <p>Ош менен Жалал-Абад дүйшөмбүгө карай кургак болот, температура +31...+32°Cге чейин көтөрүлөт, бирок Бишкек менен Караколдо туруксуз аба ырайы дагы узагыраак сакталат — Бишкекте жамгырдын ыктымалдыгы дүйшөмбү күнү 78%ге, шейшемби күнү 69%ге кайра көтөрүлөт, Караколдо шейшемби күнү дагы бир жамгырлуу мезгил 91% ыктымалдык менен өтөт, эки шаар тең шаршемби күнгө карай гана ачылат.</p>
+          <h3>Дем алыш күндөрүнө ысыктык кайтат</h3>
+          <p>Жуманын ортосуна карай жамгыр токтогондон кийин, температура тез көтөрүлө баштайт. Жалал-Абад менен Ош бейшемби жана жума күндөрүнө карай +35°Cге жетет, ал эми эң ысык аймактан алыс жаткан Бишкек да жума күнгө карай +34°Cге чейин ысыйт — бул айдын башында катталган эң ысык күндөргө барабар.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн жамгыр менен +28°C, шейшембиге чейин туруксуз бойдон калат, асман ачылып жума күнгө карай +34°C.</li>
+            <li><strong>Ош:</strong> бүгүн жамгыр менен +29°C, дүйшөмбүгө карай ачылат, бейшемби күнгө карай +35°Cге көтөрүлөт.</li>
+            <li><strong>Жалал-Абад:</strong> бүгүн жамгыр менен +29°C, дүйшөмбүгө карай ачылат, бейшемби жана жума күндөрүнө карай +35°Cге көтөрүлөт.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн жамгыр менен +22°C, жекшемби күнү +18°Cге түшөт, шейшембиге чейин туруксуз бойдон калат, жума күнгө карай ачылып +24°C.</li>
+            <li><strong>Нарын:</strong> бүгүн жамгыр менен +22°C, жекшембиге чейин туруксуз бойдон калат, асман ачылып жума күнгө карай +29°Cге көтөрүлөт.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 22 августа: сегодня страну накроют дожди, к следующим выходным жара возвращается",
+        seoTitle: "Прогноз на 22 августа: сегодня страну накроют дожди, к следующим выходным жара возвращается",
+        seoDesc: "Сегодня в Бишкеке вероятность дождя достигает 100%, а в Караколе в воскресенье всего +18°C, но к середине недели небо расчистится, и в Оше с Джалал-Абадом к следующим выходным снова будет +34...+35°C.",
+        category: "Прогноз погоды",
+        date: "22 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Сегодня в Бишкеке вероятность дождя достигает 100%, а в Караколе в воскресенье всего +18°C, но к середине недели небо расчистится, и в Оше с Джалал-Абадом к следующим выходным снова будет +34...+35°C.",
+        content: `
+          <p>Сегодня дожди накрывают почти всю территорию страны: в Бишкеке вероятность дождя достигает 100%, немногим отстают Нарын и Каракол. Влажная погода задержится до середины следующей недели, особенно в районе Иссык-Куля, прежде чем сильное потепление вернёт юг Кыргызстана к температурам около +35°C к следующим выходным.</p>
+          <h3>Дожди накрывают страну сегодня</h3>
+          <p>Вероятность дождя в Бишкеке сегодня достигает 100% при температуре всего +28°C, в Нарыне — 92%, в Караколе — 86%, в Джалал-Абаде — 74%. Ош сегодня самый сухой из основных городов — вероятность дождя там 55% при +29°C.</p>
+          <h3>В Караколе дождливо и прохладно до воскресенья</h3>
+          <p>Регион Иссык-Куля не спешит обсыхать — вероятность дождя в Караколе в воскресенье даже вырастет до 96% при температуре всего +18°C, а в Нарыне тоже сохранится неустойчивая погода — 82%.</p>
+          <h3>Юг проясняется первым, Чуйская долина отстаёт</h3>
+          <p>Ош и Джалал-Абад станут сухими уже к понедельнику, температура поднимется примерно до +31...+32°C, но в Бишкеке и Караколе неустойчивая погода задержится дольше — в Бишкеке вероятность дождя вновь вырастет до 78% в понедельник и 69% во вторник, а в Караколе во вторник пройдёт ещё один дождливый период с вероятностью около 91%, прежде чем оба города наконец прояснятся к среде.</p>
+          <h3>К выходным жара возвращается</h3>
+          <p>Как только к середине недели дожди прекратятся, температура начнёт быстро расти. Джалал-Абад и Ош достигнут +35°C к четвергу и пятнице, а даже Бишкек, находящийся дальше от самой жаркой зоны, прогреется до +34°C к пятнице — это сопоставимо с самыми жаркими днями, отмеченными ранее в этом месяце.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +28°C сегодня с дождём, неустойчивая погода сохранится до вторника, прояснение и рост до +34°C к пятнице.</li>
+            <li><strong>Ош:</strong> +29°C сегодня с дождём, прояснение к понедельнику, рост до +35°C к четвергу.</li>
+            <li><strong>Джалал-Абад:</strong> +29°C сегодня с дождём, прояснение к понедельнику, рост до +35°C к четвергу и пятнице.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +22°C сегодня с дождём, снижение до +18°C в воскресенье, неустойчивая погода сохранится до вторника, прояснение до +24°C к пятнице.</li>
+            <li><strong>Нарын:</strong> +22°C сегодня с дождём, неустойчивая погода сохранится до воскресенья, прояснение и рост до +29°C к пятнице.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-song-kul-alpine-season-closing",
+    slug: "song-kul-lake-alpine-season-closing-september",
+    image: "/assets/images/blog_lake.webp",
+    translations: {
+      EN: {
+        title: "Song-Kul's Short Alpine Season Is Closing: What to Know Before the Roads Shut",
+        seoTitle: "Song-Kul's Short Alpine Season Is Closing: What to Know Before the Roads Shut",
+        seoDesc: "Kyrgyzstan's high-altitude Song-Kul lake, where nomadic families set up yurt camps at 3,016 meters, only stays accessible from June to September — and this year's window closes in a few weeks as nights already dip toward freezing.",
+        category: "Travel & Weather",
+        date: "August 22, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzstan's high-altitude Song-Kul lake, where nomadic families set up yurt camps at 3,016 meters, only stays accessible from June to September — and this year's window closes in a few weeks as nights already dip toward freezing.",
+        content: `
+          <p>High in the Naryn region, at an elevation of 3,016 meters, Song-Kul is one of Kyrgyzstan's most striking alpine lakes — and one of its shortest travel seasons. Unlike Issyk-Kul, which stays accessible year-round, Song-Kul is only reachable from June through September, and this year's window is already closing as nights at altitude dip toward freezing.</p>
+          <h3>A Lake That Only Opens for Three Months</h3>
+          <p>Every summer, dozens of nomadic shepherd families move their herds up to Song-Kul's high pastures, setting up yurt camps that welcome travelers alongside their own seasonal life. The road in closes with the first heavy snow, typically by mid-September, cutting the lake off from vehicle access until the following summer.</p>
+          <h3>Weather at 3,016 Meters Turns Fast</h3>
+          <p>Even in August, conditions at Song-Kul can swing dramatically — clear blue skies can give way to strong wind, rain, or even hail within a single afternoon. By September, overnight temperatures regularly fall to 0°C to +5°C, and the first frost of the season is common at this altitude, even while lower-elevation cities like Bishkek and Osh still see daytime highs well into the +30s.</p>
+          <h3>Why the Last Weeks Draw Travelers Anyway</h3>
+          <p>Despite the cold nights, the final two weeks before closure are a favorite window for experienced travelers: the summer crowds have thinned, the autumn light over the jailoo (high pasture) is especially dramatic, and the yurt camps are still fully operating with hot meals and warm bedding.</p>
+          <h3>What to Pack</h3>
+          <p>Layered warm clothing is essential regardless of how hot it is in the valley towns — a fleece or down layer, a windproof shell, and a warm hat and gloves for the night make the difference between an uncomfortable stay and a memorable one. Yurt camps typically provide thick blankets, but nighttime temperatures at this elevation catch many summer-only packers off guard.</p>
+          <h3>When the Season Actually Ends</h3>
+          <p>Camps and the access road typically close by mid-September once snow blocks the mountain pass, so travelers hoping to see Song-Kul this year have only a few weeks left before the lake goes quiet until next summer.</p>
+        `
+      },
+      KG: {
+        title: "Сон-Көлдүн кыска альпы мезгили аяктап баратат: жолдор жабылганга чейин эмнени билүү керек",
+        seoTitle: "Сон-Көлдүн кыска альпы мезгили аяктап баратат: жолдор жабылганга чейин эмнени билүү керек",
+        seoDesc: "Көчмөн үй-бүлөлөр 3016 метр бийиктикте боз үй лагерлерин курган Кыргызстандын бийик тоолуу Сон-Көл көлү июндан сентябрга чейин гана жетүүгө мүмкүн — быйылкы мезгил жакында жабылат, түндөр бийиктикте нөлгө жакындап калды.",
+        category: "Саякат жана аба ырайы",
+        date: "22-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Көчмөн үй-бүлөлөр 3016 метр бийиктикте боз үй лагерлерин курган Кыргызстандын бийик тоолуу Сон-Көл көлү июндан сентябрга чейин гана жетүүгө мүмкүн — быйылкы мезгил жакында жабылат, түндөр бийиктикте нөлгө жакындап калды.",
+        content: `
+          <p>Нарын облусунун бийик тоолорунда, 3016 метр бийиктикте Сон-Көл жайгашкан — Кыргызстандын эң таасирдүү альпы көлдөрүнүн бири жана эң кыска туристтик мезгилдүү жерлердин бири. Жыл бою жетүүгө боло турган Ысык-Көлдөн айырмаланып, Сон-Көлгө болгону июндан сентябрга чейин жетүүгө болот, быйыл болсо бул мезгил жакында жабылат — бийиктикте түндөр нөлгө жакындап калды.</p>
+          <h3>Болгону үч ай ачык турган көл</h3>
+          <p>Ар бир жайда ондогон көчмөн үй-бүлөлөр малын Сон-Көлдүн бийик жайлоолоруна айдап чыгарып, боз үй лагерлерин тигишет, алар өз мезгилдик жашоосу менен катар саякатчыларды да кабыл алышат. Жол биринчи катуу кар менен, адатта сентябрдын ортосуна карай жабылат, көл кийинки жайга чейин унаа менен жетүүдөн ажырайт.</p>
+          <h3>3016 метр бийиктикте аба ырайы тез өзгөрөт</h3>
+          <p>Атүгүл августта деле Сон-Көлдөгү шарттар кескин өзгөрүшү мүмкүн — ачык көк асман бир күндүн ичинде күчтүү шамалга, жамгырга, атүгүл мөндүргө айланышы мүмкүн. Сентябрга карай түнкү температура көбүнчө 0...+5°C чейин түшөт, ушул бийиктикте мезгилдин алгачкы аязы кадимки көрүнүш, бул мезгилде Бишкек, Ош сыяктуу ойдуңдагы шаарларда күндүзгү температура дагы деле +30°Cден ашык болуп турганда.</p>
+          <h3>Эмне үчүн саякатчылар акыркы жумаларды тандашат</h3>
+          <p>Суук түндөргө карабастан, жабылганга чейинки акыркы эки жума тажрыйбалуу саякатчылардын сүйүктүү мезгили — жайкы эл азайган, жайлоонун үстүндөгү күзгү жарык өзгөчө таасирдүү, ал эми боз үй лагерлери дагы деле толук иштеп, ысык тамак жана жылуу төшөк сунушташат.</p>
+          <h3>Эмнени алып барыш керек</h3>
+          <p>Өрөөндөгү шаарларда канчалык ысык болбосун, жылуу, катмарлуу кийим зарыл — флис же пух катмар, шамалдан коргогон куртка, ошондой эле түнкүсүн жылуу баш кийим менен кол кап — ыңгайсыз сапар менен эстеп каларлык сапардын айырмасы ушунда. Боз үй лагерлеринде адатта жоон жамынычтар бар, бирок бул бийиктиктеги түнкү температура жайга гана ылайыкташкан көптөгөн саякатчыларды капыстан кармайт.</p>
+          <h3>Мезгил чын эле качан аяктайт</h3>
+          <p>Лагерлер жана кире беруучу жол адатта кар тоо ашуусун жапкандан кийин, сентябрдын ортосуна карай жабылат, ошондуктан быйыл Сон-Көлдү көргүсү келген саякатчыларда көл кийинки жайга чейин тынчыганга чейин болгону бир нече жума калды.</p>
+        `
+      },
+      RU: {
+        title: "Короткий альпийский сезон Сон-Куля подходит к концу: что нужно знать до закрытия дорог",
+        seoTitle: "Короткий альпийский сезон Сон-Куля подходит к концу: что нужно знать до закрытия дорог",
+        seoDesc: "Высокогорное озеро Сон-Куль в Кыргызстане, где кочевые семьи ставят юрточные лагеря на высоте 3016 метров, доступно только с июня по сентябрь — и в этом году окно уже закрывается, а ночи на высоте приближаются к нулю.",
+        category: "Туризм и погода",
+        date: "22 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Высокогорное озеро Сон-Куль в Кыргызстане, где кочевые семьи ставят юрточные лагеря на высоте 3016 метров, доступно только с июня по сентябрь — и в этом году окно уже закрывается, а ночи на высоте приближаются к нулю.",
+        content: `
+          <p>Высоко в Нарынской области, на высоте 3016 метров, находится Сон-Куль — одно из самых впечатляющих альпийских озёр Кыргызстана и одно из мест с самым коротким туристическим сезоном. В отличие от Иссык-Куля, который доступен круглый год, до Сон-Куля можно добраться только с июня по сентябрь, и в этом году окно уже закрывается — ночи на высоте приближаются к нулю градусов.</p>
+          <h3>Озеро, которое открыто всего три месяца</h3>
+          <p>Каждое лето десятки кочевых семей поднимают свои стада на высокогорные пастбища Сон-Куля, ставя юрточные лагеря, которые принимают путешественников наравне со своей обычной сезонной жизнью. Дорога закрывается с первым сильным снегопадом, обычно к середине сентября, отрезая озеро от автомобильного доступа до следующего лета.</p>
+          <h3>Погода на высоте 3016 метров меняется быстро</h3>
+          <p>Даже в августе условия на Сон-Куле могут резко меняться — ясное голубое небо может смениться сильным ветром, дождём или даже градом в течение одного дня. К сентябрю ночные температуры регулярно опускаются до 0...+5°C, и на этой высоте не редкость первые заморозки сезона, даже когда в городах на равнине, таких как Бишкек и Ош, дневная температура всё ещё держится далеко за +30°C.</p>
+          <h3>Почему путешественники всё равно выбирают последние недели</h3>
+          <p>Несмотря на холодные ночи, последние две недели перед закрытием — любимое время у опытных путешественников: летние толпы уже поредели, осенний свет над джайлоо (высокогорным пастбищем) особенно эффектен, а юрточные лагеря всё ещё полностью работают, предлагая горячую еду и тёплые постели.</p>
+          <h3>Что взять с собой</h3>
+          <p>Тёплая многослойная одежда необходима независимо от того, насколько жарко в долинных городах — флисовый или пуховый слой, ветрозащитная куртка, а также тёплая шапка и перчатки на ночь — вот что отличает неприятную поездку от незабываемой. В юрточных лагерях обычно есть плотные одеяла, но ночные температуры на этой высоте застают врасплох многих, кто собирается вещи в расчёте только на лето.</p>
+          <h3>Когда сезон действительно заканчивается</h3>
+          <p>Лагеря и подъездная дорога обычно закрываются к середине сентября, как только снег перекрывает горный перевал, так что у путешественников, желающих увидеть Сон-Куль в этом году, остаётся всего несколько недель, прежде чем озеро затихнет до следующего лета.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-20-forecast-weekend-storms",
     slug: "august-20-forecast-kyrgyzstan-heat-holds-weekend-storms",
     image: "/assets/images/blogphoto-aug-20-storm-steppe.webp",
