@@ -5,6 +5,164 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-24-forecast-last-rain-heat-wave",
+    slug: "august-24-forecast-kyrgyzstan-last-rain-heat-wave-builds",
+    image: "/assets/images/blogphoto-outlook-heat-cooldown.webp",
+    translations: {
+      EN: {
+        title: "Aug 24 Forecast: Bishkek's Last Rainy Day, Then a Late-August Heat Wave Builds",
+        seoTitle: "Aug 24 Forecast: Bishkek's Last Rainy Day, Then a Late-August Heat Wave Builds",
+        seoDesc: "Bishkek sees a 100% rain chance today and Karakol tops 95% tomorrow, but skies clear by Wednesday and a strong warm-up pushes Osh to +34°C and Bishkek to +33°C by the weekend.",
+        category: "Weather Forecast",
+        date: "August 24, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek sees a 100% rain chance today and Karakol tops 95% tomorrow, but skies clear by Wednesday and a strong warm-up pushes Osh to +34°C and Bishkek to +33°C by the weekend.",
+        content: `
+          <p>Bishkek starts the week with its last significant rain — a 100% chance today — while the south is already dry and warming. The wet pattern lingers over Issyk-Kul into Tuesday, but once it clears midweek, a strong late-August heat wave builds, pushing Osh to +34°C and Bishkek to +33°C by the weekend.</p>
+          <h3>Bishkek's Last Rainy Day</h3>
+          <p>Bishkek sees a 100% chance of rain today with a high of just +29°C, while Osh and Jalal-Abad are already dry and comfortably warm at +31°C and +30°C. Naryn is dry too today, though still cool at +22°C.</p>
+          <h3>Karakol Peaks Wet on Tuesday</h3>
+          <p>The Issyk-Kul region is the last to clear. Karakol's rain chance actually rises to 95% on Tuesday with a high of only +20°C, and Bishkek stays unsettled too at 94%, before both dry out by Wednesday.</p>
+          <h3>A Heat Wave Builds Through the Weekend</h3>
+          <p>Once the rain clears, temperatures climb fast almost everywhere. Osh reaches +33°C by Wednesday and +34°C by Thursday through Saturday, Jalal-Abad hits +34°C by Friday, and even Bishkek — coming off today's rain — warms to +33°C by Saturday, some of the hottest readings of the past two weeks.</p>
+          <h3>Naryn and Karakol Stay Milder</h3>
+          <p>The high-altitude east doesn't join the heat wave the same way. Naryn tops out near +25-28°C through the weekend and Karakol stays in the low +20s, keeping both noticeably cooler than the Chuy valley and the south.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +29°C today with rain, staying unsettled into Tuesday, clearing and climbing to +33°C by Saturday.</li>
+            <li><strong>Osh:</strong> +31°C today, dry all week, rising steadily to +34°C by Thursday.</li>
+            <li><strong>Jalal-Abad:</strong> +30°C today, dry all week, climbing to +34°C by Thursday and Friday.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +21°C today with rain, peaking at 95% rain chance and +20°C Tuesday, clearing to +25°C by Friday.</li>
+            <li><strong>Naryn:</strong> +22°C today and dry, climbing gradually to +28°C by Friday.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "24-августка карата божомол: Бишкектеги акыркы жамгырлуу күн, андан кийин августтун аягындагы ысыктык башталат",
+        seoTitle: "24-августка карата божомол: Бишкектеги акыркы жамгырлуу күн, андан кийин августтун аягындагы ысыктык башталат",
+        seoDesc: "Бүгүн Бишкекте жамгырдын ыктымалдыгы 100%, эртең Караколдо 95%тен ашат, бирок шаршембиге карай асман ачылып, күчтүү жылуулук Ошто +34°Cге, Бишкекте дем алыш күндөрүнө карай +33°Cге чейин көтөрөт.",
+        category: "Аба ырайы божомолу",
+        date: "24-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бүгүн Бишкекте жамгырдын ыктымалдыгы 100%, эртең Караколдо 95%тен ашат, бирок шаршембиге карай асман ачылып, күчтүү жылуулук Ошто +34°Cге, Бишкекте дем алыш күндөрүнө карай +33°Cге чейин көтөрөт.",
+        content: `
+          <p>Бишкекте жума акыркы олуттуу жамгыр менен башталат — бүгүн ыктымалдык 100%, — ал эми түштүктө буга чейин эле кургак жана жылуу. Ысык-Көлдөгү нымдуу аба ырайы шейшембиге чейин созулат, бирок ал жуманын ортосуна карай токтогондон кийин, августтун аягындагы күчтүү ысыктык башталат, ал Ошту +34°Cге, Бишкекти дем алыш күндөрүнө карай +33°Cге чейин көтөрөт.</p>
+          <h3>Бишкектеги акыркы жамгырлуу күн</h3>
+          <p>Бишкекте бүгүн жамгырдын ыктымалдыгы 100%, температура болгону +29°C, ал эми Ош менен Жалал-Абадда буга чейин эле кургак жана жагымдуу жылуу — +31°C жана +30°C. Нарында да бүгүн кургак, бирок дагы деле салкын — +22°C.</p>
+          <h3>Ысык-Көлдөгү жамгырдын туу чокусу — шейшемби күнү</h3>
+          <p>Ысык-Көл аймагы эң акыры ачылат. Караколдо шейшемби күнү жамгырдын ыктымалдыгы 95%ге чейин көтөрүлөт, температура болгону +20°C, Бишкекте да туруксуз аба ырайы сакталат — 94%, эки шаар тең шаршембиге карай гана кургайт.</p>
+          <h3>Дем алыш күндөрүнө карай ысыктык күчөйт</h3>
+          <p>Жамгыр токтогондон кийин, температура дээрлик бардык жерде тез көтөрүлөт. Ош шаршембиге карай +33°Cге, бейшембиден ишембиге чейин +34°Cге жетет, Жалал-Абад жума күнгө карай +34°Cге жетет, ал эми бүгүн жамгыр алдында турган Бишкек да ишемби күнгө карай +33°Cге чейин ысыйт — бул акыркы эки жумадагы эң жогорку көрсөткүчтөрдүн бири.</p>
+          <h3>Нарын менен Каракол салкыныраак бойдон калат</h3>
+          <p>Бийик тоолуу чыгыш ысыктыкка ошол эле деңгээлде кошулбайт. Нарында дем алыш күндөрү температура +25...+28°Cден ашпайт, Караколдо +20°C тегерегинде сакталат — эки аймак тең Чүй өрөөнү менен түштүктөн байкаларлык салкын.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн жамгыр менен +29°C, шейшембиге чейин туруксуз бойдон калат, асман ачылып ишемби күнгө карай +33°C.</li>
+            <li><strong>Ош:</strong> бүгүн +31°C, жума бою кургак, бейшемби күнгө карай туруктуу түрдө +34°Cге көтөрүлөт.</li>
+            <li><strong>Жалал-Абад:</strong> бүгүн +30°C, жума бою кургак, бейшемби жана жума күндөрүнө карай +34°Cге көтөрүлөт.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн жамгыр менен +21°C, шейшемби күнү жамгырдын ыктымалдыгы 95%ке жана +20°Cге жетет, жума күнгө карай ачылып +25°C.</li>
+            <li><strong>Нарын:</strong> бүгүн +22°C жана кургак, жума күнгө карай акырындык менен +28°Cге көтөрүлөт.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 24 августа: последний дождливый день в Бишкеке, затем — жара конца августа",
+        seoTitle: "Прогноз на 24 августа: последний дождливый день в Бишкеке, затем — жара конца августа",
+        seoDesc: "Сегодня в Бишкеке вероятность дождя 100%, а завтра в Караколе — свыше 95%, но к среде небо расчистится, и сильное потепление поднимет температуру в Оше до +34°C, а в Бишкеке до +33°C к выходным.",
+        category: "Прогноз погоды",
+        date: "24 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Сегодня в Бишкеке вероятность дождя 100%, а завтра в Караколе — свыше 95%, но к среде небо расчистится, и сильное потепление поднимет температуру в Оше до +34°C, а в Бишкеке до +33°C к выходным.",
+        content: `
+          <p>Неделя в Бишкеке начинается с последнего заметного дождя — сегодня вероятность 100%, — тогда как на юге уже сухо и тепло. Влажная погода на Иссык-Куле задержится до вторника, но как только она уляжется к середине недели, начнётся сильная жара конца августа, которая поднимет температуру в Оше до +34°C, а в Бишкеке — до +33°C к выходным.</p>
+          <h3>Последний дождливый день в Бишкеке</h3>
+          <p>В Бишкеке сегодня вероятность дождя 100% при температуре всего +29°C, тогда как в Оше и Джалал-Абаде уже сухо и комфортно тепло — +31°C и +30°C. В Нарыне сегодня тоже сухо, хотя всё ещё прохладно — +22°C.</p>
+          <h3>Пик дождей на Иссык-Куле — во вторник</h3>
+          <p>Регион Иссык-Куля проясняется последним. Вероятность дождя в Караколе во вторник даже вырастет до 95% при температуре всего +20°C, а в Бишкеке тоже сохранится неустойчивая погода — 94%, прежде чем оба города обсохнут к среде.</p>
+          <h3>К выходным нарастает жара</h3>
+          <p>Как только дожди прекратятся, температура быстро пойдёт вверх почти повсюду. Ош достигнет +33°C к среде и +34°C с четверга по субботу, Джалал-Абад дойдёт до +34°C к пятнице, а даже Бишкек, который сегодня ещё под дождём, прогреется до +33°C к субботе — это одни из самых высоких показателей за последние две недели.</p>
+          <h3>Нарын и Каракол остаются прохладнее</h3>
+          <p>Высокогорный восток не присоединится к жаре в той же мере. В Нарыне температура не превысит +25...+28°C на выходных, а в Караколе сохранится в пределах +20°C с небольшим — оба региона заметно прохладнее Чуйской долины и юга.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +29°C сегодня с дождём, неустойчивая погода сохранится до вторника, прояснение и рост до +33°C к субботе.</li>
+            <li><strong>Ош:</strong> +31°C сегодня, сухо всю неделю, стабильный рост до +34°C к четвергу.</li>
+            <li><strong>Джалал-Абад:</strong> +30°C сегодня, сухо всю неделю, рост до +34°C к четвергу и пятнице.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +21°C сегодня с дождём, пик вероятности дождя 95% и +20°C во вторник, прояснение до +25°C к пятнице.</li>
+            <li><strong>Нарын:</strong> +22°C сегодня и сухо, постепенный рост до +28°C к пятнице.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-knowledge-day-weather",
+    slug: "knowledge-day-weather-september-1-kyrgyzstan",
+    image: "/assets/images/blog_city.webp",
+    translations: {
+      EN: {
+        title: "Knowledge Day Weather: What to Expect as Kyrgyzstan's School Year Begins September 1",
+        seoTitle: "Knowledge Day Weather: What to Expect as Kyrgyzstan's School Year Begins September 1",
+        seoDesc: "September 1's Knowledge Day marks the start of the school year across Kyrgyzstan, and this year's outlook points to warm afternoons in Bishkek and the south with a cooler, rain-prone start around Issyk-Kul.",
+        category: "Travel & Weather",
+        date: "August 24, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "September 1's Knowledge Day marks the start of the school year across Kyrgyzstan, and this year's outlook points to warm afternoons in Bishkek and the south with a cooler, rain-prone start around Issyk-Kul.",
+        content: `
+          <p>September 1 is Knowledge Day across Kyrgyzstan — the traditional first day of the school year, marked with flowers, ribbons, and a "first bell" ceremony at schools nationwide. With just over a week to go, the current outlook gives a first look at what students, parents, and teachers can expect for the big day.</p>
+          <h3>A Warm Start in Bishkek and the South</h3>
+          <p>Current projections put Bishkek at a daytime high of around +27°C on Knowledge Day, with overcast skies but no significant rain expected. Osh looks even warmer, with highs near +32°C and clear conditions — still very much summer weather for the first day back at school.</p>
+          <h3>Cooler and Wetter Around Issyk-Kul</h3>
+          <p>Families around Karakol and the Issyk-Kul region should prepare differently. Current outlooks point to a much cooler +21°C high with a real chance of rain showers, a noticeably different picture from the warmth expected in Bishkek and the south.</p>
+          <h3>What to Dress Kids In</h3>
+          <p>Given the mix of conditions, a light layer that can come off by midday works well in Bishkek and the south, while families near Issyk-Kul should plan for a jacket and an umbrella just in case. Mornings countrywide are already noticeably cooler than they were earlier in August, so a light long-sleeve layer for the walk to school is a safe bet everywhere.</p>
+          <h3>Why This Week's Weather Still Matters</h3>
+          <p>Forecasts this far out naturally carry more uncertainty than a next-day outlook, and conditions can shift as September 1 approaches. Pogoda.kg will keep tracking the forecast for all of Kyrgyzstan's cities in the days leading up to Knowledge Day, so families can check back closer to the date for a more precise picture.</p>
+        `
+      },
+      KG: {
+        title: "Билим күнүнүн аба ырайы: 1-сентябрда окуу жылы башталганда эмнени күтүү керек",
+        seoTitle: "Билим күнүнүн аба ырайы: 1-сентябрда окуу жылы башталганда эмнени күтүү керек",
+        seoDesc: "1-сентябрь — Кыргызстан боюнча окуу жылынын башталышы болгон Билим күнү, азыркы божомол боюнча Бишкекте жана түштүктө жылуу, Ысык-Көл тегерегинде салкыныраак жана жамгырлуу аба ырайы күтүлөт.",
+        category: "Саякат жана аба ырайы",
+        date: "24-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "1-сентябрь — Кыргызстан боюнча окуу жылынын башталышы болгон Билим күнү, азыркы божомол боюнча Бишкекте жана түштүктө жылуу, Ысык-Көл тегерегинде салкыныраак жана жамгырлуу аба ырайы күтүлөт.",
+        content: `
+          <p>1-сентябрда Кыргызстан боюнча Билим күнү белгиленет — гүлдөр, лента жана мектептердеги «биринчи коңгуроо» аземи менен коштолгон окуу жылынын салттуу биринчи күнү. Майрамга бир жумадан ашык убакыт калды, азыркы божомол окуучуларга, ата-энелерге жана мугалимдерге ушул күнү эмнени күтүшөрү жөнүндө алгачкы түшүнүк берет.</p>
+          <h3>Бишкек жана түштүктө жылуу башталыш</h3>
+          <p>Азыркы божомолдорго ылайык, Билим күнүндө Бишкекте күндүзгү температура болжол менен +27°C болот, асман булуттуу, бирок олуттуу жамгыр күтүлбөйт. Ошто андан да жылуураак — болжол менен +32°C жана ачык, мектепке биринчи жолу баруу үчүн дагы деле толук жайкы аба ырайы.</p>
+          <h3>Ысык-Көл тегерегинде салкыныраак жана жамгырлуу</h3>
+          <p>Каракол жана Ысык-Көл аймагындагы үй-бүлөлөр башкача даярданышы керек. Азыркы божомолдор боюнча, ал жерде байкаларлык салкыныраак күн күтүлөт — болжол менен +21°C жана жамгырдын чыныгы ыктымалдыгы менен, бул Бишкек жана түштүктө күтүлгөн жылуулуктан кескин айырмаланат.</p>
+          <h3>Балдарды кантип кийинтүү керек</h3>
+          <p>Шарттардын ар түрдүүлүгүн эске алганда, Бишкекте жана түштүктө түшкө карай чечип салууга боло турган жеңил катмар ылайыктуу, ал эми Ысык-Көл жанындагы үй-бүлөлөр ар эхтималга каршы куртка жана зонтик алып жүрүшү керек. Өлкө боюнча эртеңи саат августтун башына караганда буга чейин эле байкаларлык салкын, ошондуктан мектепке бара жатканда узун жеңдүү жеңил кофта — бардык жерде ишенимдүү тандоо.</p>
+          <h3>Бул жумадагы аба ырайы эмне үчүн дагы деле маанилүү</h3>
+          <p>Мынчалык алыс мезгилге божомолдор эртеңки күнгө караганда табигый түрдө анча так эмес, шарттар 1-сентябрга жакындаган сайын өзгөрүшү мүмкүн. Pogoda.kg Билим күнүнө чейинки күндөрдө Кыргызстандын бардык шаарлары боюнча божомолду кайра күзөтө берет, ошондуктан үй-бүлөлөр датага жакындаган сайын так картинаны текшере алышат.</p>
+        `
+      },
+      RU: {
+        title: "Погода на День знаний: чего ждать в первый день учебного года 1 сентября",
+        seoTitle: "Погода на День знаний: чего ждать в первый день учебного года 1 сентября",
+        seoDesc: "1 сентября — День знаний, начало учебного года по всему Кыргызстану, и текущий прогноз обещает тёплый день в Бишкеке и на юге, а вокруг Иссык-Куля — более прохладную и дождливую погоду.",
+        category: "Туризм и погода",
+        date: "24 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "1 сентября — День знаний, начало учебного года по всему Кыргызстану, и текущий прогноз обещает тёплый день в Бишкеке и на юге, а вокруг Иссык-Куля — более прохладную и дождливую погоду.",
+        content: `
+          <p>1 сентября по всему Кыргызстану отмечают День знаний — традиционный первый день учебного года, который сопровождается цветами, лентами и церемонией «первого звонка» в школах по всей стране. До праздника остаётся чуть больше недели, и текущий прогноз даёт первое представление о том, чего ждать ученикам, родителям и учителям в этот день.</p>
+          <h3>Тёплое начало в Бишкеке и на юге</h3>
+          <p>По текущим прогнозам, в Бишкеке в День знаний ожидается дневная температура около +27°C, пасмурно, но без значительных осадков. В Оше ожидается ещё теплее — около +32°C и ясно, всё ещё вполне летняя погода для первого дня в школе.</p>
+          <h3>Прохладнее и дождливее у Иссык-Куля</h3>
+          <p>Семьям в районе Каракола и Иссык-Куля стоит готовиться по-другому. По текущим прогнозам, там ожидается заметно более прохладный день — около +21°C с реальной вероятностью дождя, что сильно отличается от тепла, которое ждут в Бишкеке и на юге.</p>
+          <h3>Как одеть детей</h3>
+          <p>Учитывая разброс условий, в Бишкеке и на юге хорошо подойдёт лёгкий слой одежды, который можно снять к обеду, а семьям у Иссык-Куля стоит взять с собой куртку и зонт на всякий случай. Утра по всей стране уже заметно прохладнее, чем в начале августа, поэтому лёгкая кофта с длинным рукавом для дороги в школу — надёжный выбор повсюду.</p>
+          <h3>Почему погода на этой неделе всё ещё важна</h3>
+          <p>Прогнозы на такой срок вперёд естественно менее точны, чем прогноз на завтра, и условия могут измениться по мере приближения 1 сентября. Pogoda.kg продолжит следить за прогнозом по всем городам Кыргызстана в дни перед Днём знаний, так что семьи могут проверить более точную картину ближе к дате.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-22-forecast-rain-clears-heat-returns",
     slug: "august-22-forecast-kyrgyzstan-rain-clears-midweek-heat-returns",
     image: "/assets/images/blogphoto-rain-naryn-issykkul.webp",
