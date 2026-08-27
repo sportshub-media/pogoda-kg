@@ -5,6 +5,170 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-aug-27-forecast-heat-holds-rain-monday",
+    slug: "august-27-forecast-kyrgyzstan-heat-holds-rain-returns-monday",
+    image: "/assets/images/blogphoto-heatwave-peak-39.webp",
+    translations: {
+      EN: {
+        title: "Aug 27 Forecast: Peak Summer Heat Holds Through the Weekend, Rain Returns Monday",
+        seoTitle: "Aug 27 Forecast: Peak Summer Heat Holds Through the Weekend, Rain Returns Monday",
+        seoDesc: "Osh climbs to +34.5°C by Sunday and Jalal-Abad tops +34°C, but rain moves back into Bishkek and Karakol stays unsettled as the pattern turns early next week.",
+        category: "Weather Forecast",
+        date: "August 27, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Osh climbs to +34.5°C by Sunday and Jalal-Abad tops +34°C, but rain moves back into Bishkek and Karakol stays unsettled as the pattern turns early next week.",
+        content: `
+          <p>Summer's hottest stretch in weeks continues today, with Bishkek, Osh and Jalal-Abad all dry and climbing toward the mid-+30s. The heat holds through the weekend, but the pattern turns early next week as rain returns to Bishkek and Karakol stays unsettled.</p>
+          <h3>Heat Builds Through the Weekend</h3>
+          <p>Osh leads the country, climbing from +33°C today to +34.5°C by Sunday, with Jalal-Abad close behind at +32°C today rising to +34°C by Monday. Bishkek isn't far off either, reaching +33.8°C on Saturday — some of the hottest readings the capital has seen in weeks.</p>
+          <h3>Naryn and Karakol Stay Comfortable</h3>
+          <p>The high-altitude east avoids the worst of the heat. Naryn holds in the mid-+20s through the weekend, and Karakol stays similarly mild in the low-to-mid +20s, though both start seeing rising rain chances by Saturday and Sunday.</p>
+          <h3>Rain Returns to Bishkek by Monday</h3>
+          <p>The dry, hot pattern breaks first in the capital. Bishkek's rain chance climbs to 45% on Monday with gusty wind up to 22 km/h, and temperatures ease to +31.5°C — a real change after four straight dry, hot days.</p>
+          <h3>Cooling Continues Into Next Week</h3>
+          <p>The cooldown deepens through Tuesday and Wednesday, with Bishkek dropping to +29.3°C and then +25.7°C — a notable step down from the weekend's heat and a reminder that September is close.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +31.7°C today, climbing to +33.8°C Saturday, rain returns Monday, cooling to +25.7°C by Wednesday.</li>
+            <li><strong>Osh:</strong> +33.2°C today, climbing steadily to +34.5°C by Sunday, staying warm into next week.</li>
+            <li><strong>Jalal-Abad:</strong> +32.2°C today, rising to +34°C by Monday, still warm Tuesday at +31°C.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +23.6°C today and dry, rain chances rising through the weekend, unsettled into next week.</li>
+            <li><strong>Naryn:</strong> +26.2°C today and dry, staying mild with rising rain chances by Saturday.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "27-августка карата божомол: ысыктык дем алыш күндөрү бою сакталат, дүйшөмбүдө жамгыр кайтат",
+        seoTitle: "27-августка карата божомол: ысыктык дем алыш күндөрү бою сакталат, дүйшөмбүдө жамгыр кайтат",
+        seoDesc: "Ош жекшемби күнгө карай +34,5°Cге, Жалал-Абад +34°Cден жогору көтөрүлөт, бирок Бишкекке жамгыр кайтат, Караколдо кийинки жуманын башында туруксуз аба ырайы сакталат.",
+        category: "Аба ырайы божомолу",
+        date: "27-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Ош жекшемби күнгө карай +34,5°Cге, Жалал-Абад +34°Cден жогору көтөрүлөт, бирок Бишкекке жамгыр кайтат, Караколдо кийинки жуманын башында туруксуз аба ырайы сакталат.",
+        content: `
+          <p>Акыркы жумалардын эң ысык мезгили бүгүн уланууда: Бишкекте, Ошто жана Жалал-Абадда кургак, температура +30дун ортосуна карай көтөрүлүүдө. Ысыктык дем алыш күндөрү бою сакталат, бирок кийинки жуманын башында аба ырайы өзгөрөт — Бишкекке жамгыр кайтат, Караколдо туруксуз аба ырайы сакталат.</p>
+          <h3>Ысыктык дем алыш күндөрү бою күчөйт</h3>
+          <p>Ош өлкө боюнча алдыда: бүгүн +33°Cден жекшемби күнгө карай +34,5°Cге чейин, Жалал-Абад андан бир аз артта — бүгүн +32°Cден дүйшөмбү күнгө карай +34°Cге чейин. Бишкек да алыс эмес, ишемби күнү +33,8°Cге жетет — бул борбордун акыркы жумалардагы эң жогорку көрсөткүчтөрүнүн бири.</p>
+          <h3>Нарын менен Каракол ыңгайлуу бойдон калат</h3>
+          <p>Бийик тоолуу чыгыш эң катуу ысыктыктан алыс. Нарында дем алыш күндөрү бою +20дун ортосу сакталат, Караколдо да ушундай эле жумшак аба ырайы — +20дун орто-жогорку бөлүгүндө, бирок эки аймакта тең ишемби жана жекшемби күндөрүнө карай жамгырдын ыктымалдыгы өсөт.</p>
+          <h3>Дүйшөмбүгө карай Бишкекке жамгыр кайтат</h3>
+          <p>Кургак, ысык аба ырайы биринчи болуп борбордо үзүлөт. Бишкекте дүйшөмбү күнү жамгырдын ыктымалдыгы 45%ке чейин көтөрүлөт, шамал 22 км/сааттка чейин күчөйт, температура +31,5°Cге түшөт — төрт күн катары менен кургак, ысык болгондон кийинки чоң өзгөрүү.</p>
+          <h3>Суукташуу кийинки жумада уланат</h3>
+          <p>Суукташуу шейшемби жана шаршемби күндөрү күчөйт: Бишкекте температура +29,3°Cге, андан кийин +25,7°Cге түшөт — дем алыш күндөрүндөгү ысыктыктан кийинки байкаларлык төмөндөө жана сентябрдын жакындап калгандыгынын эскертүүсү.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн +31,7°C, ишемби күнгө карай +33,8°Cге көтөрүлөт, дүйшөмбүдө жамгыр кайтат, шаршемби күнгө карай +25,7°Cге суукташат.</li>
+            <li><strong>Ош:</strong> бүгүн +33,2°C, жекшемби күнгө карай туруктуу түрдө +34,5°Cге көтөрүлөт, кийинки жумада да жылуу сакталат.</li>
+            <li><strong>Жалал-Абад:</strong> бүгүн +32,2°C, дүйшөмбү күнгө карай +34°Cге көтөрүлөт, шейшемби күнү дагы деле жылуу — +31°C.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн +23,6°C жана кургак, дем алыш күндөрүнө карай жамгырдын ыктымалдыгы өсөт, кийинки жумада туруксуз.</li>
+            <li><strong>Нарын:</strong> бүгүн +26,2°C жана кургак, ишемби күнгө карай жамгырдын ыктымалдыгы өсүү менен жумшак бойдон калат.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 27 августа: жара держится все выходные, дожди возвращаются в понедельник",
+        seoTitle: "Прогноз на 27 августа: жара держится все выходные, дожди возвращаются в понедельник",
+        seoDesc: "Ош поднимется до +34,5°C к воскресенью, а Джалал-Абад — выше +34°C, но дожди вернутся в Бишкек, а в Караколе погода останется неустойчивой в начале следующей недели.",
+        category: "Прогноз погоды",
+        date: "27 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Ош поднимется до +34,5°C к воскресенью, а Джалал-Абад — выше +34°C, но дожди вернутся в Бишкек, а в Караколе погода останется неустойчивой в начале следующей недели.",
+        content: `
+          <p>Самый жаркий период последних недель продолжается сегодня: в Бишкеке, Оше и Джалал-Абаде сухо, температура поднимается к середине +30-х. Жара сохранится все выходные, но в начале следующей недели погода изменится — в Бишкек вернутся дожди, а в Караколе сохранится неустойчивая погода.</p>
+          <h3>Жара нарастает все выходные</h3>
+          <p>Ош лидирует по стране: от +33°C сегодня до +34,5°C к воскресенью, Джалал-Абад немного отстаёт — от +32°C сегодня до +34°C к понедельнику. Бишкек тоже не сильно отстаёт, достигая +33,8°C в субботу — одни из самых высоких показателей столицы за последние недели.</p>
+          <h3>Нарын и Каракол остаются комфортными</h3>
+          <p>Высокогорный восток избегает самой сильной жары. В Нарыне все выходные держится середина +20-х, в Караколе схожая мягкая погода в пределах +20-х с небольшим, хотя в обоих регионах к субботе и воскресенью растёт вероятность дождя.</p>
+          <h3>Дожди возвращаются в Бишкек к понедельнику</h3>
+          <p>Сухая жаркая погода первой прерывается в столице. Вероятность дождя в Бишкеке в понедельник вырастет до 45% при порывистом ветре до 22 км/ч, а температура снизится до +31,5°C — заметная перемена после четырёх подряд сухих жарких дней.</p>
+          <h3>Похолодание продолжится на следующей неделе</h3>
+          <p>Похолодание усилится во вторник и среду: в Бишкеке температура опустится до +29,3°C, а затем до +25,7°C — заметный спад после жары выходных и напоминание о приближении сентября.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +31,7°C сегодня, рост до +33,8°C в субботу, дожди возвращаются в понедельник, похолодание до +25,7°C к среде.</li>
+            <li><strong>Ош:</strong> +33,2°C сегодня, стабильный рост до +34,5°C к воскресенью, тепло сохранится и на следующей неделе.</li>
+            <li><strong>Джалал-Абад:</strong> +32,2°C сегодня, рост до +34°C к понедельнику, всё ещё тепло во вторник — +31°C.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +23,6°C сегодня и сухо, вероятность дождя растёт к выходным, неустойчивая погода на следующей неделе.</li>
+            <li><strong>Нарын:</strong> +26,2°C сегодня и сухо, погода останется мягкой с растущей вероятностью дождя к субботе.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-independence-day-weather",
+    slug: "independence-day-weather-kyrgyzstan-august-31",
+    image: "/assets/images/blog_city.webp",
+    translations: {
+      EN: {
+        title: "Independence Day Weather: What to Expect for Kyrgyzstan's August 31 Celebrations",
+        seoTitle: "Independence Day Weather: What to Expect for Kyrgyzstan's August 31 Celebrations",
+        seoDesc: "Kyrgyzstan's Independence Day falls on Monday, August 31, and the current outlook shows a 45% chance of rain in Bishkek during Ala-Too Square's celebrations, with warmer, drier conditions holding in the south.",
+        category: "Travel & Weather",
+        date: "August 27, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Kyrgyzstan's Independence Day falls on Monday, August 31, and the current outlook shows a 45% chance of rain in Bishkek during Ala-Too Square's celebrations, with warmer, drier conditions holding in the south.",
+        content: `
+          <p>Kyrgyzstan marks its Independence Day on Monday, August 31, with the largest celebrations centered on Bishkek's Ala-Too Square — parades, concerts, and crowds gathering to watch the festivities alongside the country's leadership. With the holiday just days away, here's what the current outlook suggests for weather across the country.</p>
+          <h3>A Chance of Rain in Bishkek</h3>
+          <p>The capital's outlook for Independence Day itself shows a real chance of rain — around 45% — with gusty wind up to 22 km/h and a high of +31.5°C. It's not a washout, but anyone heading to Ala-Too Square for the celebrations should be prepared for a passing shower.</p>
+          <h3>Warmer and Drier in the South</h3>
+          <p>Osh and Jalal-Abad look set for a much drier holiday, with highs near +34°C and only a slim chance of rain. Celebrations in the south should see clear, hot conditions typical of late-August Kyrgyzstan.</p>
+          <h3>Naryn and Karakol Stay Mild</h3>
+          <p>The high-altitude regions offer a middle ground — Naryn and the Issyk-Kul area around Karakol should see comfortable temperatures in the mid-+20s, with a moderate chance of scattered showers rather than the capital's steadier rain risk.</p>
+          <h3>What to Bring to Ala-Too Square</h3>
+          <p>Given the rain chance in Bishkek, a light rain jacket or umbrella is a sensible addition for anyone attending the square's celebrations, along with sun protection for the hours before any rain arrives — the day starts warm and dry before conditions shift.</p>
+          <h3>How Confident Is This Forecast</h3>
+          <p>A four-day-out forecast carries more uncertainty than a next-day outlook, and conditions can still shift before Monday. Pogoda.kg will keep the forecast updated in the days ahead, so check back closer to Independence Day for a sharper picture.</p>
+        `
+      },
+      KG: {
+        title: "Көз карандысыздык күнүнүн аба ырайы: Кыргызстандагы 31-август майрамында эмнени күтүү керек",
+        seoTitle: "Көз карандысыздык күнүнүн аба ырайы: Кыргызстандагы 31-август майрамында эмнени күтүү керек",
+        seoDesc: "Кыргызстандын Көз карандысыздык күнү дүйшөмбү, 31-августка туура келет, азыркы божомол боюнча Бишкекте Ала-Тоо аянтындагы майрамда жамгырдын ыктымалдыгы 45%, ал эми түштүктө жылуу жана кургак аба ырайы сакталат.",
+        category: "Саякат жана аба ырайы",
+        date: "27-август, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Кыргызстандын Көз карандысыздык күнү дүйшөмбү, 31-августка туура келет, азыркы божомол боюнча Бишкекте Ала-Тоо аянтындагы майрамда жамгырдын ыктымалдыгы 45%, ал эми түштүктө жылуу жана кургак аба ырайы сакталат.",
+        content: `
+          <p>Кыргызстан Көз карандысыздык күнүн дүйшөмбү, 31-августта белгилейт, майрамдын негизги иш-чаралары салт боюнча Бишкектеги Ала-Тоо аянтында өтөт — жүрүштөр, концерттер жана өлкөнүн жетекчилиги менен бирге майрамды карап турган эл. Майрамга бир нече күн калды, азыркы аба ырайы божомолу өлкө боюнча эмнени көрсөтөрүн карап көрөлү.</p>
+          <h3>Бишкекте жамгырдын ыктымалдыгы бар</h3>
+          <p>Борбор үчүн Көз карандысыздык күнүнө карата божомол чыныгы жамгыр ыктымалдыгын көрсөтөт — болжол менен 45%, — шамал 22 км/сааттка чейин күчөйт, температура +31,5°Cге жетет. Бул күн бою жамгыр жаайт дегенди билдирбейт, бирок Ала-Тоо аянтындагы майрамга баргысы келгендер кыска мөөнөттүү жамгырга даяр болушу керек.</p>
+          <h3>Түштүктө жылуураак жана кургагыраак</h3>
+          <p>Ош менен Жалал-Абадда майрам алда канча кургак болот деп күтүлүүдө — температура +34°C тегерегинде, жамгырдын ыктымалдыгы аз гана. Түштүктөгү майрам Кыргызстандын августтун аягына мүнөздүү ачык, ысык аба ырайында өтөт.</p>
+          <h3>Нарын менен Каракол жумшак бойдон калат</h3>
+          <p>Бийик тоолуу аймактар ортоңку варианттарды сунуштайт — Нарында жана Караколдун жанындагы Ысык-Көл аймагында +20дун ортосундагы ыңгайлуу температура күтүлүүдө, борбордогудай туруктуу жамгыр коркунучунан эмес, орточо ыктымалдыктагы чачыранды жамгырлар менен.</p>
+          <h3>Ала-Тоо аянтына эмне алып барыш керек</h3>
+          <p>Бишкекте жамгырдын ыктымалдыгын эске алганда, аянттагы майрамга баргысы келгендер үчүн жеңил жамгыр курткасы же зонтик акылга сыярлык кошумча болот, ошондой эле жамгыр башталганга чейинки саатта күндөн коргонуу — күн жылуу жана кургак башталат, андан кийин аба ырайы өзгөрөт.</p>
+          <h3>Бул божомол канчалык так</h3>
+          <p>Төрт күн мурунку божомол эртеңки күнгө караганда анча так эмес, шарттар дүйшөмбүгө чейин дагы өзгөрүшү мүмкүн. Pogoda.kg алдыдагы күндөрдө божомолду жаңылап турат, ошондуктан Көз карандысыздык күнүнө жакындаган сайын так картинаны текшериңиз.</p>
+        `
+      },
+      RU: {
+        title: "Погода на День независимости: чего ждать на праздновании 31 августа в Кыргызстане",
+        seoTitle: "Погода на День независимости: чего ждать на праздновании 31 августа в Кыргызстане",
+        seoDesc: "День независимости Кыргызстана отмечается в понедельник, 31 августа, и текущий прогноз показывает 45% вероятность дождя в Бишкеке во время торжеств на площади Ала-Тоо, тогда как на юге сохранится тёплая и сухая погода.",
+        category: "Туризм и погода",
+        date: "27 августа 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "День независимости Кыргызстана отмечается в понедельник, 31 августа, и текущий прогноз показывает 45% вероятность дождя в Бишкеке во время торжеств на площади Ала-Тоо, тогда как на юге сохранится тёплая и сухая погода.",
+        content: `
+          <p>Кыргызстан отмечает День независимости в понедельник, 31 августа, и главные торжества традиционно проходят на площади Ала-Тоо в Бишкеке — парады, концерты и толпы людей, наблюдающих за праздником вместе с руководством страны. До праздника осталось всего несколько дней, и вот что показывает текущий прогноз погоды по стране.</p>
+          <h3>Вероятность дождя в Бишкеке</h3>
+          <p>Прогноз для столицы на сам День независимости показывает реальную вероятность дождя — около 45% — с порывистым ветром до 22 км/ч и температурой до +31,5°C. Это не проливной дождь весь день, но тем, кто планирует идти на площадь Ала-Тоо на празднование, стоит быть готовыми к кратковременному дождю.</p>
+          <h3>Теплее и суше на юге</h3>
+          <p>В Оше и Джалал-Абаде праздник обещает быть намного суше — температура около +34°C и лишь небольшая вероятность дождя. Торжества на юге пройдут при ясной, жаркой погоде, типичной для конца августа в Кыргызстане.</p>
+          <h3>Нарын и Каракол остаются мягкими</h3>
+          <p>Высокогорные регионы предлагают промежуточный вариант — в Нарыне и в районе Иссык-Куля у Каракола ожидается комфортная температура в середине +20-х, с умеренной вероятностью отдельных ливней, а не устойчивого риска дождя, как в столице.</p>
+          <h3>Что взять с собой на площадь Ала-Тоо</h3>
+          <p>Учитывая вероятность дождя в Бишкеке, лёгкий дождевик или зонт — разумное дополнение для всех, кто планирует посетить торжества на площади, а также защита от солнца на часы до начала дождя — день начнётся тёплым и сухим, прежде чем погода изменится.</p>
+          <h3>Насколько точен этот прогноз</h3>
+          <p>Прогноз за четыре дня вперёд менее точен, чем прогноз на завтра, и условия могут ещё измениться до понедельника. Pogoda.kg будет обновлять прогноз в ближайшие дни, так что стоит проверить более точную картину ближе к Дню независимости.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-24-forecast-last-rain-heat-wave",
     slug: "august-24-forecast-kyrgyzstan-last-rain-heat-wave-builds",
     image: "/assets/images/blogphoto-outlook-heat-cooldown.webp",
