@@ -1,12 +1,14 @@
+import { weatherText, weatherStatus } from './weather-status.js';
 // Pogoda Kg - Interactive Weather Map Controller
 import { KYRGYZSTAN_CITIES } from './config.js';
-import { fetchWeatherData } from './api.js';
+import { REFRESH_MS, fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { initLangSwitcher, TRANSLATIONS, getCurrentLang, getRegionName } from './i18n.js';
 import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 
 let leafletMap = null;
 let markersLayer = null;
+let renderVersion = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshMiniWeather(lang);
   });
   initKyrgyzstanMap();
+  setInterval(() => { if (!document.hidden) renderMarkers(); }, REFRESH_MS);
 });
 
 function getConditionStr(conditionKey) {
@@ -26,7 +29,8 @@ function getConditionStr(conditionKey) {
 
 function getCityName(city) {
   const lang = getCurrentLang();
-  return (lang === 'RU' || lang === 'KG') ? city.nativeName : city.name;
+  if (lang === 'RU') return ({ 'jalal-abad': 'Джалал-Абад', uzgen: 'Узген' })[city.id] || city.nativeName;
+  return lang === 'KG' ? city.nativeName : city.name;
 }
 
 async function initKyrgyzstanMap() {
@@ -51,13 +55,22 @@ async function initKyrgyzstanMap() {
 async function renderMarkers() {
   if (!markersLayer || !leafletMap) return;
 
+  const version = ++renderVersion;
   markersLayer.clearLayers();
 
   const lang = getCurrentLang();
   const langPrefix = lang === 'KG' ? '' : `/${lang.toLowerCase()}`;
 
-  for (const city of KYRGYZSTAN_CITIES) {
-    const data = await fetchWeatherData(city.lat, city.lon);
+  const results = await Promise.all(KYRGYZSTAN_CITIES.map(async city => {
+    try { return { city, data: await fetchWeatherData(city.lat, city.lon) }; }
+    catch { return { city, data: null }; }
+  }));
+  if (version !== renderVersion) return;
+  for (const {city, data} of results) {
+    if (!data) {
+      L.marker([city.lat, city.lon]).addTo(markersLayer).bindPopup(`${getCityName(city)}: ${weatherText('unavailable')}`);
+      continue;
+    }
     const displayName = getCityName(city);
     
     // Custom HTML Marker Icon. No fixed iconSize — labels vary a lot in length
@@ -76,6 +89,7 @@ async function renderMarkers() {
 
     marker.bindPopup(`
       <div style="padding:8px; font-family:sans-serif; text-align:center;">
+        <p style="font-size:12px">${weatherStatus(data)}</p>
         <h3 style="margin:0 0 4px 0; font-size:18px;">${displayName} <small>(${getCurrentLang() === 'EN' ? city.nativeName : city.name})</small></h3>
         <div style="font-size:12px; color:#64748B;">${getRegionName(city, lang)}</div>
         <div style="font-size:32px; font-weight:800; color:#FF9F43; margin:8px 0;">${data.current.temp}°C</div>

@@ -152,3 +152,8 @@ export const WMO_WEATHER_CODES = {
   80: { labelKey: "cond_rain", icon: "rain-showers", svg: `<img src="/assets/animated/rainy-6.svg" class="weather-anim-icon" alt="Rain Showers">` },
   95: { labelKey: "cond_thunder", icon: "thunder", svg: `<img src="/assets/animated/thunder.svg" class="weather-anim-icon" alt="Thunder">` }
 };
+
+// Complete the provider's precipitation codes; unknown values remain unknown.
+for (const [code, equivalent] of Object.entries({53:51,55:51,56:61,57:65,66:61,67:65,77:71,81:63,82:65,85:71,86:75,96:95,99:95})) {
+  WMO_WEATHER_CODES[code] = WMO_WEATHER_CODES[equivalent];
+}

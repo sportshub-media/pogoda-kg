@@ -60,8 +60,8 @@ const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 // EN isn't listed — the source file's own English copy is used as-is for the EN build.
 const PAGE_META = {
     'index.html': {
-        RU: { title: "Погода в Бишкеке сегодня, на неделю и месяц | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю, на 10 дней и на месяц. Ош, Каракол, Нарын и другие." },
-        KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана айлык аба ырайы божомолдору тизмеси." }
+        RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
+        KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
     },
     'contact.html': {
         RU: { title: "Связаться с командой Pogoda Kg — вопросы и поддержка", description: "Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана." },
@@ -128,14 +128,14 @@ function getCityMeta(lang, city) {
     if (lang === 'RU') {
         const ru = ruCity(city);
         return {
-            title: `Погода в ${ru.prep} сегодня, на неделю и месяц | Pogoda.kg`,
-            description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю, на 10 дней и на месяц. Обновляется каждые 15 минут.`
+            title: `Погода в ${ru.prep} сегодня, на неделю | Pogoda.kg`,
+            description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю. Обновляется каждые 15 минут.`
         };
     }
     // KG
     return {
         title: `${native} аба ырайы бүгүн жана 7 күндүк божомол | Pogoda.kg`,
-        description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк, 14 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
+        description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
     };
 }
 
@@ -184,7 +184,7 @@ function getCitySectionTitles(lang, city) {
             todayDetails: `Today Weather Details for ${en}`,
             todayDetailsDesc: `A closer look at current conditions in ${en} — wind speed, humidity, visibility, and today's daylight hours.`,
             weekly: `Weekly Weather Forecast for ${en}`,
-            weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and wind for the next 7 days.`
+            weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and precipitation chances for the next 7 days.`
         };
     }
     if (lang === 'RU') {
@@ -195,7 +195,7 @@ function getCitySectionTitles(lang, city) {
             todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
             todayDetailsDesc: `Подробный обзор текущих условий в ${ru.prep}: скорость ветра, влажность, видимость и продолжительность светового дня.`,
             weekly: `Прогноз погоды в ${ru.prep} на неделю`,
-            weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и ветер на ближайшие 7 дней.`
+            weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и вероятность осадков на ближайшие 7 дней.`
         };
     }
     // KG — "${native} үчүн" (for {city}) sidesteps Kyrgyz vowel-harmony suffix
@@ -221,7 +221,7 @@ function renderNewsGridHTML(lang, posts) {
         const data = post.translations[lang] || post.translations.EN;
         const isFeatured = i === 0;
         return `
-      <div class="news-card${isFeatured ? ' news-card-featured' : ''}" onclick="window.location.href='/blog/${post.slug}.html'">
+      <a class="news-card${isFeatured ? ' news-card-featured' : ''}" href="/blog/${post.slug}">
         <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
         <div class="news-card-overlay">
           <h3 class="news-title">${data.title}</h3>
@@ -231,7 +231,7 @@ function renderNewsGridHTML(lang, posts) {
             <span><svg class="icon"><use href="#icon-${isFeatured ? 'clock' : 'calendar'}"></use></svg> ${data.date}</span>
           </div>
         </div>
-      </div>`;
+      </a>`;
     }).join('\n');
 }
 

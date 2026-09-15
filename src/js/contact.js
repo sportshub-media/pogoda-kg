@@ -30,12 +30,16 @@ function setupContactForm() {
       return;
     }
 
-    // Show clean success toast
+    const city = document.getElementById('contactCity').value;
+    const body = `${message}\n\nName: ${name}\nReply email: ${email}\nLocation: ${city}`;
+    window.location.href = `mailto:info.pogoda.kg@gmail.com?subject=${encodeURIComponent('Pogoda.kg enquiry')}&body=${encodeURIComponent(body)}`;
+
+    // Preparing a draft is not confirmation of delivery.
     if (alertBox) {
       alertBox.style.display = 'block';
       alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    form.reset();
+
   });
 }

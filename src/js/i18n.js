@@ -1,7 +1,9 @@
+import { storage } from './storage.js';
 // Pogoda Kg - 3-Language Internationalization (KG, RU, EN)
 
 export const TRANSLATIONS = {
   EN: {
+    cond_clear_night: "Clear",
     nav_home: "Home",
     nav_news: "News",
     nav_map: "Map",
@@ -17,7 +19,7 @@ export const TRANSLATIONS = {
     today: "Today",
     hero_subtitle: "Weather and Forecast",
     hero_title: "Daily Weather Forecast Update in Kyrgyzstan",
-    hero_desc: "Get the latest real-time weather forecast for Kyrgyzstan cities with up-to-date information on temperature, precipitation, wind speed, and monthly outlooks.",
+    hero_desc: "Get the latest real-time weather forecast for Kyrgyzstan cities with up-to-date information on temperature, precipitation, wind speed, and seven-day forecasts.",
     search_placeholder: "Search location in Kyrgyzstan...",
     hourly_title: "Hourly Update",
     hourly_desc: "Stay up-to-date with hourly weather predictions. Plan your day with detailed temperature and precipitation metrics.",
@@ -28,25 +30,25 @@ export const TRANSLATIONS = {
     max_temp: "MAX",
     precip_label: "Precipitation",
     wind_prefix: "up to",
-    wind_unit: "m/s",
+    wind_unit: "km/h",
     wind_label: "Wind",
-    wind_desc: "Gentle Mountain Breeze",
+    wind_desc: "Wind speed at 10 m",
     humidity_label: "Humidity",
-    humidity_desc: "Optimal Comfort Level",
+    humidity_desc: "Relative humidity",
     visibility_label: "Visibility",
-    visibility_desc: "Clear Atmospheric View",
+    visibility_desc: "Visibility at the current forecast hour",
     sun_arc_label: "Sun & Daylight Progress",
     sunrise_label: "Sunrise",
     sunset_label: "Sunset",
     weekly_title: "Weekly Weather Forecast",
-    weekly_desc: "7-day extended outlook with min/max temperatures, condition icons, and expected wind activity.",
+    weekly_desc: "Seven days of high and low temperatures and precipitation probability.",
     recent_title: "Recent Search Weather",
     recent_desc: "Quickly access weather reports from cities you previously searched in Kyrgyzstan.",
     news_title: "Latest Weather Forecast News",
     news_desc: "Stay up-to-date with regional Kyrgyzstan weather news, mountain snow reports, and climate trends.",
     gallery_title: "Kyrgyzstan Weather Landscapes & Regions",
     gallery_desc: "Explore live scenic weather photography across Tien-Shan mountains, Issyk-Kul alpine lake, Naryn highlands, and Bishkek city valley.",
-    footer_desc: "Kyrgyzstan's primary weather portal (pogoda.kg). Providing hyper-local real-time weather forecasts, hourly updates, and 14-day forecasts for all 10 major Kyrgyzstan regions.",
+    footer_desc: "Kyrgyzstan's primary weather portal (pogoda.kg). Providing hyper-local real-time weather forecasts, hourly updates, and 7-day forecasts for 10 major Kyrgyzstan cities.",
     footer_nav: "Navigation",
     footer_locations: "Top Locations",
     footer_contact: "Contact & Support",
@@ -57,7 +59,7 @@ export const TRANSLATIONS = {
     contact_email_label: "Email Address *",
     contact_city_label: "Your Location in Kyrgyzstan",
     contact_msg_label: "Message *",
-    contact_btn: "Send Message",
+    contact_btn: "Open email app",
     map_title: "Interactive Kyrgyzstan Weather Map",
     map_desc: "Explore live temperature markers and forecast data across Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, and Talas.",
     cookie_text: "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy.html'>Privacy Policy</a>.",
@@ -86,7 +88,7 @@ export const TRANSLATIONS = {
     faq_a5_clean: "Our 7-day forecast uses advanced meteorological models specific to Kyrgyzstan's mountainous terrain for high accuracy.",
     contact_office_title: "Office Headquarters",
     contact_support_email_label: "Support Email",
-    contact_success_msg: "Thank you! Your message has been sent to our Bishkek editorial desk.",
+    contact_success_msg: "Your email app should open with a draft. Send it there to deliver your message. If it does not open, email info.pogoda.kg@gmail.com directly.",
     contact_required_alert: "Please fill in all required form fields.",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
@@ -155,6 +157,7 @@ export const TRANSLATIONS = {
     select_label: "Select"
   },
   KG: {
+    cond_clear_night: "Ачык",
     nav_home: "Башкы",
     nav_news: "Жаңылыктар",
     nav_map: "Карта",
@@ -170,7 +173,7 @@ export const TRANSLATIONS = {
     today: "Бүгүн",
     hero_subtitle: "Аба ырайы жана божомол",
     hero_title: "Кыргызстандагы күнүмдүк аба ырайынын божомолу",
-    hero_desc: "Кыргызстандын шаарлары үчүн аба ырайы, температура, жаан-чачын, шамал жана 14 күндүк так божомолду алыңыз.",
+    hero_desc: "Кыргызстандын шаарлары үчүн аба ырайы, температура, жаан-чачын, шамал жана 7 күндүк так божомолду алыңыз.",
     search_placeholder: "Кыргызстандагы шаарды издөө...",
     hourly_title: "Сааттык божомол",
     hourly_desc: "Саат сайын өзгөргөн аба ырайы маалыматы менен таанышыңыз.",
@@ -181,25 +184,25 @@ export const TRANSLATIONS = {
     max_temp: "МАКС",
     precip_label: "Жаан-чачын",
     wind_prefix: "чейин",
-    wind_unit: "м/с",
+    wind_unit: "км/саат",
     wind_label: "Шамал",
-    wind_desc: "Тоо илеби",
+    wind_desc: "10 м бийиктиктеги шамал",
     humidity_label: "Нымдуулук",
-    humidity_desc: "Ыңгайлуу деңгээл",
+    humidity_desc: "Салыштырмалуу нымдуулук",
     visibility_label: "Көрүнүү",
-    visibility_desc: "Ачык көрүнүш",
+    visibility_desc: "Азыркы сааттагы көрүнүү аралыгы",
     sun_arc_label: "Күн жана күндүзгү цикл",
     sunrise_label: "Күн чыгуу",
     sunset_label: "Күн батуу",
     weekly_title: "Бир жумалык божомол",
-    weekly_desc: "7 күндүк аба ырайы прогнозу, максималдуу жана минималдуу температуралар.",
+    weekly_desc: "7 күндүк эң жогорку жана төмөнкү температуралар, жаан-чачын ыктымалдыгы.",
     recent_title: "Акыркы изделгендер",
     recent_desc: "Сиз мурда көргөн Кыргызстан шаарларынын аба ырайы.",
     news_title: "Акыркы аба ырайы жаңылыктары",
     news_desc: "Кыргызстандын тоо ашуулары, кар абалы жана климаттык жаңылыктары менен кабардар болуңуз.",
     gallery_title: "Кыргызстандын жаратылышы жана аймактары",
     gallery_desc: "Тянь-Шань тоолору, Ысык-Көл, Нарын тоолору жана Чүй өрөөнүнүн сүрөттөрү.",
-    footer_desc: "Кыргызстандын негизги аба ырайы порталы (pogoda.kg). Кыргызстандын 10 облусу жана шаары үчүн 24 сааттык жана 14 күндүк так аба ырайы.",
+    footer_desc: "Кыргызстандын негизги аба ырайы порталы (pogoda.kg). Кыргызстандын 10 облусу жана шаары үчүн 24 сааттык жана 7 күндүк так аба ырайы.",
     footer_nav: "Навигация",
     footer_locations: "Ири шаарлар",
     footer_contact: "Байланыш жана колдоо",
@@ -210,7 +213,7 @@ export const TRANSLATIONS = {
     contact_email_label: "Электрондук почта *",
     contact_city_label: "Кыргызстандагы жайгашкан жериңиз",
     contact_msg_label: "Билдирүү *",
-    contact_btn: "Кабар жөнөтүү",
+    contact_btn: "Электрондук почтаны ачуу",
     map_title: "Кыргызстандын интерактивдүү аба ырайы картасы",
     map_desc: "Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын жана Таластагы температураны жана аба ырайын көрүңүз.",
     cookie_text: "Биз сизге жакшыраак тажрыйба берүү үчүн тил жана тема тандоолоруңузду сактоо максатында локалдык сактагычты колдонобуз. Бул сайтты колдонууну улантуу менен, сиз биздин <a href='/privacy.html'>Купуялык саясатыбызга</a> макулдугуңузду билдиресиз.",
@@ -239,7 +242,7 @@ export const TRANSLATIONS = {
     faq_a5_clean: "Биздин 7 күндүк прогноз Кыргызстандын тоолуу рельефине ылайыкталган алдыңкы метеорологиялык моделдерди колдонуп, жогорку тактыкты камсыздайт.",
     contact_office_title: "Башкы кеңсе",
     contact_support_email_label: "Колдоо кызматынын почтасы",
-    contact_success_msg: "Рахмат! Билдирүүңүз Бишкектеги редакциябызга жөнөтүлдү.",
+    contact_success_msg: "Почта колдонмосунда каттын долбоору ачылат. Катты ошол жерден жөнөтүңүз. Ачылбаса, info.pogoda.kg@gmail.com дарегине жазыңыз.",
     contact_required_alert: "Бардык милдеттүү талааларды толтуруңуз.",
     footer_privacy: "Купуялык саясаты",
     footer_terms: "Колдонуу шарттары",
@@ -308,6 +311,7 @@ export const TRANSLATIONS = {
     select_label: "Тандоо"
   },
   RU: {
+    cond_clear_night: "Ясно",
     nav_home: "Главная",
     nav_news: "Новости",
     nav_map: "Карта",
@@ -323,7 +327,7 @@ export const TRANSLATIONS = {
     today: "Сегодня",
     hero_subtitle: "Погода и прогноз",
     hero_title: "Ежедневное обновление прогноза погоды в Кыргызстане",
-    hero_desc: "Получайте точный прогноз погоды в реальном времени для городов Кыргызстана: температура, осадки, скорость ветра и прогноз на 14 дней.",
+    hero_desc: "Получайте точный прогноз погоды в реальном времени для городов Кыргызстана: температура, осадки, скорость ветра и прогноз на 7 дней.",
     search_placeholder: "Поиск города в Кыргызстане...",
     hourly_title: "Почасовой прогноз",
     hourly_desc: "Будьте в курсе почасового прогноза погоды.",
@@ -334,25 +338,25 @@ export const TRANSLATIONS = {
     max_temp: "МАКС",
     precip_label: "Осадки",
     wind_prefix: "до",
-    wind_unit: "м/с",
+    wind_unit: "км/ч",
     wind_label: "Ветер",
-    wind_desc: "Горный бриз",
+    wind_desc: "Ветер на высоте 10 м",
     humidity_label: "Влажность",
-    humidity_desc: "Комфортный уровень",
+    humidity_desc: "Относительная влажность",
     visibility_label: "Видимость",
-    visibility_desc: "Ясная видимость",
+    visibility_desc: "Видимость на текущий час",
     sun_arc_label: "Солнце и световой день",
     sunrise_label: "Восход",
     sunset_label: "Закат",
     weekly_title: "Прогноз погоды на неделю",
-    weekly_desc: "7-дневный прогноз погоды с максимальной и минимальной температурой и осадками.",
+    weekly_desc: "Температура днём и ночью и вероятность осадков на семь дней.",
     recent_title: "Недавний поиск",
     recent_desc: "Быстрый доступ к погоде в недавно просмотренных городах Кыргызстана.",
     news_title: "Последние новости погоды",
     news_desc: "Актуальные новости погоды Кыргызстана, отчеты о снеге на перевалах и климатические тренды.",
     gallery_title: "Пейзажи и регионы Кыргызстана",
     gallery_desc: "Живописные фотографии гор Тянь-Шань, озера Иссык-Куль, Нарынских высот и Чуйской долины.",
-    footer_desc: "Главный погодный портал Кыргызстана (pogoda.kg). Точный почасовой и 14-дневный прогноз погоды для всех 10 ключевых городов.",
+    footer_desc: "Главный погодный портал Кыргызстана (pogoda.kg). Точный почасовой и 7-дневный прогноз погоды для всех 10 ключевых городов.",
     footer_nav: "Навигация",
     footer_locations: "Популярные города",
     footer_contact: "Контакты и поддержка",
@@ -363,7 +367,7 @@ export const TRANSLATIONS = {
     contact_email_label: "Электронная почта *",
     contact_city_label: "Ваше местоположение в Кыргызстане",
     contact_msg_label: "Сообщение *",
-    contact_btn: "Отправить сообщение",
+    contact_btn: "Открыть почтовое приложение",
     map_title: "Интерактивная погодная карта Кыргызстана",
     map_desc: "Исследуйте живые температурные маркеры и прогнозы погоды в Бишкеке, Оше, Джалал-Абаде, Караколе, Токмаке, Узгене, Кара-Балте, Балыкчи, Нарыне и Таласе.",
     cookie_text: "Мы используем локальное хранилище для сохранения ваших настроек языка и темы, чтобы сделать ваш опыт лучше. Продолжая использовать этот сайт, вы соглашаетесь с нашей <a href='/privacy.html'>Политикой конфиденциальности</a>.",
@@ -392,7 +396,7 @@ export const TRANSLATIONS = {
     faq_a5_clean: "Наш 7-дневный прогноз использует передовые метеорологические модели, учитывающие горный рельеф Кыргызстана, для высокой точности.",
     contact_office_title: "Главный офис",
     contact_support_email_label: "Email поддержки",
-    contact_success_msg: "Спасибо! Ваше сообщение отправлено в нашу редакцию в Бишкеке.",
+    contact_success_msg: "В почтовом приложении откроется черновик. Отправьте его там. Если приложение не открылось, напишите на info.pogoda.kg@gmail.com.",
     contact_required_alert: "Пожалуйста, заполните все обязательные поля формы.",
     footer_privacy: "Политика конфиденциальности",
     footer_terms: "Условия использования",
@@ -470,9 +474,9 @@ export const TRANSLATIONS = {
 // the client-side mirror needed to correct them in place.
 const PAGE_META = {
   home: {
-    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, weekly, and monthly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn." },
-    RU: { title: "Погода в Бишкеке сегодня, на неделю и месяц | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю, на 10 дней и на месяц. Ош, Каракол, Нарын и другие." },
-    KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана айлык аба ырайы божомолдору тизмеси." }
+    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn." },
+    RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
+    KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
   },
   map: {
     EN: { title: "Pogoda Kg | Interactive Kyrgyzstan Weather Map & Radar", description: "Explore our interactive Kyrgyzstan weather map with live temperature markers, wind data, and forecasts for Bishkek, Osh, Karakol, Naryn, and more cities." },
@@ -553,9 +557,13 @@ export function syncPageHeadForLang(lang) {
 
 export function getCurrentLang() {
   const path = window.location.pathname;
-  if (path.startsWith('/en')) return 'EN';
-  if (path.startsWith('/ru')) return 'RU';
-  return localStorage.getItem('pogoda_lang') || 'KG';
+  if (/^\/en(?:\/|$)/.test(path)) return 'EN';
+  if (/^\/ru(?:\/|$)/.test(path)) return 'RU';
+  if (/^\/blog\/.+/.test(path)) {
+    const saved = storage.getItem('pogoda_lang');
+    return ['KG', 'RU', 'EN'].includes(saved) ? saved : 'KG';
+  }
+  return 'KG';
 }
 
 export function getRegionName(city, lang = getCurrentLang()) {
@@ -652,96 +660,29 @@ export function applyTranslations(lang = getCurrentLang()) {
 }
 
 export function initLangSwitcher(onLangChange) {
-  const path = window.location.pathname;
-  // Individual blog articles live at a single unprefixed URL for all languages
-  // (content is swapped client-side), so never rewrite their URL.
-  const isBlogArticle = /^\/blog\/.+\.html$/.test(path);
-  let detectedLang = null;
-  if (path.startsWith('/en')) detectedLang = 'EN';
-  else if (path.startsWith('/ru')) detectedLang = 'RU';
-  else if (path.startsWith('/kg')) detectedLang = 'KG';
-
-  const activeLang = detectedLang || localStorage.getItem('pogoda_lang') || 'KG';
-  localStorage.setItem('pogoda_lang', activeLang);
-
-  // If the user lands on a /kg URL, redirect to clean URL
-  if (isBlogArticle) {
-    // no URL change
-  } else if (path.startsWith('/kg')) {
-    let cleanPath = path.replace(/^\/kg/, '');
-    if (cleanPath === '') cleanPath = '/';
-    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
-  } else if (!detectedLang && activeLang !== 'KG') {
-    let newPath = `/${activeLang.toLowerCase()}${path}`;
-    newPath = newPath.replace('//', '/');
-    if (newPath !== path) {
-      window.history.replaceState(null, '', newPath + window.location.search + window.location.hash);
-      syncSeoTagsForPath(newPath);
-    }
-  }
-
-  // Covers the case above where localStorage held a different language than the
-  // page was actually served in — the URL just got silently rewritten, but the
-  // <title>/meta tags baked into this HTML still reflect the originally-served
-  // language until this runs.
+  const article = /^\/blog\/.+/.test(location.pathname);
+  const activeLang = getCurrentLang();
+  storage.setItem('pogoda_lang', activeLang);
   syncPageHeadForLang(activeLang);
-
   applyTranslations(activeLang);
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const targetLang = e.currentTarget.getAttribute('data-lang');
-      localStorage.setItem('pogoda_lang', targetLang);
-
-      if (!isBlogArticle) {
-        let currentPath = window.location.pathname;
-
-        // Remove trailing index.html if present
-        if (currentPath.endsWith('index.html')) currentPath = currentPath.replace('index.html', '');
-
-        if (currentPath.startsWith('/en/')) currentPath = currentPath.replace('/en/', '/');
-        else if (currentPath.startsWith('/ru/')) currentPath = currentPath.replace('/ru/', '/');
-        else if (currentPath.startsWith('/kg/')) currentPath = currentPath.replace('/kg/', '/');
-
-        if (currentPath === '/en' || currentPath === '/ru' || currentPath === '/kg') currentPath = '/';
-
-        let newPath = (targetLang === 'KG' ? '' : `/${targetLang.toLowerCase()}`) + (currentPath.startsWith('/') ? currentPath : '/' + currentPath);
-        newPath = newPath.replace('//', '/');
-
-        // Home pages are served as directories (trailing-slash redirect), so keep the
-        // trailing slash there; strip it everywhere else (e.g. /en/bishkek).
-        if (currentPath !== '/' && newPath.endsWith('/') && newPath.length > 1) {
-            newPath = newPath.slice(0, -1);
-        }
-
-        window.history.pushState(null, '', newPath + window.location.search + window.location.hash);
-        syncSeoTagsForPath(newPath);
+  document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang');
+      if (!['KG', 'RU', 'EN'].includes(lang)) return;
+      storage.setItem('pogoda_lang', lang);
+      if (article) {
+        syncPageHeadForLang(lang);
+        applyTranslations(lang);
+        onLangChange?.(lang);
+        return;
       }
-
-      // Correct <html lang>, <title>, meta description, and og:/twitter: tags —
-      // applyTranslations() below only updates visible body text.
-      syncPageHeadForLang(targetLang);
-
-      // Immediately apply translations without reloading the page
-      applyTranslations(targetLang);
-      
-      // Update active state in language selector UI buttons
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === targetLang);
-      });
-
-      if (onLangChange && typeof onLangChange === 'function') {
-        onLangChange(targetLang);
-      }
+      // Navigate to the actual translated document so Back, metadata, and content agree.
+      const path = location.pathname.replace(/^\/(en|ru|kg)(?=\/|$)/, '').replace(/index\.html$/, '') || '/';
+      location.href = `${lang === 'KG' ? '' : '/' + lang.toLowerCase()}${path}${location.search}${location.hash}`;
     });
   });
-
   initMobileMenu();
-
-  // Observe DOM for dynamically added links and update them
-  const observer = new MutationObserver(() => {
-    updateLinksForLang(getCurrentLang());
-  });
+  const observer = new MutationObserver(() => updateLinksForLang(getCurrentLang()));
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
@@ -752,19 +693,28 @@ export function initMobileMenu() {
 
   if (!toggleBtn || !drawer) return;
 
+  toggleBtn.setAttribute('aria-expanded', 'false');
+  toggleBtn.setAttribute('aria-controls', drawer.id);
+  drawer.inert = true;
   function openMenu() {
     toggleBtn.classList.add('active');
-    drawer.style.setProperty('background', '#ffffff', 'important');
-    drawer.style.setProperty('background-color', '#ffffff', 'important');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    drawer.inert = false;
+
+
     drawer.style.setProperty('opacity', '1', 'important');
     drawer.style.setProperty('z-index', '99999', 'important');
     drawer.classList.add('open');
+    drawer.querySelector('button, input, a')?.focus();
     if (overlay) overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     toggleBtn.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    drawer.inert = true;
+    toggleBtn.focus();
     drawer.classList.remove('open');
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
@@ -782,7 +732,7 @@ export function initMobileMenu() {
       const query = searchInput.value.trim();
       if (query) {
         closeMenu();
-        window.location.href = `index.html?search=${encodeURIComponent(query)}`;
+        window.location.href = `${getCurrentLang() === 'KG' ? '' : '/' + getCurrentLang().toLowerCase()}/?search=${encodeURIComponent(query)}`;
       }
     };
     searchBtn.addEventListener('click', handleMobileSearch);
@@ -809,6 +759,12 @@ export function initMobileMenu() {
   });
 
   document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && drawer.classList.contains('open')) {
+      const items = [...drawer.querySelectorAll('a, button, input, select, textarea')].filter(el => !el.disabled && el.getClientRects().length);
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    }
     if (e.key === 'Escape' && drawer.classList.contains('open')) {
       closeMenu();
     }

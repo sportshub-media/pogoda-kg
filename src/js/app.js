@@ -1,6 +1,8 @@
+import { weatherText, weatherStatus, showWeatherError } from './weather-status.js';
+import { storage, readRecentCities } from './storage.js';
 // Pogoda Kg - Main Application Logic
 import { KYRGYZSTAN_CITIES, DEFAULT_CITY } from './config.js';
-import { fetchWeatherData } from './api.js';
+import { REFRESH_MS, fetchWeatherData } from './api.js';
 import { initTheme } from './theme.js';
 import { TRANSLATIONS, getCurrentLang, initLangSwitcher, getRegionName } from './i18n.js';
 import { BLOG_POSTS } from './blog-posts-data.js';
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderWeeklyForecast(data.weekly);
       renderRecentSearches();
     }
+    renderOtherCities();
   });
   renderNewsGrid(getCurrentLang());
   renderFAQ(getCurrentLang());
@@ -71,16 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
   renderOtherCities();
   loadCityWeather(currentCity);
   initScrollReveal();
+  setInterval(() => { if (!document.hidden) { loadCityWeather(currentCity); renderOtherCities(); } }, REFRESH_MS);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadCityWeather(currentCity); });
 });
 
 function getCityName(city) {
   const lang = getCurrentLang();
-  return (lang === 'RU' || lang === 'KG') ? city.nativeName : city.name;
+  return lang === 'RU' ? ruCity(city).nom : lang === 'KG' ? city.nativeName : city.name;
 }
 
 function getConditionStr(conditionKey) {
   const lang = getCurrentLang();
-  return TRANSLATIONS[lang] ? TRANSLATIONS[lang][conditionKey] : conditionKey;
+  return TRANSLATIONS[lang]?.[conditionKey] || weatherText('unknown');
 }
 
 // Every city has its own dedicated, statically-generated page — switching cities from
@@ -100,6 +105,7 @@ export async function loadCityWeather(city) {
   saveRecentSearch(city);
 
   // Check cache first or fetch live
+  try {
   const data = await fetchWeatherData(city.lat, city.lon);
   weatherCache[city.id] = data;
 
@@ -108,6 +114,15 @@ export async function loadCityWeather(city) {
   renderTodayDetails(city, data.current);
   renderWeeklyForecast(data.weekly);
   renderRecentSearches();
+  } catch {
+    showWeatherError(document.getElementById('heroWeatherCard'), () => loadCityWeather(city));
+    for (const id of ['hourlyCardsContainer', 'weeklyForecastContainer', 'sunArcContainer']) document.getElementById(id)?.replaceChildren();
+    for (const id of ['detailWindValue', 'detailHumidityValue', 'detailVisibilityValue']) {
+      const el = document.getElementById(id); if (el) el.textContent = '—';
+    }
+    delete weatherCache[city.id];
+    renderRecentSearches();
+  }
 }
 
 // Same map as RU_CITY_FORMS in build.js — Russian city names with the prepositional
@@ -153,13 +168,13 @@ function getCityMeta(lang, city) {
   if (lang === 'RU') {
     const ru = ruCity(city);
     return {
-      title: `Погода в ${ru.prep} сегодня, на неделю и месяц | Pogoda.kg`,
-      description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю, на 10 дней и на месяц. Обновляется каждые 15 минут.`
+      title: `Погода в ${ru.prep} сегодня, на неделю | Pogoda.kg`,
+      description: `Прогноз погоды в ${ru.prep}, Киргизия: температура сейчас, почасовой прогноз, погода на завтра, на неделю. Обновляется каждые 15 минут.`
     };
   }
   return {
     title: `${native} аба ырайы бүгүн жана 7 күндүк божомол | Pogoda.kg`,
-    description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк, 14 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
+    description: `${native} шаары үчүн азыркы аба ырайынын божомолу: температура, шамал, нымдуулук жана 7 күндүк божомолдор ар 15 мүнөт сайын автоматтык жаңыртылат.`
   };
 }
 
@@ -202,7 +217,7 @@ function getCitySectionTitles(lang, city) {
       todayDetails: `Today Weather Details for ${en}`,
       todayDetailsDesc: `A closer look at current conditions in ${en} — wind speed, humidity, visibility, and today's daylight hours.`,
       weekly: `Weekly Weather Forecast for ${en}`,
-      weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and wind for the next 7 days.`
+      weeklyDesc: `See how the week ahead looks in ${en} — daily highs and lows, conditions, and precipitation chances for the next 7 days.`
     };
   }
   if (lang === 'RU') {
@@ -213,7 +228,7 @@ function getCitySectionTitles(lang, city) {
       todayDetails: `Погода в ${ru.prep} сегодня — подробности`,
       todayDetailsDesc: `Подробный обзор текущих условий в ${ru.prep}: скорость ветра, влажность, видимость и продолжительность светового дня.`,
       weekly: `Прогноз погоды в ${ru.prep} на неделю`,
-      weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и ветер на ближайшие 7 дней.`
+      weeklyDesc: `Узнайте, какой будет неделя в ${ru.prep}: дневные температуры, погодные условия и вероятность осадков на ближайшие 7 дней.`
     };
   }
   return {
@@ -239,7 +254,7 @@ function renderNewsGrid(lang) {
     const data = post.translations[lang] || post.translations.EN;
     const isFeatured = i === 0;
     return `
-      <div class="news-card${isFeatured ? ' news-card-featured' : ''}" onclick="window.location.href='/blog/${post.slug}.html'">
+      <a class="news-card${isFeatured ? ' news-card-featured' : ''}" href="/blog/${post.slug}">
         <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
         <div class="news-card-overlay">
           <h3 class="news-title">${data.title}</h3>
@@ -249,7 +264,7 @@ function renderNewsGrid(lang) {
             <span><svg class="icon"><use href="#icon-${isFeatured ? 'clock' : 'calendar'}"></use></svg> ${data.date}</span>
           </div>
         </div>
-      </div>`;
+      </a>`;
   }).join('\n');
 }
 
@@ -336,6 +351,7 @@ function renderHeroCard(city, data) {
   const t = TRANSLATIONS[lang];
 
   heroCard.innerHTML = `
+    <p class="weather-status" role="status">${weatherStatus(data)}<br><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">${weatherText('source')}</a></p>
     <div class="card-top-row">
       <div class="city-title-new">${getCityName(city)}</div>
     </div>
@@ -381,7 +397,7 @@ function renderHeroCard(city, data) {
         <svg class="icon" style="color:#94A3B8;"><use href="#icon-wind"></use></svg> 
         <span>${t.wind_label || 'Wind'}</span>
       </div>
-      <div class="metric-right">${t.wind_prefix || 'up to'} ${current.windSpeed} ${t.wind_unit || 'm/s'}</div>
+      <div class="metric-right">${current.windSpeed} km/h</div>
     </div>
   `;
 }
@@ -392,7 +408,7 @@ function renderHourlyForecast(hourlyList) {
   if (!container) return;
 
   container.innerHTML = '';
-  hourlyList.forEach(item => {
+  hourlyList.forEach((item, index) => {
     const card = document.createElement('div');
     card.className = 'hourly-card';
     card.innerHTML = `
@@ -401,9 +417,9 @@ function renderHourlyForecast(hourlyList) {
       <div class="hourly-condition">${getConditionStr(item.conditionKey)}</div>
       <div class="hourly-details">
         <span>💧 ${item.precip}%</span>
-        <span>💨 ${item.wind}km</span>
+        <span>💨 ${item.wind} km/h</span>
       </div>
-      <div class="hourly-time">${item.time}</div>
+      <div class="hourly-time">${index === 0 ? weatherText('now') : item.time}</div>
     `;
     container.appendChild(card);
   });
@@ -487,14 +503,14 @@ function renderWeeklyForecast(weeklyList) {
 
     const lang = getCurrentLang();
     const todayStr = TRANSLATIONS[lang]?.today || "Today";
-    const dayName = index === 0 ? todayStr : item.day;
+    const dayName = index === 0 ? todayStr : new Intl.DateTimeFormat({ KG: 'ky-KG', RU: 'ru-RU', EN: 'en-GB' }[lang], { weekday: 'short', timeZone: 'UTC' }).format(new Date(item.date + 'T12:00:00Z'));
 
     pill.innerHTML = `
       <div class="ten-day-day">${dayName}</div>
       <div class="ten-day-divider"></div>
       <div class="ten-day-icon">${item.svg}</div>
       ${precipHtml}
-      <div class="ten-day-temp">${item.maxTemp}°C</div>
+      <div class="ten-day-temp">${item.maxTemp}° / ${item.minTemp}°</div>
     `;
     container.appendChild(pill);
   });
@@ -517,17 +533,26 @@ async function renderOtherCities() {
     try {
       return { city, data: await fetchWeatherData(city.lat, city.lon) };
     } catch (error) {
-      console.error('Error loading city weather:', error);
+
       return { city, data: null };
     }
   }));
 
   for (const { city, data } of results) {
-    if (!data || !data.current) continue;
+    if (!data || !data.current) {
+      const link = document.createElement('a');
+      link.className = 'other-country-card';
+      link.href = `${lang === 'KG' ? '' : '/' + lang.toLowerCase()}/${city.id}`;
+      link.textContent = `${getCityName(city)} — ${weatherText('unavailable')}`;
+      container.append(link);
+      continue;
+    }
+    weatherCache[city.id] = data;
 
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'other-country-card';
-    card.onclick = () => navigateToCityPage(city);
+    card.title = weatherStatus(data);
+    card.href = `${getCurrentLang() === 'KG' ? '' : '/' + getCurrentLang().toLowerCase()}/${city.id}`;
 
     const conditionName = getConditionStr(data.current.conditionKey);
 
@@ -548,6 +573,7 @@ async function renderOtherCities() {
 
     container.appendChild(card);
   }
+  renderRecentSearches();
 }
 
 // 3. Search Bar logic for 10 Kyrgyzstan locations
@@ -557,6 +583,15 @@ function setupSearch() {
 
   if (!searchInput || !dropdown) return;
 
+  searchInput.setAttribute('aria-label', TRANSLATIONS[getCurrentLang()].search_placeholder);
+  searchInput.setAttribute('aria-controls', 'searchResultsDropdown');
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Escape') dropdown.classList.remove('active');
+    if (e.key === 'ArrowDown' || e.key === 'Enter') {
+      const first = dropdown.querySelector('a');
+      if (first) { e.preventDefault(); if (e.key === 'Enter') first.click(); else first.focus(); }
+    }
+  });
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim().toLowerCase();
     if (!query) {
@@ -567,6 +602,7 @@ function setupSearch() {
     const matches = KYRGYZSTAN_CITIES.filter(c =>
       c.name.toLowerCase().includes(query) ||
       c.nativeName.toLowerCase().includes(query) ||
+      ruCity(c).nom.toLowerCase().includes(query) ||
       c.region.toLowerCase().includes(query) ||
       getRegionName(c).toLowerCase().includes(query)
     );
@@ -576,26 +612,21 @@ function setupSearch() {
       dropdown.innerHTML = `<div class="search-result-item" style="cursor:default;">${TRANSLATIONS[lang].search_no_results}</div>`;
     } else {
       dropdown.innerHTML = matches.map(city => `
-        <div class="search-result-item" data-city-id="${city.id}">
+        <a class="search-result-item" data-city-id="${city.id}" href="${lang === 'KG' ? '' : '/' + lang.toLowerCase()}/${city.id}">
           <div>
             <strong>${getCityName(city)}</strong> <small>(${lang === 'EN' ? city.nativeName : city.name})</small>
             <div style="font-size:12px; color:var(--text-sub);">${getRegionName(city, lang)}</div>
           </div>
           <span style="font-size:12px; font-weight:600; color:var(--primary);">${TRANSLATIONS[lang].select_label}</span>
-        </div>
+        </a>
       `).join('');
     }
 
     dropdown.classList.add('active');
   });
 
-  dropdown.addEventListener('click', (e) => {
-    const item = e.target.closest('.search-result-item');
-    if (item && item.dataset.cityId) {
-      const selected = KYRGYZSTAN_CITIES.find(c => c.id === item.dataset.cityId);
-      if (selected) navigateToCityPage(selected);
-    }
-  });
+  const initialQuery = new URLSearchParams(location.search).get('search') || new URLSearchParams(location.search).get('q');
+  if (initialQuery) { searchInput.value = initialQuery; searchInput.dispatchEvent(new Event('input')); searchInput.focus(); }
 
   document.addEventListener('click', (e) => {
     if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
@@ -626,27 +657,28 @@ function setupHourlySlider() {
 
 // 5. Manage Recent Searches LocalStorage
 function saveRecentSearch(city) {
-  let recents = JSON.parse(localStorage.getItem('pogoda_recents') || '[]');
+  let recents = readRecentCities(KYRGYZSTAN_CITIES);
   recents = recents.filter(c => c.id !== city.id);
   recents.unshift(city);
   if (recents.length > 4) recents = recents.slice(0, 4);
-  localStorage.setItem('pogoda_recents', JSON.stringify(recents));
+  storage.setItem('pogoda_recents', JSON.stringify(recents));
 }
 
 function renderRecentSearches() {
   const container = document.getElementById('recentSearchContainer');
   if (!container) return;
 
-  const recents = JSON.parse(localStorage.getItem('pogoda_recents') || '[]');
+  const recents = readRecentCities(KYRGYZSTAN_CITIES);
   if (recents.length === 0) {
-    container.innerHTML = `<p style="color:var(--text-sub); text-align:center;">No recent searches yet.</p>`;
+    container.innerHTML = `<p style="color:var(--text-sub); text-align:center;">${getCurrentLang() === 'RU' ? 'Нет недавних поисков.' : getCurrentLang() === 'KG' ? 'Акыркы издөөлөр жок.' : 'No recent searches yet.'}</p>`;
     return;
   }
 
   container.innerHTML = '';
   recents.forEach(city => {
     const data = weatherCache[city.id];
-    const card = document.createElement('div');
+    const card = document.createElement('a');
+    card.href = `${getCurrentLang() === 'KG' ? '' : '/' + getCurrentLang().toLowerCase()}/${city.id}`;
     card.className = 'hourly-card';
     card.style.cssText = `
       cursor: pointer;
@@ -663,7 +695,6 @@ function renderRecentSearches() {
       <div style="font-size:26px; font-weight:800; margin:6px 0; color:#FF9F43;">${data ? data.current.temp + '°' : '--'}</div>
       <div style="font-size:12px; font-weight:600; background:rgba(0,0,0,0.5); padding:2px 8px; border-radius:10px;">${data ? getConditionStr(data.current.conditionKey) : TRANSLATIONS[getCurrentLang()].view_forecast_short}</div>
     `;
-    card.addEventListener('click', () => navigateToCityPage(city));
     container.appendChild(card);
   });
 }

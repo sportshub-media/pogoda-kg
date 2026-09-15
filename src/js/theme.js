@@ -1,9 +1,10 @@
+import { storage } from './storage.js';
 // Pogoda Kg - Theme Toggle Manager
 
 import { initCookieConsent } from './cookie-consent.js';
 
 export function initTheme() {
-  const savedTheme = localStorage.getItem('pogoda_theme') || 'light';
+  const savedTheme = storage.getItem('pogoda_theme') || 'light';
   if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     document.body.classList.add('dark-theme');
@@ -30,11 +31,11 @@ export function toggleTheme(isDark) {
   if (isDark) {
     document.documentElement.setAttribute('data-theme', 'dark');
     document.body.classList.add('dark-theme');
-    localStorage.setItem('pogoda_theme', 'dark');
+    storage.setItem('pogoda_theme', 'dark');
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     document.body.classList.remove('dark-theme');
-    localStorage.setItem('pogoda_theme', 'light');
+    storage.setItem('pogoda_theme', 'light');
   }
 
   // Keep all toggles synced

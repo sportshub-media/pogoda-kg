@@ -1,8 +1,9 @@
+import { storage } from './storage.js';
 import { getCurrentLang, TRANSLATIONS } from './i18n.js';
 
 export function initCookieConsent() {
   // If already consented, don't show the banner
-  if (localStorage.getItem('pogoda_cookie_consent')) return;
+  if (storage.getItem('pogoda_cookie_consent')) return;
 
   const lang = getCurrentLang() || 'EN';
   
@@ -28,7 +29,7 @@ export function initCookieConsent() {
   document.body.appendChild(banner);
 
   document.getElementById('cookieAcceptBtn').addEventListener('click', () => {
-    localStorage.setItem('pogoda_cookie_consent', 'true');
+    storage.setItem('pogoda_cookie_consent', 'true');
     banner.classList.add('hide');
     // Remove from DOM after animation completes
     setTimeout(() => banner.remove(), 300);
