@@ -5,6 +5,170 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-sep-15-forecast-warm-days-cold-nights",
+    slug: "september-15-forecast-kyrgyzstan-warm-days-cold-nights",
+    image: "/assets/images/blogphoto-aug-9-regional-forecast.webp",
+    translations: {
+      EN: {
+        title: "Sept 15 Forecast: Bishkek Still Hits Near +30°C by Day, But Nights Are Turning Cold",
+        seoTitle: "Sept 15 Forecast: Bishkek Still Hits Near +30°C by Day, But Nights Are Turning Cold",
+        seoDesc: "Bishkek, Osh and Jalal-Abad stay warm into the weekend with highs near +30°C to +31.6°C, even as Naryn and Karakol see a wet, cool midweek and nighttime lows countrywide slip into true autumn territory.",
+        category: "Weather Forecast",
+        date: "September 15, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Bishkek, Osh and Jalal-Abad stay warm into the weekend with highs near +30°C to +31.6°C, even as Naryn and Karakol see a wet, cool midweek and nighttime lows countrywide slip into true autumn territory.",
+        content: `
+          <p>Mid-September is bringing a split pattern across Kyrgyzstan: daytime highs in Bishkek, Osh and Jalal-Abad are still holding in the upper +20s to low +30s, even climbing further into the weekend, while Naryn and Karakol see a wet, sharply cooler midweek and nighttime lows everywhere slip into genuine autumn territory.</p>
+          <h3>A Wet, Cold Wednesday for Karakol</h3>
+          <p>Karakol takes the week's biggest hit tomorrow, with a 94% chance of rain and a high of just +17°C — down sharply from today's +23°C. Naryn is unsettled too, with a 78% rain chance and a high of only +22.5°C.</p>
+          <h3>Bishkek, Osh and Jalal-Abad Stay Warm</h3>
+          <p>The Chuy valley and the south barely notice the midweek system. Bishkek holds near +27-29°C through Thursday and Friday, Osh stays in the high +20s to low +30s all week, and Jalal-Abad follows a similar pattern, largely dry throughout.</p>
+          <h3>A Late-Season Warm-Up This Weekend</h3>
+          <p>Rather than cooling further, the south actually warms up heading into the weekend. Osh climbs to +31.1°C Saturday and +31.6°C Sunday, and Bishkek reaches +31°C Saturday too — some of the warmest readings of the month so far, a reminder that Kyrgyzstan's September heat hasn't fully let go yet.</p>
+          <h3>Nights Tell a Different Story</h3>
+          <p>Even as daytime highs hold up, overnight lows are firmly in autumn range. Naryn drops to +7.6°C to +8.4°C most nights this week, Karakol dips as low as +6.3°C by Friday, and even Bishkek's overnight lows sit in the low teens on several nights — a reminder that the calendar, not the afternoon thermometer, is the more reliable guide to the season now.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +28.9°C today, holding near +27-29°C through Friday, warming to +31°C Saturday, easing to +26.7°C by Monday.</li>
+            <li><strong>Osh:</strong> +29.6°C today, staying warm all week, climbing to +31.6°C by Sunday.</li>
+            <li><strong>Jalal-Abad:</strong> +28.8°C today, largely dry, rising to +31.2°C by Sunday.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +23.1°C today, dropping sharply to +17°C Wednesday with heavy rain, staying cool and unsettled through the week.</li>
+            <li><strong>Naryn:</strong> +24.3°C today with rain building, dropping to +22.5°C Wednesday with a 78% rain chance, nights near +8°C all week.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "15-сентябрга карата божомол: Бишкекте күндүз дагы деле +30°Cге жакын, бирок түндөр суукташууда",
+        seoTitle: "15-сентябрга карата божомол: Бишкекте күндүз дагы деле +30°Cге жакын, бирок түндөр суукташууда",
+        seoDesc: "Бишкек, Ош жана Жалал-Абадда дем алыш күндөрүндө да +30...+31,6°Cге чейин жылуулук сакталат, ал эми Нарын менен Караколдо жуманын ортосунда жамгыр менен суукташуу болот, өлкө боюнча түнкү температура чыныгы күз көрсөткүчтөрүнө түшөт.",
+        category: "Аба ырайы божомолу",
+        date: "15-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бишкек, Ош жана Жалал-Абадда дем алыш күндөрүндө да +30...+31,6°Cге чейин жылуулук сакталат, ал эми Нарын менен Караколдо жуманын ортосунда жамгыр менен суукташуу болот, өлкө боюнча түнкү температура чыныгы күз көрсөткүчтөрүнө түшөт.",
+        content: `
+          <p>Сентябрдын ортосу Кыргызстанга бөлүнгөн аба ырайын алып келүүдө: Бишкек, Ош жана Жалал-Абадда күндүзгү температура +27...+31°C аралыгында сакталууда, дем алыш күндөрүнө карай дагы көтөрүлүп жатат, ал эми Нарын менен Караколдо жуманын ортосунда жамгыр менен кескин суукташуу болот, өлкө боюнча түнкү температура чыныгы күздүн көрсөткүчтөрүнө түшүүдө.</p>
+          <h3>Караколдогу жамгырлуу жана суук шаршемби</h3>
+          <p>Эртең Караколдо жуманын эң курч өзгөрүүсү болот: жамгырдын ыктымалдыгы 94%, температура болгону +17°C — бүгүнкү +23°Cден байкаларлык төмөндөө. Нарында да туруксуз: жамгырдын ыктымалдыгы 78%, температура болгону +22,5°C.</p>
+          <h3>Бишкек, Ош жана Жалал-Абад жылуу бойдон калат</h3>
+          <p>Чүй өрөөнү жана түштүк жуманын ортосундагы аба ырайын дээрлик байкашпайт. Бишкекте бейшемби жана жума күндөрүнө чейин +27...+29°C сакталат, Ошто жума бою +20дун жогорку бөлүгүнөн +30дун төмөнкү бөлүгүнө чейин, Жалал-Абадда да ушундай эле сүрөт, негизинен кургак.</p>
+          <h3>Дем алыш күндөрүндөгү мезгил аягындагы жылуулук</h3>
+          <p>Мындан ары суукташуунун ордуна, түштүк дем алыш күндөрүнө карай тескерисинче жылыйт. Ош ишемби күнү +31,1°Cге, жекшемби күнү +31,6°Cге көтөрүлөт, Бишкекте да ишемби күнү +31°C болот — бул айдын эң жылуу көрсөткүчтөрүнүн бири, Кыргызстандагы сентябрь ысыгы дагы эле толук артта калбаганын эске салат.</p>
+          <h3>Түндөр башка окуяны айтып берет</h3>
+          <p>Күндүзгү температура жогору сакталып турса да, түнкү көрсөткүчтөр ишенимдүү түрдө күздүн диапазонунда. Нарында бул жуманын көпчүлүк түндөрүндө температура +7,6...+8,4°Cге түшөт, Караколдо жума күнгө карай +6,3°Cге чейин, Бишкекте да айрым түндөрү температура +12...+14°C тегерегине түшөт — бул азыр мезгилди так көрсөтүүчү нерсе күндүзгү термометр эмес, күнтизме экенин эске салат.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн +28,9°C, жумага чейин +27...+29°C тегерегинде, ишемби күнү +31°Cге жылыйт, дүйшөмбү күнгө карай +26,7°Cге түшөт.</li>
+            <li><strong>Ош:</strong> бүгүн +29,6°C, жума бою жылуу, жекшемби күнгө карай +31,6°Cге көтөрүлөт.</li>
+            <li><strong>Жалал-Абад:</strong> бүгүн +28,8°C, негизинен кургак, жекшемби күнгө карай +31,2°Cге көтөрүлөт.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн +23,1°C, шаршемби күнү катуу жамгыр менен +17°Cге кескин түшөт, жума бою салкын жана туруксуз.</li>
+            <li><strong>Нарын:</strong> бүгүн +24,3°C, жамгыр күчөйт, шаршемби күнү жамгырдын ыктымалдыгы 78% менен +22,5°Cге түшөт, жума бою түнкүсүн +8°C тегерегинде.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 15 сентября: в Бишкеке днём всё ещё около +30°C, но ночи становятся холодными",
+        seoTitle: "Прогноз на 15 сентября: в Бишкеке днём всё ещё около +30°C, но ночи становятся холодными",
+        seoDesc: "В Бишкеке, Оше и Джалал-Абаде сохраняется тепло до +30...+31,6°C даже на выходных, тогда как в Нарыне и Караколе в середине недели пройдут дожди и похолодание, а ночные температуры по всей стране опускаются до настоящих осенних значений.",
+        category: "Прогноз погоды",
+        date: "15 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "В Бишкеке, Оше и Джалал-Абаде сохраняется тепло до +30...+31,6°C даже на выходных, тогда как в Нарыне и Караколе в середине недели пройдут дожди и похолодание, а ночные температуры по всей стране опускаются до настоящих осенних значений.",
+        content: `
+          <p>Середина сентября приносит в Кыргызстан разделённую погодную картину: дневная температура в Бишкеке, Оше и Джалал-Абаде всё ещё держится в пределах +27...+31°C, даже поднимаясь ещё выше к выходным, тогда как в Нарыне и Караколе в середине недели пройдут дожди с резким похолоданием, а ночные температуры повсюду опускаются до настоящих осенних значений.</p>
+          <h3>Дождливая и холодная среда в Караколе</h3>
+          <p>Завтра в Караколе — самый резкий перепад за неделю: вероятность дождя 94%, температура всего +17°C — заметное падение по сравнению с сегодняшними +23°C. В Нарыне тоже неустойчиво: вероятность дождя 78%, температура всего +22,5°C.</p>
+          <h3>Бишкек, Ош и Джалал-Абад остаются тёплыми</h3>
+          <p>Чуйская долина и юг почти не замечают среднюю по неделе непогоду. В Бишкеке до четверга и пятницы держится около +27...+29°C, в Оше всю неделю от высоких +20-х до низких +30-х, в Джалал-Абаде похожая картина, в основном сухо.</p>
+          <h3>Позднесезонное потепление на выходных</h3>
+          <p>Вместо дальнейшего похолодания юг, наоборот, прогреется к выходным. Ош поднимется до +31,1°C в субботу и +31,6°C в воскресенье, в Бишкеке в субботу тоже будет +31°C — одни из самых тёплых показателей месяца, напоминание о том, что сентябрьская жара в Кыргызстане ещё не отступила окончательно.</p>
+          <h3>Ночи рассказывают другую историю</h3>
+          <p>Даже пока дневная температура держится высоко, ночные показатели уверенно находятся в осеннем диапазоне. В Нарыне большинство ночей на этой неделе температура опускается до +7,6...+8,4°C, в Караколе к пятнице — до +6,3°C, а в Бишкеке в некоторые ночи температура опускается до +12...+14°C — напоминание о том, что сейчас именно календарь, а не дневной термометр, точнее указывает на смену сезона.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +28,9°C сегодня, около +27...+29°C до пятницы, потепление до +31°C в субботу, снижение до +26,7°C к понедельнику.</li>
+            <li><strong>Ош:</strong> +29,6°C сегодня, тепло всю неделю, рост до +31,6°C к воскресенью.</li>
+            <li><strong>Джалал-Абад:</strong> +28,8°C сегодня, в основном сухо, рост до +31,2°C к воскресенью.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +23,1°C сегодня, резкое падение до +17°C в среду с сильным дождём, прохладная неустойчивая погода всю неделю.</li>
+            <li><strong>Нарын:</strong> +24,3°C сегодня, дожди нарастают, падение до +22,5°C в среду с вероятностью дождя 78%, ночью около +8°C всю неделю.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-arslanbob-walnut-harvest",
+    slug: "arslanbob-walnut-harvest-season-begins",
+    image: "/assets/images/blogphoto-mountain-getaways.webp",
+    translations: {
+      EN: {
+        title: "Arslanbob's Walnut Harvest Season Is About to Begin",
+        seoTitle: "Arslanbob's Walnut Harvest Season Is About to Begin",
+        seoDesc: "The world's largest walnut forest at Arslanbob starts its harvest in late September, with families climbing into the trees to shake down the season's crop before October's Walnut Harvest Festival.",
+        category: "Travel & Weather",
+        date: "September 15, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "The world's largest walnut forest at Arslanbob starts its harvest in late September, with families climbing into the trees to shake down the season's crop before October's Walnut Harvest Festival.",
+        content: `
+          <p>As Kyrgyzstan's daytime heat finally starts to ease into true autumn, one of the country's most distinctive seasonal traditions is about to begin: the walnut harvest at Arslanbob, home to the largest natural walnut forest on Earth. The harvest typically runs from late September through October, drawing both local families and travelers to the forested slopes of the Fergana Range.</p>
+          <h3>The World's Largest Walnut Forest</h3>
+          <p>Arslanbob's walnut forest covers tens of thousands of hectares in the mountains near Jalal-Abad, a natural woodland unlike anything else in Central Asia. For generations, walnuts have been central to the local economy, sold at markets across the region and exported abroad.</p>
+          <h3>How the Harvest Works</h3>
+          <p>Families move into the forest for weeks at a time, often setting up temporary camps among the trees. Men and older boys climb high into the branches to shake down the nuts, while women and children gather what falls below — a communal effort that's as much a cultural tradition as an economic one.</p>
+          <h3>Cooler Mountain Weather Ahead</h3>
+          <p>Harvest season coincides with the forest's transition into autumn. Nights in the surrounding mountains are already dropping into the single digits at higher elevations, and by the time the harvest is in full swing in October, cooler, crisper days become the norm — good walking weather, though warm layers are worth packing for the mornings and evenings.</p>
+          <h3>The Walnut Harvest Festival</h3>
+          <p>The season culminates in the Walnut Harvest Festival, usually held the first weekend of October, with folklore performances, traditional wrestling and games, a walnut-cracking contest, and a long-distance race through the forest hills.</p>
+          <h3>Planning a Visit</h3>
+          <p>Travelers can join the harvest alongside local families through community-based tourism programs in the village, offering a firsthand look at a tradition that has shaped Arslanbob's economy and identity for generations. With the season just getting underway, the next few weeks are the best window to experience it before the forest quiets down for winter.</p>
+        `
+      },
+      KG: {
+        title: "Арстанбапта жаңгак терүү мезгили башталууда",
+        seoTitle: "Арстанбапта жаңгак терүү мезгили башталууда",
+        seoDesc: "Дүйнөдөгү эң чоң жаңгак токою Арстанбапта түшүм жыйноо сентябрдын аягында башталат — үй-бүлөлөр жаңгакты кагып түшүрүү үчүн дарактарга чыгышат, ал эми октябрдын башында түшүм майрамы өтөт.",
+        category: "Саякат жана аба ырайы",
+        date: "15-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Дүйнөдөгү эң чоң жаңгак токою Арстанбапта түшүм жыйноо сентябрдын аягында башталат — үй-бүлөлөр жаңгакты кагып түшүрүү үчүн дарактарга чыгышат, ал эми октябрдын башында түшүм майрамы өтөт.",
+        content: `
+          <p>Кыргызстандагы жайкы ысыктык акыры чыныгы күзгө орун бошотуп жатканда, өлкөнүн эң өзгөчө мезгилдик салттарынын бири башталууда — жер жүзүндөгү эң чоң табигый жаңгак токою жайгашкан Арстанбапта жаңгак терүү. Түшүм жыйноо мезгили адатта сентябрдын аягынан октябрга чейин созулат, жергиликтүү үй-бүлөлөрдү да, саякатчыларды да Фергана кырка тоолорунун токойлуу капталдарына тартат.</p>
+          <h3>Дүйнөдөгү эң чоң жаңгак токою</h3>
+          <p>Арстанбаптын жаңгак токою Жалал-Абадга жакын тоолордо ондогон миң гектарды ээлейт — Борбордук Азияда мындай табигый токой жок. Муундан-муунга жаңгак жергиликтүү экономиканын негизи болуп келген: аны аймак боюнча базарларда сатышат жана чет өлкөгө чыгарышат.</p>
+          <h3>Түшүм жыйноо кантип өтөт</h3>
+          <p>Үй-бүлөлөр токойдо жумалап жашашат, көбүнчө дарактардын арасында убактылуу лагерлерди тигишет. Эркектер жана чоңураак балдар жаңгакты кагып түшүрүү үчүн бийик бутактарга чыгышат, ал эми аялдар менен балдар жерге түшкөн жаңгакты чогултушат — бул экономикалык гана эмес, маданий салт да болгон жалпы эмгек.</p>
+          <h3>Алдыда — салкыныраак тоо аба ырайы</h3>
+          <p>Түшүм жыйноо мезгили токойдун күзгө өтүшү менен дал келет. Айланадагы тоолордогу түндөр бийик жерлерде буга чейин эле бир орундуу сандарга түшүп жатат, октябрда түшүм жыйноо толук жүрүп жатканда, салкыныраак жана таза күндөр кадимки көрүнүшкө айланат — сейилдөө үчүн жакшы аба ырайы, бирок эртең мененки жана кечки убакытка жылуу кийим алып жүрүү керек.</p>
+          <h3>Жаңгак терүү майрамы</h3>
+          <p>Мезгил адатта октябрдын биринчи дем алыш күндөрүндө өтүүчү Жаңгак терүү майрамы менен аяктайт, анда элдик көрсөтүүлөр, салттуу күрөш жана оюндар, жаңгак чагуу конкурсу, ошондой эле токойлуу дөбөлөр аркылуу узак аралыкка жүгүрүү өтөт.</p>
+          <h3>Сапарды кантип пландоо керек</h3>
+          <p>Саякатчылар айылдагы коомдук туризм программалары аркылуу жергиликтүү үй-бүлөлөр менен бирге түшүм жыйноого кошула алышат, бул Арстанбаптын экономикасы менен өзгөчөлүгүн муундан-муунга калыптандырган салтты өз көзү менен көрүүгө мүмкүнчүлүк берет. Мезгил жаңы гана башталып жатат, ошондуктан токой кышка тынчыганга чейин аны көрүү үчүн алдыдагы бир нече жума эң ыңгайлуу убакыт.</p>
+        `
+      },
+      RU: {
+        title: "В Арсланбобе начинается сезон сбора урожая грецкого ореха",
+        seoTitle: "В Арсланбобе начинается сезон сбора урожая грецкого ореха",
+        seoDesc: "В крупнейшем в мире ореховом лесу Арсланбоба сбор урожая начинается в конце сентября — семьи забираются на деревья, чтобы стряхнуть орехи, а в начале октября проходит фестиваль урожая.",
+        category: "Туризм и погода",
+        date: "15 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "В крупнейшем в мире ореховом лесу Арсланбоба сбор урожая начинается в конце сентября — семьи забираются на деревья, чтобы стряхнуть орехи, а в начале октября проходит фестиваль урожая.",
+        content: `
+          <p>По мере того как летняя жара в Кыргызстане наконец уступает место настоящей осени, начинается одна из самых самобытных сезонных традиций страны — сбор урожая грецкого ореха в Арсланбобе, где расположен крупнейший на Земле естественный ореховый лес. Сезон сбора обычно длится с конца сентября по октябрь, привлекая как местные семьи, так и путешественников на лесистые склоны Ферганского хребта.</p>
+          <h3>Крупнейший в мире ореховый лес</h3>
+          <p>Ореховый лес Арсланбоба занимает десятки тысяч гектаров в горах близ Джалал-Абада — природный массив, которому нет аналогов в Центральной Азии. На протяжении поколений грецкие орехи были основой местной экономики: их продают на рынках по всему региону и экспортируют за рубеж.</p>
+          <h3>Как проходит сбор урожая</h3>
+          <p>Семьи неделями живут в лесу, часто устраивая временные лагеря среди деревьев. Мужчины и подростки забираются высоко на ветви, чтобы стряхнуть орехи, а женщины и дети собирают упавшие — совместный труд, который является не только экономической, но и культурной традицией.</p>
+          <h3>Впереди — более прохладная горная погода</h3>
+          <p>Сезон сбора совпадает с переходом леса в осень. Ночи в окрестных горах уже опускаются до однозначных чисел на большей высоте, а к тому моменту, когда сбор урожая наберёт полную силу в октябре, более прохладные и свежие дни станут нормой — хорошая погода для прогулок, хотя тёплые слои одежды стоит взять на утро и вечер.</p>
+          <h3>Фестиваль урожая грецкого ореха</h3>
+          <p>Сезон завершается Фестивалем урожая грецкого ореха, который обычно проходит в первые выходные октября, с фольклорными выступлениями, традиционной борьбой и играми, конкурсом по колке орехов и длинным забегом по лесистым холмам.</p>
+          <h3>Как спланировать поездку</h3>
+          <p>Путешественники могут присоединиться к сбору урожая вместе с местными семьями через программы общинного туризма в селе, получив возможность своими глазами увидеть традицию, которая на протяжении поколений формировала экономику и самобытность Арсланбоба. Сезон только начинается, так что ближайшие недели — лучшее время, чтобы застать его до того, как лес затихнет на зиму.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-aug-27-forecast-heat-holds-rain-monday",
     slug: "august-27-forecast-kyrgyzstan-heat-holds-rain-returns-monday",
     image: "/assets/images/blogphoto-heatwave-peak-39.webp",
