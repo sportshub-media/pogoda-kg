@@ -21,7 +21,7 @@ The main forecast refreshes every 15 minutes while the page is visible and on re
 
 ## Daily briefing and mountain passes
 
-`/daily` is one permanent daily briefing page for Bishkek, Osh, Karakol, Naryn, and Jalal-Abad. It does not create a new blog post each day. The GitHub Action in `.github/workflows/update-daily-briefing.yml` runs daily at 09:10 Asia/Bishkek, requests numeric forecast data from Open-Meteo, and commits the refreshed briefing source file. A Cloudflare Pages deployment triggered by that commit publishes the update.
+`/daily` is one permanent daily briefing page for Bishkek, Osh, Karakol, Naryn, and Jalal-Abad. The GitHub Action in `.github/workflows/update-daily-briefing.yml` runs daily at 09:20 Asia/Bishkek, requests numeric forecast data from Open-Meteo, refreshes the briefing, and publishes one dated forecast article under `/blog`. Each automated article contains the forecast values for those five cities in Kyrgyz, Russian, and English. A retry on the same day does not create a duplicate article. A Cloudflare Pages deployment triggered by that commit publishes the update.
 
 `/passes` displays current weather for Too-Ashuu, Ala-Bel, Dolon, Otmek, and Tuz-Bel. It never claims that a road is open or closed. It links visitors to the Ministry of Transport's official pass status and road cameras, since that authority controls road-access information.
 
