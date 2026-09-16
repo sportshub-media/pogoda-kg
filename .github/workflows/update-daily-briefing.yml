@@ -1,0 +1,21 @@
+name: Update daily weather briefing
+
+on:
+  schedule:
+    # 09:10 Asia/Bishkek (UTC+6), every day.
+    - cron: '10 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/update-daily-briefing.mjs
+      - run: git diff --quiet || (git config user.name 'Pogoda Kg updater' && git config user.email 'bot@pogoda.kg' && git add src/js/daily-briefing-data.js && git commit -m 'data: update daily weather briefing' && git push)

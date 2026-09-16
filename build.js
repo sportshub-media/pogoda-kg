@@ -91,6 +91,17 @@ const PAGE_META = {
         RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
         KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
     }
+    ,
+    'passes.html': {
+        EN: { title: 'Kyrgyzstan Mountain Pass Weather & Road Information | Pogoda.kg', description: 'Weather at Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel. Check official Kyrgyzstan road information before departure.' },
+        RU: { title: 'Погода на горных перевалах Кыргызстана и состояние дорог | Pogoda.kg', description: 'Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость.' },
+        KG: { title: 'Кыргызстандын тоо ашууларындагы аба ырайы жана жол маалыматы | Pogoda.kg', description: 'Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз.' }
+    },
+    'daily.html': {
+        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg', description: 'Today’s weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.' },
+        RU: { title: 'Погода в Кыргызстане сегодня: ежедневная сводка | Pogoda.kg', description: 'Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро.' },
+        KG: { title: 'Бүгүн Кыргызстандагы аба ырайы: күндөлүк маалымат | Pogoda.kg', description: 'Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат.' }
+    }
 };
 
 // Russian city names in nominative + prepositional case. config.js's nativeName is

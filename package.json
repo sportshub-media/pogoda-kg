@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "update:daily": "node scripts/update-daily-briefing.mjs"
   }
 }
