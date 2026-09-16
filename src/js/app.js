@@ -137,7 +137,14 @@ const RU_CITY_FORMS = {
   'kara-balta': { nom: 'Кара-Балта',  prep: 'Кара-Балте' },
   'balykchy':   { nom: 'Балыкчы',     prep: 'Балыкчы' },
   'naryn':      { nom: 'Нарын',       prep: 'Нарыне' },
-  'talas':      { nom: 'Талас',       prep: 'Таласе' }
+  'talas':       { nom: 'Талас',       prep: 'Таласе' },
+  'batken':      { nom: 'Баткен',      prep: 'Баткене' },
+  'cholpon-ata': { nom: 'Чолпон-Ата',  prep: 'Чолпон-Ате' },
+  'kant':        { nom: 'Кант',        prep: 'Канте' },
+  'kemin':       { nom: 'Кемин',       prep: 'Кемине' },
+  'kyzyl-kiya':  { nom: 'Кызыл-Кия',   prep: 'Кызыл-Кие' },
+  'toktogul':    { nom: 'Токтогул',    prep: 'Токтогуле' },
+  'razzakov':    { nom: 'Раззаков',    prep: 'Раззакове' }
 };
 
 function ruCity(city) {
@@ -719,4 +726,3 @@ function setupOtherCitiesScroll() {
     });
   }
 }
-

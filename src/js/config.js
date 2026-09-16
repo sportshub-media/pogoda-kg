@@ -130,7 +130,14 @@ export const KYRGYZSTAN_CITIES = [
     population: "40,000",
     elevation: "1,280 m",
     image: "assets/images/talas.webp"
-  }
+  },
+  { id: "batken", name: "Batken", nativeName: "Баткен", region: "Batken Region", regionKey: "batken", lat: 40.0626, lon: 70.8194, isCapital: false, population: "23,000", elevation: "1,036 m", image: "assets/images/gallery_jalal_abad.webp" },
+  { id: "cholpon-ata", name: "Cholpon-Ata", nativeName: "Чолпон-Ата", region: "Issyk-Kul Region", regionKey: "issykkul", lat: 42.6494, lon: 77.0813, isCapital: false, population: "14,000", elevation: "1,609 m", image: "assets/images/gallery_issyk_kul.webp" },
+  { id: "kant", name: "Kant", nativeName: "Кант", region: "Chuy Region", regionKey: "chuy", lat: 42.8911, lon: 74.8505, isCapital: false, population: "22,000", elevation: "742 m", image: "assets/images/tokmok.webp" },
+  { id: "kemin", name: "Kemin", nativeName: "Кемин", region: "Chuy Region", regionKey: "chuy", lat: 42.7864, lon: 75.7003, isCapital: false, population: "9,000", elevation: "1,123 m", image: "assets/images/naryn_mountains.webp" },
+  { id: "kyzyl-kiya", name: "Kyzyl-Kiya", nativeName: "Кызыл-Кыя", region: "Batken Region", regionKey: "batken", lat: 40.2568, lon: 72.1279, isCapital: false, population: "56,000", elevation: "1,058 m", image: "assets/images/osh.webp" },
+  { id: "toktogul", name: "Toktogul", nativeName: "Токтогул", region: "Jalal-Abad Region", regionKey: "jalalabad", lat: 41.8731, lon: 72.9416, isCapital: false, population: "19,000", elevation: "1,030 m", image: "assets/images/naryn_mountains.webp" },
+  { id: "razzakov", name: "Razzakov", nativeName: "Раззаков", region: "Batken Region", regionKey: "batken", lat: 39.8389, lon: 69.5306, isCapital: false, population: "28,000", elevation: "1,328 m", image: "assets/images/talas.webp" }
 ];
 
 export const DEFAULT_CITY = KYRGYZSTAN_CITIES[0]; // Bishkek
