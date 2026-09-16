@@ -4,9 +4,9 @@ import { getCurrentLang, initLangSwitcher } from './i18n.js';
 import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
 
 const copy = {
-  EN: { title: 'Kyrgyzstan weather today', intro: 'A daily snapshot for five major cities. This page is updated once each morning; live city pages refresh during the day.', updated: 'Daily briefing updated', empty: 'Today’s briefing is being prepared. Open a city page for the latest live forecast.', high: 'High', low: 'Low', rain: 'Rain chance', live: 'Open live forecast', source: 'Forecast data: Open-Meteo. For weather warnings, check the Ministry of Emergency Situations.' },
-  RU: { title: 'Погода в Кыргызстане сегодня', intro: 'Ежедневная сводка по пяти крупным городам. Страница обновляется утром, а прогнозы городов — в течение дня.', updated: 'Ежедневная сводка обновлена', empty: 'Сегодняшняя сводка готовится. Откройте страницу города для актуального прогноза.', high: 'Днём', low: 'Ночью', rain: 'Вероятность осадков', live: 'Открыть прогноз', source: 'Данные прогноза: Open-Meteo. Предупреждения о погоде проверяйте на сайте МЧС.' },
-  KG: { title: 'Бүгүн Кыргызстандагы аба ырайы', intro: 'Беш ири шаар боюнча күнүмдүк кыскача маалымат. Бул барак эртең менен жаңыланат, шаарлардын божомолу күн ичинде да жаңыланат.', updated: 'Күндөлүк маалымат жаңыртылды', empty: 'Бүгүнкү маалымат даярдалууда. Акыркы божомолду көрүү үчүн шаар барагын ачыңыз.', high: 'Күндүз', low: 'Түнкүсүн', rain: 'Жаан-чачын ыктымалдыгы', live: 'Божомолду ачуу', source: 'Божомол маалыматы: Open-Meteo. Аба ырайы боюнча эскертүүлөрдү Өзгөчө кырдаалдар министрлигинен текшериңиз.' }
+  EN: { kicker: 'Daily briefing', title: 'Kyrgyzstan weather today', intro: 'A daily snapshot for five major cities. This page is updated once each morning; live city pages refresh during the day.', updated: 'Daily briefing updated', empty: 'Today’s briefing is being prepared. Open a city page for the latest live forecast.', high: 'High', low: 'Low', rain: 'Rain chance', live: 'Open live forecast', source: 'Forecast data: Open-Meteo. For weather warnings, check the Ministry of Emergency Situations.' },
+  RU: { kicker: 'Ежедневная сводка', title: 'Погода в Кыргызстане сегодня', intro: 'Ежедневная сводка по пяти крупным городам. Страница обновляется утром, а прогнозы городов — в течение дня.', updated: 'Ежедневная сводка обновлена', empty: 'Сегодняшняя сводка готовится. Откройте страницу города для актуального прогноза.', high: 'Днём', low: 'Ночью', rain: 'Вероятность осадков', live: 'Открыть прогноз', source: 'Данные прогноза: Open-Meteo. Предупреждения о погоде проверяйте на сайте МЧС.' },
+  KG: { kicker: 'Күндөлүк маалымат', title: 'Бүгүн Кыргызстандагы аба ырайы', intro: 'Беш ири шаар боюнча күнүмдүк кыскача маалымат. Бул барак эртең менен жаңыланат, шаарлардын божомолу күн ичинде да жаңыланат.', updated: 'Күндөлүк маалымат жаңыртылды', empty: 'Бүгүнкү маалымат даярдалууда. Акыркы божомолду көрүү үчүн шаар барагын ачыңыз.', high: 'Күндүз', low: 'Түнкүсүн', rain: 'Жаан-чачын ыктымалдыгы', live: 'Божомолду ачуу', source: 'Божомол маалыматы: Open-Meteo. Аба ырайы боюнча эскертүүлөрдү Өзгөчө кырдаалдар министрлигинен текшериңиз.' }
 };
 const conditions = {
   0: ['Clear', 'Ясно', 'Ачык'], 1: ['Mainly clear', 'Преимущественно ясно', 'Негизинен ачык'],
@@ -21,6 +21,7 @@ function t() { return copy[getCurrentLang()] || copy.KG; }
 function condition(code) { const index = { EN: 0, RU: 1, KG: 2 }[getCurrentLang()] ?? 2; return (conditions[code] || ['Unknown', 'Нет данных', 'Белгисиз'])[index]; }
 function render() {
   const strings = t();
+  document.getElementById('briefingKicker').textContent = strings.kicker;
   document.getElementById('briefingTitle').textContent = strings.title;
   document.getElementById('briefingIntro').textContent = strings.intro;
   document.getElementById('briefingSource').textContent = strings.source;
