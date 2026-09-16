@@ -11,6 +11,9 @@ export const TRANSLATIONS = {
     nav_contact: "Contact",
     nav_today: "Today",
     nav_passes: "Passes",
+    nav_tools: "Weather Tools",
+    nav_daily_briefing: "Daily Briefing",
+    nav_mountain_passes: "Mountain Passes",
     faq_page_desc: "Answers about Kyrgyzstan's weather and climate — by region, by city, and about how Pogoda.kg itself works.",
     faq_section_general: "Weather in Kyrgyzstan",
     faq_section_cities: "Weather FAQ by City",
@@ -167,6 +170,9 @@ export const TRANSLATIONS = {
     nav_contact: "Байланыш",
     nav_today: "Бүгүн",
     nav_passes: "Ашуулар",
+    nav_tools: "Аба ырайы кызматтары",
+    nav_daily_briefing: "Күндөлүк маалымат",
+    nav_mountain_passes: "Тоо ашуулары",
     faq_page_desc: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор — региондор боюнча, шаарлар боюнча, ошондой эле Pogoda.kg кантип иштээри тууралуу.",
     faq_section_general: "Кыргызстандагы аба ырайы",
     faq_section_cities: "Шаарлар боюнча суроо-жооптор",
@@ -323,6 +329,9 @@ export const TRANSLATIONS = {
     nav_contact: "Контакты",
     nav_today: "Сегодня",
     nav_passes: "Перевалы",
+    nav_tools: "Сервисы погоды",
+    nav_daily_briefing: "Ежедневная сводка",
+    nav_mountain_passes: "Горные перевалы",
     faq_page_desc: "Ответы о погоде и климате Кыргызстана — по регионам, по городам, а также о том, как работает сам Pogoda.kg.",
     faq_section_general: "Погода в Кыргызстане",
     faq_section_cities: "Вопросы и ответы по городам",
@@ -665,12 +674,52 @@ export function applyTranslations(lang = getCurrentLang()) {
   updateLinksForLang(lang);
 }
 
+// One shared navigation category makes the practical weather services easy to
+// discover from every page without copying the same markup into every template.
+export function initWeatherToolsNav(lang = getCurrentLang()) {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.KG;
+  document.querySelectorAll('.main-nav ul').forEach(list => {
+    let item = list.querySelector('.nav-tools');
+    if (!item) {
+      item = document.createElement('li');
+      item.className = 'nav-tools';
+      item.innerHTML = '<button class="nav-tools-toggle" type="button" aria-expanded="false" aria-haspopup="true"></button><ul class="nav-tools-menu"></ul>';
+      const before = [...list.children].find(child => child.querySelector('a[href*="map"]'));
+      list.insertBefore(item, before || null);
+      const button = item.querySelector('.nav-tools-toggle');
+      button.addEventListener('click', event => {
+        event.stopPropagation();
+        const open = item.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+      item.addEventListener('keydown', event => {
+        if (event.key === 'Escape') { item.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); button.focus(); }
+      });
+    }
+    item.querySelector('.nav-tools-toggle').textContent = dict.nav_tools;
+    item.querySelector('.nav-tools-menu').innerHTML = `<li><a href="/daily">${dict.nav_daily_briefing}</a></li><li><a href="/passes">${dict.nav_mountain_passes}</a></li>`;
+  });
+  document.querySelectorAll('.mobile-nav ul').forEach(list => {
+    let item = list.querySelector('.mobile-tools-links');
+    if (!item) { item = document.createElement('li'); item.className = 'mobile-tools-links'; list.append(item); }
+    item.innerHTML = `<span class="mobile-tools-title">${dict.nav_tools}</span><a href="/daily">${dict.nav_daily_briefing}</a><a href="/passes">${dict.nav_mountain_passes}</a>`;
+  });
+  if (!document.documentElement.dataset.weatherToolsCloseListener) {
+    document.documentElement.dataset.weatherToolsCloseListener = 'true';
+    document.addEventListener('click', () => document.querySelectorAll('.nav-tools.is-open').forEach(item => {
+      item.classList.remove('is-open'); item.querySelector('.nav-tools-toggle').setAttribute('aria-expanded', 'false');
+    }));
+  }
+  updateLinksForLang(lang);
+}
+
 export function initLangSwitcher(onLangChange) {
   const article = /^\/blog\/.+/.test(location.pathname);
   const activeLang = getCurrentLang();
   storage.setItem('pogoda_lang', activeLang);
   syncPageHeadForLang(activeLang);
   applyTranslations(activeLang);
+  initWeatherToolsNav(activeLang);
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', () => {
       const lang = button.getAttribute('data-lang');
@@ -679,6 +728,7 @@ export function initLangSwitcher(onLangChange) {
       if (article) {
         syncPageHeadForLang(lang);
         applyTranslations(lang);
+        initWeatherToolsNav(lang);
         onLangChange?.(lang);
         return;
       }
