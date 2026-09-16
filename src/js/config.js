@@ -12,7 +12,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: true,
     population: "1,074,000",
     elevation: "800 m",
-    image: "assets/images/generated/bishkek-chuy-weather.jpg"
+    image: "assets/images/generated/cities/bishkek.jpg"
   },
   {
     id: "osh",
@@ -25,7 +25,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "322,000",
     elevation: "963 m",
-    image: "assets/images/generated/osh-fergana-weather.jpg"
+    image: "assets/images/generated/cities/osh.jpg"
   },
   {
     id: "jalal-abad",
@@ -38,7 +38,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "123,000",
     elevation: "763 m",
-    image: "assets/images/generated/toktogul-weather.jpg"
+    image: "assets/images/generated/cities/jalal-abad.jpg"
   },
   {
     id: "karakol",
@@ -51,7 +51,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "84,000",
     elevation: "1,760 m",
-    image: "assets/images/generated/issyk-kul-weather.jpg"
+    image: "assets/images/generated/cities/karakol.jpg"
   },
   {
     id: "tokmok",
@@ -64,7 +64,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "71,000",
     elevation: "816 m",
-    image: "assets/images/generated/bishkek-chuy-weather.jpg"
+    image: "assets/images/generated/cities/tokmok.jpg"
   },
   {
     id: "uzgen",
@@ -77,7 +77,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "62,000",
     elevation: "1,025 m",
-    image: "assets/images/generated/osh-fergana-weather.jpg"
+    image: "assets/images/generated/cities/uzgen.jpg"
   },
   {
     id: "kara-balta",
@@ -90,7 +90,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "54,000",
     elevation: "780 m",
-    image: "assets/images/generated/bishkek-chuy-weather.jpg"
+    image: "assets/images/generated/cities/kara-balta.jpg"
   },
   {
     id: "balykchy",
@@ -103,7 +103,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "51,000",
     elevation: "1,609 m",
-    image: "assets/images/generated/issyk-kul-weather.jpg"
+    image: "assets/images/generated/cities/balykchy.jpg"
   },
   {
     id: "naryn",
@@ -116,7 +116,7 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "41,000",
     elevation: "2,044 m",
-    image: "assets/images/generated/naryn-highlands-weather.jpg"
+    image: "assets/images/generated/cities/naryn.jpg"
   },
   {
     id: "talas",
@@ -129,15 +129,15 @@ export const KYRGYZSTAN_CITIES = [
     isCapital: false,
     population: "40,000",
     elevation: "1,280 m",
-    image: "assets/images/generated/naryn-highlands-weather.jpg"
+    image: "assets/images/generated/cities/talas.jpg"
   },
-  { id: "batken", name: "Batken", nativeName: "Баткен", region: "Batken Region", regionKey: "batken", lat: 40.0626, lon: 70.8194, isCapital: false, population: "23,000", elevation: "1,036 m", image: "assets/images/generated/batken-weather.jpg" },
-  { id: "cholpon-ata", name: "Cholpon-Ata", nativeName: "Чолпон-Ата", region: "Issyk-Kul Region", regionKey: "issykkul", lat: 42.6494, lon: 77.0813, isCapital: false, population: "14,000", elevation: "1,609 m", image: "assets/images/generated/issyk-kul-weather.jpg" },
-  { id: "kant", name: "Kant", nativeName: "Кант", region: "Chuy Region", regionKey: "chuy", lat: 42.8911, lon: 74.8505, isCapital: false, population: "22,000", elevation: "742 m", image: "assets/images/generated/bishkek-chuy-weather.jpg" },
-  { id: "kemin", name: "Kemin", nativeName: "Кемин", region: "Chuy Region", regionKey: "chuy", lat: 42.7864, lon: 75.7003, isCapital: false, population: "9,000", elevation: "1,123 m", image: "assets/images/generated/bishkek-chuy-weather.jpg" },
-  { id: "kyzyl-kiya", name: "Kyzyl-Kiya", nativeName: "Кызыл-Кыя", region: "Batken Region", regionKey: "batken", lat: 40.2568, lon: 72.1279, isCapital: false, population: "56,000", elevation: "1,058 m", image: "assets/images/generated/osh-fergana-weather.jpg" },
-  { id: "toktogul", name: "Toktogul", nativeName: "Токтогул", region: "Jalal-Abad Region", regionKey: "jalalabad", lat: 41.8731, lon: 72.9416, isCapital: false, population: "19,000", elevation: "1,030 m", image: "assets/images/generated/toktogul-weather.jpg" },
-  { id: "razzakov", name: "Razzakov", nativeName: "Раззаков", region: "Batken Region", regionKey: "batken", lat: 39.8389, lon: 69.5306, isCapital: false, population: "28,000", elevation: "1,328 m", image: "assets/images/generated/batken-weather.jpg" }
+  { id: "batken", name: "Batken", nativeName: "Баткен", region: "Batken Region", regionKey: "batken", lat: 40.0626, lon: 70.8194, isCapital: false, population: "23,000", elevation: "1,036 m", image: "assets/images/generated/cities/batken.jpg" },
+  { id: "cholpon-ata", name: "Cholpon-Ata", nativeName: "Чолпон-Ата", region: "Issyk-Kul Region", regionKey: "issykkul", lat: 42.6494, lon: 77.0813, isCapital: false, population: "14,000", elevation: "1,609 m", image: "assets/images/generated/cities/cholpon-ata.jpg" },
+  { id: "kant", name: "Kant", nativeName: "Кант", region: "Chuy Region", regionKey: "chuy", lat: 42.8911, lon: 74.8505, isCapital: false, population: "22,000", elevation: "742 m", image: "assets/images/generated/cities/kant.jpg" },
+  { id: "kemin", name: "Kemin", nativeName: "Кемин", region: "Chuy Region", regionKey: "chuy", lat: 42.7864, lon: 75.7003, isCapital: false, population: "9,000", elevation: "1,123 m", image: "assets/images/generated/cities/kemin.jpg" },
+  { id: "kyzyl-kiya", name: "Kyzyl-Kiya", nativeName: "Кызыл-Кыя", region: "Batken Region", regionKey: "batken", lat: 40.2568, lon: 72.1279, isCapital: false, population: "56,000", elevation: "1,058 m", image: "assets/images/generated/cities/kyzyl-kiya.jpg" },
+  { id: "toktogul", name: "Toktogul", nativeName: "Токтогул", region: "Jalal-Abad Region", regionKey: "jalalabad", lat: 41.8731, lon: 72.9416, isCapital: false, population: "19,000", elevation: "1,030 m", image: "assets/images/generated/cities/toktogul.jpg" },
+  { id: "razzakov", name: "Razzakov", nativeName: "Раззаков", region: "Batken Region", regionKey: "batken", lat: 39.8389, lon: 69.5306, isCapital: false, population: "28,000", elevation: "1,328 m", image: "assets/images/generated/cities/razzakov.jpg" }
 ];
 
 export const DEFAULT_CITY = KYRGYZSTAN_CITIES[0]; // Bishkek

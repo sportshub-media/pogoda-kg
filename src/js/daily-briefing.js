@@ -19,6 +19,16 @@ const conditions = {
 };
 function t() { return copy[getCurrentLang()] || copy.KG; }
 function condition(code) { const index = { EN: 0, RU: 1, KG: 2 }[getCurrentLang()] ?? 2; return (conditions[code] || ['Unknown', 'Нет данных', 'Белгисиз'])[index]; }
+function formatUpdatedAt(value, lang) {
+  const date = new Date(value);
+  const time = new Intl.DateTimeFormat(lang === 'RU' ? 'ru-RU' : 'en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Bishkek' }).format(date);
+  if (lang === 'KG') {
+    const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.'];
+    const bishkek = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Bishkek' }));
+    return `${bishkek.getDate()}-${months[bishkek.getMonth()]} ${bishkek.getFullYear()}-ж., ${time}`;
+  }
+  return new Intl.DateTimeFormat(lang === 'RU' ? 'ru-RU' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Bishkek' }).format(date);
+}
 function render() {
   const strings = t();
   document.getElementById('briefingKicker').textContent = strings.kicker;
@@ -29,7 +39,7 @@ function render() {
   const grid = document.getElementById('briefingGrid');
   grid.replaceChildren();
   if (!DAILY_BRIEFING.generatedAt || !DAILY_BRIEFING.cities.length) { status.textContent = strings.empty; return; }
-  status.textContent = `${strings.updated}: ${new Intl.DateTimeFormat({ EN: 'en-GB', RU: 'ru-RU', KG: 'ky-KG' }[getCurrentLang()], { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Bishkek' }).format(new Date(DAILY_BRIEFING.generatedAt))} (UTC+6)`;
+  status.textContent = `${strings.updated}: ${formatUpdatedAt(DAILY_BRIEFING.generatedAt, getCurrentLang())} (UTC+6)`;
   DAILY_BRIEFING.cities.forEach(city => {
     const card = document.createElement('article'); card.className = 'travel-card';
     const cityName = getCurrentLang() === 'EN' ? city.en : getCurrentLang() === 'RU' ? city.ru : city.kg;
