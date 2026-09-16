@@ -93,16 +93,40 @@ const PAGE_META = {
     }
     ,
     'passes.html': {
-        EN: { title: 'Kyrgyzstan Mountain Pass Weather & Road Information | Pogoda.kg', description: 'Weather at Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel. Check official Kyrgyzstan road information before departure.' },
+        EN: { title: 'Kyrgyzstan Mountain Pass Weather and Roads | Pogoda.kg', description: 'Mountain pass weather for Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel with temperature, wind, visibility and official road-status links before travel.' },
         RU: { title: 'Погода на горных перевалах Кыргызстана и состояние дорог | Pogoda.kg', description: 'Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость.' },
         KG: { title: 'Кыргызстандын тоо ашууларындагы аба ырайы жана жол маалыматы | Pogoda.kg', description: 'Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз.' }
     },
     'daily.html': {
-        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg', description: 'Today’s weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.' },
+        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg', description: 'Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now.' },
         RU: { title: 'Погода в Кыргызстане сегодня: ежедневная сводка | Pogoda.kg', description: 'Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро.' },
         KG: { title: 'Бүгүн Кыргызстандагы аба ырайы: күндөлүк маалымат | Pogoda.kg', description: 'Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат.' }
     }
 };
+
+// Focused topical keywords supplement the unique title, description and visible copy.
+const PAGE_KEYWORDS = {
+    'index.html': 'Kyrgyzstan weather, Bishkek weather forecast, weather today, 7-day forecast',
+    'daily.html': 'Kyrgyzstan weather today, daily weather briefing, Bishkek Osh forecast, weather update',
+    'passes.html': 'Kyrgyzstan mountain pass weather, Too-Ashuu road conditions, Ala-Bel weather, pass forecast',
+    'map.html': 'Kyrgyzstan weather map, live weather map, Bishkek temperature map, city forecast map',
+    'blog.html': 'Kyrgyzstan weather news, climate blog, mountain weather reports, weather updates',
+    'faq.html': 'Kyrgyzstan weather FAQ, weather forecast questions, Kyrgyzstan climate guide',
+    'contact.html': 'Pogoda kg contact, weather data support, Kyrgyzstan weather feedback',
+    'privacy.html': 'Pogoda kg privacy policy, weather website privacy, data preferences',
+    'terms.html': 'Pogoda kg terms of service, weather forecast terms, website conditions',
+    '404.html': 'Pogoda kg page not found, Kyrgyzstan weather homepage'
+};
+
+function addKeywords(html, keywords) {
+    if (!keywords || /<meta name="keywords"/i.test(html)) return html;
+    return html.replace('</head>', `  <meta name="keywords" content="${keywords}">\n</head>`);
+}
+
+function cityKeywords(lang, city) {
+    const name = lang === 'RU' ? ruCity(city).nom : (lang === 'KG' ? city.nativeName : city.name);
+    return `${name} weather, ${name} weather forecast, ${name} temperature today, Kyrgyzstan weather`;
+}
 
 // Russian city names in nominative + prepositional case. config.js's nativeName is
 // the Kyrgyz spelling (Өзгөн, Жалал-Абад), which shouldn't appear on Russian pages.
@@ -452,6 +476,7 @@ htmlFiles.forEach(file => {
             translated = translated.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${pageMeta.title}">`);
             translated = translated.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${pageMeta.description}">`);
         }
+        translated = addKeywords(translated, PAGE_KEYWORDS[file]);
 
         // Fill in the homepage's news grid with the current top 5 blog posts, in
         // this build's language.
@@ -515,6 +540,7 @@ htmlFiles.forEach(file => {
                 cityHtml = cityHtml.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${cityMeta.description}">`);
                 cityHtml = cityHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${cityMeta.title}">`);
                 cityHtml = cityHtml.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${cityMeta.description}">`);
+                cityHtml = addKeywords(cityHtml, cityKeywords(lang, city));
 
                 // Replace the hero heading/intro with real, unique on-page content for this
                 // city (not just meta tags) — this is what makes it a genuine dedicated page
@@ -594,6 +620,52 @@ htmlFiles.forEach(file => {
         }
     });
 });
+
+// The article archive has its own templates, so normalise its social/search
+// metadata during the build as well. This leaves the visible article H1 intact
+// while giving every post a unique, descriptive 50–60 character title and a
+// 150–160 character description.
+function trimAtWord(text, max) {
+    if (text.length <= max) return text;
+    const cut = text.slice(0, max + 1).replace(/\s+\S*$/, '').trim();
+    return cut || text.slice(0, max).trim();
+}
+
+function articleMetaFromHeading(heading) {
+    const clean = heading.replace(/\s*\|\s*Pogoda\.kg\s*$/i, '').replace(/\s+/g, ' ').trim();
+    let core = trimAtWord(clean, 47);
+    if (core.length < 38) core = trimAtWord(`${core} Kyrgyzstan Weather`, 47);
+    const title = `${core} | Pogoda.kg`;
+    let description = `Kyrgyzstan weather update: ${clean}. Find forecast context, travel guidance and practical local conditions from Pogoda.kg.`;
+    if (description.length < 150) description += ' Check the live city forecast before making plans.';
+    description = trimAtWord(description, 160);
+    return { title, description };
+}
+
+const outputBlogDir = path.join(OUT_DIR, 'blog');
+if (fs.existsSync(outputBlogDir)) {
+    fs.readdirSync(outputBlogDir).filter(f => f.endsWith('.html')).forEach(file => {
+        const postPath = path.join(outputBlogDir, file);
+        let post = fs.readFileSync(postPath, 'utf8');
+        const h1 = post.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+        if (!h1) return;
+        const heading = h1[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&');
+        const meta = articleMetaFromHeading(heading);
+        post = post.replace(/<title>.*?<\/title>/i, `<title>${meta.title}</title>`);
+        post = post.replace(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${meta.description}">`);
+        post = post.replace(/<meta property="og:title" content="[^"]*">/i, `<meta property="og:title" content="${meta.title}">`);
+        post = post.replace(/<meta property="og:description" content="[^"]*">/i, `<meta property="og:description" content="${meta.description}">`);
+        post = post.replace(/<meta name="twitter:title" content="[^"]*">/i, `<meta name="twitter:title" content="${meta.title}">`);
+        post = post.replace(/<meta name="twitter:description" content="[^"]*">/i, `<meta name="twitter:description" content="${meta.description}">`);
+        post = addKeywords(post, `Kyrgyzstan weather, ${heading}, weather forecast, Pogoda kg`);
+        // Article templates historically jumped from their H1 directly to H3.
+        // In the generated site, promote those content headings to H2 and keep
+        // the decorative footer labels out of the document outline.
+        post = post.replace(/<h3\b/g, '<h2').replace(/<\/h3>/g, '</h2>');
+        post = post.replace(/<h4\b/g, '<p class="footer-heading"').replace(/<\/h4>/g, '</p>');
+        fs.writeFileSync(postPath, post);
+    });
+}
 
 // Blog articles each live at a single unprefixed URL (no per-language copies) — include them too.
 if (fs.existsSync(path.join(SRC_DIR, 'blog'))) {

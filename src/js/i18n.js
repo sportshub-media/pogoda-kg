@@ -67,6 +67,14 @@ export const TRANSLATIONS = {
     contact_btn: "Open email app",
     map_title: "Interactive Kyrgyzstan Weather Map",
     map_desc: "Explore live temperature markers and forecast data across Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, and Talas.",
+    map_city_conditions_title: "Live weather conditions by city",
+    news_latest_heading: "Latest Kyrgyzstan weather reports",
+    daily_overview_title: "Today's weather across Kyrgyzstan",
+    daily_plan_title: "Plan your day with current forecasts",
+    daily_plan_body: "Open any city forecast for hourly conditions, wind, rain probability and a seven-day outlook. This briefing is a quick national overview; city pages provide the most current local forecast.",
+    passes_info_title: "Official road information and live weather",
+    passes_before_title: "Before travelling through a pass",
+    passes_before_body: "Use the weather cards to prepare for temperature, wind and visibility. Only the Ministry of Transport can confirm whether a road is open, restricted or closed, so check its latest update before departure.",
     cookie_text: "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy.html'>Privacy Policy</a>.",
     cookie_btn: "Got it!",
     close_btn: "Close",
@@ -227,6 +235,14 @@ export const TRANSLATIONS = {
     contact_btn: "Электрондук почтаны ачуу",
     map_title: "Кыргызстандын интерактивдүү аба ырайы картасы",
     map_desc: "Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын жана Таластагы температураны жана аба ырайын көрүңүз.",
+    map_city_conditions_title: "Шаарлар боюнча учурдагы аба ырайы",
+    news_latest_heading: "Кыргызстан боюнча акыркы аба ырайы кабарлары",
+    daily_overview_title: "Бүгүн Кыргызстан боюнча аба ырайы",
+    daily_plan_title: "Учурдагы божомолдор менен күнүңүздү пландаңыз",
+    daily_plan_body: "Сааттык абалды, шамалды, жаан-чачын ыктымалдыгын жана жети күндүк божомолду көрүү үчүн каалаган шаардын барагын ачыңыз. Бул сводка жалпы көрүнүш берет; шаар барактары жергиликтүү абалды так көрсөтөт.",
+    passes_info_title: "Расмий жол маалыматы жана учурдагы аба ырайы",
+    passes_before_title: "Ашуудан өтөөрдүн алдында",
+    passes_before_body: "Температурага, шамалга жана көрүү алыстыгына даярдануу үчүн аба ырайы карталарын колдонуңуз. Жолдун ачык же жабык экенин Транспорт министрлиги гана ырастайт, ошондуктан сапар алдында акыркы билдирүүнү текшериңиз.",
     cookie_text: "Биз сизге жакшыраак тажрыйба берүү үчүн тил жана тема тандоолоруңузду сактоо максатында локалдык сактагычты колдонобуз. Бул сайтты колдонууну улантуу менен, сиз биздин <a href='/privacy.html'>Купуялык саясатыбызга</a> макулдугуңузду билдиресиз.",
     cookie_btn: "Түшүндүм!",
     close_btn: "Жабуу",
@@ -387,6 +403,14 @@ export const TRANSLATIONS = {
     contact_btn: "Открыть почтовое приложение",
     map_title: "Интерактивная погодная карта Кыргызстана",
     map_desc: "Исследуйте живые температурные маркеры и прогнозы погоды в Бишкеке, Оше, Джалал-Абаде, Караколе, Токмаке, Узгене, Кара-Балте, Балыкчи, Нарыне и Таласе.",
+    map_city_conditions_title: "Текущая погода по городам",
+    news_latest_heading: "Последние сводки о погоде Кыргызстана",
+    daily_overview_title: "Погода по Кыргызстану сегодня",
+    daily_plan_title: "Планируйте день по актуальным прогнозам",
+    daily_plan_body: "Откройте прогноз города, чтобы посмотреть почасовые условия, ветер, вероятность осадков и прогноз на семь дней. Эта сводка даёт общий обзор, а страницы городов показывают наиболее актуальную местную погоду.",
+    passes_info_title: "Официальная дорожная информация и текущая погода",
+    passes_before_title: "Перед поездкой через перевал",
+    passes_before_body: "Используйте погодные карточки, чтобы подготовиться к температуре, ветру и видимости. Только Министерство транспорта подтверждает, открыта, ограничена или закрыта дорога, поэтому перед выездом проверьте последнее сообщение.",
     cookie_text: "Мы используем локальное хранилище для сохранения ваших настроек языка и темы, чтобы сделать ваш опыт лучше. Продолжая использовать этот сайт, вы соглашаетесь с нашей <a href='/privacy.html'>Политикой конфиденциальности</a>.",
     cookie_btn: "Понятно!",
     close_btn: "Закрыть",
@@ -530,6 +554,16 @@ const PAGE_META = {
     EN: { title: "Kyrgyzstan Weather FAQ: Climate Questions Answered", description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — all in one place." },
     RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
     KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
+  },
+  daily: {
+    EN: { title: "Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg", description: "Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now." },
+    RU: { title: "Погода в Кыргызстане сегодня: ежедневная сводка | Pogoda.kg", description: "Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро." },
+    KG: { title: "Бүгүн Кыргызстандагы аба ырайы: күндөлүк маалымат | Pogoda.kg", description: "Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат." }
+  },
+  passes: {
+    EN: { title: "Kyrgyzstan Mountain Pass Weather and Roads | Pogoda.kg", description: "Mountain pass weather for Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel with temperature, wind, visibility and official road-status links before travel." },
+    RU: { title: "Погода на горных перевалах Кыргызстана и состояние дорог | Pogoda.kg", description: "Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость." },
+    KG: { title: "Кыргызстандын тоо ашууларындагы аба ырайы жана жол маалыматы | Pogoda.kg", description: "Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз." }
   }
 };
 
@@ -547,6 +581,8 @@ function getStaticPageKey(pathname) {
   if (p === '/blog') return 'blog';
   if (p === '/404') return '404';
   if (p === '/faq') return 'faq';
+  if (p === '/daily') return 'daily';
+  if (p === '/passes') return 'passes';
   return null;
 }
 
