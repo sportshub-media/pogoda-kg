@@ -516,7 +516,7 @@ export const TRANSLATIONS = {
 // the client-side mirror needed to correct them in place.
 const PAGE_META = {
   home: {
-    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn." },
+    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn today." },
     RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
     KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
   },
@@ -551,7 +551,7 @@ const PAGE_META = {
     KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
   },
   faq: {
-    EN: { title: "Kyrgyzstan Weather FAQ: Climate Questions Answered", description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — all in one place." },
+    EN: { title: "Kyrgyzstan Weather FAQ: Climate Questions Answered", description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — one place." },
     RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
     KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
   },

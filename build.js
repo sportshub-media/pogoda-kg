@@ -60,6 +60,7 @@ const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 // EN isn't listed — the source file's own English copy is used as-is for the EN build.
 const PAGE_META = {
     'index.html': {
+        EN: { title: 'Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg', description: 'Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn today.' },
         RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
         KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
     },
@@ -88,6 +89,7 @@ const PAGE_META = {
         KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
     },
     'faq.html': {
+        EN: { title: 'Kyrgyzstan Weather FAQ: Climate Questions Answered', description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — one place." },
         RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
         KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
     }
@@ -121,6 +123,30 @@ const PAGE_KEYWORDS = {
 function addKeywords(html, keywords) {
     if (!keywords || /<meta name="keywords"/i.test(html)) return html;
     return html.replace('</head>', `  <meta name="keywords" content="${keywords}">\n</head>`);
+}
+
+function fitSeoTitle(title, lang) {
+    const brand = ' | Pogoda.kg';
+    let core = title.replace(/\s*\|\s*Pogoda\.?kg\s*$/i, '').trim();
+    const filler = { EN: ' Kyrgyzstan', RU: ' — Кыргызстан', KG: ' — Кыргызстан' }[lang] || '';
+    if (core.length + brand.length < 50) core += filler;
+    core = trimAtWord(core, 60 - brand.length);
+    return `${core}${brand}`;
+}
+
+function fitSeoDescription(description, lang) {
+    const ending = {
+        EN: ' Check current conditions before planning.',
+        RU: ' Данные помогут заранее спланировать поездку и день.',
+        KG: ' Маалымат сапарды жана күнүңүздү алдын ала пландаштырууга жардам берет.'
+    }[lang] || '';
+    let result = description;
+    while (result.length < 150) result += ending;
+    return trimAtWord(result, 160);
+}
+
+function normaliseMeta(meta, lang) {
+    return { title: fitSeoTitle(meta.title, lang), description: fitSeoDescription(meta.description, lang) };
 }
 
 function cityKeywords(lang, city) {
@@ -467,7 +493,8 @@ htmlFiles.forEach(file => {
         let translated = translateHTML(rawHtml, lang, dict, fullUrl);
 
         // Translate <title>/meta description (and matching og:/twitter: tags) per language.
-        const pageMeta = PAGE_META[file] && PAGE_META[file][lang];
+        const rawPageMeta = PAGE_META[file] && PAGE_META[file][lang];
+        const pageMeta = rawPageMeta && normaliseMeta(rawPageMeta, lang);
         if (pageMeta) {
             translated = translated.replace(/<title>.*?<\/title>/, `<title>${pageMeta.title}</title>`);
             translated = translated.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${pageMeta.description}">`);
@@ -533,7 +560,7 @@ htmlFiles.forEach(file => {
                 cityHtml = cityHtml.replace(/\s*<meta name="yandex-verification" content="[^"]*"\s*\/>\n?/, '\n');
 
                 // Update title & meta description to be unique per city (50-60 / 150-160 chars)
-                const cityMeta = getCityMeta(lang, city);
+                const cityMeta = normaliseMeta(getCityMeta(lang, city), lang);
                 cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityMeta.title}</title>`);
                 cityHtml = cityHtml.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${cityMeta.description}">`);
                 cityHtml = cityHtml.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${cityMeta.title}">`);
