@@ -5,6 +5,170 @@
 
 export const BLOG_POSTS = [
   {
+    id: "post-sep-16-forecast-karakol-soaked-south-climbing",
+    slug: "september-16-forecast-kyrgyzstan-karakol-rain-south-warms",
+    image: "/assets/images/blogphoto-aug-15-light-rain-east.webp",
+    translations: {
+      EN: {
+        title: "Sept 16 Forecast: Karakol Soaked Today, But Bishkek and the South Keep Climbing Toward the Weekend",
+        seoTitle: "Sept 16 Forecast: Karakol Soaked Today, But Bishkek and the South Keep Climbing Toward the Weekend",
+        seoDesc: "Karakol sees a 100% rain chance today at just +19°C, while Bishkek, Osh and Jalal-Abad stay dry and keep warming toward the weekend, before Naryn and Karakol turn sharply cooler again early next week.",
+        category: "Weather Forecast",
+        date: "September 16, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Karakol sees a 100% rain chance today at just +19°C, while Bishkek, Osh and Jalal-Abad stay dry and keep warming toward the weekend, before Naryn and Karakol turn sharply cooler again early next week.",
+        content: `
+          <p>Karakol takes the brunt of today's wet weather with a 100% chance of rain and a high of just +19.1°C, while Bishkek, Osh and Jalal-Abad stay largely dry and keep climbing toward a warm weekend. The pattern flips again early next week, when Naryn and Karakol both turn sharply cooler.</p>
+          <h3>Karakol Soaked Today</h3>
+          <p>Karakol's rain chance hits 100% today with a high of just +19.1°C, and Naryn isn't far behind at 75% with a high of +22.2°C. Both regions stay unsettled tomorrow too, before drying out somewhat by Friday.</p>
+          <h3>Bishkek, Osh and Jalal-Abad Keep Climbing</h3>
+          <p>The Chuy valley and the south see little of today's wet weather. Bishkek warms steadily from +27.1°C today to +31.4°C by Sunday, Osh follows a similar path toward +31.8°C, and Jalal-Abad reaches +31°C by Sunday too — each a touch warmer than earlier in the week.</p>
+          <h3>A Warm Weekend Ahead</h3>
+          <p>Saturday and Sunday look like the warmest days of the coming week almost everywhere outside Naryn and Karakol, with highs in the low +30s across the Chuy valley and the south and mostly dry, clear conditions.</p>
+          <h3>Naryn and Karakol Turn Sharply Cooler Next Week</h3>
+          <p>The next real cooldown lands early next week in the east. Naryn drops to just +17°C on Monday and Tuesday with rain showers, and Karakol follows a similar path down to +17.4°C — a much sharper autumn signal than anything the Chuy valley or south has seen so far.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +27.1°C today, climbing to +31.4°C by Sunday, easing with rain to +29.8°C by Monday.</li>
+            <li><strong>Osh:</strong> +30.1°C today with a slight rain chance, rising to +31.8°C by Sunday.</li>
+            <li><strong>Jalal-Abad:</strong> +29.2°C today, largely dry, climbing to +31°C by Sunday.</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +19.1°C today with heavy rain, staying cool through the week, dropping to +17.4°C by Monday and Tuesday.</li>
+            <li><strong>Naryn:</strong> +22.2°C today with rain, easing slightly midweek, dropping sharply to +17°C by Monday and Tuesday.</li>
+          </ul>
+        `
+      },
+      KG: {
+        title: "16-сентябрга карата божомол: Каракол бүгүн жамгырга чөмүлдү, Бишкек менен түштүк дем алыш күндөрүнө карай жылый берет",
+        seoTitle: "16-сентябрга карата божомол: Каракол бүгүн жамгырга чөмүлдү, Бишкек менен түштүк дем алыш күндөрүнө карай жылый берет",
+        seoDesc: "Караколдо бүгүн жамгырдын ыктымалдыгы 100%, температура болгону +19°C, ал эми Бишкек, Ош жана Жалал-Абадда кургак, температура дем алыш күндөрүнө карай өсүүдө, андан кийин кийинки жуманын башында Нарын менен Караколдо кайра курч суукташуу болот.",
+        category: "Аба ырайы божомолу",
+        date: "16-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Караколдо бүгүн жамгырдын ыктымалдыгы 100%, температура болгону +19°C, ал эми Бишкек, Ош жана Жалал-Абадда кургак, температура дем алыш күндөрүнө карай өсүүдө, андан кийин кийинки жуманын башында Нарын менен Караколдо кайра курч суукташуу болот.",
+        content: `
+          <p>Бүгүнкү начар аба ырайынын негизги сокку Караколго тийет — жамгырдын ыктымалдыгы 100%, температура болгону +19,1°C, ал эми Бишкек, Ош жана Жалал-Абадда негизинен кургак, температура жылуу дем алыш күндөрүнө карай өсүп жатат. Кийинки жуманын башында картина кайра өзгөрөт: Нарын менен Караколдо курч суукташуу болот.</p>
+          <h3>Каракол бүгүн жамгырга чөмүлдү</h3>
+          <p>Бүгүн Караколдо жамгырдын ыктымалдыгы 100%ге жетет, температура болгону +19,1°C, Нарын андан анча алыс эмес — 75%, +22,2°C. Эки аймак тең эртең дагы туруксуз бойдон калат, жума күнгө карай гана бир аз кургайт.</p>
+          <h3>Бишкек, Ош жана Жалал-Абад жылый берет</h3>
+          <p>Чүй өрөөнү жана түштүк бүгүнкү начар аба ырайын дээрлик байкашпайт. Бишкекте температура бүгүнкү +27,1°Cден жекшемби күнгө карай +31,4°Cге чейин туруктуу өсөт, Ошто ушундай эле динамика менен +31,8°Cге, Жалал-Абадда да жекшемби күнгө карай +31°C — баары жуманын башындагыга караганда бир аз жылуураак.</p>
+          <h3>Алдыда жылуу дем алыш күндөрү</h3>
+          <p>Ишемби жана жекшемби Нарын менен Караколдон башка дээрлик бардык жерде алдыдагы жуманын эң жылуу күндөрү болуп көрүнөт, Чүй өрөөнү жана түштүктө температура +30дун төмөнкү бөлүгүндө, аба ырайы негизинен кургак жана ачык.</p>
+          <h3>Нарын менен Караколдо кийинки жумада курч суукташуу</h3>
+          <p>Кийинки чыныгы суукташуу кийинки жуманын башында чыгышка келет. Нарында дүйшөмбү жана шейшемби күндөрү температура болгону +17°Cге чейин жамгыр менен түшөт, Караколдо да ушундай эле сценарий — +17,4°Cге чейин — бул Чүй өрөөнү жана түштүк буга чейин көргөндөн алда канча курч күз белгиси.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> бүгүн +27,1°C, жекшемби күнгө карай +31,4°Cге көтөрүлөт, дүйшөмбү күнгө карай жамгыр менен +29,8°Cге түшөт.</li>
+            <li><strong>Ош:</strong> бүгүн +30,1°C, аз гана жамгыр ыктымалдыгы менен, жекшемби күнгө карай +31,8°Cге көтөрүлөт.</li>
+            <li><strong>Жалал-Абад:</strong> бүгүн +29,2°C, негизинен кургак, жекшемби күнгө карай +31°Cге көтөрүлөт.</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> бүгүн катуу жамгыр менен +19,1°C, жума бою салкын, дүйшөмбү жана шейшемби күндөрүнө карай +17,4°Cге түшөт.</li>
+            <li><strong>Нарын:</strong> бүгүн жамгыр менен +22,2°C, жуманын ортосунда бир аз жакшырат, дүйшөмбү жана шейшемби күндөрүнө карай +17°Cге кескин түшөт.</li>
+          </ul>
+        `
+      },
+      RU: {
+        title: "Прогноз на 16 сентября: Каракол сегодня под дождём, а Бишкек и юг продолжают теплеть к выходным",
+        seoTitle: "Прогноз на 16 сентября: Каракол сегодня под дождём, а Бишкек и юг продолжают теплеть к выходным",
+        seoDesc: "В Караколе сегодня вероятность дождя 100% при всего +19°C, тогда как в Бишкеке, Оше и Джалал-Абаде сухо и температура продолжает расти к выходным, прежде чем в начале следующей недели в Нарыне и Караколе снова резко похолодает.",
+        category: "Прогноз погоды",
+        date: "16 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "В Караколе сегодня вероятность дождя 100% при всего +19°C, тогда как в Бишкеке, Оше и Джалал-Абаде сухо и температура продолжает расти к выходным, прежде чем в начале следующей недели в Нарыне и Караколе снова резко похолодает.",
+        content: `
+          <p>Сегодня основной удар непогоды принимает на себя Каракол — вероятность дождя там 100% при температуре всего +19,1°C, тогда как в Бишкеке, Оше и Джалал-Абаде в основном сухо, и температура продолжает расти к тёплым выходным. В начале следующей недели картина снова меняется: в Нарыне и Караколе резко похолодает.</p>
+          <h3>Каракол сегодня под дождём</h3>
+          <p>Вероятность дождя в Караколе сегодня достигает 100% при температуре всего +19,1°C, в Нарыне немногим отстаёт — 75% при +22,2°C. Оба региона останутся неустойчивыми и завтра, прежде чем немного подсохнут к пятнице.</p>
+          <h3>Бишкек, Ош и Джалал-Абад продолжают теплеть</h3>
+          <p>Чуйская долина и юг почти не замечают сегодняшнюю непогоду. В Бишкеке температура стабильно растёт от +27,1°C сегодня до +31,4°C к воскресенью, в Оше похожая динамика к +31,8°C, в Джалал-Абаде тоже +31°C к воскресенью — везде чуть теплее, чем в начале недели.</p>
+          <h3>Впереди тёплые выходные</h3>
+          <p>Суббота и воскресенье выглядят самыми тёплыми днями наступающей недели почти везде, кроме Нарына и Каракола, с температурой в низких +30-х по Чуйской долине и югу и в основном сухой, ясной погодой.</p>
+          <h3>В Нарыне и Караколе на следующей неделе резко похолодает</h3>
+          <p>Следующее настоящее похолодание придёт на восток в начале следующей недели. В Нарыне в понедельник и вторник температура упадёт до всего +17°C с дождями, в Караколе похожая картина — до +17,4°C — гораздо более резкий осенний сигнал, чем всё, что до сих пор видели Чуйская долина и юг.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +27,1°C сегодня, рост до +31,4°C к воскресенью, снижение с дождём до +29,8°C к понедельнику.</li>
+            <li><strong>Ош:</strong> +30,1°C сегодня с небольшой вероятностью дождя, рост до +31,8°C к воскресенью.</li>
+            <li><strong>Джалал-Абад:</strong> +29,2°C сегодня, в основном сухо, рост до +31°C к воскресенью.</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +19,1°C сегодня с сильным дождём, прохладно всю неделю, снижение до +17,4°C к понедельнику и вторнику.</li>
+            <li><strong>Нарын:</strong> +22,2°C сегодня с дождём, небольшое улучшение в середине недели, резкое снижение до +17°C к понедельнику и вторнику.</li>
+          </ul>
+        `
+      }
+    }
+  },
+  {
+    id: "post-ala-archa-autumn-hiking",
+    slug: "ala-archa-autumn-hiking-day-trip-bishkek",
+    image: "/assets/images/blogphoto-mountain-getaways.webp",
+    translations: {
+      EN: {
+        title: "Autumn Is Ala-Archa's Best Season: A Day-Trip Guide from Bishkek",
+        seoTitle: "Autumn Is Ala-Archa's Best Season: A Day-Trip Guide from Bishkek",
+        seoDesc: "While Bishkek still holds in the high +20s by day, Ala-Archa National Park is already turning to autumn gold — cooler air, clearer skies, and far fewer crowds than summer.",
+        category: "Travel & Weather",
+        date: "September 16, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "While Bishkek still holds in the high +20s by day, Ala-Archa National Park is already turning to autumn gold — cooler air, clearer skies, and far fewer crowds than summer.",
+        content: `
+          <p>As Bishkek's daytime temperatures still linger in the high +20s, one of the best ways to feel autumn arrive is a short drive south to Ala-Archa National Park — widely considered the most rewarding day trip from the capital, and never better than right now.</p>
+          <h3>Just 40 Minutes from the Capital</h3>
+          <p>Ala-Archa sits roughly 40 kilometers from Bishkek, making it an easy half-day or full-day trip without an overnight stay. The park's entrance gorge gives quick access to trails ranging from an easy riverside walk to more demanding routes toward glaciers and high ridgelines.</p>
+          <h3>Cooler and Crisper Than the City</h3>
+          <p>Even while Bishkek holds in the high +20s this week, temperatures in Ala-Archa's higher elevations run noticeably cooler, and mountain weather can shift quickly — clear skies can give way to wind or a passing shower within an hour. Layered clothing makes a real difference here.</p>
+          <h3>Golden Autumn Colors</h3>
+          <p>September and October bring the park's forests and valley slopes into full autumn color, paired with clearer skies and far fewer crowds than the summer season — a combination many visitors consider the best time of year to see Ala-Archa.</p>
+          <h3>What to Wear and Bring</h3>
+          <p>A warm layer, a windproof shell, and sturdy footwear are worth packing regardless of how warm it feels leaving Bishkek. Mornings and higher trail sections can be considerably colder than the gorge entrance, and afternoon cloud can bring a quick temperature drop.</p>
+          <h3>Popular Trails for a Day Trip</h3>
+          <p>The gentle riverside trail near the park entrance suits a relaxed outing, while the hike toward Ak-Sai waterfall and the glacier viewpoints further up the valley make for a fuller day for more experienced hikers. Either way, starting early gives the best chance of clear mountain views before afternoon cloud builds.</p>
+        `
+      },
+      KG: {
+        title: "Күз — Ала-Арча үчүн эң мыкты мезгил: Бишкектен бир күндүк саякат боюнча гид",
+        seoTitle: "Күз — Ала-Арча үчүн эң мыкты мезгил: Бишкектен бир күндүк саякат боюнча гид",
+        seoDesc: "Бишкекте күндүз дагы деле +27...+30°C сакталып турганда, Ала-Арча улуттук паркында күз буга чейин эле сезилип турат — салкыныраак, күздүк түстөр жаркыныраак, жайкыга караганда туристтер азыраак.",
+        category: "Саякат жана аба ырайы",
+        date: "16-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Бишкекте күндүз дагы деле +27...+30°C сакталып турганда, Ала-Арча улуттук паркында күз буга чейин эле сезилип турат — салкыныраак, күздүк түстөр жаркыныраак, жайкыга караганда туристтер азыраак.",
+        content: `
+          <p>Бишкекте күндүзгү температура дагы деле +20дун жогорку бөлүгүндө сакталып турганда, күздүн келгенин сезүүнүн эң мыкты жолдорунун бири — түштүктөгү Ала-Арча улуттук паркына кыска сапар, аны көбүнчө борбордон болгон эң баалуу бир күндүк саякат деп эсептешет, ал эми азыр — бул үчүн өзгөчө ыңгайлуу мезгил.</p>
+          <h3>Борбордон болгону 40 мүнөт</h3>
+          <p>Ала-Арча Бишкектен болжол менен 40 километр алыстыкта жайгашкан, бул аны түнөбөй эле жарым күндүк же бир күндүк сапар үчүн ыңгайлуу кылат. Парктын кире беришиндеги капчыгай жеңил дарыя боюндагы сейилден тартып мөңгүлөргө жана бийик кыркаларга чейинки татаалыраак жолдорго тез жетүү мүмкүнчүлүгүн берет.</p>
+          <h3>Шаардан салкыныраак жана тазараак</h3>
+          <p>Бишкекте бул жума +20дун жогорку бөлүгү сакталып турганда деле, Ала-Арчанын бийигирээк жерлеринде байкаларлык салкын, тоо аба ырайы тез өзгөрүшү мүмкүн — ачык асман бир сааттын ичинде шамалга же кыска мөөнөттүү жамгырга айланышы мүмкүн. Катмарлуу кийим бул жерде чындап маанилүү.</p>
+          <h3>Алтын күздүк түстөр</h3>
+          <p>Сентябрь жана октябрь парктын токойлору менен өрөөн капталдарын толук күздүк түскө киргизет, ошондой эле асман ачыгыраак, жайга караганда туристтер алда канча азыраак болот — көптөгөн зыяратчылар муну Ала-Арчаны көрүү үчүн жылдын эң мыкты мезгили деп эсептешет.</p>
+          <h3>Эмне кийип, эмне алып жүрүү керек</h3>
+          <p>Бишкектен чыкканда канчалык жылуу болбосун, жылуу катмар, шамалдан коргогон куртка жана ыңгайлуу бекем бут кийим алып жүрүүгө арзыйт. Эртең мененки убакыт жана жолдун бийигирээк бөлүктөрү капчыгайдын кире беришине караганда алда канча суугураак болушу мүмкүн, ал эми түштөн кийинки булуттуулук температуранын кескин төмөндөшүнө алып келиши мүмкүн.</p>
+          <h3>Бир күндүк сапар үчүн белгилүү жолдор</h3>
+          <p>Парктын кире беришиндеги дарыя боюндагы жеңил жол тынч сейил үчүн ылайыктуу, ал эми Ак-Сай сүзгөнбогону жана өрөөндүн жогору жагындагы мөңгү көрүнүш аянтчаларына чейинки жол тажрыйбалуу туристтер үчүн күндү толугураак кылат. Кандай болбосун, эрте чыгуу түштөн кийинки булуттар чогулганга чейин тоолордун ачык көрүнүшүн көрүү мүмкүнчүлүгүн жогорулатат.</p>
+        `
+      },
+      RU: {
+        title: "Осень — лучшее время для Ала-Арчи: путеводитель по однодневной поездке из Бишкека",
+        seoTitle: "Осень — лучшее время для Ала-Арчи: путеводитель по однодневной поездке из Бишкека",
+        seoDesc: "Пока в Бишкеке днём всё ещё около +27...+30°C, в национальном парке Ала-Арча уже чувствуется осень — прохладнее, ярче осенние краски и меньше туристов, чем летом.",
+        category: "Туризм и погода",
+        date: "16 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Пока в Бишкеке днём всё ещё около +27...+30°C, в национальном парке Ала-Арча уже чувствуется осень — прохладнее, ярче осенние краски и меньше туристов, чем летом.",
+        content: `
+          <p>Пока дневная температура в Бишкеке всё ещё держится в верхних +20-х, один из лучших способов почувствовать приход осени — короткая поездка на юг, в национальный парк Ала-Арча, который многие считают самой стоящей однодневной поездкой из столицы, а сейчас — особенно удачное для этого время.</p>
+          <h3>Всего 40 минут от столицы</h3>
+          <p>Ала-Арча находится примерно в 40 километрах от Бишкека, что делает её удобной для поездки на полдня или на целый день без ночёвки. Ущелье у входа в парк открывает быстрый доступ к маршрутам — от лёгкой прогулки вдоль реки до более сложных троп к ледникам и высоким гребням.</p>
+          <h3>Прохладнее и свежее, чем в городе</h3>
+          <p>Даже пока в Бишкеке на этой неделе держатся высокие +20-е, на более высоких участках Ала-Арчи заметно прохладнее, а горная погода может меняться быстро — ясное небо может смениться ветром или кратковременным дождём в течение часа. Многослойная одежда здесь действительно важна.</p>
+          <h3>Золотые осенние краски</h3>
+          <p>Сентябрь и октябрь приносят лесам и склонам парка полную осеннюю окраску, вместе с более ясным небом и гораздо меньшим количеством туристов, чем летом, — сочетание, которое многие посетители считают лучшим временем года для посещения Ала-Арчи.</p>
+          <h3>Что надеть и взять с собой</h3>
+          <p>Тёплый слой, ветрозащитная куртка и удобная прочная обувь стоят того, чтобы взять их с собой, независимо от того, насколько тепло при выезде из Бишкека. Утро и более высокие участки маршрута могут быть значительно холоднее, чем вход в ущелье, а послеполуденная облачность способна вызвать резкое похолодание.</p>
+          <h3>Популярные маршруты для однодневной поездки</h3>
+          <p>Лёгкая тропа вдоль реки у входа в парк подходит для спокойной прогулки, а поход к водопаду Ак-Сай и смотровым площадкам ледника выше по долине сделают день более насыщенным для опытных туристов. В любом случае ранний старт даёт больше шансов застать ясные виды на горы до того, как соберутся послеполуденные облака.</p>
+        `
+      }
+    }
+  },
+  {
     id: "post-sep-15-forecast-warm-days-cold-nights",
     slug: "september-15-forecast-kyrgyzstan-warm-days-cold-nights",
     image: "/assets/images/blogphoto-aug-9-regional-forecast.webp",
