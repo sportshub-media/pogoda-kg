@@ -6,6 +6,216 @@
 export const BLOG_POSTS = [
   // AUTO_DAILY_FORECASTS_START — maintained by scripts/publish-daily-forecast.mjs.
   {
+    "id": "daily-forecast-2026-09-26",
+    "slug": "daily-weather-forecast-kyrgyzstan-2026-09-26",
+    "image": "/assets/images/hero_mountains.webp",
+    "translations": {
+      "EN": {
+        "title": "Kyrgyzstan weather forecast for 26 September 2026",
+        "seoTitle": "Kyrgyzstan weather forecast for 26 September 2026",
+        "seoDesc": "Kyrgyzstan weather forecast for 26 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
+        "category": "Weather Forecast",
+        "date": "26 September 2026",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Daily forecast for five major Kyrgyzstan cities on 26 September 2026.",
+        "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 26 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +25°C / +13°C, rain chance 76%, drizzly.</li><li><strong>Osh:</strong> +22°C / +14°C, rain chance 80%, drizzly.</li><li><strong>Karakol:</strong> +16°C / +4°C, rain chance 43%, drizzly.</li><li><strong>Naryn:</strong> +16°C / +6°C, rain chance 14%, drizzly.</li><li><strong>Jalal-Abad:</strong> +24°C / +13°C, rain chance 99%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
+      },
+      "RU": {
+        "title": "Погода в Кыргызстане на 26 сентября 2026 г.",
+        "seoTitle": "Погода в Кыргызстане на 26 сентября 2026 г.",
+        "seoDesc": "Прогноз погоды по Кыргызстану на 26 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
+        "category": "Прогноз погоды",
+        "date": "26 сентября 2026 г.",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Ежедневный прогноз для пяти городов Кыргызстана на 26 сентября 2026 г..",
+        "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 26 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, вероятность осадков 76%, морось.</li><li><strong>Ош:</strong> +22°C / +14°C, вероятность осадков 80%, морось.</li><li><strong>Каракол:</strong> +16°C / +4°C, вероятность осадков 43%, морось.</li><li><strong>Нарын:</strong> +16°C / +6°C, вероятность осадков 14%, морось.</li><li><strong>Жалал-Абад:</strong> +24°C / +13°C, вероятность осадков 99%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
+      },
+      "KG": {
+        "title": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "seoTitle": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "seoDesc": "2026-ж., 26-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
+        "category": "Аба ырайы божомолу",
+        "date": "2026-ж., 26-сентябрь",
+        "author": "Pogoda Weather Team",
+        "excerpt": "2026-ж., 26-сентябрь үчүн Кыргызстандын беш шаары боюнча күнүмдүк аба ырайы божомолу.",
+        "content": "<p>2026-ж., 26-сентябрь үчүн Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күнүмдүк божомол. Маалымат Бишкек убактысы менен эртең менен алынган Open-Meteo божомолуна негизделет.</p><h3>Шаарлар боюнча божомол</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, жаан-чачын ыктымалдыгы 76%, майда жамгыр.</li><li><strong>Ош:</strong> +22°C / +14°C, жаан-чачын ыктымалдыгы 80%, майда жамгыр.</li><li><strong>Каракол:</strong> +16°C / +4°C, жаан-чачын ыктымалдыгы 43%, майда жамгыр.</li><li><strong>Нарын:</strong> +16°C / +6°C, жаан-чачын ыктымалдыгы 14%, майда жамгыр.</li><li><strong>Жалал-Абад:</strong> +24°C / +13°C, жаан-чачын ыктымалдыгы 99%, майда жамгыр.</li></ul><h3>Жолго чыгаарда</h3><p>Божомол күн ичинде өзгөрүшү мүмкүн. Тоо ашуулары аркылуу сапарга чыгардан мурун расмий жол маалыматын текшериңиз.</p>"
+      }
+    }
+  },
+  {
+    id: "post-sep-26-week-ahead-autumn-settles-in",
+    slug: "week-ahead-forecast-kyrgyzstan-september-26-october-2",
+    image: "/assets/images/generated/naryn-highlands-weather.jpg",
+    translations: {
+      EN: {
+        title: "Week Ahead (Sept 26–Oct 2): Autumn Settles In, With a Dry Window Between Two Wet Spells",
+        seoTitle: "Kyrgyzstan Weather Week Ahead: Sept 26–Oct 2",
+        seoDesc: "A wet Saturday, then four calm dry days in Bishkek, Osh and Jalal-Abad before rain returns Oct 1–2. Nights near +4°C in Naryn and Karakol.",
+        category: "Weather Forecast",
+        date: "September 26, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "A wet Saturday, then four calm dry days in Bishkek, Osh and Jalal-Abad before rain returns Oct 1–2. Nights near +4°C in Naryn and Karakol.",
+        content: `
+          <p>Autumn has settled in. Bishkek recorded highs of +27°C to +32°C between September 14 and 23, but since Thursday daytime temperatures have stepped down to about +25°C, and the main cities are now at or below +25°C. The week ahead splits into three parts: a wet Saturday, a calm and mostly dry stretch from Sunday to Wednesday, and a new round of rain on Thursday and Friday.</p>
+          <h3>A Wet Start on Saturday</h3>
+          <p>Rain and drizzle cover the valleys today: Jalal-Abad has a 99% chance, Osh 80% and Bishkek 76%, with highs of +23.8°C, +22.0°C and +24.6°C. It is cooler still in the east, where Karakol reaches only +16.4°C (after a low of +4.0°C) and Naryn +16.1°C.</p>
+          <h3>Sunday to Wednesday: A Calmer, Mostly Dry Window</h3>
+          <p>The wet pattern clears quickly. From Sunday to Wednesday, Osh sees rain chances of just 0–4% and Jalal-Abad 0–9%, while Bishkek stays between 8% and 22%. Highs are about +20°C to +25°C and lows +11°C to +13°C — comfortable autumn weather for getting outdoors before the next system arrives.</p>
+          <h3>Cold Nights in the East</h3>
+          <p>Nights are already cool at altitude: Naryn drops to +4.3°C on Sunday and Karakol to +4.0°C on Saturday, and both stay around +4°C to +7°C on most nights through Tuesday. Daytime highs remain mild at +16°C to +20°C, so the gap between afternoon and dawn is wide — layers are worth packing.</p>
+          <h3>Rain Returns on Thursday and Friday</h3>
+          <p>A new system arrives on October 1. Rain chances rise to 55% in Bishkek, 51% in Osh, 66% in Jalal-Abad, 70% in Naryn and 63% in Karakol on Thursday, and stay elevated on Friday, when the models even show thunderstorm conditions in Osh (though with a 43% chance). Highs ease to +20°C to +23°C in the valleys, and only +14.5°C to +14.7°C in Naryn and Karakol on Friday.</p>
+          <h3>Seven-Day Outlook by City</h3>
+          <ul>
+            <li><strong>Bishkek:</strong> +24.6°C Saturday with drizzle, +22°C to +25°C and mostly dry Sunday to Wednesday, then about a 50% rain chance and +20°C to +21°C on Thursday and Friday.</li>
+            <li><strong>Osh:</strong> +22.0°C Saturday with rain, dry Sunday to Wednesday at +20°C to +23°C, showers Thursday and a thunderstorm signal Friday (+20.3°C).</li>
+            <li><strong>Jalal-Abad:</strong> +23.8°C Saturday with near-certain rain, dry Sunday to Wednesday, then showers Thursday and Friday (about a 66% chance).</li>
+            <li><strong>Karakol/Issyk-Kul:</strong> +16.4°C Saturday (low +4.0°C), +17°C to +20°C through Thursday, then showers and just +14.7°C on Friday.</li>
+            <li><strong>Naryn:</strong> +16.1°C Saturday, +18°C to +20°C Monday to Wednesday as rain chances build, and +14.5°C on Friday.</li>
+          </ul>
+          <p>For a same-day snapshot across five cities, see our <a href="/daily">daily briefing</a>.</p>
+        `
+      },
+      KG: {
+        title: "26-сентябрь — 2-октябрь жума: күз орношот, эки жамгырдын ортосунда кургак мезгил",
+        seoTitle: "Кыргызстандагы аба ырайы: 26-сентябрь — 2-октябрь",
+        seoDesc: "Жамгырлуу ишембиден кийин Бишкек, Ош, Жалал-Абадда төрт тынч кургак күн, 1–2-октябрда жамгыр кайтат. Нарын менен Караколдо түндөрү +4°C тегерегинде.",
+        category: "Аба ырайы божомолу",
+        date: "26-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Жамгырлуу ишембиден кийин Бишкек, Ош, Жалал-Абадда төрт тынч кургак күн, 1–2-октябрда жамгыр кайтат. Нарын менен Караколдо түндөрү +4°C тегерегинде.",
+        content: `
+          <p>Күз толук келди. 14–23-сентябрь аралыгында Бишкекте күндүзгү температура +27...+32°C болгон, бирок бейшембиден бери болжол менен +25°Cге түштү, азыр негизги шаарларда +25°Cден жогору эмес. Алдыдагы жума үч бөлүккө бөлүнөт: жамгырлуу ишемби, жекшембиден шаршембиге чейинки тынч жана негизинен кургак мезгил, ошондой эле бейшемби менен жумада жаңы жамгыр толкуну.</p>
+          <h3>Ишембиде жамгырлуу башталыш</h3>
+          <p>Бүгүн жамгыр менен майда жамгыр өрөөндөрдү каптайт: Жалал-Абадда жаан-чачындын ыктымалдыгы 99%, Ошто 80%, Бишкекте 76%, күндүз тиешелүүлүгүнө жараша +23,8°C, +22,0°C жана +24,6°C. Чыгышта андан да салкын: Караколдо күндүз болгону +16,4°C (түнкүсүн +4,0°C болгон), Нарында +16,1°C.</p>
+          <h3>Жекшембиден шаршембиге — тынч, кургак мезгил</h3>
+          <p>Начар аба ырайы тез кетет. Жекшембиден шаршембиге чейин Ошто жаан-чачындын ыктымалдыгы болгону 0–4%, Жалал-Абадда 0–9%, Бишкекте 8–22%. Күндүз +20...+25°C, түнкүсүн +11...+13°C — кийинки система келгенче сыртка чыгууга ыңгайлуу күзгү аба ырайы.</p>
+          <h3>Чыгышта суук түндөр</h3>
+          <p>Бийик жерлерде түндөр буга чейин эле салкын: Нарында жекшемби күнү температура +4,3°Cге, Караколдо ишемби күнү +4,0°Cге чейин түшөт, ал эми шейшембиге чейинки көпчүлүк түндөрдө эки жерде тең +4...+7°C тегерегинде сакталат. Күндүз болсо жумшак (+16...+20°C), ошондуктан түшкү жана таңкы температуранын айырмасы чоң — катмарлап кийинген жакшы.</p>
+          <h3>Бейшемби менен жумада жамгыр кайтат</h3>
+          <p>1-октябрда жаңы система келет. Бейшемби күнү жамгырдын ыктымалдыгы Бишкекте 55%ке, Ошто 51%ке, Жалал-Абадда 66%ке, Нарында 70%ке жана Караколдо 63%ке чейин көтөрүлөт да, жума күнү да жогору бойдон калат, ал күнү Ош үчүн моделдер күн күркүрөө шарттарын да көрсөтөт (ыктымалдыгы 43%). Өрөөндөрдө күндүз +20...+23°C, ал эми Нарын менен Караколдо жума күнү болгону +14,5...+14,7°C.</p>
+          <h3>Шаарлар боюнча жети күндүк божомол</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> ишембиде майда жамгыр менен +24,6°C, жекшембиден шаршембиге чейин +22...+25°C жана негизинен кургак, бейшемби менен жумада жамгырдын ыктымалдыгы 50% тегерегинде, +20...+21°C.</li>
+            <li><strong>Ош:</strong> ишембиде жамгыр менен +22,0°C, жекшембиден шаршембиге чейин +20...+23°C менен кургак, бейшембиде нөшөр, жума күнү күн күркүрөшү мүмкүн, +20,3°C.</li>
+            <li><strong>Жалал-Абад:</strong> ишембиде +23,8°C, жамгыр дээрлик сөзсүз; жекшембиден шаршембиге чейин кургак; бейшемби менен жумада нөшөр (ыктымалдыгы 66% тегерегинде).</li>
+            <li><strong>Каракол/Ысык-Көл:</strong> ишембиде +16,4°C (түнкүсүн +4,0°C), бейшембиге чейин +17...+20°C, жума күнү нөшөр жана +14,7°C.</li>
+            <li><strong>Нарын:</strong> ишембиде +16,1°C, дүйшөмбүдөн шаршембиге чейин жамгыр ыктымалдыгы өсүп +18...+20°C, жума күнү +14,5°C.</li>
+          </ul>
+          <p>Бир күндүк абалды беш шаар боюнча көрүү үчүн <a href="/daily">күндөлүк маалыматыбызды</a> караңыз.</p>
+        `
+      },
+      RU: {
+        title: "Неделя 26 сентября — 2 октября: осень вступает в права, сухое окно между двумя дождями",
+        seoTitle: "Погода в Кыргызстане на неделю: 26 сентября — 2 октября",
+        seoDesc: "Дождливая суббота, затем четыре спокойных сухих дня в Бишкеке, Оше и Джалал-Абаде; 1–2 октября вернутся дожди. В Нарыне и Караколе ночью около +4°C.",
+        category: "Прогноз погоды",
+        date: "26 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Дождливая суббота, затем четыре спокойных сухих дня в Бишкеке, Оше и Джалал-Абаде; 1–2 октября вернутся дожди. В Нарыне и Караколе ночью около +4°C.",
+        content: `
+          <p>Осень вступила в свои права. С 14 по 23 сентября дневная температура в Бишкеке составляла +27...+32°C, но с четверга она снизилась примерно до +25°C, а в основных городах сейчас не выше +25°C. Наступающая неделя делится на три части: дождливая суббота, спокойный и в основном сухой период с воскресенья по среду и новая волна дождей в четверг и пятницу.</p>
+          <h3>Дождливое начало в субботу</h3>
+          <p>Сегодня дожди и морось охватывают долины: в Джалал-Абаде вероятность осадков 99%, в Оше 80%, в Бишкеке 76%, днём +23,8°C, +22,0°C и +24,6°C соответственно. На востоке ещё прохладнее: в Караколе днём всего +16,4°C (ночью было +4,0°C), в Нарыне +16,1°C.</p>
+          <h3>С воскресенья по среду — спокойное сухое окно</h3>
+          <p>Ненастье быстро уходит. С воскресенья по среду вероятность осадков в Оше составляет всего 0–4%, в Джалал-Абаде 0–9%, в Бишкеке 8–22%. Днём около +20...+25°C, ночью +11...+13°C — комфортная осенняя погода, чтобы выбраться на природу до прихода следующей системы.</p>
+          <h3>Холодные ночи на востоке</h3>
+          <p>В высокогорье ночью уже прохладно: в Нарыне в воскресенье температура опускается до +4,3°C, в Караколе в субботу до +4,0°C, а в большинстве ночей до вторника обе точки держатся около +4...+7°C. Днём при этом умеренно (+16...+20°C), так что разница между полуднем и рассветом велика — стоит одеваться слоями.</p>
+          <h3>В четверг и пятницу вернутся дожди</h3>
+          <p>1 октября приходит новая система. В четверг вероятность дождя растёт до 55% в Бишкеке, 51% в Оше, 66% в Джалал-Абаде, 70% в Нарыне и 63% в Караколе и остаётся высокой в пятницу, когда для Оша модели даже показывают грозовые условия (вероятность 43%). Днём в долинах около +20...+23°C, а в Нарыне и Караколе в пятницу всего +14,5...+14,7°C.</p>
+          <h3>Прогноз на семь дней по городам</h3>
+          <ul>
+            <li><strong>Бишкек:</strong> +24,6°C в субботу с моросью, с воскресенья по среду +22...+25°C и в основном сухо, в четверг и пятницу вероятность дождя около 50%, +20...+21°C.</li>
+            <li><strong>Ош:</strong> +22,0°C в субботу с дождём, сухо с воскресенья по среду при +20...+23°C, в четверг ливни, в пятницу возможна гроза, +20,3°C.</li>
+            <li><strong>Джалал-Абад:</strong> +23,8°C в субботу, дождь почти неизбежен; сухо с воскресенья по среду; в четверг и пятницу ливни (вероятность около 66%).</li>
+            <li><strong>Каракол/Иссык-Куль:</strong> +16,4°C в субботу (ночью +4,0°C), +17...+20°C до четверга, в пятницу ливни и +14,7°C.</li>
+            <li><strong>Нарын:</strong> +16,1°C в субботу, +18...+20°C с понедельника по среду при росте вероятности дождя, в пятницу +14,5°C.</li>
+          </ul>
+          <p>Чтобы увидеть снимок на сегодня по пяти городам, загляните в нашу <a href="/daily">ежедневную сводку</a>.</p>
+        `
+      }
+    }
+  },
+  {
+    id: "post-sep-26-first-snow-watch-passes",
+    slug: "first-snow-watch-kyrgyzstan-high-passes-october",
+    image: "/assets/images/generated/passes-weather.jpg",
+    translations: {
+      EN: {
+        title: "First Snow Watch: What the Forecast Shows for Kyrgyzstan's High Mountain Passes This Week",
+        seoTitle: "First Snow Watch: Kyrgyzstan's High Mountain Passes",
+        seoDesc: "Forecast models show light snow at Kyrgyzstan's highest passes this week, led by Otmek and Ala-Bel. Only official sources can confirm road access.",
+        category: "Mountain Weather",
+        date: "September 26, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Forecast models show light snow at Kyrgyzstan's highest passes this week, led by Otmek and Ala-Bel. Only official sources can confirm road access.",
+        content: `
+          <p>Autumn is reaching the roads that cross Kyrgyzstan's mountains. Forecast data for the five passes tracked on our <a href="/passes">mountain passes page</a> shows nights at or below freezing this week and light snow at the highest of them, with the biggest push expected on Thursday, October 1.</p>
+          <h3>Where Snow Is in the Forecast</h3>
+          <p>Over the next seven days, the model shows about 24 cm of snowfall at Otmek, about 10 cm at Ala-Bel and about 6 cm at Tuz-Bel. Too-Ashuu and Dolon show no snowfall, but do show rain and nights near or below zero. None of the five main cities — Bishkek, Osh, Jalal-Abad, Karakol and Naryn — has snow in the forecast.</p>
+          <h3>Thursday, October 1, Is the Day to Watch</h3>
+          <p>The heaviest precipitation arrives on October 1: about 12 cm of snow at Otmek (20 mm of precipitation in total) and about 6 cm at Ala-Bel (11 mm). At Too-Ashuu the same system shows up as 7.7 mm of rain and a high of just +6.6°C, and at Dolon as 5 mm of rain.</p>
+          <h3>The Freezing Level Sits Near Pass Height</h3>
+          <p>The height where the air reaches 0°C is forecast to dip to roughly 3,100–3,250 m near Too-Ashuu, Ala-Bel and Otmek on September 26–28 and again on October 1–2 — about the elevation of several of these passes, which our passes page lists between 3,030 m and 3,574 m. Below that height, precipitation is more likely to fall as rain; above it, as snow.</p>
+          <h3>Read the Numbers With Care</h3>
+          <p>These figures come from the same weather model as our passes page, which reads a grid point rather than the road itself. For four of the five passes, the model's terrain sits roughly 400–500 m below the elevation we list, so real conditions at the crest are likely colder and snowier than shown. Treat the values as a guide to the trend, not as a road report.</p>
+          <h3>Weather Isn't Road Status</h3>
+          <p>A forecast can't tell you whether a pass is open. Only the Ministry of Transport can confirm road access, so check its <a href="https://mtd.gov.kg/category/proezzhaemost/">official road-status page</a> and the live cameras linked from our <a href="/passes">passes page</a> before setting out. Leave with plenty of fuel, warm clothing and extra time, and be ready to turn back if conditions change.</p>
+          <h3>Snow This Early Isn't Unheard Of</h3>
+          <p>Regional weather reports recorded snowfall on the Too-Ashuu range in late August and early September 2024, and the first appreciable snow usually arrives around October — so light snow on the highest passes at the end of September is within the normal range.</p>
+        `
+      },
+      KG: {
+        title: "Биринчи кар күзөтүүсү: бул жумада Кыргызстандын бийик ашууларында божомол эмнени көрсөтөт",
+        seoTitle: "Кыргызстан ашууларында биринчи кар: жумалык божомол",
+        seoDesc: "Божомол бул жумада бийик ашууларда жеңил кар жаай турганын көрсөтөт, көбүрөөк Өтмөк менен Ала-Белде. Жолду расмий булактар гана тастыктайт.",
+        category: "Тоо аба ырайы",
+        date: "26-сентябрь, 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Божомол бул жумада бийик ашууларда жеңил кар жаай турганын көрсөтөт, көбүрөөк Өтмөк менен Ала-Белде. Жолду расмий булактар гана тастыктайт.",
+        content: `
+          <p>Күз Кыргызстандын тоолорун кесип өткөн жолдорго жетип келүүдө. Биздин <a href="/passes">тоо ашуулары барагы</a> көзөмөлдөгөн беш ашуу боюнча божомол бул жумада түндөрү нөлгө жакын же андан төмөн болорун жана эң бийиктеринде жеңил кар жаай турганын көрсөтөт; эң күчтүү толкун бейшемби күнү, 1-октябрда күтүлөт.</p>
+          <h3>Божомолдо кар кайда</h3>
+          <p>Кийинки жети күндө модель Өтмөктө болжол менен 24 см, Ала-Белде болжол менен 10 см жана Түз-Белде болжол менен 6 см кар жаай турганын көрсөтөт. Төө-Ашууда жана Долондо кар жок, бирок жамгыр жана нөлгө жакын же андан төмөн түндөр бар. Негизги шаарлардын бирөөндө да — Бишкек, Ош, Жалал-Абад, Каракол жана Нарында — божомолдо кар жок.</p>
+          <h3>Бейшемби, 1-октябрь — көз салуучу күн</h3>
+          <p>Эң катуу жаан-чачын 1-октябрда келет: Өтмөктө болжол менен 12 см кар (жалпы 20 мм жаан-чачын) жана Ала-Белде болжол менен 6 см (11 мм). Төө-Ашууда ошол эле система 7,7 мм жамгыр түрүндө көрүнөт, күндүзгү температура болгону +6,6°C, ал эми Долондо 5 мм жамгыр.</p>
+          <h3>Нөл градус бийиктиги ашуулардын деңгээлине жакын</h3>
+          <p>Абанын температурасы 0°Cге жеткен бийиктик 26–28-сентябрда жана 1–2-октябрда Төө-Ашуу, Ала-Бел жана Өтмөк тегерегинде болжол менен 3100–3250 метрге чейин түшөрү болжолдонууда — бул бир нече ашуунун бийиктиги (биздин барактагы ашуулар 3030дан 3574 метрге чейин көрсөтүлгөн). Ошол бийиктиктен төмөн жаан-чачын көбүнчө жамгыр, андан жогору кар болуп жаайт.</p>
+          <h3>Сандарга этият мамиле кылыңыз</h3>
+          <p>Бул маанилер ашуулар барагындагы модель менен бирдей, ал жолдун өзүн эмес, тор чекитин эсептейт. Беш ашуунун төртөөндө модель рельефи биз көрсөткөн бийиктиктен болжол менен 400–500 метр төмөн, ошондуктан кырында көрсөтүлгөндөн салкыныраак жана карлуураак болушу мүмкүн. Сандарды жол маалыматы катары эмес, багыт көрсөткүч катары кабыл алыңыз.</p>
+          <h3>Аба ырайы — жолдун абалы эмес</h3>
+          <p>Божомол ашуунун ачык же жабык экенин айтпайт. Жол катышуусун Транспорт министрлиги гана тастыктай алат, ошондуктан жолго чыгаардан мурун анын <a href="https://mtd.gov.kg/category/proezzhaemost/">расмий өтүү барагын</a> жана биздин <a href="/passes">ашуулар барагындагы</a> шилтемелер аркылуу онлайн камераларды текшериңиз. Жанар-жагармай, жылуу кийим жана кошумча убакыт менен чыгыңыз, шарттар өзгөрсө артка кайтууга даяр болуңуз.</p>
+          <h3>Бул мезгилде кар сейрек эмес</h3>
+          <p>Аймактык аба ырайы билдирүүлөрүнө ылайык, 2024-жылы Төө-Ашуу тоолорунда август айынын аягында жана сентябрдын башында кар жааган, ал эми биринчи олуттуу кар адатта октябрь тегерегинде келет — ошондуктан сентябрдын аягында эң бийик ашууларда жеңил кар жаашы нормалдуу көрүнүш.</p>
+        `
+      },
+      RU: {
+        title: "Следим за первым снегом: что прогноз показывает для высокогорных перевалов Кыргызстана на этой неделе",
+        seoTitle: "Первый снег на перевалах Кыргызстана: прогноз недели",
+        seoDesc: "Модели показывают лёгкий снег на высоких перевалах Кыргызстана, больше всего на Өтмөк и Ала-Бел. Проезд подтверждают только официальные источники.",
+        category: "Погода в горах",
+        date: "26 сентября 2026",
+        author: "Pogoda Weather Team",
+        excerpt: "Модели показывают лёгкий снег на высоких перевалах Кыргызстана, больше всего на Өтмөк и Ала-Бел. Проезд подтверждают только официальные источники.",
+        content: `
+          <p>Осень добирается до дорог, пересекающих горы Кыргызстана. Прогноз для пяти перевалов, которые отслеживает наша <a href="/passes">страница горных перевалов</a>, показывает на этой неделе ночи около нуля и ниже и небольшой снег на самых высоких из них; главный удар ожидается в четверг, 1 октября.</p>
+          <h3>Где в прогнозе снег</h3>
+          <p>В течение семи дней модель показывает около 24 см снега на Өтмөк, около 10 см на Ала-Бел и около 6 см на Түз-Бел. На Төө-Ашуу и Долон снега нет, но есть дожди и ночи около нуля или ниже. Ни в одном из основных городов — Бишкеке, Оше, Джалал-Абаде, Караколе и Нарыне — снега в прогнозе нет.</p>
+          <h3>Четверг, 1 октября — день, за которым стоит следить</h3>
+          <p>Самые сильные осадки придут 1 октября: около 12 см снега на Өтмөк (всего 20 мм осадков) и около 6 см на Ала-Бел (11 мм). На Төө-Ашуу та же система проявится дождём (7,7 мм) при температуре днём всего +6,6°C, на Долон — 5 мм дождя.</p>
+          <h3>Нулевая изотерма — вблизи высоты перевалов</h3>
+          <p>Высота, на которой температура воздуха достигает 0°C, по прогнозу опустится примерно до 3100–3250 м в районе Төө-Ашуу, Ала-Бел и Өтмөк 26–28 сентября и снова 1–2 октября — это высота нескольких перевалов (на нашей странице они указаны в диапазоне от 3030 до 3574 м). Ниже этой отметки осадки чаще выпадают дождём, выше — снегом.</p>
+          <h3>Относитесь к цифрам осторожно</h3>
+          <p>Эти значения получены из той же модели, что и на странице перевалов, а она считает точку сетки, а не саму дорогу. Для четырёх из пяти перевалов рельеф модели примерно на 400–500 м ниже указанной нами высоты, поэтому на гребне, вероятно, холоднее и снежнее, чем показано. Считайте цифры ориентиром по тенденции, а не сводкой по дороге.</p>
+          <h3>Погода — это не статус дороги</h3>
+          <p>Прогноз не скажет, открыт ли перевал. Доступ по дороге может подтвердить только Министерство транспорта, поэтому перед выездом проверьте его <a href="https://mtd.gov.kg/category/proezzhaemost/">официальную страницу проезжаемости</a> и онлайн-камеры, ссылки на которые есть на нашей <a href="/passes">странице перевалов</a>. Выезжайте с запасом топлива, тёплой одеждой и временем, и будьте готовы развернуться, если условия изменятся.</p>
+          <h3>Снег в это время — не редкость</h3>
+          <p>По региональным метеосообщениям, в 2024 году снег выпадал в горах Төө-Ашуу в конце августа и в начале сентября, а первый значительный снег обычно приходит около октября — поэтому лёгкий снег на самых высоких перевалах в конце сентября находится в пределах нормы.</p>
+        `
+      }
+    }
+  },
+  {
     "id": "daily-forecast-2026-09-16",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-16",
     "image": "/assets/images/hero_mountains.webp",
