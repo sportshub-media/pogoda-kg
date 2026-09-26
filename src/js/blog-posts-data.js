@@ -48,8 +48,8 @@ export const BLOG_POSTS = [
     image: "/assets/images/generated/naryn-highlands-weather.jpg",
     translations: {
       EN: {
-        title: "Week Ahead (Sept 26–Oct 2): Autumn Settles In, With a Dry Window Between Two Wet Spells",
-        seoTitle: "Kyrgyzstan Weather Week Ahead: Sept 26–Oct 2",
+        title: "Week Ahead, Sept 26–Oct 2: Autumn Settles In",
+        seoTitle: "Week Ahead, Sept 26–Oct 2: Autumn Settles In",
         seoDesc: "A wet Saturday, then four calm dry days in Bishkek, Osh and Jalal-Abad before rain returns Oct 1–2. Nights near +4°C in Naryn and Karakol.",
         category: "Weather Forecast",
         date: "September 26, 2026",
@@ -142,8 +142,8 @@ export const BLOG_POSTS = [
     image: "/assets/images/generated/passes-weather.jpg",
     translations: {
       EN: {
-        title: "First Snow Watch: What the Forecast Shows for Kyrgyzstan's High Mountain Passes This Week",
-        seoTitle: "First Snow Watch: Kyrgyzstan's High Mountain Passes",
+        title: "First Snow Watch on Kyrgyzstan's High Passes",
+        seoTitle: "First Snow Watch on Kyrgyzstan's High Passes",
         seoDesc: "Forecast models show light snow at Kyrgyzstan's highest passes this week, led by Otmek and Ala-Bel. Only official sources can confirm road access.",
         category: "Mountain Weather",
         date: "September 26, 2026",
