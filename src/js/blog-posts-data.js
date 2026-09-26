@@ -6,6 +6,43 @@
 export const BLOG_POSTS = [
   // AUTO_DAILY_FORECASTS_START — maintained by scripts/publish-daily-forecast.mjs.
   {
+    "id": "daily-forecast-2026-09-26",
+    "slug": "daily-weather-forecast-kyrgyzstan-2026-09-26",
+    "image": "/assets/images/hero_mountains.webp",
+    "translations": {
+      "EN": {
+        "title": "Kyrgyzstan weather forecast for 26 September 2026",
+        "seoTitle": "Kyrgyzstan weather forecast for 26 September 2026",
+        "seoDesc": "Kyrgyzstan weather forecast for 26 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
+        "category": "Weather Forecast",
+        "date": "26 September 2026",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Daily forecast for five major Kyrgyzstan cities on 26 September 2026.",
+        "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 26 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +25°C / +13°C, rain chance 86%, drizzly.</li><li><strong>Osh:</strong> +22°C / +14°C, rain chance 80%, drizzly.</li><li><strong>Karakol:</strong> +16°C / +4°C, rain chance 59%, overcast.</li><li><strong>Naryn:</strong> +16°C / +6°C, rain chance 10%, drizzly.</li><li><strong>Jalal-Abad:</strong> +24°C / +13°C, rain chance 99%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
+      },
+      "RU": {
+        "title": "Погода в Кыргызстане на 26 сентября 2026 г.",
+        "seoTitle": "Погода в Кыргызстане на 26 сентября 2026 г.",
+        "seoDesc": "Прогноз погоды по Кыргызстану на 26 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
+        "category": "Прогноз погоды",
+        "date": "26 сентября 2026 г.",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Ежедневный прогноз для пяти городов Кыргызстана на 26 сентября 2026 г..",
+        "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 26 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, вероятность осадков 86%, морось.</li><li><strong>Ош:</strong> +22°C / +14°C, вероятность осадков 80%, морось.</li><li><strong>Каракол:</strong> +16°C / +4°C, вероятность осадков 59%, пасмурно.</li><li><strong>Нарын:</strong> +16°C / +6°C, вероятность осадков 10%, морось.</li><li><strong>Жалал-Абад:</strong> +24°C / +13°C, вероятность осадков 99%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
+      },
+      "KG": {
+        "title": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "seoTitle": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "seoDesc": "2026-ж., 26-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
+        "category": "Аба ырайы божомолу",
+        "date": "2026-ж., 26-сентябрь",
+        "author": "Pogoda Weather Team",
+        "excerpt": "2026-ж., 26-сентябрь үчүн Кыргызстандын беш шаары боюнча күнүмдүк аба ырайы божомолу.",
+        "content": "<p>2026-ж., 26-сентябрь үчүн Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күнүмдүк божомол. Маалымат Бишкек убактысы менен эртең менен алынган Open-Meteo божомолуна негизделет.</p><h3>Шаарлар боюнча божомол</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, жаан-чачын ыктымалдыгы 86%, майда жамгыр.</li><li><strong>Ош:</strong> +22°C / +14°C, жаан-чачын ыктымалдыгы 80%, майда жамгыр.</li><li><strong>Каракол:</strong> +16°C / +4°C, жаан-чачын ыктымалдыгы 59%, булуттуу.</li><li><strong>Нарын:</strong> +16°C / +6°C, жаан-чачын ыктымалдыгы 10%, майда жамгыр.</li><li><strong>Жалал-Абад:</strong> +24°C / +13°C, жаан-чачын ыктымалдыгы 99%, майда жамгыр.</li></ul><h3>Жолго чыгаарда</h3><p>Божомол күн ичинде өзгөрүшү мүмкүн. Тоо ашуулары аркылуу сапарга чыгардан мурун расмий жол маалыматын текшериңиз.</p>"
+      }
+    }
+  },
+  {
     id: "post-sep-26-week-ahead-autumn-settles-in",
     slug: "week-ahead-forecast-kyrgyzstan-september-26-october-2",
     image: "/assets/images/generated/naryn-highlands-weather.jpg",
