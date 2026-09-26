@@ -4,6 +4,8 @@ on:
   schedule:
     # 09:20 Asia/Bishkek (UTC+6), every day.
     - cron: '20 3 * * *'
+    # TEMPORARY one-off test: 12:07 UTC on 26 Sept only (matches again next year). Safe to delete.
+    - cron: '7 12 26 9 *'
   workflow_dispatch:
 
 permissions:
