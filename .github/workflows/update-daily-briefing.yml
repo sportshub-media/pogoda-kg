@@ -19,4 +19,12 @@ jobs:
           node-version: 24
       - run: node scripts/update-daily-briefing.mjs
       - run: node scripts/publish-daily-forecast.mjs
-      - run: git diff --quiet || (git config user.name 'Pogoda Kg updater' && git config user.email 'bot@pogoda.kg' && git add src/js/daily-briefing-data.js src/js/blog-posts-data.js src/blog && git commit -m 'data: publish daily weather update' && git push)
+      - name: Commit and push if changed
+        run: |
+          if ! git diff --quiet; then
+            git config user.name 'Pogoda Kg updater'
+            git config user.email 'bot@pogoda.kg'
+            git add src/js/daily-briefing-data.js src/js/blog-posts-data.js src/blog
+            git commit -m 'data: publish daily weather update'
+            git push
+          fi
