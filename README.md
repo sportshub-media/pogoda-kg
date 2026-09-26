@@ -25,6 +25,10 @@ The main forecast refreshes every 15 minutes while the page is visible and on re
 
 `/passes` displays current weather for Too-Ashuu, Ala-Bel, Dolon, Otmek, and Tuz-Bel. It never claims that a road is open or closed. It links visitors to the Ministry of Transport's official pass status and road cameras, since that authority controls road-access information.
 
+## Search engine notification (IndexNow)
+
+`scripts/indexnow.mjs` tells Bing, Yandex and other IndexNow engines when pages are new or changed (Google does not use IndexNow; it relies on `sitemap.xml`). The ownership key lives in the repository root as `<32-hex-key>.txt`; `build.js` copies it to the site root. The daily workflow runs the script as a best-effort step after publishing: it waits for the new daily article to be live, then submits it plus `/daily`, `/ru/daily`, `/en/daily` and `/blog`. A failure there never fails the publish. After publishing a hand-written article, run `node scripts/indexnow.mjs --ready /blog/<slug> /blog/<slug> /blog` once Cloudflare has deployed. Only submit URLs that really changed.
+
 ## Contact
 
 The form opens a prefilled email draft addressed to `info.pogoda.kg@gmail.com`. The visitor must send it in their mail app. Fields remain available if no mail app is configured. There is no server-side message delivery service in this repository.

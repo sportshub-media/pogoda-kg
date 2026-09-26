@@ -30,3 +30,10 @@ jobs:
             git commit -m 'data: publish daily weather update'
             git push
           fi
+      # Best-effort: a failure here (e.g. IndexNow briefly down) must never fail the daily publish.
+      - name: Notify IndexNow (Bing, Yandex)
+        continue-on-error: true
+        run: |
+          DAY=$(TZ=Asia/Bishkek date +%F)
+          node scripts/indexnow.mjs --ready "/blog/daily-weather-forecast-kyrgyzstan-$DAY" \
+            "/blog/daily-weather-forecast-kyrgyzstan-$DAY" /daily /ru/daily /en/daily /blog

@@ -724,6 +724,12 @@ if (fs.existsSync(path.join(__dirname, 'llms.txt'))) {
     fs.copyFileSync(path.join(__dirname, 'llms.txt'), path.join(OUT_DIR, 'llms.txt'));
 }
 
+// Copy the IndexNow ownership key file (<32-hex-key>.txt) to the site root so
+// search engines can verify our submissions (see scripts/indexnow.mjs).
+fs.readdirSync(__dirname).filter(f => /^[0-9a-f]{32}\.txt$/.test(f)).forEach(f => {
+    fs.copyFileSync(path.join(__dirname, f), path.join(OUT_DIR, f));
+});
+
 // Write _redirects
 const redirects = `# Clean URLs
 /kg  /  301
