@@ -1,61 +1,61 @@
-// Generated at 2026-10-02T09:54:09.265Z; do not edit by hand.
+// Generated at 2026-10-03T09:16:21.266Z; do not edit by hand.
 export const DAILY_BRIEFING = {
-  "generatedAt": "2026-10-02T09:54:09.265Z",
+  "generatedAt": "2026-10-03T09:16:21.266Z",
   "cities": [
     {
       "id": "bishkek",
       "en": "Bishkek",
       "kg": "Бишкек",
       "ru": "Бишкек",
-      "temp": 22,
-      "high": 22,
-      "low": 11,
-      "precip": 100,
-      "code": 0
+      "temp": 28,
+      "high": 28,
+      "low": 10,
+      "precip": 0,
+      "code": 1
     },
     {
       "id": "osh",
       "en": "Osh",
       "kg": "Ош",
       "ru": "Ош",
-      "temp": 21,
-      "high": 21,
-      "low": 14,
-      "precip": 80,
-      "code": 1
+      "temp": 23,
+      "high": 23,
+      "low": 13,
+      "precip": 0,
+      "code": 0
     },
     {
       "id": "karakol",
       "en": "Karakol",
       "kg": "Каракол",
       "ru": "Каракол",
-      "temp": 13,
-      "high": 13,
-      "low": 8,
-      "precip": 100,
-      "code": 0
+      "temp": 17,
+      "high": 17,
+      "low": 4,
+      "precip": 0,
+      "code": 3
     },
     {
       "id": "naryn",
       "en": "Naryn",
       "kg": "Нарын",
       "ru": "Нарын",
-      "temp": 15,
-      "high": 15,
-      "low": 6,
-      "precip": 92,
-      "code": 0
+      "temp": 19,
+      "high": 19,
+      "low": 3,
+      "precip": 0,
+      "code": 1
     },
     {
       "id": "jalal-abad",
       "en": "Jalal-Abad",
       "kg": "Жалал-Абад",
       "ru": "Жалал-Абад",
-      "temp": 23,
-      "high": 23,
-      "low": 14,
-      "precip": 100,
-      "code": 1
+      "temp": 25,
+      "high": 25,
+      "low": 12,
+      "precip": 0,
+      "code": 0
     }
   ]
 };
