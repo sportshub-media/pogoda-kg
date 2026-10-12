@@ -8,11 +8,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-11",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-11",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/osh-fergana-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 11 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 11 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 11 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 11 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 11 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "11 October 2026",
@@ -21,8 +21,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 11 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +22°C / +10°C, rain chance 0%, overcast.</li><li><strong>Osh:</strong> +22°C / +12°C, rain chance 0%, overcast.</li><li><strong>Karakol:</strong> +16°C / +3°C, rain chance 0%, overcast.</li><li><strong>Naryn:</strong> +17°C / +3°C, rain chance 0%, overcast.</li><li><strong>Jalal-Abad:</strong> +24°C / +11°C, rain chance 0%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 11 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 11 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 11 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 11 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 11 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "11 октября 2026 г.",
@@ -31,8 +31,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 11 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +22°C / +10°C, вероятность осадков 0%, пасмурно.</li><li><strong>Ош:</strong> +22°C / +12°C, вероятность осадков 0%, пасмурно.</li><li><strong>Каракол:</strong> +16°C / +3°C, вероятность осадков 0%, пасмурно.</li><li><strong>Нарын:</strong> +17°C / +3°C, вероятность осадков 0%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +24°C / +11°C, вероятность осадков 0%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 11-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 11-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 11 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 11 окт 2026",
         "seoDesc": "2026-ж., 11-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 11-октябрь",
@@ -45,11 +45,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-10",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-10",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/issyk-kul-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 10 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 10 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 10 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 10 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 10 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "10 October 2026",
@@ -58,8 +58,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 10 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +21°C / +6°C, rain chance 5%, overcast.</li><li><strong>Osh:</strong> +20°C / +14°C, rain chance 11%, drizzly.</li><li><strong>Karakol:</strong> +15°C / +2°C, rain chance 47%, drizzly.</li><li><strong>Naryn:</strong> +15°C / +4°C, rain chance 49%, drizzly.</li><li><strong>Jalal-Abad:</strong> +22°C / +12°C, rain chance 23%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 10 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 10 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 10 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 10 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 10 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "10 октября 2026 г.",
@@ -68,8 +68,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 10 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +21°C / +6°C, вероятность осадков 5%, пасмурно.</li><li><strong>Ош:</strong> +20°C / +14°C, вероятность осадков 11%, морось.</li><li><strong>Каракол:</strong> +15°C / +2°C, вероятность осадков 47%, морось.</li><li><strong>Нарын:</strong> +15°C / +4°C, вероятность осадков 49%, морось.</li><li><strong>Жалал-Абад:</strong> +22°C / +12°C, вероятность осадков 23%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 10-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 10-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 10 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 10 окт 2026",
         "seoDesc": "2026-ж., 10-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 10-октябрь",
@@ -82,11 +82,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-09",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-09",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/bishkek-chuy-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 9 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 9 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 9 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 9 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 9 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "9 October 2026",
@@ -95,8 +95,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 9 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +21°C / +9°C, rain chance 0%, overcast.</li><li><strong>Osh:</strong> +21°C / +12°C, rain chance 12%, drizzly.</li><li><strong>Karakol:</strong> +16°C / +3°C, rain chance 61%, showery.</li><li><strong>Naryn:</strong> +15°C / +3°C, rain chance 75%, showery.</li><li><strong>Jalal-Abad:</strong> +23°C / +12°C, rain chance 11%, showery.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 9 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 9 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 9 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 9 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 9 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "9 октября 2026 г.",
@@ -105,8 +105,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 9 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +21°C / +9°C, вероятность осадков 0%, пасмурно.</li><li><strong>Ош:</strong> +21°C / +12°C, вероятность осадков 12%, морось.</li><li><strong>Каракол:</strong> +16°C / +3°C, вероятность осадков 61%, ливни.</li><li><strong>Нарын:</strong> +15°C / +3°C, вероятность осадков 75%, ливни.</li><li><strong>Жалал-Абад:</strong> +23°C / +12°C, вероятность осадков 11%, ливни.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 9-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 9-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 9 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 9 окт 2026",
         "seoDesc": "2026-ж., 9-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 9-октябрь",
@@ -119,11 +119,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-08",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-08",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/daily-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 8 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 8 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 8 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 8 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 8 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "8 October 2026",
@@ -132,8 +132,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 8 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +20°C / +8°C, rain chance 0%, partly cloudy.</li><li><strong>Osh:</strong> +21°C / +14°C, rain chance 73%, drizzly.</li><li><strong>Karakol:</strong> +15°C / +4°C, rain chance 27%, drizzly.</li><li><strong>Naryn:</strong> +14°C / +4°C, rain chance 0%, overcast.</li><li><strong>Jalal-Abad:</strong> +22°C / +13°C, rain chance 42%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 8 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 8 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 8 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 8 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 8 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "8 октября 2026 г.",
@@ -142,8 +142,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 8 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +20°C / +8°C, вероятность осадков 0%, переменная облачность.</li><li><strong>Ош:</strong> +21°C / +14°C, вероятность осадков 73%, морось.</li><li><strong>Каракол:</strong> +15°C / +4°C, вероятность осадков 27%, морось.</li><li><strong>Нарын:</strong> +14°C / +4°C, вероятность осадков 0%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +22°C / +13°C, вероятность осадков 42%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 8-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 8-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 8 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 8 окт 2026",
         "seoDesc": "2026-ж., 8-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 8-октябрь",
@@ -156,11 +156,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-07",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-07",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/news-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 7 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 7 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 7 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 7 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 7 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "7 October 2026",
@@ -169,8 +169,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 7 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +17°C / +5°C, rain chance 0%, overcast.</li><li><strong>Osh:</strong> +19°C / +11°C, rain chance 94%, drizzly.</li><li><strong>Karakol:</strong> +14°C / +4°C, rain chance 67%, drizzly.</li><li><strong>Naryn:</strong> +13°C / +1°C, rain chance 0%, overcast.</li><li><strong>Jalal-Abad:</strong> +21°C / +10°C, rain chance 24%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 7 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 7 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 7 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 7 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 7 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "7 октября 2026 г.",
@@ -179,8 +179,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 7 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +17°C / +5°C, вероятность осадков 0%, пасмурно.</li><li><strong>Ош:</strong> +19°C / +11°C, вероятность осадков 94%, морось.</li><li><strong>Каракол:</strong> +14°C / +4°C, вероятность осадков 67%, морось.</li><li><strong>Нарын:</strong> +13°C / +1°C, вероятность осадков 0%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +21°C / +10°C, вероятность осадков 24%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 7-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 7-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 7 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 7 окт 2026",
         "seoDesc": "2026-ж., 7-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 7-октябрь",
@@ -193,11 +193,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-06",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-06",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/toktogul-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 6 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 6 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 6 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 6 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 6 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "6 October 2026",
@@ -206,8 +206,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 6 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +14°C / +8°C, rain chance 77%, drizzly.</li><li><strong>Osh:</strong> +17°C / +11°C, rain chance 84%, drizzly.</li><li><strong>Karakol:</strong> +15°C / +7°C, rain chance 53%, drizzly.</li><li><strong>Naryn:</strong> +13°C / +6°C, rain chance 16%, overcast.</li><li><strong>Jalal-Abad:</strong> +19°C / +11°C, rain chance 100%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 6 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 6 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 6 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 6 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 6 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "6 октября 2026 г.",
@@ -216,8 +216,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 6 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +14°C / +8°C, вероятность осадков 77%, морось.</li><li><strong>Ош:</strong> +17°C / +11°C, вероятность осадков 84%, морось.</li><li><strong>Каракол:</strong> +15°C / +7°C, вероятность осадков 53%, морось.</li><li><strong>Нарын:</strong> +13°C / +6°C, вероятность осадков 16%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +19°C / +11°C, вероятность осадков 100%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 6-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 6-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 6 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 6 окт 2026",
         "seoDesc": "2026-ж., 6-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 6-октябрь",
@@ -230,11 +230,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-05",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-05",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/batken-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 5 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 5 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 5 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 5 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 5 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "5 October 2026",
@@ -243,8 +243,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 5 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +15°C / +8°C, rain chance 100%, showery.</li><li><strong>Osh:</strong> +17°C / +14°C, rain chance 100%, drizzly.</li><li><strong>Karakol:</strong> +16°C / +9°C, rain chance 100%, showery.</li><li><strong>Naryn:</strong> +12°C / +8°C, rain chance 100%, showery.</li><li><strong>Jalal-Abad:</strong> +17°C / +13°C, rain chance 100%, showery.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 5 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 5 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 5 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 5 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 5 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "5 октября 2026 г.",
@@ -253,8 +253,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 5 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +15°C / +8°C, вероятность осадков 100%, ливни.</li><li><strong>Ош:</strong> +17°C / +14°C, вероятность осадков 100%, морось.</li><li><strong>Каракол:</strong> +16°C / +9°C, вероятность осадков 100%, ливни.</li><li><strong>Нарын:</strong> +12°C / +8°C, вероятность осадков 100%, ливни.</li><li><strong>Жалал-Абад:</strong> +17°C / +13°C, вероятность осадков 100%, ливни.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 5-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 5-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 5 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 5 окт 2026",
         "seoDesc": "2026-ж., 5-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 5-октябрь",
@@ -267,11 +267,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-04",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-04",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/osh-fergana-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 4 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 4 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 4 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 4 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 4 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "4 October 2026",
@@ -280,8 +280,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 4 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +29°C / +12°C, rain chance 84%, drizzly.</li><li><strong>Osh:</strong> +27°C / +15°C, rain chance 18%, overcast.</li><li><strong>Karakol:</strong> +20°C / +9°C, rain chance 0%, overcast.</li><li><strong>Naryn:</strong> +22°C / +6°C, rain chance 0%, overcast.</li><li><strong>Jalal-Abad:</strong> +28°C / +14°C, rain chance 31%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 4 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 4 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 4 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 4 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 4 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "4 октября 2026 г.",
@@ -290,8 +290,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 4 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +29°C / +12°C, вероятность осадков 84%, морось.</li><li><strong>Ош:</strong> +27°C / +15°C, вероятность осадков 18%, пасмурно.</li><li><strong>Каракол:</strong> +20°C / +9°C, вероятность осадков 0%, пасмурно.</li><li><strong>Нарын:</strong> +22°C / +6°C, вероятность осадков 0%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +28°C / +14°C, вероятность осадков 31%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 4-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 4-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 4 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 4 окт 2026",
         "seoDesc": "2026-ж., 4-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 4-октябрь",
@@ -304,11 +304,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-03",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-03",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/issyk-kul-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 3 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 3 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 3 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 3 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 3 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "3 October 2026",
@@ -317,8 +317,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 3 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +28°C / +10°C, rain chance 0%, overcast.</li><li><strong>Osh:</strong> +23°C / +13°C, rain chance 0%, overcast.</li><li><strong>Karakol:</strong> +17°C / +4°C, rain chance 0%, overcast.</li><li><strong>Naryn:</strong> +19°C / +3°C, rain chance 0%, partly cloudy.</li><li><strong>Jalal-Abad:</strong> +25°C / +12°C, rain chance 0%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 3 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 3 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 3 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 3 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 3 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "3 октября 2026 г.",
@@ -327,8 +327,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 3 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +28°C / +10°C, вероятность осадков 0%, пасмурно.</li><li><strong>Ош:</strong> +23°C / +13°C, вероятность осадков 0%, пасмурно.</li><li><strong>Каракол:</strong> +17°C / +4°C, вероятность осадков 0%, пасмурно.</li><li><strong>Нарын:</strong> +19°C / +3°C, вероятность осадков 0%, переменная облачность.</li><li><strong>Жалал-Абад:</strong> +25°C / +12°C, вероятность осадков 0%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 3-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 3-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 3 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 3 окт 2026",
         "seoDesc": "2026-ж., 3-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 3-октябрь",
@@ -341,11 +341,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-02",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-02",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/bishkek-chuy-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 2 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 2 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 2 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 2 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 2 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "2 October 2026",
@@ -354,8 +354,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 2 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +22°C / +11°C, rain chance 100%, showery.</li><li><strong>Osh:</strong> +21°C / +14°C, rain chance 80%, drizzly.</li><li><strong>Karakol:</strong> +13°C / +8°C, rain chance 100%, showery.</li><li><strong>Naryn:</strong> +15°C / +6°C, rain chance 92%, drizzly.</li><li><strong>Jalal-Abad:</strong> +23°C / +14°C, rain chance 100%, showery.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 2 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 2 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 2 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 2 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 2 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "2 октября 2026 г.",
@@ -364,8 +364,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 2 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +22°C / +11°C, вероятность осадков 100%, ливни.</li><li><strong>Ош:</strong> +21°C / +14°C, вероятность осадков 80%, морось.</li><li><strong>Каракол:</strong> +13°C / +8°C, вероятность осадков 100%, ливни.</li><li><strong>Нарын:</strong> +15°C / +6°C, вероятность осадков 92%, морось.</li><li><strong>Жалал-Абад:</strong> +23°C / +14°C, вероятность осадков 100%, ливни.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 2-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 2-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 2 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 2 окт 2026",
         "seoDesc": "2026-ж., 2-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 2-октябрь",
@@ -378,11 +378,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-10-01",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-10-01",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/daily-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 1 October 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 1 October 2026",
+        "title": "Kyrgyzstan Weather Forecast: 1 Oct 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 1 Oct 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 1 October 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "1 October 2026",
@@ -391,8 +391,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 1 October 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +22°C / +14°C, rain chance 25%, drizzly.</li><li><strong>Osh:</strong> +21°C / +15°C, rain chance 100%, drizzly.</li><li><strong>Karakol:</strong> +20°C / +9°C, rain chance 79%, showery.</li><li><strong>Naryn:</strong> +17°C / +7°C, rain chance 78%, drizzly.</li><li><strong>Jalal-Abad:</strong> +22°C / +14°C, rain chance 100%, showery.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 1 октября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 1 октября 2026 г.",
+        "title": "Погода в Кыргызстане: 1 окт 2026",
+        "seoTitle": "Погода в Кыргызстане: 1 окт 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 1 октября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "1 октября 2026 г.",
@@ -401,8 +401,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 1 октября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +22°C / +14°C, вероятность осадков 25%, морось.</li><li><strong>Ош:</strong> +21°C / +15°C, вероятность осадков 100%, морось.</li><li><strong>Каракол:</strong> +20°C / +9°C, вероятность осадков 79%, ливни.</li><li><strong>Нарын:</strong> +17°C / +7°C, вероятность осадков 78%, морось.</li><li><strong>Жалал-Абад:</strong> +22°C / +14°C, вероятность осадков 100%, ливни.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 1-октябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 1-октябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 1 окт 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 1 окт 2026",
         "seoDesc": "2026-ж., 1-октябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 1-октябрь",
@@ -415,11 +415,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-30",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-30",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/news-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 30 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 30 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 30 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 30 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 30 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "30 September 2026",
@@ -428,8 +428,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 30 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +25°C / +13°C, rain chance 5%, overcast.</li><li><strong>Osh:</strong> +24°C / +13°C, rain chance 2%, drizzly.</li><li><strong>Karakol:</strong> +20°C / +8°C, rain chance 4%, overcast.</li><li><strong>Naryn:</strong> +21°C / +7°C, rain chance 29%, drizzly.</li><li><strong>Jalal-Abad:</strong> +26°C / +13°C, rain chance 3%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 30 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 30 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 30 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 30 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 30 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "30 сентября 2026 г.",
@@ -438,8 +438,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 30 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, вероятность осадков 5%, пасмурно.</li><li><strong>Ош:</strong> +24°C / +13°C, вероятность осадков 2%, морось.</li><li><strong>Каракол:</strong> +20°C / +8°C, вероятность осадков 4%, пасмурно.</li><li><strong>Нарын:</strong> +21°C / +7°C, вероятность осадков 29%, морось.</li><li><strong>Жалал-Абад:</strong> +26°C / +13°C, вероятность осадков 3%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 30-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 30-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 30 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 30 сен 2026",
         "seoDesc": "2026-ж., 30-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 30-сентябрь",
@@ -452,11 +452,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-29",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-29",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/toktogul-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 29 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 29 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 29 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 29 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 29 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "29 September 2026",
@@ -465,8 +465,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 29 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +24°C / +11°C, rain chance 8%, drizzly.</li><li><strong>Osh:</strong> +22°C / +12°C, rain chance 0%, mostly clear.</li><li><strong>Karakol:</strong> +18°C / +8°C, rain chance 85%, drizzly.</li><li><strong>Naryn:</strong> +19°C / +4°C, rain chance 29%, overcast.</li><li><strong>Jalal-Abad:</strong> +23°C / +12°C, rain chance 0%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 29 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 29 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 29 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 29 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 29 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "29 сентября 2026 г.",
@@ -475,8 +475,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 29 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +24°C / +11°C, вероятность осадков 8%, морось.</li><li><strong>Ош:</strong> +22°C / +12°C, вероятность осадков 0%, в основном ясно.</li><li><strong>Каракол:</strong> +18°C / +8°C, вероятность осадков 85%, морось.</li><li><strong>Нарын:</strong> +19°C / +4°C, вероятность осадков 29%, пасмурно.</li><li><strong>Жалал-Абад:</strong> +23°C / +12°C, вероятность осадков 0%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 29-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 29-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 29 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 29 сен 2026",
         "seoDesc": "2026-ж., 29-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 29-сентябрь",
@@ -489,11 +489,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-28",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-28",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/batken-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 28 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 28 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 28 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 28 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 28 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "28 September 2026",
@@ -502,8 +502,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 28 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +22°C / +10°C, rain chance 45%, overcast.</li><li><strong>Osh:</strong> +20°C / +13°C, rain chance 0%, overcast.</li><li><strong>Karakol:</strong> +19°C / +4°C, rain chance 7%, overcast.</li><li><strong>Naryn:</strong> +19°C / +4°C, rain chance 78%, drizzly.</li><li><strong>Jalal-Abad:</strong> +21°C / +13°C, rain chance 0%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 28 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 28 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 28 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 28 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 28 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "28 сентября 2026 г.",
@@ -512,8 +512,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 28 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +22°C / +10°C, вероятность осадков 45%, пасмурно.</li><li><strong>Ош:</strong> +20°C / +13°C, вероятность осадков 0%, пасмурно.</li><li><strong>Каракол:</strong> +19°C / +4°C, вероятность осадков 7%, пасмурно.</li><li><strong>Нарын:</strong> +19°C / +4°C, вероятность осадков 78%, морось.</li><li><strong>Жалал-Абад:</strong> +21°C / +13°C, вероятность осадков 0%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 28-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 28-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 28 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 28 сен 2026",
         "seoDesc": "2026-ж., 28-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 28-сентябрь",
@@ -526,11 +526,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-27",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-27",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/osh-fergana-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 27 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 27 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 27 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 27 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 27 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "27 September 2026",
@@ -539,8 +539,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 27 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +23°C / +11°C, rain chance 6%, overcast.</li><li><strong>Osh:</strong> +21°C / +14°C, rain chance 35%, drizzly.</li><li><strong>Karakol:</strong> +17°C / +6°C, rain chance 22%, drizzly.</li><li><strong>Naryn:</strong> +17°C / +3°C, rain chance 0%, mostly clear.</li><li><strong>Jalal-Abad:</strong> +23°C / +13°C, rain chance 6%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 27 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 27 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 27 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 27 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 27 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "27 сентября 2026 г.",
@@ -549,8 +549,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 27 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +23°C / +11°C, вероятность осадков 6%, пасмурно.</li><li><strong>Ош:</strong> +21°C / +14°C, вероятность осадков 35%, морось.</li><li><strong>Каракол:</strong> +17°C / +6°C, вероятность осадков 22%, морось.</li><li><strong>Нарын:</strong> +17°C / +3°C, вероятность осадков 0%, в основном ясно.</li><li><strong>Жалал-Абад:</strong> +23°C / +13°C, вероятность осадков 6%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 27-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 27-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 27 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 27 сен 2026",
         "seoDesc": "2026-ж., 27-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 27-сентябрь",
@@ -563,11 +563,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-26",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-26",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/issyk-kul-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 26 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 26 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 26 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 26 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 26 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "26 September 2026",
@@ -576,8 +576,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 26 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +25°C / +13°C, rain chance 86%, drizzly.</li><li><strong>Osh:</strong> +22°C / +14°C, rain chance 80%, drizzly.</li><li><strong>Karakol:</strong> +16°C / +4°C, rain chance 59%, overcast.</li><li><strong>Naryn:</strong> +16°C / +6°C, rain chance 10%, drizzly.</li><li><strong>Jalal-Abad:</strong> +24°C / +13°C, rain chance 99%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 26 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 26 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 26 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 26 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 26 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "26 сентября 2026 г.",
@@ -586,8 +586,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 26 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +25°C / +13°C, вероятность осадков 86%, морось.</li><li><strong>Ош:</strong> +22°C / +14°C, вероятность осадков 80%, морось.</li><li><strong>Каракол:</strong> +16°C / +4°C, вероятность осадков 59%, пасмурно.</li><li><strong>Нарын:</strong> +16°C / +6°C, вероятность осадков 10%, морось.</li><li><strong>Жалал-Абад:</strong> +24°C / +13°C, вероятность осадков 99%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 26-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 26 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 26 сен 2026",
         "seoDesc": "2026-ж., 26-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 26-сентябрь",
@@ -773,11 +773,11 @@ export const BLOG_POSTS = [
   {
     "id": "daily-forecast-2026-09-16",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-09-16",
-    "image": "/assets/images/hero_mountains.webp",
+    "image": "/assets/images/generated/news-weather.jpg",
     "translations": {
       "EN": {
-        "title": "Kyrgyzstan weather forecast for 16 September 2026",
-        "seoTitle": "Kyrgyzstan weather forecast for 16 September 2026",
+        "title": "Kyrgyzstan Weather Forecast: 16 Sep 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 16 Sep 2026",
         "seoDesc": "Kyrgyzstan weather forecast for 16 September 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
         "category": "Weather Forecast",
         "date": "16 September 2026",
@@ -786,8 +786,8 @@ export const BLOG_POSTS = [
         "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 16 September 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +27°C / +14°C, rain chance 8%, clear.</li><li><strong>Osh:</strong> +29°C / +19°C, rain chance 10%, drizzly.</li><li><strong>Karakol:</strong> +19°C / +12°C, rain chance 100%, showery.</li><li><strong>Naryn:</strong> +22°C / +10°C, rain chance 40%, drizzly.</li><li><strong>Jalal-Abad:</strong> +29°C / +17°C, rain chance 2%, overcast.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
       },
       "RU": {
-        "title": "Погода в Кыргызстане на 16 сентября 2026 г.",
-        "seoTitle": "Погода в Кыргызстане на 16 сентября 2026 г.",
+        "title": "Погода в Кыргызстане: 16 сен 2026",
+        "seoTitle": "Погода в Кыргызстане: 16 сен 2026",
         "seoDesc": "Прогноз погоды по Кыргызстану на 16 сентября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
         "category": "Прогноз погоды",
         "date": "16 сентября 2026 г.",
@@ -796,8 +796,8 @@ export const BLOG_POSTS = [
         "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 16 сентября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +27°C / +14°C, вероятность осадков 8%, ясно.</li><li><strong>Ош:</strong> +29°C / +19°C, вероятность осадков 10%, морось.</li><li><strong>Каракол:</strong> +19°C / +12°C, вероятность осадков 100%, ливни.</li><li><strong>Нарын:</strong> +22°C / +10°C, вероятность осадков 40%, морось.</li><li><strong>Жалал-Абад:</strong> +29°C / +17°C, вероятность осадков 2%, пасмурно.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
       },
       "KG": {
-        "title": "2026-ж., 16-сентябрь үчүн Кыргызстандагы аба ырайы",
-        "seoTitle": "2026-ж., 16-сентябрь үчүн Кыргызстандагы аба ырайы",
+        "title": "Кыргызстандагы аба ырайы: 16 сен 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 16 сен 2026",
         "seoDesc": "2026-ж., 16-сентябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
         "category": "Аба ырайы божомолу",
         "date": "2026-ж., 16-сентябрь",
