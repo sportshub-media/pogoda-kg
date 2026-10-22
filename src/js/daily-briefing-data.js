@@ -1,15 +1,15 @@
-// Generated at 2026-10-21T08:42:20.191Z; do not edit by hand.
+// Generated at 2026-10-22T08:44:42.433Z; do not edit by hand.
 export const DAILY_BRIEFING = {
-  "generatedAt": "2026-10-21T08:42:20.191Z",
+  "generatedAt": "2026-10-22T08:44:42.433Z",
   "cities": [
     {
       "id": "bishkek",
       "en": "Bishkek",
       "kg": "Бишкек",
       "ru": "Бишкек",
-      "temp": 15,
-      "high": 15,
-      "low": 7,
+      "temp": 16,
+      "high": 16,
+      "low": 6,
       "precip": 0,
       "code": 3
     },
@@ -19,29 +19,29 @@ export const DAILY_BRIEFING = {
       "kg": "Ош",
       "ru": "Ош",
       "temp": 18,
-      "high": 19,
-      "low": 10,
+      "high": 18,
+      "low": 9,
       "precip": 0,
-      "code": 1
+      "code": 0
     },
     {
       "id": "karakol",
       "en": "Karakol",
       "kg": "Каракол",
       "ru": "Каракол",
-      "temp": 14,
-      "high": 14,
-      "low": 3,
-      "precip": 47,
-      "code": 2
+      "temp": 15,
+      "high": 15,
+      "low": 9,
+      "precip": 29,
+      "code": 3
     },
     {
       "id": "naryn",
       "en": "Naryn",
       "kg": "Нарын",
       "ru": "Нарын",
-      "temp": 12,
-      "high": 12,
+      "temp": 13,
+      "high": 13,
       "low": 1,
       "precip": 0,
       "code": 1
@@ -53,7 +53,7 @@ export const DAILY_BRIEFING = {
       "ru": "Жалал-Абад",
       "temp": 20,
       "high": 20,
-      "low": 8,
+      "low": 7,
       "precip": 0,
       "code": 0
     }
