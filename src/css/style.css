@@ -166,6 +166,15 @@ header.site-header {
   transition: var(--transition);
 }
 
+/* The mobile drawer lives inside this header, so header's own z-index caps
+   how high the drawer can stack. header's z-index (900) is below the cookie
+   banner's (9999), so with the drawer open the banner was painting over its
+   bottom portion, hiding the language switcher. Only raise header above the
+   banner while the drawer is actually open. */
+header.site-header:has(.mobile-drawer.open) {
+  z-index: 10000;
+}
+
 .header-container {
   max-width: 1320px;
   margin: 0 auto;
@@ -1758,12 +1767,16 @@ footer.site-footer {
 
 .mobile-drawer-lang-row {
   padding: 16px 20px;
+  border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
 }
 
 .mobile-drawer-footer {
