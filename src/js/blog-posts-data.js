@@ -6,6 +6,43 @@
 export const BLOG_POSTS = [
   // AUTO_DAILY_FORECASTS_START — maintained by scripts/publish-daily-forecast.mjs.
   {
+    "id": "daily-forecast-2026-11-12",
+    "slug": "daily-weather-forecast-kyrgyzstan-2026-11-12",
+    "image": "/assets/images/generated/daily-weather.jpg",
+    "translations": {
+      "EN": {
+        "title": "Kyrgyzstan Weather Forecast: 12 Nov 2026",
+        "seoTitle": "Kyrgyzstan Weather Forecast: 12 Nov 2026",
+        "seoDesc": "Kyrgyzstan weather forecast for 12 November 2026: temperatures and rain chances for Bishkek, Osh, Karakol, Naryn and Jalal-Abad.",
+        "category": "Weather Forecast",
+        "date": "12 November 2026",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Daily forecast for five major Kyrgyzstan cities on 12 November 2026.",
+        "content": "<p>A daily forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad on 12 November 2026. Figures are based on the Open-Meteo forecast collected in the morning, Bishkek time.</p><h3>City forecast</h3><ul><li><strong>Bishkek:</strong> +3°C / +1°C, rain chance 90%, unavailable.</li><li><strong>Osh:</strong> +9°C / +3°C, rain chance 2%, foggy.</li><li><strong>Karakol:</strong> +7°C / -2°C, rain chance 46%, snowy.</li><li><strong>Naryn:</strong> +6°C / -2°C, rain chance 90%, unavailable.</li><li><strong>Jalal-Abad:</strong> +11°C / +3°C, rain chance 69%, drizzly.</li></ul><h3>Before travelling</h3><p>Forecasts can change during the day. Before travelling through a mountain pass, check official road information.</p>"
+      },
+      "RU": {
+        "title": "Погода в Кыргызстане: 12 ноя 2026",
+        "seoTitle": "Погода в Кыргызстане: 12 ноя 2026",
+        "seoDesc": "Прогноз погоды по Кыргызстану на 12 ноября 2026 г.: температура и вероятность осадков для Бишкека, Оша, Каракола, Нарына и Джалал-Абада.",
+        "category": "Прогноз погоды",
+        "date": "12 ноября 2026 г.",
+        "author": "Pogoda Weather Team",
+        "excerpt": "Ежедневный прогноз для пяти городов Кыргызстана на 12 ноября 2026 г..",
+        "content": "<p>Ежедневная сводка прогноза для Бишкека, Оша, Каракола, Нарына и Джалал-Абада на 12 ноября 2026 г.. Значения основаны на прогнозе Open-Meteo, полученном утром по времени Бишкека.</p><h3>Прогноз по городам</h3><ul><li><strong>Бишкек:</strong> +3°C / +1°C, вероятность осадков 90%, нет данных.</li><li><strong>Ош:</strong> +9°C / +3°C, вероятность осадков 2%, туман.</li><li><strong>Каракол:</strong> +7°C / -2°C, вероятность осадков 46%, снег.</li><li><strong>Нарын:</strong> +6°C / -2°C, вероятность осадков 90%, нет данных.</li><li><strong>Жалал-Абад:</strong> +11°C / +3°C, вероятность осадков 69%, морось.</li></ul><h3>Перед поездкой</h3><p>Прогноз меняется в течение дня. Для поездок через горные перевалы проверьте официальную дорожную информацию перед выездом.</p>"
+      },
+      "KG": {
+        "title": "Кыргызстандагы аба ырайы: 12 ноя 2026",
+        "seoTitle": "Кыргызстандагы аба ырайы: 12 ноя 2026",
+        "seoDesc": "2026-ж., 12-ноябрь күнүнө Кыргызстан боюнча аба ырайы: Бишкек, Ош, Каракол, Нарын жана Жалал-Абад үчүн температура жана жаан-чачын ыктымалдыгы.",
+        "category": "Аба ырайы божомолу",
+        "date": "2026-ж., 12-ноябрь",
+        "author": "Pogoda Weather Team",
+        "excerpt": "2026-ж., 12-ноябрь үчүн Кыргызстандын беш шаары боюнча күнүмдүк аба ырайы божомолу.",
+        "content": "<p>2026-ж., 12-ноябрь үчүн Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күнүмдүк божомол. Маалымат Бишкек убактысы менен эртең менен алынган Open-Meteo божомолуна негизделет.</p><h3>Шаарлар боюнча божомол</h3><ul><li><strong>Бишкек:</strong> +3°C / +1°C, жаан-чачын ыктымалдыгы 90%, маалымат жок.</li><li><strong>Ош:</strong> +9°C / +3°C, жаан-чачын ыктымалдыгы 2%, туман.</li><li><strong>Каракол:</strong> +7°C / -2°C, жаан-чачын ыктымалдыгы 46%, кар.</li><li><strong>Нарын:</strong> +6°C / -2°C, жаан-чачын ыктымалдыгы 90%, маалымат жок.</li><li><strong>Жалал-Абад:</strong> +11°C / +3°C, жаан-чачын ыктымалдыгы 69%, майда жамгыр.</li></ul><h3>Жолго чыгаарда</h3><p>Божомол күн ичинде өзгөрүшү мүмкүн. Тоо ашуулары аркылуу сапарга чыгардан мурун расмий жол маалыматын текшериңиз.</p>"
+      }
+    }
+  },
+  {
     "id": "daily-forecast-2026-11-11",
     "slug": "daily-weather-forecast-kyrgyzstan-2026-11-11",
     "image": "/assets/images/generated/news-weather.jpg",
