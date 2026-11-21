@@ -64,6 +64,12 @@ const DAILY_CONDITIONS = extractFromJs('daily-briefing.js', /const conditions = 
 const DAILY_BRIEFING = extractFromJs('daily-briefing-data.js', /export const DAILY_BRIEFING = (\{[\s\S]*?\n\});/);
 const PASSES_COPY = extractFromJs('passes.js', /const copy = (\{[\s\S]*?\n\});/);
 const KYRGYZSTAN_PASSES = extractFromJs('passes-data.js', /export const KYRGYZSTAN_PASSES = (\[[\s\S]*?\]);/);
+const WMO_WEATHER_CODES = extractFromJs('config.js', /export const WMO_WEATHER_CODES = (\{[\s\S]*?\n\});/);
+// 7-day forecast for every city, saved each morning by scripts/update-daily-briefing.mjs.
+const SNAPSHOT_PATH = path.join(SRC_DIR, 'data', 'forecast-snapshot.json');
+const FORECAST_SNAPSHOT = fs.existsSync(SNAPSHOT_PATH) ? JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8')) : null;
+// Bishkek calendar day of an ISO timestamp (or undefined).
+const isoDay = value => value && new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bishkek' }).format(new Date(value));
 const { OFFICIAL_ROAD_STATUS_URL, OFFICIAL_CAMERAS_URL } = Object.fromEntries(
     [...fs.readFileSync(path.join(SRC_DIR, 'js', 'passes-data.js'), 'utf8').matchAll(/export const (OFFICIAL_\w+_URL) = '([^']+)'/g)].map(m => [m[1], m[2]]));
 
@@ -455,6 +461,33 @@ function renderDailyPage(html, lang) {
     return fillById(out, 'briefingGrid', cards);
 }
 
+const SNAPSHOT_NOTE = {
+    EN: time => `Forecast issued ${time} (UTC+6), Open-Meteo data. Live values load in your browser.`,
+    RU: time => `Прогноз от ${time} (UTC+6), данные Open-Meteo. Актуальные значения загружаются в браузере.`,
+    KG: time => `Божомол ${time} (UTC+6) берилген, Open-Meteo маалыматы. Учурдагы маанилер браузерде жүктөлөт.`
+};
+
+// The city's 7-day forecast from the morning snapshot, in the same pills app.js
+// draws (audit C2: the forecast was only in the page after JavaScript ran). Days
+// are labelled with their date, not "Today", because the page is built once a day.
+function withWeeklySnapshot(html, lang, cityId) {
+    const days = FORECAST_SNAPSHOT && FORECAST_SNAPSHOT.cities[cityId];
+    if (!days) return html;
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bishkek' }).format(new Date());
+    const upcoming = days.filter(day => day.date >= today);
+    if (upcoming.length < 3) return html;
+    const locale = { KG: 'ky-KG', RU: 'ru-RU', EN: 'en-GB' }[lang];
+    const pills = upcoming.map(day => {
+        const label = new Intl.DateTimeFormat(locale, { weekday: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${day.date}T12:00:00Z`));
+        const icon = (WMO_WEATHER_CODES[day.code] || {}).svg || '';
+        const precip = day.precip > 20 ? `<div style="color:#00c6ff; font-size:10px; margin-top:-10px; margin-bottom:5px;">💧 ${day.precip}%</div>` : '';
+        return `<div class="ten-day-pill"><div class="ten-day-day">${label}</div><div class="ten-day-divider"></div><div class="ten-day-icon">${icon}</div>${precip}<div class="ten-day-temp">${day.max}° / ${day.min}°</div></div>`;
+    }).join('');
+    const note = `<p class="section-desc" id="weeklySnapshotNote" style="font-size:13px; margin-top:12px;">${SNAPSHOT_NOTE[lang](formatBriefingTime(FORECAST_SNAPSHOT.generatedAt, lang))}</p>`;
+    return html.replace('<div id="weeklyForecastContainer" class="ten-day-forecast-container"></div>',
+        () => `<div id="weeklyForecastContainer" class="ten-day-forecast-container">${pills}</div>\n    ${note}`);
+}
+
 // Server-rendered /passes: names, routes, elevations and the official road-status
 // links. Weather values stay live in passes.js, which redraws the cards.
 function renderPassesPage(html, lang) {
@@ -679,8 +712,9 @@ htmlFiles.forEach(file => {
         // already has its own 5 site-usage FAQs baked into the template via
         // data-i18n — just add matching FAQPage schema so they're eligible for
         // rich results too, without touching the visible markup.
+        // The homepage shows Bishkek, so it gets Bishkek's 7-day snapshot.
         let pageOutput = file === 'index.html'
-            ? withFAQ(translated, HOME_FAQ[lang] || HOME_FAQ.EN)
+            ? withWeeklySnapshot(withFAQ(translated, HOME_FAQ[lang] || HOME_FAQ.EN), lang, 'bishkek')
             : translated;
         if (file === 'contact.html') {
             const contactFaqList = [1, 2, 3, 4, 5].map(n => ({
@@ -706,7 +740,8 @@ htmlFiles.forEach(file => {
         fs.writeFileSync(outFilePath, finalisePage(pageOutput, lang, file === 'index.html' ? '/' : pageUrl));
         // The 404 page isn't a real, indexable page — don't submit it to Google via the sitemap.
         const pageSources = { 'daily.html': ['src/js/daily-briefing-data.js'], 'blog.html': ['src/js/blog-posts-data.js'], 'faq.html': ['src/js/faq-data.js'], 'index.html': ['src/js/faq-data.js'] };
-        if (file !== '404.html') sitemapUrls.push({ loc: fullUrl, sources: [`src/${file}`, ...(pageSources[file] || [])] });
+        const contentDates = { 'daily.html': [isoDay(DAILY_BRIEFING.generatedAt)], 'index.html': [isoDay(FORECAST_SNAPSHOT && FORECAST_SNAPSHOT.generatedAt)] };
+        if (file !== '404.html') sitemapUrls.push({ loc: fullUrl, sources: [`src/${file}`, ...(pageSources[file] || [])], dates: contentDates[file] || [] });
 
         // Special Case: If it's index.html, generate city pages!
         if (file === 'index.html') {
@@ -800,13 +835,13 @@ htmlFiles.forEach(file => {
                 // City-specific weather FAQ (real regional climate facts, not
                 // templated stat-swapping) plus matching FAQPage schema.
                 const cityFaqList = (CITY_FAQ[city.id] && (CITY_FAQ[city.id][lang] || CITY_FAQ[city.id].EN)) || HOME_FAQ.EN;
-                cityHtml = withFAQ(cityHtml, cityFaqList);
+                cityHtml = withWeeklySnapshot(withFAQ(cityHtml, cityFaqList), lang, city.id);
 
                 // Write city file
                 const cityOutPath = path.join(OUT_DIR, prefix, `${city.id}.html`);
                 fs.mkdirSync(path.dirname(cityOutPath), { recursive: true });
                 fs.writeFileSync(cityOutPath, finalisePage(cityHtml, lang, `/${city.id}`));
-                sitemapUrls.push({ loc: cityUrl, sources: ['src/index.html', 'src/js/faq-data.js'] });
+                sitemapUrls.push({ loc: cityUrl, sources: ['src/index.html', 'src/js/faq-data.js'], dates: [isoDay(FORECAST_SNAPSHOT && FORECAST_SNAPSHOT.generatedAt)] });
             });
         }
     });
@@ -898,15 +933,17 @@ BLOG_POSTS.forEach(post => {
         const outPath = path.join(OUT_DIR, LANG_PREFIXES[lang], 'blog', `${post.slug}.html`);
         fs.mkdirSync(path.dirname(outPath), { recursive: true });
         fs.writeFileSync(outPath, renderArticle(template, post, lang));
-        if (!TEMPLATED_POST_RE.test(post.slug)) sitemapUrls.push({ loc: langUrl(lang, `/blog/${post.slug}`), sources: [`src/blog/${post.slug}.html`] });
+        if (!TEMPLATED_POST_RE.test(post.slug)) sitemapUrls.push({ loc: langUrl(lang, `/blog/${post.slug}`), sources: [`src/blog/${post.slug}.html`], dates: [(template.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})/) || [])[1]] });
     });
 });
 
-// Last commit date of every file under src/, for <lastmod>. Returns null on a
-// shallow clone, where every file would wrongly share the latest commit's date.
+// Last commit date of every file under src/, for <lastmod>. Cloudflare Pages builds
+// from a shallow clone, where every file would wrongly share the latest commit's
+// date, so fetch the full history first; returns null if that isn't possible.
 function gitLastModifiedDates() {
     try {
-        const git = args => require('child_process').execFileSync('git', args, { cwd: __dirname, maxBuffer: 64 * 1024 * 1024 }).toString();
+        const git = args => require('child_process').execFileSync('git', args, { cwd: __dirname, maxBuffer: 64 * 1024 * 1024, timeout: 120000, stdio: ['ignore', 'pipe', 'ignore'] }).toString();
+        if (git(['rev-parse', '--is-shallow-repository']).trim() === 'true') git(['fetch', '--unshallow', '--quiet']);
         if (git(['rev-parse', '--is-shallow-repository']).trim() === 'true') return null;
         const dates = new Map();
         let current = null;
@@ -925,8 +962,8 @@ if (!lastModified) console.warn('Sitemap: no full git history available, <lastmo
 // Generate Sitemap
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls.map(({ loc, sources }) => {
-    const lastmod = lastModified && sources.map(source => lastModified.get(source)).filter(Boolean).sort().pop();
+${sitemapUrls.map(({ loc, sources, dates = [] }) => {
+    const lastmod = [...(lastModified ? sources.map(source => lastModified.get(source)) : []), ...dates].filter(Boolean).sort().pop();
     return `  <url>\n    <loc>https://pogoda.kg${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}\n  </url>`;
 }).join('\n')}
 </urlset>`;

@@ -116,7 +116,9 @@ export async function loadCityWeather(city) {
   renderRecentSearches();
   } catch {
     showWeatherError(document.getElementById('heroWeatherCard'), () => loadCityWeather(city));
-    for (const id of ['hourlyCardsContainer', 'weeklyForecastContainer', 'sunArcContainer']) document.getElementById(id)?.replaceChildren();
+    for (const id of ['hourlyCardsContainer', 'sunArcContainer']) document.getElementById(id)?.replaceChildren();
+    // Keep the build-time 7-day snapshot (still labelled with its issue time) if live data never loaded.
+    if (!document.getElementById('weeklySnapshotNote')) document.getElementById('weeklyForecastContainer')?.replaceChildren();
     for (const id of ['detailWindValue', 'detailHumidityValue', 'detailVisibilityValue']) {
       const el = document.getElementById(id); if (el) el.textContent = '—';
     }
@@ -455,6 +457,8 @@ function renderWeeklyForecast(weeklyList) {
   const container = document.getElementById('weeklyForecastContainer');
   if (!container) return;
 
+  // The build-time snapshot's "forecast issued at" note no longer applies to live data.
+  document.getElementById('weeklySnapshotNote')?.remove();
   container.innerHTML = '';
   weeklyList.forEach((item, index) => {
     const pill = document.createElement('div');
