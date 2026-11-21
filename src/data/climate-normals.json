@@ -1,0 +1,1520 @@
+{
+ "source": "Open-Meteo historical weather API (ERA5 / ERA5-Land reanalysis)",
+ "period": "2016–2025",
+ "generatedAt": "2026-11-21T18:07:48.364Z",
+ "cities": {
+  "bishkek": {
+   "gridElevation": 749,
+   "months": [
+    {
+     "max": 1.2,
+     "min": -8.1,
+     "precip": 45,
+     "snowCm": 26,
+     "wetDays": 8
+    },
+    {
+     "max": 4.8,
+     "min": -6.4,
+     "precip": 54,
+     "snowCm": 26,
+     "wetDays": 9
+    },
+    {
+     "max": 12.6,
+     "min": 0.8,
+     "precip": 110,
+     "snowCm": 16,
+     "wetDays": 13
+    },
+    {
+     "max": 18.4,
+     "min": 6.7,
+     "precip": 128,
+     "snowCm": 4,
+     "wetDays": 13
+    },
+    {
+     "max": 23.4,
+     "min": 11,
+     "precip": 102,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 28.6,
+     "min": 15.6,
+     "precip": 41,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 32.1,
+     "min": 18.8,
+     "precip": 23,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 30.1,
+     "min": 17.1,
+     "precip": 28,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 24.6,
+     "min": 12,
+     "precip": 42,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 16.2,
+     "min": 4.9,
+     "precip": 82,
+     "snowCm": 8,
+     "wetDays": 9
+    },
+    {
+     "max": 8.3,
+     "min": -1.5,
+     "precip": 75,
+     "snowCm": 21,
+     "wetDays": 8
+    },
+    {
+     "max": 2.8,
+     "min": -6.4,
+     "precip": 53,
+     "snowCm": 26,
+     "wetDays": 9
+    }
+   ]
+  },
+  "osh": {
+   "gridElevation": 1012,
+   "months": [
+    {
+     "max": 4.9,
+     "min": -3.8,
+     "precip": 29,
+     "snowCm": 8,
+     "wetDays": 8
+    },
+    {
+     "max": 7.4,
+     "min": -2.3,
+     "precip": 46,
+     "snowCm": 7,
+     "wetDays": 8
+    },
+    {
+     "max": 13.3,
+     "min": 3.4,
+     "precip": 84,
+     "snowCm": 2,
+     "wetDays": 12
+    },
+    {
+     "max": 18.5,
+     "min": 8.6,
+     "precip": 101,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 23.5,
+     "min": 13.4,
+     "precip": 99,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 28.6,
+     "min": 17.9,
+     "precip": 49,
+     "snowCm": 0,
+     "wetDays": 10
+    },
+    {
+     "max": 32.3,
+     "min": 21.2,
+     "precip": 23,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 30.6,
+     "min": 19.4,
+     "precip": 14,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 26.4,
+     "min": 14.8,
+     "precip": 17,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 17.7,
+     "min": 7.9,
+     "precip": 55,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 10.8,
+     "min": 1.6,
+     "precip": 46,
+     "snowCm": 2,
+     "wetDays": 7
+    },
+    {
+     "max": 5.9,
+     "min": -2.3,
+     "precip": 45,
+     "snowCm": 8,
+     "wetDays": 8
+    }
+   ]
+  },
+  "jalal-abad": {
+   "gridElevation": 771,
+   "months": [
+    {
+     "max": 5.6,
+     "min": -5.3,
+     "precip": 43,
+     "snowCm": 17,
+     "wetDays": 8
+    },
+    {
+     "max": 8.7,
+     "min": -3.4,
+     "precip": 60,
+     "snowCm": 19,
+     "wetDays": 9
+    },
+    {
+     "max": 15,
+     "min": 2.8,
+     "precip": 117,
+     "snowCm": 4,
+     "wetDays": 14
+    },
+    {
+     "max": 20.2,
+     "min": 7.8,
+     "precip": 110,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 24.9,
+     "min": 12.1,
+     "precip": 114,
+     "snowCm": 0,
+     "wetDays": 13
+    },
+    {
+     "max": 29.4,
+     "min": 15.8,
+     "precip": 44,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 32.9,
+     "min": 18.9,
+     "precip": 24,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 31.4,
+     "min": 17.6,
+     "precip": 15,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 27,
+     "min": 13.3,
+     "precip": 32,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 18.5,
+     "min": 6.9,
+     "precip": 81,
+     "snowCm": 1,
+     "wetDays": 8
+    },
+    {
+     "max": 11.8,
+     "min": 0.5,
+     "precip": 64,
+     "snowCm": 5,
+     "wetDays": 8
+    },
+    {
+     "max": 6,
+     "min": -4.1,
+     "precip": 72,
+     "snowCm": 23,
+     "wetDays": 9
+    }
+   ]
+  },
+  "karakol": {
+   "gridElevation": 1753,
+   "months": [
+    {
+     "max": -2.2,
+     "min": -9.5,
+     "precip": 26,
+     "snowCm": 18,
+     "wetDays": 6
+    },
+    {
+     "max": -0.6,
+     "min": -8.2,
+     "precip": 31,
+     "snowCm": 19,
+     "wetDays": 7
+    },
+    {
+     "max": 5.5,
+     "min": -3.2,
+     "precip": 47,
+     "snowCm": 13,
+     "wetDays": 9
+    },
+    {
+     "max": 12.4,
+     "min": 1.3,
+     "precip": 84,
+     "snowCm": 1,
+     "wetDays": 13
+    },
+    {
+     "max": 16.6,
+     "min": 5.9,
+     "precip": 115,
+     "snowCm": 0,
+     "wetDays": 16
+    },
+    {
+     "max": 19.6,
+     "min": 9.5,
+     "precip": 97,
+     "snowCm": 0,
+     "wetDays": 16
+    },
+    {
+     "max": 22.4,
+     "min": 12.4,
+     "precip": 105,
+     "snowCm": 0,
+     "wetDays": 15
+    },
+    {
+     "max": 21.5,
+     "min": 11.3,
+     "precip": 80,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 18.5,
+     "min": 7.8,
+     "precip": 80,
+     "snowCm": 1,
+     "wetDays": 12
+    },
+    {
+     "max": 11,
+     "min": 0.6,
+     "precip": 68,
+     "snowCm": 5,
+     "wetDays": 10
+    },
+    {
+     "max": 3.5,
+     "min": -5.1,
+     "precip": 46,
+     "snowCm": 21,
+     "wetDays": 7
+    },
+    {
+     "max": -0.9,
+     "min": -8.5,
+     "precip": 31,
+     "snowCm": 21,
+     "wetDays": 6
+    }
+   ]
+  },
+  "tokmok": {
+   "gridElevation": 824,
+   "months": [
+    {
+     "max": 3.4,
+     "min": -7.3,
+     "precip": 31,
+     "snowCm": 20,
+     "wetDays": 7
+    },
+    {
+     "max": 6.3,
+     "min": -5.7,
+     "precip": 45,
+     "snowCm": 23,
+     "wetDays": 8
+    },
+    {
+     "max": 13.1,
+     "min": 0.6,
+     "precip": 112,
+     "snowCm": 24,
+     "wetDays": 15
+    },
+    {
+     "max": 18.8,
+     "min": 6.2,
+     "precip": 152,
+     "snowCm": 8,
+     "wetDays": 14
+    },
+    {
+     "max": 23.6,
+     "min": 10.6,
+     "precip": 145,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 28.4,
+     "min": 15.3,
+     "precip": 78,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 31.9,
+     "min": 18.2,
+     "precip": 53,
+     "snowCm": 0,
+     "wetDays": 6
+    },
+    {
+     "max": 29.8,
+     "min": 16.3,
+     "precip": 46,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 24.7,
+     "min": 11.3,
+     "precip": 52,
+     "snowCm": 1,
+     "wetDays": 8
+    },
+    {
+     "max": 16.7,
+     "min": 4.2,
+     "precip": 71,
+     "snowCm": 9,
+     "wetDays": 9
+    },
+    {
+     "max": 9.1,
+     "min": -2.1,
+     "precip": 71,
+     "snowCm": 25,
+     "wetDays": 8
+    },
+    {
+     "max": 4.1,
+     "min": -5.7,
+     "precip": 45,
+     "snowCm": 25,
+     "wetDays": 8
+    }
+   ]
+  },
+  "uzgen": {
+   "gridElevation": 1028,
+   "months": [
+    {
+     "max": 4.6,
+     "min": -4.3,
+     "precip": 37,
+     "snowCm": 18,
+     "wetDays": 8
+    },
+    {
+     "max": 7.1,
+     "min": -3.2,
+     "precip": 53,
+     "snowCm": 22,
+     "wetDays": 8
+    },
+    {
+     "max": 13.4,
+     "min": 2.5,
+     "precip": 108,
+     "snowCm": 9,
+     "wetDays": 13
+    },
+    {
+     "max": 18.4,
+     "min": 7.3,
+     "precip": 121,
+     "snowCm": 1,
+     "wetDays": 14
+    },
+    {
+     "max": 23,
+     "min": 11.6,
+     "precip": 110,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 27.2,
+     "min": 15.1,
+     "precip": 54,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 30.5,
+     "min": 18.2,
+     "precip": 28,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 28.8,
+     "min": 16.8,
+     "precip": 16,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 24.9,
+     "min": 13,
+     "precip": 25,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 17,
+     "min": 6.6,
+     "precip": 79,
+     "snowCm": 3,
+     "wetDays": 9
+    },
+    {
+     "max": 10.8,
+     "min": 1,
+     "precip": 62,
+     "snowCm": 8,
+     "wetDays": 8
+    },
+    {
+     "max": 5.7,
+     "min": -2.7,
+     "precip": 57,
+     "snowCm": 23,
+     "wetDays": 8
+    }
+   ]
+  },
+  "kara-balta": {
+   "gridElevation": 787,
+   "months": [
+    {
+     "max": 1.9,
+     "min": -7.9,
+     "precip": 35,
+     "snowCm": 20,
+     "wetDays": 7
+    },
+    {
+     "max": 5.4,
+     "min": -6.3,
+     "precip": 42,
+     "snowCm": 21,
+     "wetDays": 8
+    },
+    {
+     "max": 12.5,
+     "min": 0.5,
+     "precip": 86,
+     "snowCm": 14,
+     "wetDays": 12
+    },
+    {
+     "max": 18.3,
+     "min": 5.9,
+     "precip": 109,
+     "snowCm": 5,
+     "wetDays": 12
+    },
+    {
+     "max": 23.5,
+     "min": 10.3,
+     "precip": 95,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 28.6,
+     "min": 15.4,
+     "precip": 47,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 31.8,
+     "min": 18.1,
+     "precip": 42,
+     "snowCm": 0,
+     "wetDays": 6
+    },
+    {
+     "max": 29.6,
+     "min": 16.2,
+     "precip": 27,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 24.1,
+     "min": 11.3,
+     "precip": 36,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 15.9,
+     "min": 4.2,
+     "precip": 57,
+     "snowCm": 7,
+     "wetDays": 8
+    },
+    {
+     "max": 8.2,
+     "min": -2.4,
+     "precip": 59,
+     "snowCm": 19,
+     "wetDays": 8
+    },
+    {
+     "max": 2.9,
+     "min": -6.4,
+     "precip": 42,
+     "snowCm": 21,
+     "wetDays": 9
+    }
+   ]
+  },
+  "balykchy": {
+   "gridElevation": 1647,
+   "months": [
+    {
+     "max": 0.5,
+     "min": -9.6,
+     "precip": 3,
+     "snowCm": 2,
+     "wetDays": 1
+    },
+    {
+     "max": 2.2,
+     "min": -7.2,
+     "precip": 8,
+     "snowCm": 5,
+     "wetDays": 2
+    },
+    {
+     "max": 7.7,
+     "min": -2,
+     "precip": 15,
+     "snowCm": 3,
+     "wetDays": 5
+    },
+    {
+     "max": 13.2,
+     "min": 2.8,
+     "precip": 33,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 18,
+     "min": 7.5,
+     "precip": 51,
+     "snowCm": 0,
+     "wetDays": 11
+    },
+    {
+     "max": 21.3,
+     "min": 11.2,
+     "precip": 58,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 24.3,
+     "min": 14.1,
+     "precip": 70,
+     "snowCm": 0,
+     "wetDays": 14
+    },
+    {
+     "max": 22.9,
+     "min": 12.5,
+     "precip": 51,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 19.8,
+     "min": 8.6,
+     "precip": 34,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 12.7,
+     "min": 2,
+     "precip": 15,
+     "snowCm": 1,
+     "wetDays": 4
+    },
+    {
+     "max": 6,
+     "min": -3.2,
+     "precip": 9,
+     "snowCm": 3,
+     "wetDays": 4
+    },
+    {
+     "max": 1.4,
+     "min": -7.4,
+     "precip": 6,
+     "snowCm": 3,
+     "wetDays": 2
+    }
+   ]
+  },
+  "naryn": {
+   "gridElevation": 2048,
+   "months": [
+    {
+     "max": -2.2,
+     "min": -13.3,
+     "precip": 8,
+     "snowCm": 6,
+     "wetDays": 3
+    },
+    {
+     "max": 0.1,
+     "min": -10.7,
+     "precip": 19,
+     "snowCm": 14,
+     "wetDays": 5
+    },
+    {
+     "max": 7,
+     "min": -4.7,
+     "precip": 30,
+     "snowCm": 15,
+     "wetDays": 9
+    },
+    {
+     "max": 14,
+     "min": 0.4,
+     "precip": 63,
+     "snowCm": 8,
+     "wetDays": 12
+    },
+    {
+     "max": 18.3,
+     "min": 4.9,
+     "precip": 87,
+     "snowCm": 2,
+     "wetDays": 13
+    },
+    {
+     "max": 21.1,
+     "min": 8.5,
+     "precip": 72,
+     "snowCm": 0,
+     "wetDays": 15
+    },
+    {
+     "max": 25.3,
+     "min": 11.8,
+     "precip": 43,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 24.4,
+     "min": 10.7,
+     "precip": 33,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 20.5,
+     "min": 6.5,
+     "precip": 41,
+     "snowCm": 2,
+     "wetDays": 7
+    },
+    {
+     "max": 11.9,
+     "min": -0.5,
+     "precip": 33,
+     "snowCm": 7,
+     "wetDays": 7
+    },
+    {
+     "max": 4.3,
+     "min": -6.8,
+     "precip": 18,
+     "snowCm": 11,
+     "wetDays": 5
+    },
+    {
+     "max": -0.9,
+     "min": -11.3,
+     "precip": 14,
+     "snowCm": 10,
+     "wetDays": 4
+    }
+   ]
+  },
+  "talas": {
+   "gridElevation": 1239,
+   "months": [
+    {
+     "max": 3.8,
+     "min": -6,
+     "precip": 20,
+     "snowCm": 14,
+     "wetDays": 5
+    },
+    {
+     "max": 5.5,
+     "min": -5.5,
+     "precip": 30,
+     "snowCm": 18,
+     "wetDays": 6
+    },
+    {
+     "max": 11,
+     "min": -0.8,
+     "precip": 73,
+     "snowCm": 21,
+     "wetDays": 12
+    },
+    {
+     "max": 17.1,
+     "min": 4.3,
+     "precip": 99,
+     "snowCm": 6,
+     "wetDays": 13
+    },
+    {
+     "max": 21.8,
+     "min": 8.7,
+     "precip": 88,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 26.3,
+     "min": 12.7,
+     "precip": 44,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 29.5,
+     "min": 15.6,
+     "precip": 30,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 27,
+     "min": 13.7,
+     "precip": 34,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 22.2,
+     "min": 9.3,
+     "precip": 33,
+     "snowCm": 1,
+     "wetDays": 6
+    },
+    {
+     "max": 14.8,
+     "min": 3,
+     "precip": 59,
+     "snowCm": 8,
+     "wetDays": 8
+    },
+    {
+     "max": 8.8,
+     "min": -1.8,
+     "precip": 43,
+     "snowCm": 16,
+     "wetDays": 7
+    },
+    {
+     "max": 4.1,
+     "min": -5,
+     "precip": 32,
+     "snowCm": 18,
+     "wetDays": 7
+    }
+   ]
+  },
+  "batken": {
+   "gridElevation": 1035,
+   "months": [
+    {
+     "max": 5.2,
+     "min": -1.8,
+     "precip": 15,
+     "snowCm": 6,
+     "wetDays": 4
+    },
+    {
+     "max": 7.8,
+     "min": -0.3,
+     "precip": 20,
+     "snowCm": 5,
+     "wetDays": 5
+    },
+    {
+     "max": 13.6,
+     "min": 4.3,
+     "precip": 43,
+     "snowCm": 2,
+     "wetDays": 9
+    },
+    {
+     "max": 19.8,
+     "min": 9.1,
+     "precip": 45,
+     "snowCm": 1,
+     "wetDays": 10
+    },
+    {
+     "max": 25.8,
+     "min": 14,
+     "precip": 53,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 30.8,
+     "min": 18.2,
+     "precip": 22,
+     "snowCm": 0,
+     "wetDays": 6
+    },
+    {
+     "max": 33.8,
+     "min": 21.1,
+     "precip": 18,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 31.5,
+     "min": 19.3,
+     "precip": 8,
+     "snowCm": 0,
+     "wetDays": 2
+    },
+    {
+     "max": 26.7,
+     "min": 15.2,
+     "precip": 9,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 17.6,
+     "min": 8.4,
+     "precip": 29,
+     "snowCm": 2,
+     "wetDays": 6
+    },
+    {
+     "max": 10.7,
+     "min": 2.9,
+     "precip": 24,
+     "snowCm": 3,
+     "wetDays": 5
+    },
+    {
+     "max": 5.9,
+     "min": -0.8,
+     "precip": 24,
+     "snowCm": 7,
+     "wetDays": 5
+    }
+   ]
+  },
+  "cholpon-ata": {
+   "gridElevation": 1640,
+   "months": [
+    {
+     "max": -0.3,
+     "min": -3.9,
+     "precip": 45,
+     "snowCm": 27,
+     "wetDays": 9
+    },
+    {
+     "max": 0.5,
+     "min": -3.1,
+     "precip": 43,
+     "snowCm": 25,
+     "wetDays": 9
+    },
+    {
+     "max": 4.9,
+     "min": 0.9,
+     "precip": 58,
+     "snowCm": 12,
+     "wetDays": 11
+    },
+    {
+     "max": 10.5,
+     "min": 4.9,
+     "precip": 80,
+     "snowCm": 2,
+     "wetDays": 13
+    },
+    {
+     "max": 15,
+     "min": 9.1,
+     "precip": 117,
+     "snowCm": 0,
+     "wetDays": 16
+    },
+    {
+     "max": 18.2,
+     "min": 12.4,
+     "precip": 151,
+     "snowCm": 0,
+     "wetDays": 20
+    },
+    {
+     "max": 21,
+     "min": 15.1,
+     "precip": 157,
+     "snowCm": 0,
+     "wetDays": 19
+    },
+    {
+     "max": 19.9,
+     "min": 14,
+     "precip": 176,
+     "snowCm": 0,
+     "wetDays": 22
+    },
+    {
+     "max": 17.2,
+     "min": 10.9,
+     "precip": 158,
+     "snowCm": 0,
+     "wetDays": 17
+    },
+    {
+     "max": 11,
+     "min": 5.1,
+     "precip": 140,
+     "snowCm": 3,
+     "wetDays": 17
+    },
+    {
+     "max": 5.1,
+     "min": 0.2,
+     "precip": 66,
+     "snowCm": 9,
+     "wetDays": 9
+    },
+    {
+     "max": 1.1,
+     "min": -2.9,
+     "precip": 44,
+     "snowCm": 14,
+     "wetDays": 9
+    }
+   ]
+  },
+  "kant": {
+   "gridElevation": 743,
+   "months": [
+    {
+     "max": 2.5,
+     "min": -8,
+     "precip": 31,
+     "snowCm": 18,
+     "wetDays": 6
+    },
+    {
+     "max": 5.8,
+     "min": -6.2,
+     "precip": 42,
+     "snowCm": 22,
+     "wetDays": 7
+    },
+    {
+     "max": 13.2,
+     "min": 0.9,
+     "precip": 86,
+     "snowCm": 15,
+     "wetDays": 12
+    },
+    {
+     "max": 19,
+     "min": 6.7,
+     "precip": 107,
+     "snowCm": 4,
+     "wetDays": 12
+    },
+    {
+     "max": 24.3,
+     "min": 11.3,
+     "precip": 87,
+     "snowCm": 0,
+     "wetDays": 11
+    },
+    {
+     "max": 29.5,
+     "min": 16.4,
+     "precip": 41,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 32.9,
+     "min": 19.3,
+     "precip": 19,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 30.6,
+     "min": 17.2,
+     "precip": 20,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 25.1,
+     "min": 11.8,
+     "precip": 29,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 16.7,
+     "min": 4.5,
+     "precip": 51,
+     "snowCm": 6,
+     "wetDays": 7
+    },
+    {
+     "max": 8.8,
+     "min": -2,
+     "precip": 55,
+     "snowCm": 18,
+     "wetDays": 7
+    },
+    {
+     "max": 3.5,
+     "min": -6.6,
+     "precip": 39,
+     "snowCm": 20,
+     "wetDays": 7
+    }
+   ]
+  },
+  "kemin": {
+   "gridElevation": 1131,
+   "months": [
+    {
+     "max": 4.4,
+     "min": -7.1,
+     "precip": 19,
+     "snowCm": 11,
+     "wetDays": 5
+    },
+    {
+     "max": 6.5,
+     "min": -5.5,
+     "precip": 29,
+     "snowCm": 12,
+     "wetDays": 7
+    },
+    {
+     "max": 12.2,
+     "min": -0.6,
+     "precip": 82,
+     "snowCm": 10,
+     "wetDays": 13
+    },
+    {
+     "max": 17.4,
+     "min": 4.3,
+     "precip": 118,
+     "snowCm": 2,
+     "wetDays": 14
+    },
+    {
+     "max": 21.9,
+     "min": 9,
+     "precip": 117,
+     "snowCm": 0,
+     "wetDays": 15
+    },
+    {
+     "max": 26.2,
+     "min": 12.9,
+     "precip": 72,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 29.7,
+     "min": 15.7,
+     "precip": 52,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 28,
+     "min": 14,
+     "precip": 49,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 23.2,
+     "min": 9.8,
+     "precip": 50,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 15.9,
+     "min": 2.9,
+     "precip": 51,
+     "snowCm": 2,
+     "wetDays": 9
+    },
+    {
+     "max": 8.7,
+     "min": -3.1,
+     "precip": 51,
+     "snowCm": 12,
+     "wetDays": 8
+    },
+    {
+     "max": 4.4,
+     "min": -6.1,
+     "precip": 27,
+     "snowCm": 12,
+     "wetDays": 6
+    }
+   ]
+  },
+  "kyzyl-kiya": {
+   "gridElevation": 992,
+   "months": [
+    {
+     "max": 5.1,
+     "min": -2.1,
+     "precip": 22,
+     "snowCm": 9,
+     "wetDays": 6
+    },
+    {
+     "max": 7.8,
+     "min": -0.7,
+     "precip": 33,
+     "snowCm": 10,
+     "wetDays": 7
+    },
+    {
+     "max": 13.7,
+     "min": 4.1,
+     "precip": 67,
+     "snowCm": 5,
+     "wetDays": 11
+    },
+    {
+     "max": 19,
+     "min": 8.6,
+     "precip": 84,
+     "snowCm": 1,
+     "wetDays": 12
+    },
+    {
+     "max": 24.5,
+     "min": 12.9,
+     "precip": 83,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 29.7,
+     "min": 16.6,
+     "precip": 39,
+     "snowCm": 0,
+     "wetDays": 9
+    },
+    {
+     "max": 33.3,
+     "min": 20.1,
+     "precip": 20,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 31.3,
+     "min": 18.8,
+     "precip": 8,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 26.6,
+     "min": 14.8,
+     "precip": 16,
+     "snowCm": 0,
+     "wetDays": 3
+    },
+    {
+     "max": 17.6,
+     "min": 8.3,
+     "precip": 50,
+     "snowCm": 2,
+     "wetDays": 7
+    },
+    {
+     "max": 10.7,
+     "min": 2.4,
+     "precip": 36,
+     "snowCm": 5,
+     "wetDays": 7
+    },
+    {
+     "max": 5.8,
+     "min": -0.9,
+     "precip": 36,
+     "snowCm": 12,
+     "wetDays": 8
+    }
+   ]
+  },
+  "toktogul": {
+   "gridElevation": 987,
+   "months": [
+    {
+     "max": 3.8,
+     "min": -1.9,
+     "precip": 20,
+     "snowCm": 11,
+     "wetDays": 5
+    },
+    {
+     "max": 5.9,
+     "min": -0.7,
+     "precip": 30,
+     "snowCm": 9,
+     "wetDays": 7
+    },
+    {
+     "max": 11.6,
+     "min": 3.4,
+     "precip": 66,
+     "snowCm": 5,
+     "wetDays": 11
+    },
+    {
+     "max": 17.6,
+     "min": 8,
+     "precip": 88,
+     "snowCm": 0,
+     "wetDays": 11
+    },
+    {
+     "max": 21.8,
+     "min": 12.1,
+     "precip": 89,
+     "snowCm": 0,
+     "wetDays": 12
+    },
+    {
+     "max": 25.8,
+     "min": 16.3,
+     "precip": 55,
+     "snowCm": 0,
+     "wetDays": 8
+    },
+    {
+     "max": 29.1,
+     "min": 19.4,
+     "precip": 51,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 28,
+     "min": 18.4,
+     "precip": 27,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 24.2,
+     "min": 14.9,
+     "precip": 44,
+     "snowCm": 0,
+     "wetDays": 5
+    },
+    {
+     "max": 16.1,
+     "min": 8.6,
+     "precip": 70,
+     "snowCm": 1,
+     "wetDays": 9
+    },
+    {
+     "max": 9.3,
+     "min": 2.9,
+     "precip": 36,
+     "snowCm": 4,
+     "wetDays": 7
+    },
+    {
+     "max": 4.9,
+     "min": -0.3,
+     "precip": 34,
+     "snowCm": 12,
+     "wetDays": 7
+    }
+   ]
+  },
+  "razzakov": {
+   "gridElevation": 1297,
+   "months": [
+    {
+     "max": 4.3,
+     "min": -3.9,
+     "precip": 33,
+     "snowCm": 13,
+     "wetDays": 7
+    },
+    {
+     "max": 5.8,
+     "min": -3.5,
+     "precip": 43,
+     "snowCm": 18,
+     "wetDays": 8
+    },
+    {
+     "max": 11.2,
+     "min": 1.5,
+     "precip": 103,
+     "snowCm": 9,
+     "wetDays": 13
+    },
+    {
+     "max": 16.3,
+     "min": 6.3,
+     "precip": 106,
+     "snowCm": 2,
+     "wetDays": 15
+    },
+    {
+     "max": 21.3,
+     "min": 11,
+     "precip": 99,
+     "snowCm": 0,
+     "wetDays": 13
+    },
+    {
+     "max": 26.3,
+     "min": 15.2,
+     "precip": 43,
+     "snowCm": 0,
+     "wetDays": 7
+    },
+    {
+     "max": 29.4,
+     "min": 18.4,
+     "precip": 28,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 27.2,
+     "min": 16.4,
+     "precip": 15,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 22.8,
+     "min": 12,
+     "precip": 24,
+     "snowCm": 0,
+     "wetDays": 4
+    },
+    {
+     "max": 15.4,
+     "min": 5.8,
+     "precip": 58,
+     "snowCm": 2,
+     "wetDays": 8
+    },
+    {
+     "max": 9.7,
+     "min": 0.2,
+     "precip": 55,
+     "snowCm": 9,
+     "wetDays": 7
+    },
+    {
+     "max": 5.7,
+     "min": -2.5,
+     "precip": 39,
+     "snowCm": 13,
+     "wetDays": 8
+    }
+   ]
+  }
+ }
+}

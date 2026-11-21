@@ -107,7 +107,7 @@ export function buildDailyArticleHtml({ slug, dateISO, image, heroAlt, en }) {
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="stylesheet" href="/css/style.css?v=19">
+  <link rel="stylesheet" href="/css/style.css?v=20">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${esc(en.seoTitle)}">
   <meta property="og:description" content="${esc(en.seoDesc)}">

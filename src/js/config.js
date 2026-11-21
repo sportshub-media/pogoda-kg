@@ -143,21 +143,21 @@ export const KYRGYZSTAN_CITIES = [
 export const DEFAULT_CITY = KYRGYZSTAN_CITIES[0]; // Bishkek
 
 export const WMO_WEATHER_CODES = {
-  0: { labelKey: "cond_sunny", icon: "sun", svg: `<img src="/assets/animated/day.svg" class="weather-anim-icon" alt="Sunny">` },
-  1: { labelKey: "cond_mainly_clear", icon: "sun-cloud", svg: `<img src="/assets/animated/cloudy-day-1.svg" class="weather-anim-icon" alt="Mainly Clear">` },
-  2: { labelKey: "cond_partly_cloudy", icon: "cloud-sun", svg: `<img src="/assets/animated/cloudy-day-3.svg" class="weather-anim-icon" alt="Partly Cloudy">` },
-  3: { labelKey: "cond_overcast", icon: "cloud", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" alt="Overcast">` },
-  45: { labelKey: "cond_foggy", icon: "fog", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" alt="Foggy">` },
-  48: { labelKey: "cond_foggy", icon: "fog", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" alt="Foggy">` },
-  51: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-4.svg" class="weather-anim-icon" alt="Light Rain">` },
-  61: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-5.svg" class="weather-anim-icon" alt="Rain">` },
-  63: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-6.svg" class="weather-anim-icon" alt="Heavy Rain">` },
-  65: { labelKey: "cond_rain", icon: "heavy-rain", svg: `<img src="/assets/animated/rainy-7.svg" class="weather-anim-icon" alt="Very Heavy Rain">` },
-  71: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-4.svg" class="weather-anim-icon" alt="Light Snow">` },
-  73: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-5.svg" class="weather-anim-icon" alt="Snow">` },
-  75: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-6.svg" class="weather-anim-icon" alt="Heavy Snow">` },
-  80: { labelKey: "cond_rain", icon: "rain-showers", svg: `<img src="/assets/animated/rainy-6.svg" class="weather-anim-icon" alt="Rain Showers">` },
-  95: { labelKey: "cond_thunder", icon: "thunder", svg: `<img src="/assets/animated/thunder.svg" class="weather-anim-icon" alt="Thunder">` }
+  0: { labelKey: "cond_sunny", icon: "sun", svg: `<img src="/assets/animated/day.svg" class="weather-anim-icon" width="64" height="64" alt="Sunny">` },
+  1: { labelKey: "cond_mainly_clear", icon: "sun-cloud", svg: `<img src="/assets/animated/cloudy-day-1.svg" class="weather-anim-icon" width="64" height="64" alt="Mainly Clear">` },
+  2: { labelKey: "cond_partly_cloudy", icon: "cloud-sun", svg: `<img src="/assets/animated/cloudy-day-3.svg" class="weather-anim-icon" width="64" height="64" alt="Partly Cloudy">` },
+  3: { labelKey: "cond_overcast", icon: "cloud", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" width="64" height="64" alt="Overcast">` },
+  45: { labelKey: "cond_foggy", icon: "fog", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" width="64" height="64" alt="Foggy">` },
+  48: { labelKey: "cond_foggy", icon: "fog", svg: `<img src="/assets/animated/cloudy.svg" class="weather-anim-icon" width="64" height="64" alt="Foggy">` },
+  51: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-4.svg" class="weather-anim-icon" width="64" height="64" alt="Light Rain">` },
+  61: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-5.svg" class="weather-anim-icon" width="64" height="64" alt="Rain">` },
+  63: { labelKey: "cond_rain", icon: "rain", svg: `<img src="/assets/animated/rainy-6.svg" class="weather-anim-icon" width="64" height="64" alt="Heavy Rain">` },
+  65: { labelKey: "cond_rain", icon: "heavy-rain", svg: `<img src="/assets/animated/rainy-7.svg" class="weather-anim-icon" width="64" height="64" alt="Very Heavy Rain">` },
+  71: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-4.svg" class="weather-anim-icon" width="64" height="64" alt="Light Snow">` },
+  73: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-5.svg" class="weather-anim-icon" width="64" height="64" alt="Snow">` },
+  75: { labelKey: "cond_snow", icon: "snow", svg: `<img src="/assets/animated/snowy-6.svg" class="weather-anim-icon" width="64" height="64" alt="Heavy Snow">` },
+  80: { labelKey: "cond_rain", icon: "rain-showers", svg: `<img src="/assets/animated/rainy-6.svg" class="weather-anim-icon" width="64" height="64" alt="Rain Showers">` },
+  95: { labelKey: "cond_thunder", icon: "thunder", svg: `<img src="/assets/animated/thunder.svg" class="weather-anim-icon" width="64" height="64" alt="Thunder">` }
 };
 
 // Complete the provider's precipitation codes; unknown values remain unknown.

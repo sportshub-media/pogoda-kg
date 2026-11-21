@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { KYRGYZSTAN_CITIES } from '../src/js/config.js';
+import { KYRGYZSTAN_PASSES } from '../src/js/passes-data.js';
 
 const cities = [
   ['bishkek', 'Bishkek', 'Бишкек', 42.8746, 74.5698],
@@ -57,6 +58,29 @@ try {
       }))];
     }))
   };
+  // Mountain passes: 3 days, with snowfall and wind, for /passes.
+  try {
+    const passParams = new URLSearchParams({
+      latitude: KYRGYZSTAN_PASSES.map(pass => pass.lat).join(','), longitude: KYRGYZSTAN_PASSES.map(pass => pass.lon).join(','),
+      daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,snowfall_sum,wind_speed_10m_max', forecast_days: '3', timezone: 'Asia/Bishkek'
+    });
+    const passResponse = await fetch(`https://api.open-meteo.com/v1/forecast?${passParams}`);
+    if (!passResponse.ok) throw new Error(`Open-Meteo returned ${passResponse.status}`);
+    const passJson = await passResponse.json();
+    const passRecords = Array.isArray(passJson) ? passJson : [passJson];
+    if (passRecords.length !== KYRGYZSTAN_PASSES.length) throw new Error('Incomplete pass data');
+    snapshot.passes = Object.fromEntries(KYRGYZSTAN_PASSES.map((pass, index) => {
+      const daily = passRecords[index].daily;
+      return [pass.id, { gridElevation: Math.round(passRecords[index].elevation), days: daily.time.map((date, day) => ({
+        date, code: daily.weather_code[day],
+        max: Math.round(daily.temperature_2m_max[day]), min: Math.round(daily.temperature_2m_min[day]),
+        precip: daily.precipitation_probability_max[day], snowCm: Math.round(daily.snowfall_sum[day] * 10) / 10,
+        wind: Math.round(daily.wind_speed_10m_max[day])
+      })) }];
+    }));
+  } catch (error) {
+    console.warn(`Pass snapshot not updated: ${error.message}`);
+  }
   await mkdir(new URL('../src/data/', import.meta.url), { recursive: true });
   await writeFile(new URL('../src/data/forecast-snapshot.json', import.meta.url), `${JSON.stringify(snapshot, null, 1)}\n`);
 } catch (error) {

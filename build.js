@@ -107,6 +107,11 @@ const PAGE_META = {
         RU: { title: 'Условия использования', description: 'Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта.' },
         KG: { title: 'Колдонуу шарттары', description: 'Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат.' }
     },
+    'about.html': {
+        EN: { title: 'About Pogoda.kg: Data Sources and Methods', description: 'How Pogoda.kg works: forecast data from Open-Meteo, ERA5 climate averages, the automated daily briefing, the limits of mountain forecasts and how to report a mistake.' },
+        RU: { title: 'О Pogoda.kg: источники данных и методы', description: 'Как работает Pogoda.kg: прогнозы Open-Meteo, климатические данные ERA5, автоматическая ежедневная сводка, ограничения прогнозов в горах и как сообщить об ошибке.' },
+        KG: { title: 'Pogoda.kg жөнүндө: маалымат булактары', description: 'Pogoda.kg кантип иштейт: Open-Meteo божомолдору, ERA5 климат маалыматы, автоматтык күнүмдүк сводка, тоолордогу божомолдун чектөөлөрү жана катаны кантип кабарлоо.' }
+    },
     'privacy.html': {
         EN: { title: 'Privacy Policy' },
         RU: { title: 'Политика конфиденциальности', description: 'Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере.' },
@@ -128,9 +133,9 @@ const PAGE_META = {
         KG: { title: 'Кыргызстандын тоо ашууларындагы аба ырайы', description: 'Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз.' }
     },
     'daily.html': {
-        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing', description: 'Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now.' },
-        RU: { title: 'Погода в Кыргызстане сегодня: сводка', description: 'Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро.' },
-        KG: { title: 'Кыргызстандагы аба ырайы бүгүн: кыскача сереп', description: 'Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат.' }
+        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing', description: 'Kyrgyzstan weather today for all 17 cities: highs and lows for today and tomorrow, rain chances, and the latest daily forecast articles. Updated every morning.' },
+        RU: { title: 'Погода в Кыргызстане сегодня: сводка', description: 'Погода в Кыргызстане сегодня для всех 17 городов: температура сегодня и завтра, вероятность осадков и последние ежедневные прогнозы. Обновляется каждое утро.' },
+        KG: { title: 'Кыргызстандагы аба ырайы бүгүн: кыскача сереп', description: 'Кыргызстандын 17 шаарындагы бүгүнкү аба ырайы: бүгүн жана эртең үчүн температура, жаан-чачын ыктымалдыгы жана акыркы күнүмдүк божомолдор. Ар күнү эртең менен жаңыланат.' }
     }
 };
 
@@ -224,10 +229,12 @@ function cityDisplayName(lang, city) {
     return city.name;
 }
 
-// Auto-generated daily posts and the dated August/September forecasts: ~125-word
-// templates that expire the next day. They stay published for readers but are
-// noindexed and left out of the sitemap (SEO QA audit, finding C3).
-const TEMPLATED_POST_RE = /^daily-weather-forecast-kyrgyzstan-\d{4}-\d{2}-\d{2}$|^(?:august|september)-\d+(?:-\d+)?-(?:regional-)?(?:forecast-kyrgyzstan|kyrgyzstan-weather-forecast)-/;
+// Auto-generated daily forecast posts ("daily-weather-forecast-kyrgyzstan-YYYY-MM-DD").
+// Every post is indexable; daily posts get previous/next-day and city links so they
+// read as one linked series rather than isolated pages.
+const DAILY_POST_RE = /^daily-weather-forecast-kyrgyzstan-(\d{4}-\d{2}-\d{2})$/;
+const DAILY_SLUGS = BLOG_POSTS.map(post => post.slug).filter(slug => DAILY_POST_RE.test(slug)).sort();
+const KG_MONTHS = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
 
 const PAGE_SLUGS = new Set(fs.readdirSync(SRC_DIR).filter(f => f.endsWith('.html') && f !== 'index.html' && f !== '404.html').map(f => f.replace('.html', '')));
 const CITY_IDS = new Set(CITIES.map(city => city.id));
@@ -277,6 +284,18 @@ function finalisePage(html, lang, basePath, baseDir = '/') {
     // Cloudflare Email Obfuscation rewrites the address into a /cdn-cgi/l/email-protection
     // link that 404s (audit H2); these comments opt the page out of it.
     out = out.replace(/<body([^>]*)>/, '<body$1>\n<!--email_off-->').replace(/<\/body>/, '<!--/email_off-->\n</body>');
+
+    // About page in every footer's navigation list (audit H3: who runs the site and how).
+    const footerAt = out.indexOf('<footer');
+    if (footerAt !== -1 && !out.includes('data-i18n="nav_about"')) {
+        const footer = out.slice(footerAt).replace(/(\s*)(<li><a href="[^"]*" data-i18n="nav_contact">)/,
+            (m, space, contact) => `${space}<li><a href="${langUrl(lang, '/about')}" data-i18n="nav_about">${TRANSLATIONS[lang].nav_about}</a></li>${space}${contact}`);
+        out = out.slice(0, footerAt) + footer;
+    }
+
+    // Generated photos are served as WebP (~50% smaller, audit L1); the JPEGs stay
+    // only for og:image / JSON-LD, where some social networks still expect JPEG.
+    out = out.replace(/((?:src|href)="|url\(')([^"')]*\/images\/generated\/[^"')]+)\.jpg(?=["'])/g, '$1$2.webp');
 
     return out.replace(/"https:\/\/pogoda\.kg\/assets\/favicon\.svg"/g, '"https://pogoda.kg/assets/apple-touch-icon.png"');
 }
@@ -429,6 +448,12 @@ function renderFAQSchema(faqList) {
     return `<script type="application/ld+json">\n  ${JSON.stringify(schema)}\n  </script>`;
 }
 
+// Inserts content before a marker that must occur exactly once (fails the build otherwise).
+function insertBefore(html, marker, content) {
+    if (html.split(marker).length !== 2) throw new Error(`insertBefore: expected one "${marker.trim()}"`);
+    return html.replace(marker, () => content + marker);
+}
+
 function fillById(html, id, content) {
     return html.replace(new RegExp(`(<([a-z0-9]+)\\b[^>]*\\sid="${id}"[^>]*>)[\\s\\S]*?(</\\2>)`), (m, open, tag, close) => open + content + close);
 }
@@ -489,6 +514,211 @@ function withWeeklySnapshot(html, lang, cityId) {
     const note = `<p class="section-desc" id="weeklySnapshotNote" style="font-size:13px; margin-top:12px;">${SNAPSHOT_NOTE[lang](formatBriefingTime(FORECAST_SNAPSHOT.generatedAt, lang))}</p>`;
     return html.replace('<div id="weeklyForecastContainer" class="ten-day-forecast-container"></div>',
         () => `<div id="weeklyForecastContainer" class="ten-day-forecast-container">${pills}</div>\n    ${note}`);
+}
+
+// ---- Server-rendered content blocks from the morning snapshot and climate data ----
+const CLIMATE_PATH = path.join(SRC_DIR, 'data', 'climate-normals.json');
+const CLIMATE = fs.existsSync(CLIMATE_PATH) ? JSON.parse(fs.readFileSync(CLIMATE_PATH, 'utf8')) : null;
+const MONTH_NAMES = {
+    EN: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    RU: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    KG: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+};
+const signedTemp = (value, lang, decimals = 0) => {
+    const text = `${value > 0 ? '+' : ''}${value.toFixed(decimals)}`;
+    return lang === 'EN' ? text : text.replace('.', ',');
+};
+const localElevation = (elevation, lang) => lang === 'EN' ? elevation : elevation.replace(',', ' ').replace(/ m$/, ' м');
+const conditionLabel = (lang, code) => TRANSLATIONS[lang][(WMO_WEATHER_CODES[code] || {}).labelKey] || '';
+const WIND_UNIT = { EN: 'km/h', RU: 'км/ч', KG: 'км/саат' };
+// "22 November" / "22 ноября" / "22-ноябрь" for an ISO date.
+function dayMonth(lang, iso) {
+    if (lang === 'KG') return `${Number(iso.slice(8))}-${KG_MONTHS[Number(iso.slice(5, 7)) - 1]}`;
+    return new Intl.DateTimeFormat(lang === 'RU' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${iso}T12:00:00Z`));
+}
+function bishkekToday() {
+    return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bishkek' }).format(new Date());
+}
+// The snapshot day to show as "today": today's entry if present, else the first one.
+function snapshotDay(days) {
+    if (!days || !days.length) return null;
+    const today = bishkekToday();
+    return days.find(day => day.date === today) || days.find(day => day.date > today) || null;
+}
+
+const CLIMATE_COPY = {
+    EN: {
+        title: city => `Climate in ${city.name}: average temperatures by month`,
+        facts: f => `${f.name} lies in ${f.region} at about ${f.elev} above sea level (${f.lat}° N, ${f.lon}° E). In ${f.period} its warmest month was ${f.warm}, with an average daytime high of ${f.warmMax}°C, and its coldest was ${f.cold}, with an average night-time low of ${f.coldMin}°C.`,
+        cols: ['Month', 'Average high', 'Average low'],
+        source: f => `Averages of daily highs and lows for ${f.period} from the ERA5 reanalysis (Open-Meteo historical weather API), for the model grid cell around ${f.name}. That cell's average elevation is ${f.grid} m, so values can differ slightly from a local weather station.`
+    },
+    RU: {
+        title: city => `Климат в ${ruCity(city).prep}: средняя температура по месяцам`,
+        facts: f => `Город ${f.name} (${f.region}) расположен на высоте около ${f.elev} над уровнем моря (${f.lat}° с. ш., ${f.lon}° в. д.). В ${f.period} годах самым тёплым месяцем был ${f.warm.toLowerCase()} — средний дневной максимум ${f.warmMax}°C, самым холодным — ${f.cold.toLowerCase()} со средним ночным минимумом ${f.coldMin}°C.`,
+        cols: ['Месяц', 'Средний максимум', 'Средний минимум'],
+        source: f => `Средние за ${f.period} годы значения дневных максимумов и ночных минимумов по данным реанализа ERA5 (исторический API Open-Meteo) для ячейки модели вокруг города. Средняя высота ячейки — ${f.grid} м, поэтому значения могут немного отличаться от показаний местной метеостанции.`
+    },
+    KG: {
+        title: city => `${city.nativeName || city.name}: климат жана айлар боюнча орточо температура`,
+        facts: f => `${f.name} (${f.region}) деңиз деңгээлинен болжол менен ${f.elev} бийиктикте жайгашкан (${f.lat}° т. к., ${f.lon}° ч. у.). ${f.period}-жылдары эң жылуу ай ${f.warm.toLowerCase()} болгон — орточо күндүзгү максимум ${f.warmMax}°C, эң суук ай ${f.cold.toLowerCase()} — орточо түнкү минимум ${f.coldMin}°C.`,
+        cols: ['Ай', 'Орточо максимум', 'Орточо минимум'],
+        source: f => `${f.period}-жылдардагы күндүзгү максимум жана түнкү минимум температуранын орточо маанилери, ERA5 реанализи боюнча (Open-Meteo тарыхый API), шаардын тегерегиндеги модель торчосу үчүн. Торчонун орточо бийиктиги — ${f.grid} м, ошондуктан маанилер жергиликтүү метеостанциянын көрсөткүчтөрүнөн бир аз айырмаланышы мүмкүн.`
+    }
+};
+
+// Monthly climate table for a city page (audit M4: unique, factual content per city).
+function cityClimateSection(lang, city) {
+    const data = CLIMATE && CLIMATE.cities[city.id];
+    if (!data) return '';
+    const t = CLIMATE_COPY[lang], months = data.months;
+    const warm = months.reduce((best, m, i) => (m.max > months[best].max ? i : best), 0);
+    const cold = months.reduce((best, m, i) => (m.min < months[best].min ? i : best), 0);
+    const f = {
+        name: cityDisplayName(lang, city), region: TRANSLATIONS[lang][`region_${city.regionKey}`],
+        elev: localElevation(city.elevation, lang), lat: city.lat.toFixed(2), lon: city.lon.toFixed(2),
+        period: CLIMATE.period, grid: data.gridElevation,
+        warm: MONTH_NAMES[lang][warm], warmMax: signedTemp(months[warm].max, lang, 1),
+        cold: MONTH_NAMES[lang][cold], coldMin: signedTemp(months[cold].min, lang, 1)
+    };
+    const rows = months.map((m, i) => `<tr><th scope="row">${MONTH_NAMES[lang][i]}</th><td>${signedTemp(m.max, lang, 1)}°C</td><td>${signedTemp(m.min, lang, 1)}°C</td></tr>`).join('');
+    return `<section class="section-wrapper defer-render city-climate">
+    <div class="section-header"><h2 class="section-title">${t.title(city)}</h2></div>
+    <p class="section-desc">${t.facts(f)}</p>
+    <div class="table-scroll"><table class="forecast-table"><thead><tr>${t.cols.map(c => `<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="section-desc table-source">${t.source(f)}</p>
+  </section>
+
+  `;
+}
+
+const MAP_COPY = {
+    EN: { title: 'Forecast by region', intro: d => `Forecast highs and lows for ${d} for every city on the map, grouped by region. Open a city for its hourly and 7-day forecast.`, how: 'Each marker shows the current temperature, loaded from Open-Meteo and refreshed every 15 minutes while the page is open. Tap a marker for wind and a link to the full city forecast.' },
+    RU: { title: 'Прогноз по областям', intro: d => `Прогноз максимальной и минимальной температуры на ${d} для всех городов на карте, по областям. Откройте город, чтобы посмотреть почасовой прогноз и прогноз на 7 дней.`, how: 'Каждая отметка показывает текущую температуру по данным Open-Meteo; пока страница открыта, данные обновляются каждые 15 минут. Нажмите на отметку, чтобы увидеть ветер и ссылку на полный прогноз города.' },
+    KG: { title: 'Облустар боюнча божомол', intro: d => `Картадагы бардык шаарлар үчүн ${d} күнкү эң жогорку жана эң төмөнкү температура, облустар боюнча. Сааттык жана 7 күндүк божомолду көрүү үчүн шаарды ачыңыз.`, how: 'Ар бир белги Open-Meteo маалыматы боюнча учурдагы температураны көрсөтөт; барак ачык турганда маалымат ар 15 мүнөттө жаңыланат. Шамалды жана шаардын толук божомолуна шилтемени көрүү үчүн белгини басыңыз.' }
+};
+const REGION_ORDER = ['chuy', 'issykkul', 'naryn', 'talas', 'jalalabad', 'osh', 'batken'];
+
+// /map: every city's forecast for today as text, grouped by region (the map itself
+// is a JavaScript widget, so the page had ~110 words of HTML content).
+function renderMapCityList(lang) {
+    const t = MAP_COPY[lang];
+    const first = FORECAST_SNAPSHOT && snapshotDay(FORECAST_SNAPSHOT.cities.bishkek);
+    if (!first) return '';
+    const groups = REGION_ORDER.map(key => {
+        const items = CITIES.filter(city => city.regionKey === key).map(city => {
+            const day = snapshotDay(FORECAST_SNAPSHOT.cities[city.id]);
+            const weather = day ? `: ${signedTemp(day.max, lang)}° / ${signedTemp(day.min, lang)}°, ${conditionLabel(lang, day.code).toLowerCase()}` : '';
+            return `<li><a href="${langUrl(lang, `/${city.id}`)}">${cityDisplayName(lang, city)}</a>${weather}</li>`;
+        }).join('');
+        return items ? `<div class="region-group"><h3>${TRANSLATIONS[lang][`region_${key}`]}</h3><ul>${items}</ul></div>` : '';
+    }).join('');
+    return `
+    <section class="map-city-forecast">
+      <h2 class="section-title">${t.title}</h2>
+      <p class="section-desc">${t.intro(dayMonth(lang, first.date))}</p>
+      <div class="region-groups">${groups}</div>
+      <p class="section-desc table-source">${t.how}</p>
+    </section>`;
+}
+
+const DAILY_TABLE_COPY = {
+    EN: { title: 'All 17 cities: today and tomorrow', cols: ['City', 'Region', 'Today', 'Tomorrow', 'Rain chance today'], recent: 'Recent daily forecasts' },
+    RU: { title: 'Все 17 городов: сегодня и завтра', cols: ['Город', 'Область', 'Сегодня', 'Завтра', 'Осадки сегодня'], recent: 'Последние ежедневные прогнозы' },
+    KG: { title: '17 шаардын баары: бүгүн жана эртең', cols: ['Шаар', 'Облус', 'Бүгүн', 'Эртең', 'Бүгүн жаан-чачын'], recent: 'Акыркы күнүмдүк божомолдор' }
+};
+
+// /daily: a 17-city table from the morning snapshot, and links to the latest daily posts.
+function renderDailyExtras(lang) {
+    const t = DAILY_TABLE_COPY[lang];
+    let table = '';
+    if (FORECAST_SNAPSHOT) {
+        const rows = CITIES.map(city => {
+            const days = FORECAST_SNAPSHOT.cities[city.id] || [];
+            const day = snapshotDay(days);
+            if (!day) return '';
+            const next = days[days.indexOf(day) + 1];
+            const range = d => d ? `${signedTemp(d.max, lang)}° / ${signedTemp(d.min, lang)}°` : '—';
+            return `<tr><th scope="row"><a href="${langUrl(lang, `/${city.id}`)}">${cityDisplayName(lang, city)}</a></th><td>${TRANSLATIONS[lang][`region_${city.regionKey}`]}</td><td>${range(day)}, ${conditionLabel(lang, day.code).toLowerCase()}</td><td>${range(next)}</td><td>${day.precip ?? 0}%</td></tr>`;
+        }).join('');
+        if (rows) table = `<h2 class="section-title">${t.title}</h2><div class="table-scroll"><table class="forecast-table"><thead><tr>${t.cols.map(c => `<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+    const recent = DAILY_SLUGS.slice(-7).reverse().map(slug => {
+        const date = slug.match(DAILY_POST_RE)[1];
+        return `<li><a href="${langUrl(lang, `/blog/${slug}`)}">${dayMonth(lang, date)} ${date.slice(0, 4)}</a></li>`;
+    }).join('');
+    return `${table}<h2 class="section-title">${t.recent}</h2><ul class="recent-daily-list">${recent}</ul>`;
+}
+
+const PASS_OUTLOOK_COPY = {
+    EN: { title: '3-day forecast for the passes', cols: ['Pass', 'Day', 'High / low', 'Snow', 'Wind', 'Precipitation chance'], why: 'Air cools by roughly 6.5°C for every 1,000 m of height, so a pass at 3,200 m is often around 15°C colder than Bishkek at 800 m, and snow can fall there when it rains in the valleys.', grid: (list) => `Forecasts are for the weather model's grid cell around each pass. Those cells sit lower than the passes themselves (${list}), so the real temperature at the top is often a few degrees colder than shown.`, none: '—' },
+    RU: { title: 'Прогноз на 3 дня для перевалов', cols: ['Перевал', 'День', 'Макс. / мин.', 'Снег', 'Ветер', 'Вероятность осадков'], why: 'С каждой тысячей метров высоты воздух в среднем холоднее примерно на 6,5°C, поэтому на перевале высотой 3200 м часто на 15°C холоднее, чем в Бишкеке на высоте 800 м, и там может идти снег, когда в долинах дождь.', grid: (list) => `Прогноз дан для ячейки погодной модели вокруг каждого перевала. Эти ячейки ниже самих перевалов (${list}), поэтому на самом перевале обычно на несколько градусов холоднее, чем указано.`, none: '—' },
+    KG: { title: 'Ашуулар үчүн 3 күндүк божомол', cols: ['Ашуу', 'Күн', 'Макс. / мин.', 'Кар', 'Шамал', 'Жаан-чачын ыктымалдыгы'], why: 'Ар бир 1000 метр бийиктикте аба орточо эсеп менен 6,5°C га суук болот, ошондуктан 3200 м бийиктиктеги ашуу 800 м бийиктиктеги Бишкекке караганда көбүнчө 15°C чамасында суук болот жана өрөөндөрдө жамгыр жааганда ал жерде кар жаашы мүмкүн.', grid: (list) => `Божомол ар бир ашуунун тегерегиндеги аба ырайы моделинин торчосу үчүн берилген. Бул торчолор ашуулардын өзүнөн төмөн жайгашкан (${list}), ошондуктан ашуунун үстүндө көрсөтүлгөндөн бир нече градус суук болушу мүмкүн.`, none: '—' }
+};
+
+// /passes: 3-day outlook per pass from the morning snapshot, plus why passes are colder.
+function renderPassOutlook(lang) {
+    const passes = FORECAST_SNAPSHOT && FORECAST_SNAPSHOT.passes;
+    if (!passes) return '';
+    const t = PASS_OUTLOOK_COPY[lang], today = bishkekToday();
+    const cm = lang === 'EN' ? 'cm' : 'см';
+    const rows = KYRGYZSTAN_PASSES.map(pass => {
+        const entry = passes[pass.id];
+        if (!entry) return '';
+        const name = lang === 'EN' ? pass.en : lang === 'RU' ? pass.ru : pass.name;
+        const days = entry.days.filter(day => day.date >= today);
+        return days.map((day, i) => `<tr>${i === 0 ? `<th scope="rowgroup" rowspan="${days.length}">${name}</th>` : ''}<td>${dayMonth(lang, day.date)}</td><td>${signedTemp(day.max, lang)}° / ${signedTemp(day.min, lang)}°</td><td>${day.snowCm >= 0.5 ? `${String(day.snowCm).replace('.', lang === 'EN' ? '.' : ',')} ${cm}` : t.none}</td><td>${day.wind} ${WIND_UNIT[lang]}</td><td>${day.precip ?? 0}%</td></tr>`).join('');
+    }).join('');
+    if (!rows) return '';
+    const gridList = KYRGYZSTAN_PASSES.filter(pass => passes[pass.id]).map(pass => `${lang === 'EN' ? pass.en : lang === 'RU' ? pass.ru : pass.name}: ${localElevation(pass.elevation, lang)} → ${passes[pass.id].gridElevation} ${lang === 'EN' ? 'm' : 'м'}`).join('; ');
+    return `<h2 class="section-title">${t.title}</h2><div class="table-scroll"><table class="forecast-table"><thead><tr>${t.cols.map(c => `<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div><p class="safety-note">${t.why}</p><p class="safety-note table-source">${t.grid(gridList)}</p>`;
+}
+
+const ABOUT_COPY = {
+    EN: {
+        h1: 'About Pogoda.kg',
+        body: `<p>Pogoda.kg publishes weather forecasts for 17 cities and towns in Kyrgyzstan in Kyrgyz, Russian and English: current conditions, an hourly forecast and a 7-day outlook for each city, a <a href="/daily">daily national briefing</a>, <a href="/passes">mountain pass weather</a>, a <a href="/map">weather map</a> and <a href="/blog">articles</a> about the country's weather and climate.</p>
+<h2>Where the forecasts come from</h2>
+<p>Forecasts come from <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a>, which combines numerical weather models run by national and international weather services, such as ECMWF, DWD (Germany) and NOAA (USA). Your browser requests the forecast for each city's coordinates and refreshes it every 15 minutes while the page is open.</p>
+<p>The monthly climate tables on city pages are averages for 2016–2025 from the ERA5 reanalysis, taken from Open-Meteo's historical weather API.</p>
+<h2>How the daily briefing and articles are made</h2>
+<p>Every morning at 09:20 Bishkek time an automated job collects the forecast for all 17 cities. It updates the <a href="/daily">daily briefing</a> and publishes a dated forecast article built from those figures: the day's warmest and coldest places, the change since yesterday and a two-day outlook. Longer guides and seasonal articles are written by the Pogoda Weather Team from the same data.</p>
+<h2>Limits of the forecasts</h2>
+<p>A forecast is a model estimate, not a measurement. In the mountains the model's grid can sit several hundred metres below a pass or a high valley, so temperatures there may be colder than shown. Pogoda.kg does not issue official warnings or road closures: for severe-weather warnings follow Kyrgyzhydromet and the Ministry of Emergency Situations, and for road conditions the <a href="${OFFICIAL_ROAD_STATUS_URL}" rel="noopener">Ministry of Transport</a>.</p>
+<h2>Corrections and contact</h2>
+<p>If you see a mistake on a forecast page or in an article, please tell us through the <a href="/contact">contact page</a>. Answers to common questions are on the <a href="/faq">FAQ page</a>.</p>`
+    },
+    RU: {
+        h1: 'О проекте Pogoda.kg',
+        body: `<p>Pogoda.kg публикует прогноз погоды для 17 городов Кыргызстана на кыргызском, русском и английском языках: погода сейчас, почасовой прогноз и прогноз на 7 дней для каждого города, <a href="/daily">ежедневная сводка по стране</a>, <a href="/passes">погода на перевалах</a>, <a href="/map">карта погоды</a> и <a href="/blog">статьи</a> о погоде и климате страны.</p>
+<h2>Откуда берутся прогнозы</h2>
+<p>Прогнозы предоставляет <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a>, который объединяет численные модели погоды национальных и международных метеослужб, например ECMWF, DWD (Германия) и NOAA (США). Браузер запрашивает прогноз по координатам каждого города и обновляет его каждые 15 минут, пока страница открыта.</p>
+<p>Таблицы климата на страницах городов — средние значения за 2016–2025 годы по данным реанализа ERA5 из исторического API Open-Meteo.</p>
+<h2>Как готовятся сводка и статьи</h2>
+<p>Каждое утро в 09:20 по времени Бишкека автоматическая задача получает прогноз для всех 17 городов. Она обновляет <a href="/daily">ежедневную сводку</a> и публикует статью с прогнозом на дату: самые тёплые и холодные места, изменение по сравнению со вчерашним днём и прогноз на два дня. Подробные руководства и сезонные статьи пишет команда Pogoda Weather Team на основе тех же данных.</p>
+<h2>Ограничения прогнозов</h2>
+<p>Прогноз — это оценка модели, а не измерение. В горах ячейка модели может быть на несколько сотен метров ниже перевала или высокогорной долины, поэтому там бывает холоднее, чем указано. Pogoda.kg не выпускает официальных предупреждений и не сообщает о закрытии дорог: штормовые предупреждения публикуют Кыргызгидромет и Министерство чрезвычайных ситуаций, информацию о дорогах — <a href="${OFFICIAL_ROAD_STATUS_URL}" rel="noopener">Министерство транспорта</a>.</p>
+<h2>Исправления и связь</h2>
+<p>Если вы заметили ошибку в прогнозе или статье, сообщите нам через <a href="/contact">страницу контактов</a>. Ответы на частые вопросы — на <a href="/faq">странице FAQ</a>.</p>`
+    },
+    KG: {
+        h1: 'Pogoda.kg жөнүндө',
+        body: `<p>Pogoda.kg Кыргызстандын 17 шаары үчүн аба ырайы божомолун кыргыз, орус жана англис тилдеринде жарыялайт: ар бир шаар үчүн учурдагы аба ырайы, сааттык жана 7 күндүк божомол, <a href="/daily">өлкө боюнча күнүмдүк сводка</a>, <a href="/passes">тоо ашууларындагы аба ырайы</a>, <a href="/map">аба ырайы картасы</a> жана өлкөнүн аба ырайы менен климаты тууралуу <a href="/blog">макалалар</a>.</p>
+<h2>Божомолдор кайдан алынат</h2>
+<p>Божомолдорду <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> берет. Ал улуттук жана эл аралык метеокызматтардын, мисалы ECMWF, DWD (Германия) жана NOAA (АКШ), сандык аба ырайы моделдерин бириктирет. Браузериңиз ар бир шаардын координаттары боюнча божомолду сурайт жана барак ачык турганда аны ар 15 мүнөттө жаңылайт.</p>
+<p>Шаар барактарындагы климат таблицалары — Open-Meteo тарыхый API аркылуу алынган ERA5 реанализи боюнча 2016–2025-жылдардын орточо маанилери.</p>
+<h2>Сводка жана макалалар кантип даярдалат</h2>
+<p>Ар күнү эртең менен Бишкек убактысы менен саат 09:20да автоматтык тапшырма 17 шаардын баары үчүн божомолду алат. Ал <a href="/daily">күнүмдүк сводканы</a> жаңылайт жана ошол сандардан түзүлгөн датасы бар макаланы жарыялайт: күндүн эң жылуу жана эң суук жерлери, кечээ менен салыштырганда өзгөрүү жана эки күндүк божомол. Кеңири колдонмолорду жана мезгилдик макалаларды ошол эле маалыматтын негизинде Pogoda Weather Team жазат.</p>
+<h2>Божомолдордун чектөөлөрү</h2>
+<p>Божомол — моделдин баалоосу, өлчөө эмес. Тоолордо моделдин торчосу ашуудан же бийик өрөөндөн бир нече жүз метр төмөн болушу мүмкүн, ошондуктан ал жерде көрсөтүлгөндөн суук болушу ыктымал. Pogoda.kg расмий эскертүүлөрдү чыгарбайт жана жолдордун жабылышы тууралуу кабарлабайт: катаал аба ырайы боюнча эскертүүлөрдү Кыргызгидромет жана Өзгөчө кырдаалдар министрлиги, жолдор боюнча маалыматты <a href="${OFFICIAL_ROAD_STATUS_URL}" rel="noopener">Транспорт министрлиги</a> берет.</p>
+<h2>Оңдоолор жана байланыш</h2>
+<p>Божомолдо же макалада ката байкасаңыз, <a href="/contact">байланыш барагы</a> аркылуу кабарлаңыз. Көп берилүүчү суроолордун жооптору — <a href="/faq">FAQ барагында</a>.</p>`
+    }
+};
+
+function renderAboutPage(html, lang) {
+    const t = ABOUT_COPY[lang];
+    return fillById(fillById(fillById(html, 'aboutTitle', t.h1), 'aboutCrumb', t.h1), 'aboutContent', `\n${t.body}\n  `);
 }
 
 // Server-rendered /passes: names, routes, elevations and the official road-status
@@ -695,6 +925,10 @@ htmlFiles.forEach(file => {
 
         if (file === 'daily.html') translated = renderDailyPage(translated, lang);
         if (file === 'passes.html') translated = renderPassesPage(translated, lang);
+        if (file === 'daily.html') translated = insertBefore(translated, '<h2 class="section-title" data-i18n="daily_plan_title">', renderDailyExtras(lang));
+        if (file === 'passes.html') translated = insertBefore(translated, '<h2 class="section-title" data-i18n="passes_before_title">', renderPassOutlook(lang));
+        if (file === 'map.html') translated = insertBefore(translated, '\n  </main>', renderMapCityList(lang));
+        if (file === 'about.html') translated = renderAboutPage(translated, lang);
         if (file === 'daily.html' || file === 'passes.html') {
             const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
                 { '@type': 'ListItem', position: 1, name: dict.nav_home, item: `https://pogoda.kg${langUrl(lang, '/')}` },
@@ -847,6 +1081,7 @@ htmlFiles.forEach(file => {
                 // templated stat-swapping) plus matching FAQPage schema.
                 const cityFaqList = (CITY_FAQ[city.id] && (CITY_FAQ[city.id][lang] || CITY_FAQ[city.id].EN)) || HOME_FAQ.EN;
                 cityHtml = withWeeklySnapshot(withFAQ(cityHtml, cityFaqList), lang, city.id);
+                cityHtml = insertBefore(cityHtml, '<!-- Weather FAQ Section -->', cityClimateSection(lang, city));
 
                 // Write city file
                 const cityOutPath = path.join(OUT_DIR, prefix, `${city.id}.html`);
@@ -885,6 +1120,30 @@ function mustReplace(html, pattern, replacement, what, slug) {
     return html.replace(pattern, replacement);
 }
 
+const DAILY_SERIES_COPY = {
+    KG: { heading: 'Башка күндөрдүн божомолу', prev: 'Мурунку күн', next: 'Кийинки күн', today: 'Бүгүнкү аба ырайы сводкасы', cities: 'Шаарлар боюнча 7 күндүк божомол' },
+    RU: { heading: 'Прогнозы на другие дни', prev: 'Предыдущий день', next: 'Следующий день', today: 'Сводка погоды на сегодня', cities: 'Прогноз на 7 дней по городам' },
+    EN: { heading: 'Forecasts for other days', prev: 'Previous day', next: 'Next day', today: "Today's weather briefing", cities: '7-day forecast by city' }
+};
+
+// Previous/next-day links, /daily and the 17 city pages under every daily post.
+function dailySeriesNav(post, lang) {
+    const i = DAILY_SLUGS.indexOf(post.slug);
+    if (i === -1) return '';
+    const t = DAILY_SERIES_COPY[lang];
+    const dayLabel = slug => {
+        const date = slug.match(DAILY_POST_RE)[1];
+        if (lang === 'KG') return `${Number(date.slice(8))}-${KG_MONTHS[Number(date.slice(5, 7)) - 1]}`;
+        return new Intl.DateTimeFormat({ RU: 'ru-RU', EN: 'en-GB' }[lang], { day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
+    };
+    const links = [];
+    if (i > 0) links.push(`<li>← ${t.prev}: <a href="${langUrl(lang, `/blog/${DAILY_SLUGS[i - 1]}`)}">${dayLabel(DAILY_SLUGS[i - 1])}</a></li>`);
+    if (i < DAILY_SLUGS.length - 1) links.push(`<li>${t.next} →: <a href="${langUrl(lang, `/blog/${DAILY_SLUGS[i + 1]}`)}">${dayLabel(DAILY_SLUGS[i + 1])}</a></li>`);
+    links.push(`<li><a href="${langUrl(lang, '/daily')}">${t.today}</a></li>`);
+    const cities = CITIES.map(city => `<a href="${langUrl(lang, `/${city.id}`)}">${cityDisplayName(lang, city)}</a>`).join(', ');
+    return `<h2>${t.heading}</h2><ul>${links.join('')}</ul><p><strong>${t.cities}:</strong> ${cities}.</p>`;
+}
+
 const BACK_TO_NEWS = { KG: 'Жаңылыктарга кайтуу', RU: 'Назад к новостям', EN: 'Back to News' };
 
 // Each article is published in all three languages from its BLOG_POSTS translations:
@@ -907,11 +1166,8 @@ function renderArticle(template, post, lang) {
         html = html.replace('</head>', `  <meta property="og:type" content="article">\n  <meta property="og:title" content="">\n  <meta property="og:description" content="">\n  <meta property="og:url" content="${canonical}">\n  <meta property="og:image" content="${image}">\n  <meta property="og:site_name" content="Pogoda Kg">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:title" content="">\n  <meta name="twitter:description" content="">\n  <meta name="twitter:image" content="${image}">\n</head>`);
     }
     html = withHeadMeta(html, { title, description });
-    if (TEMPLATED_POST_RE.test(post.slug)) {
-        // hreflang between noindexed pages only produces "broken hreflang target" errors.
-        html = html.replace(/\s*<link rel="alternate" hreflang="[^"]+" href="[^"]+"\s*\/>/g, '');
-        html = html.replace('</head>', '  <meta name="robots" content="noindex, follow">\n</head>');
-    } else if (!/<meta name="robots"/.test(html)) {
+    html = html.replace(/\s*<meta name="robots" content="noindex[^"]*">/g, '');
+    if (!/<meta name="robots"/.test(html)) {
         html = html.replace('</head>', '  <meta name="robots" content="max-image-preview:large">\n</head>');
     }
 
@@ -922,7 +1178,7 @@ function renderArticle(template, post, lang) {
         /(<div class="breadcrumbs-container"[^>]*>\s*<a [^>]*><svg[\s\S]*?<\/svg>)[^<]*(<\/a>\s*<span[^>]*>\/<\/span>\s*<a [^>]*>)[^<]*(<\/a>\s*<span[^>]*>\/<\/span>\s*<span>)[^<]*(<\/span>)/,
         (m, home, news, current, close) => `${home} ${dict.nav_home}${news}${dict.nav_news}${current}${data.title}${close}`, 'breadcrumbs', post.slug);
     html = replaceDivInner(html, '<div class="post-meta"', `\n      <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>\n      <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>\n    `);
-    html = replaceDivInner(html, '<div class="post-content"', `\n      ${data.content}\n    `);
+    html = replaceDivInner(html, '<div class="post-content"', `\n      ${data.content}${dailySeriesNav(post, lang)}\n    `);
 
     html = html.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, open, body, close) => {
         let schema;
@@ -956,7 +1212,7 @@ BLOG_POSTS.forEach(post => {
         const outPath = path.join(OUT_DIR, LANG_PREFIXES[lang], 'blog', `${post.slug}.html`);
         fs.mkdirSync(path.dirname(outPath), { recursive: true });
         fs.writeFileSync(outPath, renderArticle(template, post, lang));
-        if (!TEMPLATED_POST_RE.test(post.slug)) sitemapUrls.push({ loc: langUrl(lang, `/blog/${post.slug}`), sources: [`src/blog/${post.slug}.html`], dates: [(template.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})/) || [])[1]] });
+        sitemapUrls.push({ loc: langUrl(lang, `/blog/${post.slug}`), sources: [`src/blog/${post.slug}.html`], dates: [(template.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})/) || [])[1]] });
     });
 });
 

@@ -95,7 +95,7 @@ async function renderMarkers() {
         <div style="font-size:32px; font-weight:800; color:#FF9F43; margin:8px 0;">${data.current.temp}°C</div>
         <div style="font-size:14px; font-weight:600;">${getConditionStr(data.current.conditionKey)}</div>
         <div style="font-size:12px; margin-top:8px; display:flex; justify-content:space-around;">
-          <span>💨 ${data.current.windSpeed} km/h</span>
+          <span>💨 ${data.current.windSpeed} ${TRANSLATIONS[lang]?.wind_unit || "km/h"}</span>
           <span>💧 ${data.current.humidity}%</span>
         </div>
         <a href="${langPrefix}/${city.id}" style="display:inline-block; margin-top:12px; background:#FF9F43; color:white; padding:6px 14px; border-radius:16px; font-size:12px; text-decoration:none; font-weight:700;">${TRANSLATIONS[lang].view_forecast_btn}</a>

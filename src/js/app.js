@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('visibilitychange', () => { if (!document.hidden) loadCityWeather(currentCity); });
 });
 
+const windUnit = () => TRANSLATIONS[getCurrentLang()]?.wind_unit || "km/h";
+
 function getCityName(city) {
   const lang = getCurrentLang();
   return lang === 'RU' ? ruCity(city).nom : lang === 'KG' ? city.nativeName : city.name;
@@ -158,7 +160,8 @@ function ruCity(city) {
 // /ru/assets/… and 404s, so always resolve it from the site root.
 function cityImageUrl(city) {
   if (!city || !city.image) return '';
-  return city.image.startsWith('/') ? city.image : `/${city.image}`;
+  const image = city.image.replace(/\.jpg$/, ".webp");
+  return image.startsWith("/") ? image : `/${image}`;
 }
 
 // Same wording as getCityHeroContent() in build.js, kept in sync so the hero heading/intro
@@ -238,7 +241,7 @@ function renderNewsGrid(lang) {
     const isFeatured = i === 0;
     return `
       <a class="news-card${isFeatured ? ' news-card-featured' : ''}" href="/blog/${post.slug}">
-        <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
+        <img src="${post.image.replace(/\.jpg$/, ".webp")}" alt="${data.title}" class="news-card-img" loading="lazy" width="1536" height="1024">
         <div class="news-card-overlay">
           <h3 class="news-title">${data.title}</h3>
           ${isFeatured ? `<p style="font-size:14px; margin-bottom:12px; opacity:0.9; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${data.excerpt}</p>` : ''}
@@ -364,7 +367,7 @@ function renderHeroCard(city, data) {
         <svg class="icon" style="color:#94A3B8;"><use href="#icon-wind"></use></svg> 
         <span>${t.wind_label || 'Wind'}</span>
       </div>
-      <div class="metric-right">${current.windSpeed} km/h</div>
+      <div class="metric-right">${current.windSpeed} ${windUnit()}</div>
     </div>
   `;
 }
@@ -384,7 +387,7 @@ function renderHourlyForecast(hourlyList) {
       <div class="hourly-condition">${getConditionStr(item.conditionKey)}</div>
       <div class="hourly-details">
         <span>💧 ${item.precip}%</span>
-        <span>💨 ${item.wind} km/h</span>
+        <span>💨 ${item.wind} ${windUnit()}</span>
       </div>
       <div class="hourly-time">${index === 0 ? weatherText('now') : item.time}</div>
     `;
@@ -396,7 +399,7 @@ function renderHourlyForecast(hourlyList) {
 function renderTodayDetails(city, current) {
   // Update Wind Card
   const windValue = document.getElementById('detailWindValue');
-  if (windValue) windValue.textContent = `${current.windSpeed} km/h`;
+  if (windValue) windValue.textContent = `${current.windSpeed} ${windUnit()}`;
 
   // Update Humidity Card
   const humValue = document.getElementById('detailHumidityValue');

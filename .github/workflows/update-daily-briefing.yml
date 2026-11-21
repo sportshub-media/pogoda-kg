@@ -31,9 +31,10 @@ jobs:
             git push
           fi
       # Best-effort: a failure here (e.g. IndexNow briefly down) must never fail the daily publish.
-      # The dated daily post itself is noindexed (build.js TEMPLATED_POST_RE), so only
-      # the pages whose content actually changed are submitted.
+      # Submits the pages that change every morning: /daily and the new dated post
+      # in all three languages, plus the blog lists that now link to it.
       - name: Notify IndexNow (Bing, Yandex)
         continue-on-error: true
         run: |
-          node scripts/indexnow.mjs --ready /daily /daily /ru/daily /en/daily
+          slug="daily-weather-forecast-kyrgyzstan-$(TZ=Asia/Bishkek date +%F)"
+          node scripts/indexnow.mjs --ready "/blog/$slug" /daily /ru/daily /en/daily "/blog/$slug" "/ru/blog/$slug" "/en/blog/$slug" /blog /ru/blog /en/blog

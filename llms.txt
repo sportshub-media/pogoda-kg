@@ -12,11 +12,12 @@
 - [Homepage (Kyrgyz)](https://pogoda.kg/): Live weather for Bishkek plus quick access to every city.
 - [Homepage (English)](https://pogoda.kg/en/): English-language homepage.
 - [Homepage (Russian)](https://pogoda.kg/ru/): Russian-language homepage.
-- [Daily Briefing](https://pogoda.kg/daily): Today's forecast for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.
+- [Daily Briefing](https://pogoda.kg/daily): Today's and tomorrow's forecast for all 17 cities, updated every morning, with links to the dated daily forecast articles.
 - [Mountain Passes](https://pogoda.kg/passes): Weather at Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel. Road access is confirmed only by the Ministry of Transport.
 - [Interactive Weather Map](https://pogoda.kg/map): Live temperature markers for all 17 cities on a map of Kyrgyzstan.
 - [Weather News](https://pogoda.kg/blog): Kyrgyzstan weather articles, mountain pass conditions and seasonal guides.
 - [FAQ](https://pogoda.kg/faq): Climate questions and answers for Kyrgyzstan and each city.
+- [About](https://pogoda.kg/about): Data sources (Open-Meteo forecasts, ERA5 climate averages), how the daily briefing is produced, and the limits of mountain forecasts.
 - [Contact](https://pogoda.kg/contact): Weather data inquiries, partnerships and feedback.
 - [Privacy Policy](https://pogoda.kg/privacy)
 - [Terms of Service](https://pogoda.kg/terms)
