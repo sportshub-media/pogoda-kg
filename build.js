@@ -266,6 +266,9 @@ function finalisePage(html, lang, basePath, baseDir = '/') {
     out = out.replace(/<button class="lang-btn" data-lang="(EN|KG|RU)">\1<\/button>/g, (m, code) =>
         `<a class="lang-btn" data-lang="${code}" href="${langUrl(code, basePath)}" hreflang="${LANG_CODES[code]}">${code}</a>`);
 
+    // Search boxes had only a placeholder, which screen readers don't reliably announce.
+    out = out.replace(/<input\b(?![^>]*aria-label)([^>]*?)\splaceholder="([^"]*)"/g, (m, attrs, text) => `<input${attrs} placeholder="${text}" aria-label="${text}"`);
+
     // Every city page linked from every page (8 of 17 were linked nowhere — audit C1).
     const cityLinks = CITIES.map(city =>
         `<li><a href="${langUrl(lang, `/${city.id}`)}" class="footer-city-link" data-city-id="${city.id}">${cityDisplayName(lang, city)}</a></li>`).join('\n          ');
@@ -513,7 +516,7 @@ function renderBlogListHTML(lang) {
         return `
       <a href="/blog/${post.slug}" style="text-decoration: none; color: inherit;">
         <div class="news-card" style="min-height: 220px;">
-          <img src="${post.image}" alt="${escAttr(data.title)}" class="news-card-img" loading="lazy">
+          <img src="${post.image}" alt="${escAttr(data.title)}" class="news-card-img" loading="lazy" width="1536" height="1024">
           <div class="news-card-overlay">
             <span class="news-tag">${data.category}</span>
             <h3 class="news-title" style="font-size:18px;">${data.title}</h3>
@@ -626,12 +629,12 @@ function translateHTML(html, lang, dict, currentUrl) {
         return match;
     });
     
-    // 3. Replace data-i18n-placeholder
-    result = result.replace(/data-i18n-placeholder="([^"]+)"/g, (match, key) => {
-        if (dict[key]) {
-            return `data-i18n-placeholder="${key}" placeholder="${dict[key]}"`;
-        }
-        return match;
+    // 3. Replace data-i18n-placeholder (swapping the source's English placeholder,
+    // not adding a second one — browsers use the first of duplicate attributes)
+    result = result.replace(/<(input|textarea)\b[^>]*\sdata-i18n-placeholder="([^"]+)"[^>]*>/g, (tag, name, key) => {
+        if (!dict[key]) return tag;
+        const withoutOld = tag.replace(/\splaceholder="[^"]*"/g, '');
+        return withoutOld.replace(/\sdata-i18n-placeholder="/, ` placeholder="${dict[key]}" data-i18n-placeholder="`);
     });
     
     // 4. Fix Canonical Link
@@ -692,6 +695,14 @@ htmlFiles.forEach(file => {
 
         if (file === 'daily.html') translated = renderDailyPage(translated, lang);
         if (file === 'passes.html') translated = renderPassesPage(translated, lang);
+        if (file === 'daily.html' || file === 'passes.html') {
+            const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+                { '@type': 'ListItem', position: 1, name: dict.nav_home, item: `https://pogoda.kg${langUrl(lang, '/')}` },
+                { '@type': 'ListItem', position: 2, name: dict[file === 'daily.html' ? 'nav_daily_briefing' : 'nav_mountain_passes'], item: `https://pogoda.kg${fullUrl}` }
+            ] };
+            translated = translated.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(crumbs)}</script>
+</head>`);
+        }
         if (file === 'blog.html') {
             translated = translated.replace('<div id="blogCardsGrid" class="blog-grid"></div>', `<div id="blogCardsGrid" class="blog-grid">${renderBlogListHTML(lang)}\n    </div>`);
             translated = translated.replace('"url": "https://pogoda.kg/blog"', `"url": "https://pogoda.kg${fullUrl}"`);
@@ -888,9 +899,21 @@ function renderArticle(template, post, lang) {
     const canonical = `https://pogoda.kg${url}`;
     const description = trimAtWord((data.seoDesc || data.excerpt).replace(/\s+/g, ' ').trim(), 160);
 
+    const title = fitSeoTitle(data.seoTitle || data.title);
     let html = translateHTML(template, lang, dict, url);
-    html = withHeadMeta(html, { title: fitSeoTitle(data.seoTitle || data.title), description });
-    if (TEMPLATED_POST_RE.test(post.slug)) html = html.replace('</head>', '  <meta name="robots" content="noindex, follow">\n</head>');
+    // Hand-written article templates never had Open Graph / Twitter tags.
+    if (!/property="og:title"/.test(html)) {
+        const image = `https://pogoda.kg${post.image}`;
+        html = html.replace('</head>', `  <meta property="og:type" content="article">\n  <meta property="og:title" content="">\n  <meta property="og:description" content="">\n  <meta property="og:url" content="${canonical}">\n  <meta property="og:image" content="${image}">\n  <meta property="og:site_name" content="Pogoda Kg">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:title" content="">\n  <meta name="twitter:description" content="">\n  <meta name="twitter:image" content="${image}">\n</head>`);
+    }
+    html = withHeadMeta(html, { title, description });
+    if (TEMPLATED_POST_RE.test(post.slug)) {
+        // hreflang between noindexed pages only produces "broken hreflang target" errors.
+        html = html.replace(/\s*<link rel="alternate" hreflang="[^"]+" href="[^"]+"\s*\/>/g, '');
+        html = html.replace('</head>', '  <meta name="robots" content="noindex, follow">\n</head>');
+    } else if (!/<meta name="robots"/.test(html)) {
+        html = html.replace('</head>', '  <meta name="robots" content="max-image-preview:large">\n</head>');
+    }
 
     html = mustReplace(html, /(<h1 class="post-title"[^>]*>)[\s\S]*?(<\/h1>)/, `$1${data.title}$2`, 'h1.post-title', post.slug);
     html = mustReplace(html, /(<span class="news-tag"[^>]*>)[^<]*(<\/span>)/, `$1${data.category}$2`, 'span.news-tag', post.slug);
