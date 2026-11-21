@@ -31,6 +31,14 @@
   <symbol id="icon-wind" viewBox="0 0 512 512"><path d="M288 32c0 17.7 14.3 32 32 32h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H352c53 0 96-43 96-96s-43-96-96-96H320c-17.7 0-32 14.3-32 32zm64 352c0 17.7 14.3 32 32 32h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H384c-17.7 0-32 14.3-32 32zM128 512h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H160c17.7 0 32 14.3 32 32s-14.3 32-32 32H128c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/></symbol>
   <symbol id="icon-xmark" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
   </svg>
+  <div class="floating-dark-toggle">
+    <span>Dark<br>Mode</span>
+    <label class="toggle-switch">
+      <input type="checkbox" class="theme-toggle-input" aria-label="Dark Mode">
+      <span class="slider"></span>
+    </label>
+  </div>
+
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="brand-logo" aria-label="Pogoda.kg Home">
@@ -119,6 +127,14 @@
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-container" style="max-width:1320px; margin: 20px auto 0; padding: 0 40px; font-size: 14px; color: var(--text-sub);">
+    <a href="index.html" style="color:var(--text-sub); text-decoration:none;"><svg class="icon"><use href="#icon-house"></use></svg> <span data-i18n="nav_home">Home</span></a>
+    <span style="margin: 0 8px;">/</span>
+    <span data-i18n="nav_mountain_passes">Mountain Passes</span>
+      <div class="mini-weather-widget" id="miniWeatherWidget"></div>
+  </div>
   <main>
     <section class="service-hero passes-hero"><div class="service-hero-content"><p class="hero-kicker" id="passesKicker">Travel weather</p><h1 id="passesTitle">Mountain passes: weather and road information</h1><p id="passesIntro"></p></div></section>
     <section class="section-wrapper"><h2 class="section-title" data-i18n="passes_info_title">Official road information and live weather</h2><div class="official-links"><a id="roadStatusLink" class="btn-primary" target="_blank" rel="noopener noreferrer"></a><a id="cameraLink" class="btn-secondary" target="_blank" rel="noopener noreferrer"></a></div><p id="passesSafety" class="safety-note"></p><div id="passesGrid" class="travel-grid" aria-live="polite"></div><h2 class="section-title" data-i18n="passes_before_title">Before travelling through a pass</h2><p class="safety-note" data-i18n="passes_before_body">Use the weather cards to prepare for temperature, wind and visibility. Only the Ministry of Transport can confirm whether a road is open, restricted or closed, so check its latest update before departure.</p></section>
