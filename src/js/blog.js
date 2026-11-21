@@ -3,29 +3,15 @@ import { initTheme } from './theme.js';
 import { initLangSwitcher, getCurrentLang } from './i18n.js';
 
 import { BLOG_POSTS } from './blog-posts-data.js';
-import { initMiniWeather, refreshMiniWeather } from './mini-weather.js';
+import { initMiniWeather } from './mini-weather.js';
 export { BLOG_POSTS };
 
+// Articles and the /blog list are rendered by build.js; only the search filter
+// below redraws the list in the browser.
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMiniWeather();
-
-  const currentLang = getCurrentLang() || 'KG';
-
-  const gridContainer = document.getElementById('blogCardsGrid');
-  if (gridContainer) {
-    renderBlogPosts(BLOG_POSTS, currentLang);
-    initLangSwitcher((lang) => {
-      renderBlogPosts(BLOG_POSTS, lang);
-      refreshMiniWeather(lang);
-    });
-  } else {
-    initSingleArticle(currentLang);
-    initLangSwitcher((lang) => {
-      initSingleArticle(lang);
-      refreshMiniWeather(lang);
-    });
-  }
+  initLangSwitcher();
 });
 
 function renderBlogPosts(posts, lang = 'KG') {
@@ -41,7 +27,7 @@ function renderBlogPosts(posts, lang = 'KG') {
   container.innerHTML = posts.map(post => {
     const data = post.translations[lang] || post.translations.EN;
     return `
-      <a href="/blog/${post.slug}.html" style="text-decoration: none; color: inherit;">
+      <a href="/blog/${post.slug}" style="text-decoration: none; color: inherit;">
         <div class="news-card" style="min-height: 220px;">
           <img src="${post.image}" alt="${data.title}" class="news-card-img" loading="lazy">
           <div class="news-card-overlay">
@@ -57,61 +43,6 @@ function renderBlogPosts(posts, lang = 'KG') {
       </a>
     `;
   }).join('');
-}
-
-function initSingleArticle(lang = 'KG') {
-  const path = window.location.pathname;
-  const post = BLOG_POSTS.find(p => path.includes(p.slug));
-  if (!post) return;
-
-  const data = post.translations[lang] || post.translations.EN;
-
-  // Articles live at one unprefixed URL and swap language client-side, so the
-  // <title>/description baked into the HTML would otherwise stay in the source
-  // language no matter which language the reader picked.
-  if (data.seoTitle) document.title = data.seoTitle;
-  if (data.seoDesc) {
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', data.seoDesc);
-  }
-  document.documentElement.lang = lang === 'KG' ? 'ky' : lang.toLowerCase();
-
-  // Breadcrumbs
-  const breadcrumbsSpans = document.querySelectorAll('.breadcrumbs-container span');
-  if (breadcrumbsSpans.length > 0) {
-    const lastSpan = breadcrumbsSpans[breadcrumbsSpans.length - 1];
-    if (lastSpan) lastSpan.textContent = data.title;
-  }
-
-  // Back button
-  const backBtn = document.querySelector('.back-btn');
-  if (backBtn) {
-    const backText = lang === 'KG' ? 'Жаңылыктарга кайтуу' : (lang === 'RU' ? 'Назад к новостям' : 'Back to News');
-    backBtn.innerHTML = `<svg class="icon"><use href="#icon-arrow-left"></use></svg> ${backText}`;
-  }
-
-  // News tag
-  const newsTag = document.querySelector('.news-tag');
-  if (newsTag) newsTag.textContent = data.category;
-
-  // Post title H1
-  const postTitle = document.querySelector('.post-title');
-  if (postTitle) postTitle.textContent = data.title;
-
-  // Post Meta
-  const postMeta = document.querySelector('.post-meta');
-  if (postMeta) {
-    postMeta.innerHTML = `
-      <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
-      <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>
-    `;
-  }
-
-  // Post Content
-  const postContent = document.querySelector('.post-content');
-  if (postContent) {
-    postContent.innerHTML = data.content;
-  }
 }
 
 // Search input handler on blog.html

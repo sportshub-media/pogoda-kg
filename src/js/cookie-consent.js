@@ -10,7 +10,7 @@ export function initCookieConsent() {
   // Use translations if available, fallback to English
   const text = TRANSLATIONS[lang] && TRANSLATIONS[lang].cookie_text 
     ? TRANSLATIONS[lang].cookie_text 
-    : "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy.html'>Privacy Policy</a>.";
+    : "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy'>Privacy Policy</a>.";
   const btnText = TRANSLATIONS[lang] && TRANSLATIONS[lang].cookie_btn 
     ? TRANSLATIONS[lang].cookie_btn 
     : "Got it!";

@@ -54,9 +54,9 @@ export const TRANSLATIONS = {
     news_desc: "Stay up-to-date with regional Kyrgyzstan weather news, mountain snow reports, and climate trends.",
     gallery_title: "Kyrgyzstan Weather Landscapes & Regions",
     gallery_desc: "Explore live scenic weather photography across Tien-Shan mountains, Issyk-Kul alpine lake, Naryn highlands, and Bishkek city valley.",
-    footer_desc: "Kyrgyzstan's primary weather portal (pogoda.kg). Providing hyper-local real-time weather forecasts, hourly updates, and 7-day forecasts for 10 major Kyrgyzstan cities.",
+    footer_desc: "Weather forecasts for 17 cities in Kyrgyzstan: current conditions, hourly updates and a 7-day outlook, based on Open-Meteo model data.",
     footer_nav: "Navigation",
-    footer_locations: "Top Locations",
+    footer_locations: "Cities",
     footer_contact: "Contact & Support",
     contact_title: "Contact Pogoda Kg Team",
     contact_desc: "Have a weather data inquiry, partnership proposal, or feedback for our Kyrgyzstan weather forecast system?",
@@ -76,31 +76,31 @@ export const TRANSLATIONS = {
     passes_info_title: "Official road information and live weather",
     passes_before_title: "Before travelling through a pass",
     passes_before_body: "Use the weather cards to prepare for temperature, wind and visibility. Only the Ministry of Transport can confirm whether a road is open, restricted or closed, so check its latest update before departure.",
-    cookie_text: "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy.html'>Privacy Policy</a>.",
+    cookie_text: "We use local storage to save your language and theme preferences to provide you with a better experience. By continuing to use this site, you agree to our <a href='/privacy'>Privacy Policy</a>.",
     cookie_btn: "Got it!",
     close_btn: "Close",
     faq_title: "Frequently Asked Questions",
     faq_q1: "Q: How often is live weather data updated?",
     faq_a1: "A: Pogoda Kg refreshes weather model data every 15 minutes automatically.",
     faq_q2: "Q: Which Kyrgyzstan cities are supported?",
-    faq_a2: "A: All 10 major cities (Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, Talas) plus surrounding districts.",
+    faq_a2: "A: All 17 cities on the site: Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, Talas, Batken, Cholpon-Ata, Kant, Kemin, Kyzyl-Kiya, Toktogul and Razzakov.",
     faq_q3: "Q: Do you provide historical weather data?",
     faq_a3: "A: Currently, we focus on real-time and 7-day forecast data. Historical data is not available.",
     faq_q4: "Q: Is there a mobile app available?",
     faq_a4: "A: Our website is fully mobile-responsive and works perfectly on all devices like a native app.",
     faq_q5: "Q: How accurate is the 7-day forecast?",
-    faq_a5: "A: Our 7-day forecast uses advanced meteorological models specific to Kyrgyzstan's mountainous terrain for high accuracy.",
+    faq_a5: "A: Our forecast comes from Open-Meteo, which combines weather models from national weather services. We request it for each city's coordinates and refresh it every 15 minutes. The first two or three days are usually the most reliable; in the mountains, real conditions can differ from the model. For official weather warnings, check the Ministry of Emergency Situations.",
     faq_q1_clean: "How often is live weather data updated?",
     faq_a1_clean: "Pogoda Kg refreshes weather model data every 15 minutes automatically.",
     faq_q2_clean: "Which Kyrgyzstan cities are supported?",
-    faq_a2_clean: "All 10 major cities (Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, Talas) plus surrounding districts.",
+    faq_a2_clean: "All 17 cities on the site: Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, Kara-Balta, Balykchy, Naryn, Talas, Batken, Cholpon-Ata, Kant, Kemin, Kyzyl-Kiya, Toktogul and Razzakov.",
     faq_q3_clean: "Do you provide historical weather data?",
     faq_a3_clean: "Currently, we focus on real-time and 7-day forecast data. Historical data is not available.",
     faq_q4_clean: "Is there a mobile app available?",
     faq_a4_clean: "Our website is fully mobile-responsive and works perfectly on all devices like a native app.",
     faq_q5_clean: "How accurate is the 7-day forecast?",
-    faq_a5_clean: "Our 7-day forecast uses advanced meteorological models specific to Kyrgyzstan's mountainous terrain for high accuracy.",
-    contact_office_title: "Office Headquarters",
+    faq_a5_clean: "Our forecast comes from Open-Meteo, which combines weather models from national weather services. We request it for each city's coordinates and refresh it every 15 minutes. The first two or three days are usually the most reliable; in the mountains, real conditions can differ from the model. For official weather warnings, check the Ministry of Emergency Situations.",
+    contact_office_title: "Contact details",
     contact_support_email_label: "Support Email",
     contact_success_msg: "Your email app should open with a draft. Send it there to deliver your message. If it does not open, email info.pogoda.kg@gmail.com directly.",
     contact_required_alert: "Please fill in all required form fields.",
@@ -223,9 +223,9 @@ export const TRANSLATIONS = {
     news_desc: "Кыргызстандын тоо ашуулары, кар абалы жана климаттык жаңылыктары менен кабардар болуңуз.",
     gallery_title: "Кыргызстандын жаратылышы жана аймактары",
     gallery_desc: "Тянь-Шань тоолору, Ысык-Көл, Нарын тоолору жана Чүй өрөөнүнүн сүрөттөрү.",
-    footer_desc: "Кыргызстандын негизги аба ырайы порталы (pogoda.kg). Кыргызстандын 10 облусу жана шаары үчүн 24 сааттык жана 7 күндүк так аба ырайы.",
+    footer_desc: "Кыргызстандын 17 шаары үчүн аба ырайы: азыркы абал, сааттык жана 7 күндүк божомол, Open-Meteo маалыматтарынын негизинде.",
     footer_nav: "Навигация",
-    footer_locations: "Ири шаарлар",
+    footer_locations: "Шаарлар",
     footer_contact: "Байланыш жана колдоо",
     contact_title: "Pogoda Kg тобу менен байланышуу",
     contact_desc: "Суроолоруңуз же сунуштарыңыз барбы? Бизге жазыңыз.",
@@ -245,31 +245,31 @@ export const TRANSLATIONS = {
     passes_info_title: "Расмий жол маалыматы жана учурдагы аба ырайы",
     passes_before_title: "Ашуудан өтөөрдүн алдында",
     passes_before_body: "Температурага, шамалга жана көрүү алыстыгына даярдануу үчүн аба ырайы карталарын колдонуңуз. Жолдун ачык же жабык экенин Транспорт министрлиги гана ырастайт, ошондуктан сапар алдында акыркы билдирүүнү текшериңиз.",
-    cookie_text: "Биз сизге жакшыраак тажрыйба берүү үчүн тил жана тема тандоолоруңузду сактоо максатында локалдык сактагычты колдонобуз. Бул сайтты колдонууну улантуу менен, сиз биздин <a href='/privacy.html'>Купуялык саясатыбызга</a> макулдугуңузду билдиресиз.",
+    cookie_text: "Биз сизге жакшыраак тажрыйба берүү үчүн тил жана тема тандоолоруңузду сактоо максатында локалдык сактагычты колдонобуз. Бул сайтты колдонууну улантуу менен, сиз биздин <a href='/privacy'>Купуялык саясатыбызга</a> макулдугуңузду билдиресиз.",
     cookie_btn: "Түшүндүм!",
     close_btn: "Жабуу",
     faq_title: "Көп берилүүчү суроолор",
     faq_q1: "С: Аба ырайы тууралуу маалымат канчалык тез-тез жаңыланат?",
     faq_a1: "Ж: Pogoda Kg аба ырайы моделинин маалыматтарын ар бир 15 мүнөт сайын автоматтык түрдө жаңыртып турат.",
     faq_q2: "С: Кыргызстандын кайсы шаарлары колдоого алынат?",
-    faq_a2: "Ж: Бардык 10 ири шаар (Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын, Талас) жана алардын тегерегиндеги аймактар.",
+    faq_a2: "Ж: Сайттагы бардык 17 шаар: Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын, Талас, Баткен, Чолпон-Ата, Кант, Кемин, Кызыл-Кыя, Токтогул жана Раззаков.",
     faq_q3: "С: Сиз аба ырайынын тарыхый маалыматтарын бересизби?",
     faq_a3: "Ж: Учурда биз реалдуу убакыт жана 7 күндүк прогноз маалыматтарына басым жасайбыз. Тарыхый маалыматтар жеткиликсиз.",
     faq_q4: "С: Мобилдик тиркеме барбы?",
     faq_a4: "Ж: Биздин веб-сайт мобилдик түзмөктөргө толугу менен ылайыкташтырылган жана бардык түзмөктөрдө жергиликтүү тиркемедей иштейт.",
     faq_q5: "С: 7 күндүк прогноз канчалык так?",
-    faq_a5: "Ж: Биздин 7 күндүк прогноз Кыргызстандын тоолуу рельефине ылайыкталган алдыңкы метеорологиялык моделдерди колдонуп, жогорку тактыкты камсыздайт.",
+    faq_a5: "Ж: Божомол Open-Meteo кызматынан алынат, ал улуттук метеокызматтардын моделдерин бириктирет. Маалыматты ар бир шаардын координаттары үчүн алып, ар 15 мүнөт сайын жаңыртабыз. Алгачкы эки-үч күн адатта эң ишенимдүү; тоолордо чыныгы шарт моделден айырмаланышы мүмкүн. Расмий эскертүүлөрдү Өзгөчө кырдаалдар министрлигинен текшериңиз.",
     faq_q1_clean: "Аба ырайы тууралуу маалымат канчалык тез-тез жаңыланат?",
     faq_a1_clean: "Pogoda Kg аба ырайы моделинин маалыматтарын ар бир 15 мүнөт сайын автоматтык түрдө жаңыртып турат.",
     faq_q2_clean: "Кыргызстандын кайсы шаарлары колдоого алынат?",
-    faq_a2_clean: "Бардык 10 ири шаар (Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын, Талас) жана алардын тегерегиндеги аймактар.",
+    faq_a2_clean: "Сайттагы бардык 17 шаар: Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн, Кара-Балта, Балыкчы, Нарын, Талас, Баткен, Чолпон-Ата, Кант, Кемин, Кызыл-Кыя, Токтогул жана Раззаков.",
     faq_q3_clean: "Сиз аба ырайынын тарыхый маалыматтарын бересизби?",
     faq_a3_clean: "Учурда биз реалдуу убакыт жана 7 күндүк прогноз маалыматтарына басым жасайбыз. Тарыхый маалыматтар жеткиликсиз.",
     faq_q4_clean: "Мобилдик тиркеме барбы?",
     faq_a4_clean: "Биздин веб-сайт мобилдик түзмөктөргө толугу менен ылайыкташтырылган жана бардык түзмөктөрдө жергиликтүү тиркемедей иштейт.",
     faq_q5_clean: "7 күндүк прогноз канчалык так?",
-    faq_a5_clean: "Биздин 7 күндүк прогноз Кыргызстандын тоолуу рельефине ылайыкталган алдыңкы метеорологиялык моделдерди колдонуп, жогорку тактыкты камсыздайт.",
-    contact_office_title: "Башкы кеңсе",
+    faq_a5_clean: "Божомол Open-Meteo кызматынан алынат, ал улуттук метеокызматтардын моделдерин бириктирет. Маалыматты ар бир шаардын координаттары үчүн алып, ар 15 мүнөт сайын жаңыртабыз. Алгачкы эки-үч күн адатта эң ишенимдүү; тоолордо чыныгы шарт моделден айырмаланышы мүмкүн. Расмий эскертүүлөрдү Өзгөчө кырдаалдар министрлигинен текшериңиз.",
+    contact_office_title: "Байланыш маалыматы",
     contact_support_email_label: "Колдоо кызматынын почтасы",
     contact_success_msg: "Почта колдонмосунда каттын долбоору ачылат. Катты ошол жерден жөнөтүңүз. Ачылбаса, info.pogoda.kg@gmail.com дарегине жазыңыз.",
     contact_required_alert: "Бардык милдеттүү талааларды толтуруңуз.",
@@ -392,9 +392,9 @@ export const TRANSLATIONS = {
     news_desc: "Актуальные новости погоды Кыргызстана, отчеты о снеге на перевалах и климатические тренды.",
     gallery_title: "Пейзажи и регионы Кыргызстана",
     gallery_desc: "Живописные фотографии гор Тянь-Шань, озера Иссык-Куль, Нарынских высот и Чуйской долины.",
-    footer_desc: "Главный погодный портал Кыргызстана (pogoda.kg). Точный почасовой и 7-дневный прогноз погоды для всех 10 ключевых городов.",
+    footer_desc: "Прогноз погоды для 17 городов Кыргызстана: погода сейчас, почасовой прогноз и прогноз на 7 дней по данным Open-Meteo.",
     footer_nav: "Навигация",
-    footer_locations: "Популярные города",
+    footer_locations: "Города",
     footer_contact: "Контакты и поддержка",
     contact_title: "Связаться с командой Pogoda Kg",
     contact_desc: "Есть вопросы по данным погоды или предложения по сотрудничеству? Напишите нам.",
@@ -414,31 +414,31 @@ export const TRANSLATIONS = {
     passes_info_title: "Официальная дорожная информация и текущая погода",
     passes_before_title: "Перед поездкой через перевал",
     passes_before_body: "Используйте погодные карточки, чтобы подготовиться к температуре, ветру и видимости. Только Министерство транспорта подтверждает, открыта, ограничена или закрыта дорога, поэтому перед выездом проверьте последнее сообщение.",
-    cookie_text: "Мы используем локальное хранилище для сохранения ваших настроек языка и темы, чтобы сделать ваш опыт лучше. Продолжая использовать этот сайт, вы соглашаетесь с нашей <a href='/privacy.html'>Политикой конфиденциальности</a>.",
+    cookie_text: "Мы используем локальное хранилище для сохранения ваших настроек языка и темы, чтобы сделать ваш опыт лучше. Продолжая использовать этот сайт, вы соглашаетесь с нашей <a href='/privacy'>Политикой конфиденциальности</a>.",
     cookie_btn: "Понятно!",
     close_btn: "Закрыть",
     faq_title: "Часто задаваемые вопросы",
     faq_q1: "В: Как часто обновляются данные о погоде?",
     faq_a1: "О: Pogoda Kg автоматически обновляет данные метеорологических моделей каждые 15 минут.",
     faq_q2: "В: Какие города Кыргызстана поддерживаются?",
-    faq_a2: "О: Все 10 крупных городов (Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Кара-Балта, Балыкчы, Нарын, Талас), а также прилегающие районы.",
+    faq_a2: "О: Все 17 городов на сайте: Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Кара-Балта, Балыкчы, Нарын, Талас, Баткен, Чолпон-Ата, Кант, Кемин, Кызыл-Кия, Токтогул и Раззаков.",
     faq_q3: "В: Предоставляете ли вы исторические данные о погоде?",
     faq_a3: "О: В настоящее время мы сосредоточены на данных в реальном времени и 7-дневном прогнозе. Исторические данные недоступны.",
     faq_q4: "В: Есть ли мобильное приложение?",
     faq_a4: "О: Наш веб-сайт полностью адаптирован для мобильных устройств и отлично работает на всех устройствах, как нативное приложение.",
     faq_q5: "В: Насколько точен 7-дневный прогноз?",
-    faq_a5: "О: Наш 7-дневный прогноз использует передовые метеорологические модели, учитывающие горный рельеф Кыргызстана, для высокой точности.",
+    faq_a5: "О: Прогноз берётся из Open-Meteo, который объединяет модели национальных метеослужб. Мы запрашиваем данные по координатам каждого города и обновляем их каждые 15 минут. Первые два-три дня обычно самые надёжные; в горах реальные условия могут отличаться от модели. Официальные предупреждения о погоде публикует МЧС.",
     faq_q1_clean: "Как часто обновляются данные о погоде?",
     faq_a1_clean: "Pogoda Kg автоматически обновляет данные метеорологических моделей каждые 15 минут.",
     faq_q2_clean: "Какие города Кыргызстана поддерживаются?",
-    faq_a2_clean: "Все 10 крупных городов (Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Кара-Балта, Балыкчы, Нарын, Талас), а также прилегающие районы.",
+    faq_a2_clean: "Все 17 городов на сайте: Бишкек, Ош, Джалал-Абад, Каракол, Токмок, Узген, Кара-Балта, Балыкчы, Нарын, Талас, Баткен, Чолпон-Ата, Кант, Кемин, Кызыл-Кия, Токтогул и Раззаков.",
     faq_q3_clean: "Предоставляете ли вы исторические данные о погоде?",
     faq_a3_clean: "В настоящее время мы сосредоточены на данных в реальном времени и 7-дневном прогнозе. Исторические данные недоступны.",
     faq_q4_clean: "Есть ли мобильное приложение?",
     faq_a4_clean: "Наш веб-сайт полностью адаптирован для мобильных устройств и отлично работает на всех устройствах, как нативное приложение.",
     faq_q5_clean: "Насколько точен 7-дневный прогноз?",
-    faq_a5_clean: "Наш 7-дневный прогноз использует передовые метеорологические модели, учитывающие горный рельеф Кыргызстана, для высокой точности.",
-    contact_office_title: "Главный офис",
+    faq_a5_clean: "Прогноз берётся из Open-Meteo, который объединяет модели национальных метеослужб. Мы запрашиваем данные по координатам каждого города и обновляем их каждые 15 минут. Первые два-три дня обычно самые надёжные; в горах реальные условия могут отличаться от модели. Официальные предупреждения о погоде публикует МЧС.",
+    contact_office_title: "Контактные данные",
     contact_support_email_label: "Email поддержки",
     contact_success_msg: "В почтовом приложении откроется черновик. Отправьте его там. Если приложение не открылось, напишите на info.pogoda.kg@gmail.com.",
     contact_required_alert: "Пожалуйста, заполните все обязательные поля формы.",
@@ -511,115 +511,17 @@ export const TRANSLATIONS = {
   }
 };
 
-// <title>/description per static page per language — same copy as PAGE_META in
-// build.js. The server-rendered HTML already has the correct pair baked in for
-// whichever URL was requested, but a client-side language switch (or an initial
-// load where localStorage silently rewrites the URL to a different language)
-// left the <title>/meta tags stuck in the originally-served language. This is
-// the client-side mirror needed to correct them in place.
-const PAGE_META = {
-  home: {
-    EN: { title: "Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg", description: "Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn today." },
-    RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
-    KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
-  },
-  map: {
-    EN: { title: "Pogoda Kg | Interactive Kyrgyzstan Weather Map & Radar", description: "Explore our interactive Kyrgyzstan weather map with live temperature markers, wind data, and forecasts for Bishkek, Osh, Karakol, Naryn, and more cities." },
-    RU: { title: "Интерактивная карта погоды Кыргызстана | Pogoda Kg", description: "Изучите интерактивную карту погоды Кыргызстана с живыми отметками температуры, данными о ветре и прогнозами для Бишкека, Оша, Каракола, Нарына и других городов." },
-    KG: { title: "Кыргызстандын интерактивдүү аба ырайы картасы | Pogoda Kg", description: "Бишкек, Ош, Каракол, Нарын жана башка шаарлардын температура белгилери, шамал маалыматтары жана божомолдору менен интерактивдүү картадан таанышып чыгыңыз." }
-  },
-  contact: {
-    EN: { title: "Contact Pogoda Kg | Weather Data & Support Inquiries", description: "Contact the Pogoda Kg team for weather data inquiries, partnership proposals, feedback, or general questions about our Kyrgyzstan weather forecast service." },
-    RU: { title: "Связаться с командой Pogoda Kg — вопросы и поддержка", description: "Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана." },
-    KG: { title: "Pogoda Kg тобу менен байланышуу — суроолор жана колдоо", description: "Аба ырайы маалыматтары, кызматташтык сунуштары, пикирлер же Кыргызстандын аба ырайы божомолу тууралуу суроо-талаптарыңыз боюнча Pogoda Kg тобуна кайрылыңыз." }
-  },
-  terms: {
-    EN: { title: "Terms of Service | Pogoda Kg Weather Forecast Site", description: "Read the Terms of Service for Pogoda Kg, the Kyrgyzstan weather forecast portal, including our weather data disclaimer and acceptable use guidelines here." },
-    RU: { title: "Условия использования сайта Pogoda Kg — прочитайте", description: "Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта." },
-    KG: { title: "Колдонуу шарттары | Pogoda Kg аба ырайы порталы сайты", description: "Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат." }
-  },
-  privacy: {
-    EN: { title: "Privacy Policy | Pogoda Kg Weather Forecast Portal", description: "Read the Pogoda Kg Privacy Policy to learn what data we collect, how we use it, and how your language and city preferences are stored in your browser." },
-    RU: { title: "Политика конфиденциальности сайта Pogoda Kg — читать", description: "Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере." },
-    KG: { title: "Купуялык саясаты | Pogoda Kg аба ырайы порталы сайты", description: "Pogoda Kg кандай маалыматтарды чогултарын, аны кантип колдонорун жана тил менен шаар тандооңуз браузериңизде кантип сакталарын Купуялык саясатыбыздан билиңиз." }
-  },
-  blog: {
-    EN: { title: "Pogoda Kg | Kyrgyzstan Weather News & Climate Blog", description: "Read the latest Kyrgyzstan weather forecast news, mountain pass conditions, Issyk-Kul lake reports, and seasonal climate updates from the Pogoda Kg team." },
-    RU: { title: "Все новости и блог о погоде в Кыргызстане | Pogoda.kg", description: "Читайте последние новости о погоде в Кыргызстане, состоянии горных перевалов, отчёты по озеру Иссык-Куль и сезонные климатические обновления от Pogoda Kg." },
-    KG: { title: "Кыргызстандын аба ырайы жаңылыктары | Pogoda.kg сайты", description: "Кыргызстандын аба ырайы боюнча акыркы жаңылыктарды, тоо ашууларынын абалын, Ысык-Көл жөнүндөгү отчётторду жана мезгилдик климаттык жаңылыктарды окуңуз." }
-  },
-  '404': {
-    EN: { title: "404 — Page Not Found | Pogoda Kg Weather Forecast Portal", description: "The weather page you're looking for doesn't exist on Pogoda Kg. Return to our homepage for the latest daily Kyrgyzstan weather forecasts and city guides." },
-    RU: { title: "404 — Такая страница не найдена на сайте Pogoda Kg", description: "Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану." },
-    KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
-  },
-  faq: {
-    EN: { title: "Kyrgyzstan Weather FAQ: Climate Questions Answered", description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — one place." },
-    RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
-    KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
-  },
-  daily: {
-    EN: { title: "Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg", description: "Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now." },
-    RU: { title: "Погода в Кыргызстане сегодня: ежедневная сводка | Pogoda.kg", description: "Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро." },
-    KG: { title: "Бүгүн Кыргызстандагы аба ырайы: күндөлүк маалымат | Pogoda.kg", description: "Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат." }
-  },
-  passes: {
-    EN: { title: "Kyrgyzstan Mountain Pass Weather and Roads | Pogoda.kg", description: "Mountain pass weather for Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel with temperature, wind, visibility and official road-status links before travel." },
-    RU: { title: "Погода на горных перевалах Кыргызстана и состояние дорог | Pogoda.kg", description: "Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость." },
-    KG: { title: "Кыргызстандын тоо ашууларындагы аба ырайы жана жол маалыматы | Pogoda.kg", description: "Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз." }
-  }
-};
-
-// Maps a pathname (any language prefix, with or without trailing .html) to a
-// PAGE_META key. Returns null for city pages and blog articles — those carry
-// their own dynamic per-page meta, set elsewhere (app.js / blog.js).
-function getStaticPageKey(pathname) {
-  let p = pathname.replace(/^\/(en|ru|kg)(?=\/|$)/, '');
-  p = p.replace(/\.html$/, '');
-  if (p === '' || p === '/') return 'home';
-  if (p === '/map') return 'map';
-  if (p === '/contact') return 'contact';
-  if (p === '/terms') return 'terms';
-  if (p === '/privacy') return 'privacy';
-  if (p === '/blog') return 'blog';
-  if (p === '/404') return '404';
-  if (p === '/faq') return 'faq';
-  if (p === '/daily') return 'daily';
-  if (p === '/passes') return 'passes';
-  return null;
-}
-
-// Corrects <html lang>, <title>, meta description, and the matching og:/twitter:
-// tags for the current URL after a client-side language change. Safe to call
-// unconditionally — it's a no-op (sets the same values) when the page's
-// server-rendered head already matches.
+// Every page language has its own URL with the right <title>/meta baked in at
+// build time, so only <html lang> needs syncing here (no client-side rewrite of
+// the title — audit check 16).
 export function syncPageHeadForLang(lang) {
   document.documentElement.lang = lang === 'KG' ? 'ky' : lang.toLowerCase();
-
-  const pageKey = getStaticPageKey(window.location.pathname);
-  const meta = pageKey && PAGE_META[pageKey] && PAGE_META[pageKey][lang];
-  if (!meta) return;
-
-  document.title = meta.title;
-  const setContent = (selector, value) => {
-    const el = document.querySelector(selector);
-    if (el) el.setAttribute('content', value);
-  };
-  setContent('meta[name="description"]', meta.description);
-  setContent('meta[property="og:title"]', meta.title);
-  setContent('meta[property="og:description"]', meta.description);
-  setContent('meta[name="twitter:title"]', meta.title);
-  setContent('meta[name="twitter:description"]', meta.description);
 }
 
 export function getCurrentLang() {
   const path = window.location.pathname;
   if (/^\/en(?:\/|$)/.test(path)) return 'EN';
   if (/^\/ru(?:\/|$)/.test(path)) return 'RU';
-  if (/^\/blog\/.+/.test(path)) {
-    const saved = storage.getItem('pogoda_lang');
-    return ['KG', 'RU', 'EN'].includes(saved) ? saved : 'KG';
-  }
   return 'KG';
 }
 
@@ -633,9 +535,8 @@ export function updateLinksForLang(lang) {
   document.querySelectorAll('a').forEach(a => {
     let href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
-    // Individual blog articles only exist at the unprefixed /blog/<slug>.html path
-    // (no per-language copies), so leave them alone.
-    if (href.startsWith('/blog/')) return;
+    // The EN / KG / RU switcher links deliberately point at the other languages.
+    if (a.classList.contains('lang-btn')) return;
 
     // Remove any existing language prefix
     let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
@@ -658,9 +559,6 @@ export function updateLinksForLang(lang) {
     let match = onclick.match(/window\.location\.href='([^']+)'/);
     if (match) {
         let href = match[1];
-        // Same as the <a> handler above: blog articles only exist at the unprefixed
-        // /blog/<slug>.html path, so leave links to them alone.
-        if (href.startsWith('/blog/') || href.startsWith('blog/')) return;
         let cleanHref = href.replace(/^\/(en|ru|kg)(\/|$)/, '/');
         if (!cleanHref.startsWith('/')) {
             let currentPath = window.location.pathname;
@@ -755,26 +653,20 @@ export function initWeatherToolsNav(lang = getCurrentLang()) {
   updateLinksForLang(lang);
 }
 
-export function initLangSwitcher(onLangChange) {
-  const article = /^\/blog\/.+/.test(location.pathname);
+export function initLangSwitcher() {
   const activeLang = getCurrentLang();
   storage.setItem('pogoda_lang', activeLang);
   syncPageHeadForLang(activeLang);
   applyTranslations(activeLang);
   initWeatherToolsNav(activeLang);
   document.querySelectorAll('.lang-btn').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', event => {
       const lang = button.getAttribute('data-lang');
       if (!['KG', 'RU', 'EN'].includes(lang)) return;
       storage.setItem('pogoda_lang', lang);
-      if (article) {
-        syncPageHeadForLang(lang);
-        applyTranslations(lang);
-        initWeatherToolsNav(lang);
-        onLangChange?.(lang);
-        return;
-      }
-      // Navigate to the actual translated document so Back, metadata, and content agree.
+      // The build makes these real <a href> links; navigating here as well keeps
+      // the current query string and hash.
+      event.preventDefault();
       const path = location.pathname.replace(/^\/(en|ru|kg)(?=\/|$)/, '').replace(/index\.html$/, '') || '/';
       location.href = `${lang === 'KG' ? '' : '/' + lang.toLowerCase()}${path}${location.search}${location.hash}`;
     });

@@ -51,87 +51,107 @@ if (homeFaqMatch && moreGeneralFaqMatch && cityFaqMatch) {
     throw new Error('Could not find HOME_FAQ/MORE_GENERAL_FAQ/CITY_FAQ in faq-data.js');
 }
 
+// 2d. Copy and data behind /daily and /passes, so their headings and content are
+// in the served HTML in the page's own language (audit H4) rather than English
+// placeholders that only JavaScript replaced.
+function extractFromJs(file, re) {
+    const match = fs.readFileSync(path.join(SRC_DIR, 'js', file), 'utf8').match(re);
+    if (!match) throw new Error(`Could not find ${re} in ${file}`);
+    return eval('(' + match[1] + ')');
+}
+const DAILY_COPY = extractFromJs('daily-briefing.js', /const copy = (\{[\s\S]*?\n\});/);
+const DAILY_CONDITIONS = extractFromJs('daily-briefing.js', /const conditions = (\{[\s\S]*?\n\});/);
+const DAILY_BRIEFING = extractFromJs('daily-briefing-data.js', /export const DAILY_BRIEFING = (\{[\s\S]*?\n\});/);
+const PASSES_COPY = extractFromJs('passes.js', /const copy = (\{[\s\S]*?\n\});/);
+const KYRGYZSTAN_PASSES = extractFromJs('passes-data.js', /export const KYRGYZSTAN_PASSES = (\[[\s\S]*?\]);/);
+const { OFFICIAL_ROAD_STATUS_URL, OFFICIAL_CAMERAS_URL } = Object.fromEntries(
+    [...fs.readFileSync(path.join(SRC_DIR, 'js', 'passes-data.js'), 'utf8').matchAll(/export const (OFFICIAL_\w+_URL) = '([^']+)'/g)].map(m => [m[1], m[2]]));
+
 // 3. Define Languages and their mapping
 const LANGS = ['KG', 'RU', 'EN'];
 const LANG_CODES = { KG: 'ky', RU: 'ru', EN: 'en' };
 const LANG_PREFIXES = { KG: '', RU: '/ru', EN: '/en' };
 
-// <title> / meta description per static page per language (50-60 / 150-160 chars).
-// EN isn't listed — the source file's own English copy is used as-is for the EN build.
+// <title> / meta description per static page per language. Titles are written to
+// fit as-is (core <= 48 chars + " | Pogoda.kg"), so fitSeoTitle() never has to cut
+// one mid-phrase. An EN entry without a description keeps the source file's own.
 const PAGE_META = {
     'index.html': {
-        EN: { title: 'Kyrgyzstan Bishkek Daily Weather Forecast | Pogoda Kg', description: 'Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn today.' },
-        RU: { title: "Погода в Бишкеке сегодня, на неделю | Pogoda Kg", description: "Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие." },
-        KG: { title: "Кыргызстан: Бишкектеги күндөлүк аба ырайы | Pogoda Kg", description: "Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси." }
+        EN: { title: 'Kyrgyzstan Bishkek Daily Weather Forecast', description: 'Accurate daily, hourly, and weekly weather forecasts for Kyrgyzstan cities including Bishkek, Osh, Jalal-Abad, Karakol, Tokmok, Uzgen, and Naryn today.' },
+        RU: { title: 'Погода в Бишкеке сегодня и на неделю', description: 'Прогноз погоды в Бишкеке и по всей Киргизии: температура сейчас, почасовой прогноз, на завтра, на неделю. Ош, Каракол, Нарын и другие.' },
+        KG: { title: 'Кыргызстан: Бишкектеги күндөлүк аба ырайы', description: 'Кыргызстандын Бишкек, Ош, Жалал-Абад, Каракол, Токмок, Өзгөн жана Нарын сыяктуу шаарлары үчүн так күндөлүк, сааттык жана жумалык аба ырайы божомолдору тизмеси.' }
     },
     'contact.html': {
-        RU: { title: "Связаться с командой Pogoda Kg — вопросы и поддержка", description: "Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана." },
-        KG: { title: "Pogoda Kg тобу менен байланышуу — суроолор жана колдоо", description: "Аба ырайы маалыматтары, кызматташтык сунуштары, пикирлер же Кыргызстандын аба ырайы божомолу тууралуу суроо-талаптарыңыз боюнча Pogoda Kg тобуна кайрылыңыз." }
+        EN: { title: 'Contact Us: Weather Data Questions and Feedback' },
+        RU: { title: 'Связаться с нами: вопросы о данных о погоде', description: 'Свяжитесь с командой Pogoda Kg по вопросам данных о погоде, предложениям о сотрудничестве, отзывам или другим вопросам о нашем прогнозе погоды Кыргызстана.' },
+        KG: { title: 'Байланыш: аба ырайы маалыматы боюнча суроолор', description: 'Аба ырайы маалыматтары, кызматташтык сунуштары, пикирлер же Кыргызстандын аба ырайы божомолу тууралуу суроо-талаптарыңыз боюнча Pogoda Kg тобуна кайрылыңыз.' }
     },
     'map.html': {
-        RU: { title: "Интерактивная карта погоды Кыргызстана | Pogoda Kg", description: "Изучите интерактивную карту погоды Кыргызстана с живыми отметками температуры, данными о ветре и прогнозами для Бишкека, Оша, Каракола, Нарына и других городов." },
-        KG: { title: "Кыргызстандын интерактивдүү аба ырайы картасы | Pogoda Kg", description: "Бишкек, Ош, Каракол, Нарын жана башка шаарлардын температура белгилери, шамал маалыматтары жана божомолдору менен интерактивдүү картадан таанышып чыгыңыз." }
+        EN: { title: 'Kyrgyzstan Weather Map: Live City Temperatures' },
+        RU: { title: 'Интерактивная карта погоды Кыргызстана', description: 'Изучите интерактивную карту погоды Кыргызстана с живыми отметками температуры, данными о ветре и прогнозами для Бишкека, Оша, Каракола, Нарына и других городов.' },
+        KG: { title: 'Кыргызстандын интерактивдүү аба ырайы картасы', description: 'Бишкек, Ош, Каракол, Нарын жана башка шаарлардын температура белгилери, шамал маалыматтары жана божомолдору менен интерактивдүү картадан таанышып чыгыңыз.' }
     },
     'blog.html': {
-        RU: { title: "Все новости и блог о погоде в Кыргызстане | Pogoda.kg", description: "Читайте последние новости о погоде в Кыргызстане, состоянии горных перевалов, отчёты по озеру Иссык-Куль и сезонные климатические обновления от Pogoda Kg." },
-        KG: { title: "Кыргызстандын аба ырайы жаңылыктары | Pogoda.kg сайты", description: "Кыргызстандын аба ырайы боюнча акыркы жаңылыктарды, тоо ашууларынын абалын, Ысык-Көл жөнүндөгү отчётторду жана мезгилдик климаттык жаңылыктарды окуңуз." }
+        EN: { title: 'Kyrgyzstan Weather News and Climate Blog' },
+        RU: { title: 'Новости погоды и климата в Кыргызстане', description: 'Читайте последние новости о погоде в Кыргызстане, состоянии горных перевалов, отчёты по озеру Иссык-Куль и сезонные климатические обновления от Pogoda Kg.' },
+        KG: { title: 'Кыргызстандын аба ырайы жаңылыктары жана блогу', description: 'Кыргызстандын аба ырайы боюнча акыркы жаңылыктарды, тоо ашууларынын абалын, Ысык-Көл жөнүндөгү отчётторду жана мезгилдик климаттык жаңылыктарды окуңуз.' }
     },
     'terms.html': {
-        RU: { title: "Условия использования сайта Pogoda Kg — прочитайте", description: "Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта." },
-        KG: { title: "Колдонуу шарттары | Pogoda Kg аба ырайы порталы сайты", description: "Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат." }
+        EN: { title: 'Terms of Service' },
+        RU: { title: 'Условия использования', description: 'Ознакомьтесь с Условиями использования Pogoda Kg, погодного портала Кыргызстана, включая отказ от ответственности за данные и правила использования сайта.' },
+        KG: { title: 'Колдонуу шарттары', description: 'Кыргызстандын аба ырайы порталы Pogoda Kg сайтынын Колдонуу шарттары менен таанышыңыз: маалыматтардын тактыгы жана сайтты колдонуу эрежелери жөнүндө маалымат.' }
     },
     'privacy.html': {
-        RU: { title: "Политика конфиденциальности сайта Pogoda Kg — читать", description: "Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере." },
-        KG: { title: "Купуялык саясаты | Pogoda Kg аба ырайы порталы сайты", description: "Pogoda Kg кандай маалыматтарды чогултарын, аны кантип колдонорун жана тил менен шаар тандооңуз браузериңизде кантип сакталарын Купуялык саясатыбыздан билиңиз." }
+        EN: { title: 'Privacy Policy' },
+        RU: { title: 'Политика конфиденциальности', description: 'Ознакомьтесь с Политикой конфиденциальности Pogoda Kg: какие данные мы собираем, как их используем и как хранятся ваши настройки языка и города в браузере.' },
+        KG: { title: 'Купуялык саясаты', description: 'Pogoda Kg кандай маалыматтарды чогултарын, аны кантип колдонорун жана тил менен шаар тандооңуз браузериңизде кантип сакталарын Купуялык саясатыбыздан билиңиз.' }
     },
     '404.html': {
-        RU: { title: "404 — Такая страница не найдена на сайте Pogoda Kg", description: "Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану." },
-        KG: { title: "404 — Суралган барак табылган жок | Pogoda.kg сайты", description: "Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз." }
+        EN: { title: 'Page Not Found (404)' },
+        RU: { title: 'Страница не найдена (404)', description: 'Страница погоды, которую вы ищете, не существует на сайте Pogoda Kg. Вернитесь на главную страницу, чтобы увидеть последний прогноз погоды по Кыргызстану.' },
+        KG: { title: 'Барак табылган жок (404)', description: 'Сиз издеген аба ырайы барагы Pogoda Kg сайтында такыр эле табылган жок. Кыргызстандын акыркы күндөлүк аба ырайы божомолун көрүү үчүн башкы бетке кайтыңыз.' }
     },
     'faq.html': {
-        EN: { title: 'Kyrgyzstan Weather FAQ: Climate Questions Answered', description: "Answers about Kyrgyzstan's weather and climate: general questions, weather by city for all 10 major cities, and how Pogoda.kg's forecasts work — one place." },
-        RU: { title: "Часто задаваемые вопросы о погоде в Кыргызстане: климат", description: "Ответы о погоде и климате Кыргызстана: общие вопросы, погода по каждому из 10 крупных городов, а также о том, как работают прогнозы Pogoda.kg." },
-        KG: { title: "Кыргызстандын аба ырайы жана климаты боюнча суроо-жооптор", description: "Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, 10 ири шаар боюнча аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри." }
-    }
-    ,
+        EN: { title: 'Kyrgyzstan Weather FAQ: Climate Questions', description: "Answers about Kyrgyzstan's weather and climate: general questions, weather in each of the 17 cities we cover, and how Pogoda.kg's forecasts work." },
+        RU: { title: 'Вопросы о погоде и климате Кыргызстана', description: 'Ответы о погоде и климате Кыргызстана: общие вопросы, погода в каждом из 17 городов на сайте, а также о том, как работают прогнозы Pogoda.kg.' },
+        KG: { title: 'Кыргызстандын аба ырайы боюнча суроо-жооптор', description: 'Кыргызстандын аба ырайы жана климаты тууралуу жооптор: жалпы суроолор, сайттагы 17 шаардын ар биринин аба ырайы, ошондой эле Pogoda.kg божомолдору кантип иштээри.' }
+    },
     'passes.html': {
-        EN: { title: 'Kyrgyzstan Mountain Pass Weather and Roads | Pogoda.kg', description: 'Mountain pass weather for Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel with temperature, wind, visibility and official road-status links before travel.' },
-        RU: { title: 'Погода на горных перевалах Кыргызстана и состояние дорог | Pogoda.kg', description: 'Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость.' },
-        KG: { title: 'Кыргызстандын тоо ашууларындагы аба ырайы жана жол маалыматы | Pogoda.kg', description: 'Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз.' }
+        EN: { title: 'Kyrgyzstan Mountain Pass Weather and Roads', description: 'Mountain pass weather for Too-Ashuu, Ala-Bel, Dolon, Otmek and Tuz-Bel with temperature, wind, visibility and official road-status links before travel.' },
+        RU: { title: 'Погода на перевалах Кыргызстана и дороги', description: 'Погода на перевалах Төө-Ашуу, Ала-Бел, Долон, Өтмөк и Түз-Бел. Перед поездкой проверьте официальную проезжаемость.' },
+        KG: { title: 'Кыргызстандын тоо ашууларындагы аба ырайы', description: 'Төө-Ашуу, Ала-Бел, Долон, Өтмөк жана Түз-Бел ашууларындагы аба ырайы. Жолго чыгардан мурун расмий өтүү маалыматын текшериңиз.' }
     },
     'daily.html': {
-        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing | Pogoda.kg', description: 'Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now.' },
-        RU: { title: 'Погода в Кыргызстане сегодня: ежедневная сводка | Pogoda.kg', description: 'Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро.' },
-        KG: { title: 'Бүгүн Кыргызстандагы аба ырайы: күндөлүк маалымат | Pogoda.kg', description: 'Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат.' }
+        EN: { title: 'Kyrgyzstan Weather Today: Daily Briefing', description: 'Daily Kyrgyzstan weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad with temperatures, rain chances and links to live city forecasts now.' },
+        RU: { title: 'Погода в Кыргызстане сегодня: сводка', description: 'Ежедневная сводка погоды для Бишкека, Оша, Каракола, Нарына и Джалал-Абада, обновляется каждое утро.' },
+        KG: { title: 'Кыргызстандагы аба ырайы бүгүн: кыскача сереп', description: 'Бишкек, Ош, Каракол, Нарын жана Жалал-Абад боюнча күндөлүк аба ырайы маалыматы, ар бир эртең менен жаңыланат.' }
     }
 };
 
-// Focused topical keywords supplement the unique title, description and visible copy.
-const PAGE_KEYWORDS = {
-    'index.html': 'Kyrgyzstan weather, Bishkek weather forecast, weather today, 7-day forecast',
-    'daily.html': 'Kyrgyzstan weather today, daily weather briefing, Bishkek Osh forecast, weather update',
-    'passes.html': 'Kyrgyzstan mountain pass weather, Too-Ashuu road conditions, Ala-Bel weather, pass forecast',
-    'map.html': 'Kyrgyzstan weather map, live weather map, Bishkek temperature map, city forecast map',
-    'blog.html': 'Kyrgyzstan weather news, climate blog, mountain weather reports, weather updates',
-    'faq.html': 'Kyrgyzstan weather FAQ, weather forecast questions, Kyrgyzstan climate guide',
-    'contact.html': 'Pogoda kg contact, weather data support, Kyrgyzstan weather feedback',
-    'privacy.html': 'Pogoda kg privacy policy, weather website privacy, data preferences',
-    'terms.html': 'Pogoda kg terms of service, weather forecast terms, website conditions',
-    '404.html': 'Pogoda kg page not found, Kyrgyzstan weather homepage'
-};
+const BRAND_SUFFIX_RE = /\s*[|—–-]\s*Pogoda[\s.]?kg\b.*$/i;
+const TITLE_CORE_MAX = 48;
+const DANGLING_WORD_RE = /\s+(?:and|or|but|of|for|in|on|at|by|to|from|with|into|through|toward|towards|the|a|жана|менен|же|үчүн|и|а|но|в|на|для|по|с|о|к|от|до)$/i;
 
-function addKeywords(html, keywords) {
-    if (!keywords || /<meta name="keywords"/i.test(html)) return html;
-    return html.replace('</head>', `  <meta name="keywords" content="${keywords}">\n</head>`);
-}
-
-function fitSeoTitle(title, lang) {
+// One template for every page: "<core> | Pogoda.kg", at most 60 characters. Any
+// brand variant already in the source ("| Pogoda Kg", "— Pogoda.kg сайты") is
+// dropped first. A long core is shortened without cutting a phrase in half: at its
+// own ":" / "—" / "," break when that keeps enough of it, else kept whole without
+// the brand if it fits in 60, and only then cut at a word.
+function fitSeoTitle(title) {
     const brand = ' | Pogoda.kg';
-    let core = title.replace(/\s*\|\s*Pogoda\.?kg\s*$/i, '').trim();
-    const filler = { EN: ' Kyrgyzstan', RU: ' — Кыргызстан', KG: ' — Кыргызстан' }[lang] || '';
-    if (core.length + brand.length < 50) core += filler;
-    core = trimAtWord(core, 60 - brand.length);
-    return `${core}${brand}`;
+    const core = title.replace(BRAND_SUFFIX_RE, '').trim();
+    if (core.length <= TITLE_CORE_MAX) return core + brand;
+
+    // A dash followed by a number is a date range ("26-сентябрь — 2-октябрь"), not a break.
+    const breaks = [...core.matchAll(/(?::|\s[—–-](?=\s\D)|,)\s/g)].map(m => m.index).filter(i => i <= TITLE_CORE_MAX);
+    const atBreak = breaks.length ? core.slice(0, breaks[breaks.length - 1]).trim() : '';
+    if (atBreak.length >= 30) return atBreak + brand;
+    if (core.length <= TITLE_CORE_MAX + brand.length) return core;
+    if (atBreak.length >= 20) return atBreak + brand;
+
+    let cut = trimAtWord(core, TITLE_CORE_MAX), previous;
+    do { previous = cut; cut = cut.replace(/[\s,:;—–|-]+$/, '').replace(DANGLING_WORD_RE, ''); } while (cut !== previous);
+    return cut + brand;
 }
 
 function fitSeoDescription(description, lang) {
@@ -146,12 +166,22 @@ function fitSeoDescription(description, lang) {
 }
 
 function normaliseMeta(meta, lang) {
-    return { title: fitSeoTitle(meta.title, lang), description: fitSeoDescription(meta.description, lang) };
+    return { title: fitSeoTitle(meta.title), description: meta.description && fitSeoDescription(meta.description, lang) };
 }
 
-function cityKeywords(lang, city) {
-    const name = lang === 'RU' ? ruCity(city).nom : (lang === 'KG' ? city.nativeName : city.name);
-    return `${name} weather, ${name} weather forecast, ${name} temperature today, Kyrgyzstan weather`;
+const escAttr = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+// Writes <title>, meta description and their og:/twitter: copies.
+function withHeadMeta(html, { title, description }) {
+    let out = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
+        .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escAttr(title)}">`)
+        .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${escAttr(title)}">`);
+    if (description) {
+        out = out.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escAttr(description)}">`)
+            .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escAttr(description)}">`)
+            .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${escAttr(description)}">`);
+    }
+    return out;
 }
 
 // Russian city names in nominative + prepositional case. config.js's nativeName is
@@ -180,6 +210,66 @@ const RU_CITY_FORMS = {
 
 function ruCity(city) {
     return RU_CITY_FORMS[city.id] || { nom: city.nativeName || city.name, prep: city.nativeName || city.name };
+}
+
+function cityDisplayName(lang, city) {
+    if (lang === 'RU') return ruCity(city).nom;
+    if (lang === 'KG') return city.nativeName || city.name;
+    return city.name;
+}
+
+// Auto-generated daily posts and the dated August/September forecasts: ~125-word
+// templates that expire the next day. They stay published for readers but are
+// noindexed and left out of the sitemap (SEO QA audit, finding C3).
+const TEMPLATED_POST_RE = /^daily-weather-forecast-kyrgyzstan-\d{4}-\d{2}-\d{2}$|^(?:august|september)-\d+(?:-\d+)?-(?:regional-)?(?:forecast-kyrgyzstan|kyrgyzstan-weather-forecast)-/;
+
+const PAGE_SLUGS = new Set(fs.readdirSync(SRC_DIR).filter(f => f.endsWith('.html') && f !== 'index.html' && f !== '404.html').map(f => f.replace('.html', '')));
+const CITY_IDS = new Set(CITIES.map(city => city.id));
+
+// "/map" -> "/ru/map", "/" -> "/ru/", "/blog/x" -> "/ru/blog/x" (KG has no prefix).
+function langUrl(lang, basePath) {
+    const prefix = LANG_PREFIXES[lang];
+    return basePath === '/' ? `${prefix}/` : `${prefix}${basePath}`;
+}
+
+// Points an internal <a href> straight at its final clean URL in the page's own
+// language: "index.html" -> "/", "blog.html" -> "/ru/blog", "/blog/x.html" ->
+// "/en/blog/x". Source templates link to *.html, which 308-redirects (audit H2),
+// and /ru/ and /en/ pages linked to the Kyrgyz versions (audit check 10).
+function localiseHref(href, lang, baseDir) {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(href)) return href;
+    const [, rawPath, suffix] = href.match(/^([^?#]*)(.*)$/);
+    if (!rawPath) return href;
+    let p = rawPath.startsWith('/') ? rawPath : baseDir + rawPath.replace(/^\.\//, '');
+    p = p.replace(/^\/(?:en|ru|kg)(?=\/|$)/, '') || '/';
+    p = p.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+    if (p === '/') return langUrl(lang, '/') + suffix;
+    const post = p.match(/^\/blog\/([^/]+)$/);
+    if (post) return langUrl(lang, `/blog/${post[1]}`) + suffix;
+    const segment = p.slice(1);
+    if (PAGE_SLUGS.has(segment) || CITY_IDS.has(segment)) return langUrl(lang, p) + suffix;
+    return p + suffix;
+}
+
+// Everything every generated page needs once its own content is in place.
+function finalisePage(html, lang, basePath, baseDir = '/') {
+    let out = html.replace(/(<a\b[^>]*?\shref=")([^"]*)(")/g, (m, open, href, close) => open + localiseHref(href, lang, baseDir) + close);
+
+    // EN / KG / RU as real links to this page in each language, so crawlers can
+    // reach the /ru/ and /en/ versions (audit C1). i18n.js still saves the choice.
+    out = out.replace(/<button class="lang-btn" data-lang="(EN|KG|RU)">\1<\/button>/g, (m, code) =>
+        `<a class="lang-btn" data-lang="${code}" href="${langUrl(code, basePath)}" hreflang="${LANG_CODES[code]}">${code}</a>`);
+
+    // Every city page linked from every page (8 of 17 were linked nowhere — audit C1).
+    const cityLinks = CITIES.map(city =>
+        `<li><a href="${langUrl(lang, `/${city.id}`)}" class="footer-city-link" data-city-id="${city.id}">${cityDisplayName(lang, city)}</a></li>`).join('\n          ');
+    out = out.replace(/<ul[^>]*>(\s*<li><a href="[^"]*" class="footer-city-link"[\s\S]*?)<\/ul>/, `<ul class="footer-city-list">\n          ${cityLinks}\n        </ul>`);
+
+    // Cloudflare Email Obfuscation rewrites the address into a /cdn-cgi/l/email-protection
+    // link that 404s (audit H2); these comments opt the page out of it.
+    out = out.replace(/<body([^>]*)>/, '<body$1>\n<!--email_off-->').replace(/<\/body>/, '<!--/email_off-->\n</body>');
+
+    return out.replace(/"https:\/\/pogoda\.kg\/assets\/favicon\.svg"/g, '"https://pogoda.kg/assets/apple-touch-icon.png"');
 }
 
 // Per-city, per-language <title> and meta description (kept within 50-60 / 150-160 chars)
@@ -330,6 +420,81 @@ function renderFAQSchema(faqList) {
     return `<script type="application/ld+json">\n  ${JSON.stringify(schema)}\n  </script>`;
 }
 
+function fillById(html, id, content) {
+    return html.replace(new RegExp(`(<([a-z0-9]+)\\b[^>]*\\sid="${id}"[^>]*>)[\\s\\S]*?(</\\2>)`), (m, open, tag, close) => open + content + close);
+}
+
+// Mirrors formatUpdatedAt() in daily-briefing.js.
+function formatBriefingTime(value, lang) {
+    const date = new Date(value);
+    const time = new Intl.DateTimeFormat(lang === 'RU' ? 'ru-RU' : 'en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Bishkek' }).format(date);
+    if (lang === 'KG') {
+        const months = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.'];
+        const [y, m, d] = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bishkek' }).format(date).split('-').map(Number);
+        return `${d}-${months[m - 1]} ${y}-ж., ${time}`;
+    }
+    return new Intl.DateTimeFormat(lang === 'RU' ? 'ru-RU' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Bishkek' }).format(date);
+}
+
+// Server-rendered /daily: the same cards daily-briefing.js draws, from the same
+// morning data file, so the page has its content without JavaScript.
+function renderDailyPage(html, lang) {
+    const t = DAILY_COPY[lang] || DAILY_COPY.KG;
+    const index = { EN: 0, RU: 1, KG: 2 }[lang];
+    let out = fillById(html, 'briefingKicker', t.kicker);
+    out = fillById(out, 'briefingTitle', t.title);
+    out = fillById(out, 'briefingIntro', t.intro);
+    out = fillById(out, 'briefingSource', t.source);
+    if (!DAILY_BRIEFING.generatedAt || !DAILY_BRIEFING.cities.length) return fillById(out, 'briefingStatus', t.empty);
+    out = fillById(out, 'briefingStatus', `${t.updated}: ${formatBriefingTime(DAILY_BRIEFING.generatedAt, lang)} (UTC+6)`);
+    const cards = DAILY_BRIEFING.cities.map(city => {
+        const name = lang === 'EN' ? city.en : lang === 'RU' ? city.ru : city.kg;
+        const condition = (DAILY_CONDITIONS[city.code] || ['Unknown', 'Нет данных', 'Белгисиз'])[index];
+        return `<article class="travel-card"><h2>${name}</h2><p class="travel-weather">${city.temp > 0 ? '+' : ''}${city.temp}° · ${condition}</p><p>${t.high}: ${city.high}° · ${t.low}: ${city.low}°</p><p>${t.rain}: ${city.precip}%</p><a class="btn-primary" href="/${city.id}">${t.live}</a></article>`;
+    }).join('');
+    return fillById(out, 'briefingGrid', cards);
+}
+
+// Server-rendered /passes: names, routes, elevations and the official road-status
+// links. Weather values stay live in passes.js, which redraws the cards.
+function renderPassesPage(html, lang) {
+    const t = PASSES_COPY[lang] || PASSES_COPY.KG;
+    let out = fillById(html, 'passesKicker', t.kicker);
+    out = fillById(out, 'passesTitle', t.title);
+    out = fillById(out, 'passesIntro', t.intro);
+    out = fillById(out, 'passesSafety', t.safety);
+    out = fillById(out, 'roadStatusLink', t.source).replace('id="roadStatusLink"', `id="roadStatusLink" href="${OFFICIAL_ROAD_STATUS_URL}"`);
+    out = fillById(out, 'cameraLink', t.cameras).replace('id="cameraLink"', `id="cameraLink" href="${OFFICIAL_CAMERAS_URL}"`);
+    const cards = KYRGYZSTAN_PASSES.map(pass => {
+        const name = lang === 'EN' ? pass.en : lang === 'RU' ? pass.ru : pass.name;
+        return `<article class="travel-card"><h2>${name}</h2><p class="travel-meta">${pass.route} · ${pass.elevation}</p></article>`;
+    }).join('');
+    return fillById(out, 'passesGrid', cards);
+}
+
+// Server-rendered /blog list (mirrors renderBlogPosts() in blog.js) so every post
+// has a crawlable link — 83 of 88 were reachable only through JavaScript (audit C1).
+function renderBlogListHTML(lang) {
+    return BLOG_POSTS.map(post => {
+        const data = post.translations[lang] || post.translations.EN;
+        return `
+      <a href="/blog/${post.slug}" style="text-decoration: none; color: inherit;">
+        <div class="news-card" style="min-height: 220px;">
+          <img src="${post.image}" alt="${escAttr(data.title)}" class="news-card-img" loading="lazy">
+          <div class="news-card-overlay">
+            <span class="news-tag">${data.category}</span>
+            <h3 class="news-title" style="font-size:18px;">${data.title}</h3>
+            <p style="font-size:13px; opacity:0.85; margin-bottom:10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${data.excerpt}</p>
+            <div class="news-meta">
+              <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>
+              <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>
+            </div>
+          </div>
+        </div>
+      </a>`;
+    }).join('');
+}
+
 // Fills #faqContainer and injects FAQPage schema for a given faqList, against
 // a page HTML string whose #faqContainer is still the pristine (comment-only)
 // placeholder from the template. Must run on template-derived HTML BEFORE any
@@ -413,11 +578,6 @@ console.log('Copying static assets...');
     }
 });
 
-// Blog posts need copying too (we might need to process blog html files, let's copy them first)
-if (fs.existsSync(path.join(SRC_DIR, 'blog'))) {
-    copyFolderSync(path.join(SRC_DIR, 'blog'), path.join(OUT_DIR, 'blog'));
-}
-
 // Helper to translate HTML string
 function translateHTML(html, lang, dict, currentUrl) {
     let result = html;
@@ -443,7 +603,8 @@ function translateHTML(html, lang, dict, currentUrl) {
     
     // 4. Fix Canonical Link
     result = result.replace(/<link rel="canonical" href="[^"]+">/, `<link rel="canonical" href="https://pogoda.kg${currentUrl}">`);
-    
+    result = result.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="https://pogoda.kg${currentUrl}">`);
+
     // 5. Fix Hreflang Tags (rebuild them)
     // Remove existing
     result = result.replace(/<link rel="alternate" hreflang="[^"]+" href="[^"]+"\s*\/>\n?/g, '');
@@ -494,16 +655,14 @@ htmlFiles.forEach(file => {
 
         // Translate <title>/meta description (and matching og:/twitter: tags) per language.
         const rawPageMeta = PAGE_META[file] && PAGE_META[file][lang];
-        const pageMeta = rawPageMeta && normaliseMeta(rawPageMeta, lang);
-        if (pageMeta) {
-            translated = translated.replace(/<title>.*?<\/title>/, `<title>${pageMeta.title}</title>`);
-            translated = translated.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${pageMeta.description}">`);
-            translated = translated.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${pageMeta.title}">`);
-            translated = translated.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${pageMeta.description}">`);
-            translated = translated.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${pageMeta.title}">`);
-            translated = translated.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${pageMeta.description}">`);
+        if (rawPageMeta) translated = withHeadMeta(translated, normaliseMeta(rawPageMeta, lang));
+
+        if (file === 'daily.html') translated = renderDailyPage(translated, lang);
+        if (file === 'passes.html') translated = renderPassesPage(translated, lang);
+        if (file === 'blog.html') {
+            translated = translated.replace('<div id="blogCardsGrid" class="blog-grid"></div>', `<div id="blogCardsGrid" class="blog-grid">${renderBlogListHTML(lang)}\n    </div>`);
+            translated = translated.replace('"url": "https://pogoda.kg/blog"', `"url": "https://pogoda.kg${fullUrl}"`);
         }
-        translated = addKeywords(translated, PAGE_KEYWORDS[file]);
 
         // Fill in the homepage's news grid with the current top 5 blog posts, in
         // this build's language.
@@ -544,9 +703,10 @@ htmlFiles.forEach(file => {
             : path.join(OUT_DIR, prefix, file);
 
         fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
-        fs.writeFileSync(outFilePath, pageOutput);
+        fs.writeFileSync(outFilePath, finalisePage(pageOutput, lang, file === 'index.html' ? '/' : pageUrl));
         // The 404 page isn't a real, indexable page — don't submit it to Google via the sitemap.
-        if (file !== '404.html') sitemapUrls.push(fullUrl);
+        const pageSources = { 'daily.html': ['src/js/daily-briefing-data.js'], 'blog.html': ['src/js/blog-posts-data.js'], 'faq.html': ['src/js/faq-data.js'], 'index.html': ['src/js/faq-data.js'] };
+        if (file !== '404.html') sitemapUrls.push({ loc: fullUrl, sources: [`src/${file}`, ...(pageSources[file] || [])] });
 
         // Special Case: If it's index.html, generate city pages!
         if (file === 'index.html') {
@@ -560,14 +720,18 @@ htmlFiles.forEach(file => {
                 cityHtml = cityHtml.replace(/\s*<meta name="yandex-verification" content="[^"]*"\s*\/>\n?/, '\n');
 
                 // Update title & meta description to be unique per city (50-60 / 150-160 chars)
-                const cityMeta = normaliseMeta(getCityMeta(lang, city), lang);
-                cityHtml = cityHtml.replace(/<title>.*?<\/title>/, `<title>${cityMeta.title}</title>`);
-                cityHtml = cityHtml.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${cityMeta.description}">`);
-                cityHtml = cityHtml.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${cityMeta.title}">`);
-                cityHtml = cityHtml.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${cityMeta.description}">`);
-                cityHtml = cityHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${cityMeta.title}">`);
-                cityHtml = cityHtml.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${cityMeta.description}">`);
-                cityHtml = addKeywords(cityHtml, cityKeywords(lang, city));
+                cityHtml = withHeadMeta(cityHtml, normaliseMeta(getCityMeta(lang, city), lang));
+                cityHtml = cityHtml.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="https://pogoda.kg${cityUrl}">`);
+
+                // BreadcrumbList: Home > City (audit check 32).
+                const breadcrumb = {
+                    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: dict.nav_home, item: `https://pogoda.kg${langUrl(lang, '/')}` },
+                        { '@type': 'ListItem', position: 2, name: cityDisplayName(lang, city), item: `https://pogoda.kg${cityUrl}` }
+                    ]
+                };
+                cityHtml = cityHtml.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>\n</head>`);
 
                 // Replace the hero heading/intro with real, unique on-page content for this
                 // city (not just meta tags) — this is what makes it a genuine dedicated page
@@ -641,70 +805,130 @@ htmlFiles.forEach(file => {
                 // Write city file
                 const cityOutPath = path.join(OUT_DIR, prefix, `${city.id}.html`);
                 fs.mkdirSync(path.dirname(cityOutPath), { recursive: true });
-                fs.writeFileSync(cityOutPath, cityHtml);
-                sitemapUrls.push(cityUrl);
+                fs.writeFileSync(cityOutPath, finalisePage(cityHtml, lang, `/${city.id}`));
+                sitemapUrls.push({ loc: cityUrl, sources: ['src/index.html', 'src/js/faq-data.js'] });
             });
         }
     });
 });
 
-// The article archive has its own templates, so normalise its social/search
-// metadata during the build as well. This leaves the visible article H1 intact
-// while giving every post a unique, descriptive 50–60 character title and a
-// 150–160 character description.
 function trimAtWord(text, max) {
     if (text.length <= max) return text;
     const cut = text.slice(0, max + 1).replace(/\s+\S*$/, '').trim();
     return cut || text.slice(0, max).trim();
 }
 
-function articleMetaFromHeading(heading) {
-    const clean = heading.replace(/\s*\|\s*Pogoda\.kg\s*$/i, '').replace(/\s+/g, ' ').trim();
-    let core = trimAtWord(clean, 47);
-    if (core.length < 38) core = trimAtWord(`${core} Kyrgyzstan Weather`, 47);
-    const title = `${core} | Pogoda.kg`;
-    let description = `Kyrgyzstan weather update: ${clean}. Find forecast context, travel guidance and practical local conditions from Pogoda.kg.`;
-    if (description.length < 150) description += ' Check the live city forecast before making plans.';
-    description = trimAtWord(description, 160);
-    return { title, description };
+// Replaces everything between `<div ...>` (the first tag starting with openPrefix)
+// and its matching </div>, counting nested divs.
+function replaceDivInner(html, openPrefix, inner) {
+    const start = html.indexOf(openPrefix);
+    if (start === -1) throw new Error(`${openPrefix} not found`);
+    const openEnd = html.indexOf('>', start) + 1;
+    const tags = /<\/?div\b/g;
+    tags.lastIndex = openEnd;
+    let depth = 1, match;
+    while ((match = tags.exec(html))) {
+        depth += match[0] === '<div' ? 1 : -1;
+        if (depth === 0) return html.slice(0, openEnd) + inner + html.slice(match.index);
+    }
+    throw new Error(`${openPrefix} has no closing </div>`);
 }
 
-const outputBlogDir = path.join(OUT_DIR, 'blog');
-if (fs.existsSync(outputBlogDir)) {
-    fs.readdirSync(outputBlogDir).filter(f => f.endsWith('.html')).forEach(file => {
-        const postPath = path.join(outputBlogDir, file);
-        let post = fs.readFileSync(postPath, 'utf8');
-        const h1 = post.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-        if (!h1) return;
-        const heading = h1[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&');
-        const meta = articleMetaFromHeading(heading);
-        post = post.replace(/<title>.*?<\/title>/i, `<title>${meta.title}</title>`);
-        post = post.replace(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${meta.description}">`);
-        post = post.replace(/<meta property="og:title" content="[^"]*">/i, `<meta property="og:title" content="${meta.title}">`);
-        post = post.replace(/<meta property="og:description" content="[^"]*">/i, `<meta property="og:description" content="${meta.description}">`);
-        post = post.replace(/<meta name="twitter:title" content="[^"]*">/i, `<meta name="twitter:title" content="${meta.title}">`);
-        post = post.replace(/<meta name="twitter:description" content="[^"]*">/i, `<meta name="twitter:description" content="${meta.description}">`);
-        post = addKeywords(post, `Kyrgyzstan weather, ${heading}, weather forecast, Pogoda kg`);
-        // Article templates historically jumped from their H1 directly to H3.
-        // In the generated site, promote those content headings to H2 and keep
-        // the decorative footer labels out of the document outline.
-        post = post.replace(/<h3\b/g, '<h2').replace(/<\/h3>/g, '</h2>');
-        post = post.replace(/<h4\b/g, '<p class="footer-heading"').replace(/<\/h4>/g, '</p>');
-        fs.writeFileSync(postPath, post);
+function mustReplace(html, pattern, replacement, what, slug) {
+    if (!pattern.test(html)) throw new Error(`Article ${slug}: could not find ${what}`);
+    return html.replace(pattern, replacement);
+}
+
+const BACK_TO_NEWS = { KG: 'Жаңылыктарга кайтуу', RU: 'Назад к новостям', EN: 'Back to News' };
+
+// Each article is published in all three languages from its BLOG_POSTS translations:
+// Kyrgyz at /blog/<slug>, Russian at /ru/blog/<slug>, English at /en/blog/<slug>.
+// Before, /blog/<slug> served English HTML that JavaScript then swapped for the
+// Kyrgyz text, and its hreflang pointed ky/ru/en all at that one URL (audit H1).
+// src/blog/<slug>.html is the page shell; only its article-specific parts change.
+function renderArticle(template, post, lang) {
+    const data = post.translations[lang] || post.translations.EN;
+    const dict = TRANSLATIONS[lang];
+    const url = langUrl(lang, `/blog/${post.slug}`);
+    const canonical = `https://pogoda.kg${url}`;
+    const description = trimAtWord((data.seoDesc || data.excerpt).replace(/\s+/g, ' ').trim(), 160);
+
+    let html = translateHTML(template, lang, dict, url);
+    html = withHeadMeta(html, { title: fitSeoTitle(data.seoTitle || data.title), description });
+    if (TEMPLATED_POST_RE.test(post.slug)) html = html.replace('</head>', '  <meta name="robots" content="noindex, follow">\n</head>');
+
+    html = mustReplace(html, /(<h1 class="post-title"[^>]*>)[\s\S]*?(<\/h1>)/, `$1${data.title}$2`, 'h1.post-title', post.slug);
+    html = mustReplace(html, /(<span class="news-tag"[^>]*>)[^<]*(<\/span>)/, `$1${data.category}$2`, 'span.news-tag', post.slug);
+    html = mustReplace(html, /(class="back-btn"[^>]*>[\s\S]*?<\/svg>)[^<]*(<\/a>)/, `$1 ${BACK_TO_NEWS[lang]}$2`, 'a.back-btn', post.slug);
+    html = mustReplace(html,
+        /(<div class="breadcrumbs-container"[^>]*>\s*<a [^>]*><svg[\s\S]*?<\/svg>)[^<]*(<\/a>\s*<span[^>]*>\/<\/span>\s*<a [^>]*>)[^<]*(<\/a>\s*<span[^>]*>\/<\/span>\s*<span>)[^<]*(<\/span>)/,
+        (m, home, news, current, close) => `${home} ${dict.nav_home}${news}${dict.nav_news}${current}${data.title}${close}`, 'breadcrumbs', post.slug);
+    html = replaceDivInner(html, '<div class="post-meta"', `\n      <span><svg class="icon"><use href="#icon-user"></use></svg> ${data.author}</span>\n      <span><svg class="icon"><use href="#icon-calendar"></use></svg> ${data.date}</span>\n    `);
+    html = replaceDivInner(html, '<div class="post-content"', `\n      ${data.content}\n    `);
+
+    html = html.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, open, body, close) => {
+        let schema;
+        try { schema = JSON.parse(body); } catch { return m; }
+        if (['NewsArticle', 'BlogPosting', 'Article'].includes(schema['@type'])) {
+            // BlogPosting, not NewsArticle: these are guides and forecasts, not news reports (audit check 30).
+            Object.assign(schema, { '@type': 'BlogPosting', headline: data.title, description, inLanguage: LANG_CODES[lang], mainEntityOfPage: { '@type': 'WebPage', '@id': canonical } });
+        } else if (schema['@type'] === 'BreadcrumbList') {
+            schema.itemListElement = [
+                { '@type': 'ListItem', position: 1, name: dict.nav_home, item: `https://pogoda.kg${langUrl(lang, '/')}` },
+                { '@type': 'ListItem', position: 2, name: dict.nav_news, item: `https://pogoda.kg${langUrl(lang, '/blog')}` },
+                { '@type': 'ListItem', position: 3, name: data.title, item: canonical }
+            ];
+        } else {
+            return m;
+        }
+        return `${open}\n  ${JSON.stringify(schema, null, 2).replace(/\n/g, '\n  ')}\n  ${close}`;
     });
+
+    // Article templates historically jumped from their H1 directly to H3.
+    // Promote content headings to H2 and keep the decorative footer labels out
+    // of the document outline.
+    html = html.replace(/<h3\b/g, '<h2').replace(/<\/h3>/g, '</h2>');
+    html = html.replace(/<h4\b/g, '<p class="footer-heading"').replace(/<\/h4>/g, '</p>');
+    return finalisePage(html, lang, `/blog/${post.slug}`, '/blog/');
 }
 
-// Blog articles each live at a single unprefixed URL (no per-language copies) — include them too.
-if (fs.existsSync(path.join(SRC_DIR, 'blog'))) {
-    fs.readdirSync(path.join(SRC_DIR, 'blog'))
-        .filter(f => f.endsWith('.html'))
-        .forEach(f => sitemapUrls.push(`/blog/${f.replace('.html', '')}`));
+BLOG_POSTS.forEach(post => {
+    const template = fs.readFileSync(path.join(SRC_DIR, 'blog', `${post.slug}.html`), 'utf8');
+    LANGS.forEach(lang => {
+        const outPath = path.join(OUT_DIR, LANG_PREFIXES[lang], 'blog', `${post.slug}.html`);
+        fs.mkdirSync(path.dirname(outPath), { recursive: true });
+        fs.writeFileSync(outPath, renderArticle(template, post, lang));
+        if (!TEMPLATED_POST_RE.test(post.slug)) sitemapUrls.push({ loc: langUrl(lang, `/blog/${post.slug}`), sources: [`src/blog/${post.slug}.html`] });
+    });
+});
+
+// Last commit date of every file under src/, for <lastmod>. Returns null on a
+// shallow clone, where every file would wrongly share the latest commit's date.
+function gitLastModifiedDates() {
+    try {
+        const git = args => require('child_process').execFileSync('git', args, { cwd: __dirname, maxBuffer: 64 * 1024 * 1024 }).toString();
+        if (git(['rev-parse', '--is-shallow-repository']).trim() === 'true') return null;
+        const dates = new Map();
+        let current = null;
+        for (const line of git(['log', '--format=%x00%cs', '--name-only', '--', 'src']).split('\n')) {
+            if (line.startsWith('\0')) current = line.slice(1);
+            else if (line && current && !dates.has(line)) dates.set(line, current);
+        }
+        return dates;
+    } catch {
+        return null;
+    }
 }
+const lastModified = gitLastModifiedDates();
+if (!lastModified) console.warn('Sitemap: no full git history available, <lastmod> omitted.');
 
 // Generate Sitemap
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${sitemapUrls.map(url => `  <url>\n    <loc>https://pogoda.kg${url}</loc>\n  </url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map(({ loc, sources }) => {
+    const lastmod = lastModified && sources.map(source => lastModified.get(source)).filter(Boolean).sort().pop();
+    return `  <url>\n    <loc>https://pogoda.kg${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}\n  </url>`;
+}).join('\n')}
 </urlset>`;
 fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), sitemapXml);
 
@@ -734,12 +958,6 @@ fs.readdirSync(__dirname).filter(f => /^[0-9a-f]{32}\.txt$/.test(f)).forEach(f =
 const redirects = `# Clean URLs
 /kg  /  301
 /kg/*  /:splat  301
-
-# Blog articles only exist at the unprefixed /blog/<slug> URL (single page,
-# language switched client-side) — redirect any language-prefixed guesses
-# to the canonical URL instead of 404ing.
-/ru/blog/*  /blog/:splat  301
-/en/blog/*  /blog/:splat  301
 `;
 fs.writeFileSync(path.join(OUT_DIR, '_redirects'), redirects);
 

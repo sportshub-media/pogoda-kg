@@ -333,6 +333,8 @@ body:not(.dark-theme) nav.main-nav a.active::after {
   display: flex;
   align-items: center;
   gap: 4px;
+  text-decoration: none;
+  line-height: normal;
 }
 
 .lang-btn:hover {
@@ -1518,6 +1520,16 @@ footer.site-footer {
 
 .footer-column ul {
   list-style: none;
+}
+
+.footer-column .footer-city-list {
+  columns: 2;
+  column-gap: 24px;
+}
+
+.footer-city-list li {
+  break-inside: avoid;
+  white-space: nowrap;
 }
 
 .footer-column li {

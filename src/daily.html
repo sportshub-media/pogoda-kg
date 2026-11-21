@@ -6,6 +6,16 @@
   <title>Kyrgyzstan weather today | Pogoda.kg</title>
   <meta name="description" content="A daily weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.">
   <link rel="canonical" href="https://pogoda.kg/daily">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kyrgyzstan weather today | Pogoda.kg">
+  <meta property="og:description" content="A daily weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="https://pogoda.kg/assets/images/generated/daily-weather.jpg">
+  <meta property="og:site_name" content="Pogoda Kg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kyrgyzstan weather today | Pogoda.kg">
+  <meta name="twitter:description" content="A daily weather briefing for Bishkek, Osh, Karakol, Naryn and Jalal-Abad, updated every morning.">
+  <meta name="twitter:image" content="https://pogoda.kg/assets/images/generated/daily-weather.jpg">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <script type="module" src="js/daily-briefing.js?v=3" defer></script>
@@ -136,6 +146,51 @@
       <div class="mini-weather-widget" id="miniWeatherWidget"></div>
   </div>
   <main><section class="service-hero daily-hero"><div class="service-hero-content"><p class="hero-kicker" id="briefingKicker">Daily briefing</p><h1 id="briefingTitle">Kyrgyzstan weather today</h1><p id="briefingIntro"></p></div></section><section class="section-wrapper"><h2 class="section-title" data-i18n="daily_overview_title">Today’s weather across Kyrgyzstan</h2><p id="briefingStatus" class="safety-note" role="status"></p><div id="briefingGrid" class="travel-grid"></div><h2 class="section-title" data-i18n="daily_plan_title">Plan your day with current forecasts</h2><p class="safety-note" data-i18n="daily_plan_body">Open any city forecast for hourly conditions, wind, rain probability and a seven-day outlook. This briefing is a quick national overview; city pages provide the most current local forecast.</p><p id="briefingSource" class="safety-note"></p></section></main>
-  <footer class="site-footer"><div class="copyright-bar"><div>© 2026 Pogoda Kg (pogoda.kg)</div><div><a href="privacy.html" data-i18n="footer_privacy">Privacy</a> · <a href="terms.html" data-i18n="footer_terms">Terms</a></div></div></footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo" aria-label="Pogoda.kg Home">
+          <img src="assets/logo-dark.png" alt="Pogoda.kg Logo" class="brand-logo-img logo-light-theme" width="575" height="79">
+          <img src="assets/logo.png" alt="Pogoda.kg Logo" class="brand-logo-img logo-dark-theme" width="575" height="79">
+        </a>
+        <p data-i18n="footer_desc">Kyrgyzstan's official weather portal (pogoda.kg).</p>
+      </div>
+
+      <div class="footer-column">
+        <p class="footer-heading" data-i18n="footer_nav">Navigation</p>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="blog.html" data-i18n="nav_news">Weather News</a></li>
+          <li><a href="map.html" data-i18n="nav_map">Weather Map</a></li>
+          <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <p class="footer-heading" data-i18n="footer_locations">Top Locations</p>
+        <ul>
+          <li><a href="/bishkek" class="footer-city-link" data-city-id="bishkek">Bishkek</a></li>
+          <li><a href="/osh" class="footer-city-link" data-city-id="osh">Osh</a></li>
+          <li><a href="/jalal-abad" class="footer-city-link" data-city-id="jalal-abad">Jalal-Abad</a></li>
+          <li><a href="/karakol" class="footer-city-link" data-city-id="karakol">Karakol</a></li>
+          <li><a href="/naryn" class="footer-city-link" data-city-id="naryn">Naryn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <p class="footer-heading" data-i18n="footer_contact">Contact</p>
+        <p style="font-size:14px; color:var(--text-sub);">Email: info.pogoda.kg@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="copyright-bar">
+      <div>© 2026 Pogoda Kg (pogoda.kg). All rights reserved.</div>
+      <div style="display:flex; gap:16px;">
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
