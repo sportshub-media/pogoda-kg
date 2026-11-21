@@ -176,23 +176,58 @@
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <button class="mobile-drawer-close" id="mobileDrawerClose">
+          <svg class="icon"><use href="#icon-xmark"></use></svg>
+          <span data-i18n="close_btn">Close</span>
+        </button>
+      </div>
+      <div class="mobile-drawer-search">
+        <input type="text" id="mobileSearchInput" placeholder="Search location in Kyrgyzstan..." data-i18n-placeholder="search_placeholder">
+        <button id="mobileSearchBtn" aria-label="Search"><svg class="icon"><use href="#icon-magnifying-glass"></use></svg></button>
+      </div>
       <nav class="mobile-nav">
         <ul>
-          <li><a href="/index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="/blog.html" class="active" data-i18n="nav_news">News</a></li>
-          <li><a href="/map.html" data-i18n="nav_map">Map</a></li>
-          <li><a href="/faq.html" data-i18n="nav_faq">FAQ</a></li>
-          <li><a href="/contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li>
+            <a href="/index.html">
+              <span data-i18n="nav_home">Home</span>
+              <span class="mobile-menu-arrow"><svg class="icon"><use href="#icon-chevron-right"></use></svg></span>
+            </a>
+          </li>
+          <li>
+            <a href="/blog.html" class="active">
+              <span data-i18n="nav_news">News</span>
+              <span class="mobile-menu-arrow"><svg class="icon"><use href="#icon-chevron-right"></use></svg></span>
+            </a>
+          </li>
+          <li>
+            <a href="/map.html">
+              <span data-i18n="nav_map">Map</span>
+              <span class="mobile-menu-arrow"><svg class="icon"><use href="#icon-chevron-right"></use></svg></span>
+            </a>
+          </li>
+          <li>
+            <a href="/faq.html">
+              <span data-i18n="nav_faq">FAQ</span>
+              <span class="mobile-menu-arrow"><svg class="icon"><use href="#icon-chevron-right"></use></svg></span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact.html">
+              <span data-i18n="nav_contact">Contact</span>
+              <span class="mobile-menu-arrow"><svg class="icon"><use href="#icon-chevron-right"></use></svg></span>
+            </a>
+          </li>
         </ul>
-      </nav>
-      <div class="mobile-drawer-footer">
-        <div class="mobile-lang-title">Language / Тил / Язык</div>
-        <div class="lang-selector mobile-lang-selector">
-          <button class="lang-btn" data-lang="EN">EN</button>
-          <button class="lang-btn" data-lang="KG">KG</button>
-          <button class="lang-btn" data-lang="RU">RU</button>
+        <div class="mobile-drawer-lang-row">
+          <div class="mobile-lang-title">Language / Тил / Язык</div>
+          <div class="lang-selector mobile-lang-selector">
+            <button class="lang-btn" data-lang="EN">EN</button>
+            <button class="lang-btn" data-lang="KG">KG</button>
+            <button class="lang-btn" data-lang="RU">RU</button>
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
     <div class="mobile-overlay" id="mobileOverlay"></div>
   </header>
