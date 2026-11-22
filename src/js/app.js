@@ -321,7 +321,7 @@ function renderHeroCard(city, data) {
   const t = TRANSLATIONS[lang];
 
   heroCard.innerHTML = `
-    <p class="weather-status" role="status">${weatherStatus(data)}<br><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">${weatherText('source')}</a></p>
+    <p class="weather-status" role="status">${weatherStatus(data)}</p>
     <div class="card-top-row">
       <div class="city-title-new">${getCityName(city)}</div>
     </div>
