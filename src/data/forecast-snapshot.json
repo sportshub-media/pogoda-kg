@@ -1,528 +1,521 @@
 {
- "generatedAt": "2026-11-27T12:44:07.066Z",
+ "generatedAt": "2026-11-28T11:58:53.617Z",
  "cities": {
   "bishkek": [
    {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 9,
-    "min": 1,
-    "precip": 100
-   },
-   {
     "date": "2026-11-28",
-    "code": 3,
-    "max": 7,
-    "min": -2,
-    "precip": 78
+    "code": 51,
+    "max": 9,
+    "min": 0,
+    "precip": 88
    },
    {
     "date": "2026-11-29",
     "code": 3,
     "max": 7,
     "min": 0,
-    "precip": 4
+    "precip": 0
    },
    {
     "date": "2026-11-30",
-    "code": 51,
-    "max": 5,
+    "code": 3,
+    "max": 6,
     "min": 2,
-    "precip": 22
+    "precip": 18
    },
    {
     "date": "2026-12-01",
     "code": 80,
-    "max": 5,
+    "max": 7,
     "min": 2,
-    "precip": 90
+    "precip": 72
    },
    {
     "date": "2026-12-02",
-    "code": 53,
-    "max": 9,
-    "min": 2,
-    "precip": 82
+    "code": 80,
+    "max": 7,
+    "min": 3,
+    "precip": 71
    },
    {
     "date": "2026-12-03",
-    "code": 53,
+    "code": 71,
     "max": 3,
-    "min": 2,
-    "precip": 39
+    "min": 1,
+    "precip": 44
+   },
+   {
+    "date": "2026-12-04",
+    "code": 73,
+    "max": 1,
+    "min": -3,
+    "precip": 87
    }
   ],
   "osh": [
    {
-    "date": "2026-11-27",
-    "code": 51,
-    "max": 10,
+    "date": "2026-11-28",
+    "code": 3,
+    "max": 12,
+    "min": 5,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 13,
+    "min": 7,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 3,
+    "max": 14,
     "min": 6,
+    "precip": 0
+   },
+   {
+    "date": "2026-12-01",
+    "code": 3,
+    "max": 15,
+    "min": 7,
     "precip": 16
    },
    {
-    "date": "2026-11-28",
-    "code": 3,
-    "max": 12,
-    "min": 5,
-    "precip": 2
-   },
-   {
-    "date": "2026-11-29",
-    "code": 3,
-    "max": 13,
-    "min": 8,
-    "precip": 0
-   },
-   {
-    "date": "2026-11-30",
-    "code": 3,
-    "max": 15,
-    "min": 6,
-    "precip": 4
-   },
-   {
-    "date": "2026-12-01",
-    "code": 51,
-    "max": 15,
-    "min": 6,
-    "precip": 31
-   },
-   {
     "date": "2026-12-02",
-    "code": 51,
-    "max": 12,
-    "min": 7,
-    "precip": 31
-   },
-   {
-    "date": "2026-12-03",
     "code": 53,
-    "max": 10,
-    "min": 8,
-    "precip": 57
-   }
-  ],
-  "jalal-abad": [
-   {
-    "date": "2026-11-27",
-    "code": 81,
-    "max": 9,
-    "min": 6,
-    "precip": 100
-   },
-   {
-    "date": "2026-11-28",
-    "code": 3,
-    "max": 14,
-    "min": 5,
-    "precip": 59
-   },
-   {
-    "date": "2026-11-29",
-    "code": 3,
-    "max": 14,
-    "min": 4,
-    "precip": 0
-   },
-   {
-    "date": "2026-11-30",
-    "code": 3,
-    "max": 15,
-    "min": 5,
-    "precip": 46
-   },
-   {
-    "date": "2026-12-01",
-    "code": 80,
     "max": 13,
-    "min": 6,
-    "precip": 50
-   },
-   {
-    "date": "2026-12-02",
-    "code": 80,
-    "max": 13,
-    "min": 8,
+    "min": 9,
     "precip": 54
    },
    {
     "date": "2026-12-03",
     "code": 53,
     "max": 10,
-    "min": 8,
-    "precip": 73
-   }
-  ],
-  "karakol": [
-   {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 6,
-    "min": -2,
-    "precip": 72
+    "min": 7,
+    "precip": 67
    },
    {
-    "date": "2026-11-28",
-    "code": 86,
-    "max": 2,
-    "min": -4,
-    "precip": 100
-   },
-   {
-    "date": "2026-11-29",
-    "code": 3,
-    "max": 3,
-    "min": -4,
-    "precip": 3
-   },
-   {
-    "date": "2026-11-30",
-    "code": 80,
-    "max": 4,
-    "min": -1,
-    "precip": 81
-   },
-   {
-    "date": "2026-12-01",
-    "code": 86,
-    "max": 3,
-    "min": -1,
-    "precip": 92
-   },
-   {
-    "date": "2026-12-02",
-    "code": 86,
-    "max": 2,
-    "min": -2,
-    "precip": 92
-   },
-   {
-    "date": "2026-12-03",
-    "code": 86,
-    "max": 2,
-    "min": -2,
-    "precip": 46
-   }
-  ],
-  "tokmok": [
-   {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 10,
-    "min": 1,
-    "precip": 100
-   },
-   {
-    "date": "2026-11-28",
-    "code": 51,
-    "max": 7,
-    "min": -1,
-    "precip": 35
-   },
-   {
-    "date": "2026-11-29",
-    "code": 3,
-    "max": 9,
-    "min": 0,
-    "precip": 4
-   },
-   {
-    "date": "2026-11-30",
-    "code": 51,
-    "max": 9,
-    "min": 2,
-    "precip": 28
-   },
-   {
-    "date": "2026-12-01",
-    "code": 80,
-    "max": 7,
-    "min": 3,
-    "precip": 94
-   },
-   {
-    "date": "2026-12-02",
-    "code": 55,
-    "max": 10,
+    "date": "2026-12-04",
+    "code": 61,
+    "max": 8,
     "min": 4,
-    "precip": 76
-   },
-   {
-    "date": "2026-12-03",
-    "code": 53,
-    "max": 6,
-    "min": 3,
-    "precip": 32
+    "precip": 100
    }
   ],
-  "uzgen": [
-   {
-    "date": "2026-11-27",
-    "code": 51,
-    "max": 11,
-    "min": 6,
-    "precip": 61
-   },
+  "jalal-abad": [
    {
     "date": "2026-11-28",
     "code": 3,
     "max": 13,
-    "min": 4,
-    "precip": 29
+    "min": 5,
+    "precip": 86
    },
    {
     "date": "2026-11-29",
     "code": 3,
     "max": 14,
-    "min": 6,
+    "min": 4,
     "precip": 0
    },
    {
     "date": "2026-11-30",
     "code": 3,
     "max": 15,
-    "min": 6,
-    "precip": 10
+    "min": 5,
+    "precip": 14
    },
    {
     "date": "2026-12-01",
-    "code": 53,
-    "max": 13,
-    "min": 7,
-    "precip": 47
+    "code": 45,
+    "max": 14,
+    "min": 6,
+    "precip": 39
    },
    {
     "date": "2026-12-02",
     "code": 80,
-    "max": 12,
-    "min": 6,
-    "precip": 53
+    "max": 14,
+    "min": 8,
+    "precip": 79
    },
    {
     "date": "2026-12-03",
-    "code": 55,
+    "code": 81,
     "max": 9,
-    "min": 7,
-    "precip": 77
+    "min": 6,
+    "precip": 87
+   },
+   {
+    "date": "2026-12-04",
+    "code": 80,
+    "max": 9,
+    "min": 6,
+    "precip": 100
    }
   ],
-  "kara-balta": [
+  "karakol": [
    {
-    "date": "2026-11-27",
-    "code": 85,
-    "max": 8,
-    "min": 1,
+    "date": "2026-11-28",
+    "code": 86,
+    "max": 3,
+    "min": -3,
     "precip": 100
    },
    {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 4,
+    "min": -3,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 80,
+    "max": 5,
+    "min": -1,
+    "precip": 92
+   },
+   {
+    "date": "2026-12-01",
+    "code": 81,
+    "max": 4,
+    "min": 0,
+    "precip": 88
+   },
+   {
+    "date": "2026-12-02",
+    "code": 86,
+    "max": 3,
+    "min": -4,
+    "precip": 87
+   },
+   {
+    "date": "2026-12-03",
+    "code": 86,
+    "max": 2,
+    "min": -7,
+    "precip": 47
+   },
+   {
+    "date": "2026-12-04",
+    "code": 85,
+    "max": 2,
+    "min": -2,
+    "precip": 86
+   }
+  ],
+  "tokmok": [
+   {
     "date": "2026-11-28",
     "code": 51,
-    "max": 7,
+    "max": 11,
     "min": 0,
+    "precip": 84
+   },
+   {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 10,
+    "min": 1,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 3,
+    "max": 10,
+    "min": 2,
+    "precip": 19
+   },
+   {
+    "date": "2026-12-01",
+    "code": 81,
+    "max": 10,
+    "min": 3,
+    "precip": 81
+   },
+   {
+    "date": "2026-12-02",
+    "code": 80,
+    "max": 7,
+    "min": 2,
+    "precip": 75
+   },
+   {
+    "date": "2026-12-03",
+    "code": 53,
+    "max": 6,
+    "min": 1,
+    "precip": 35
+   },
+   {
+    "date": "2026-12-04",
+    "code": 73,
+    "max": 3,
+    "min": -1,
+    "precip": 81
+   }
+  ],
+  "uzgen": [
+   {
+    "date": "2026-11-28",
+    "code": 3,
+    "max": 13,
+    "min": 5,
     "precip": 14
    },
    {
     "date": "2026-11-29",
     "code": 3,
+    "max": 13,
+    "min": 6,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 3,
+    "max": 15,
+    "min": 6,
+    "precip": 2
+   },
+   {
+    "date": "2026-12-01",
+    "code": 3,
+    "max": 14,
+    "min": 7,
+    "precip": 29
+   },
+   {
+    "date": "2026-12-02",
+    "code": 80,
+    "max": 10,
+    "min": 7,
+    "precip": 88
+   },
+   {
+    "date": "2026-12-03",
+    "code": 55,
+    "max": 8,
+    "min": 6,
+    "precip": 87
+   },
+   {
+    "date": "2026-12-04",
+    "code": 61,
     "max": 7,
+    "min": 3,
+    "precip": 100
+   }
+  ],
+  "kara-balta": [
+   {
+    "date": "2026-11-28",
+    "code": 3,
+    "max": 8,
+    "min": 0,
+    "precip": 12
+   },
+   {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 6,
     "min": -1,
     "precip": 0
    },
    {
     "date": "2026-11-30",
-    "code": 51,
-    "max": 5,
-    "min": 1,
-    "precip": 13
+    "code": 3,
+    "max": 7,
+    "min": 2,
+    "precip": 8
    },
    {
     "date": "2026-12-01",
-    "code": 53,
-    "max": 5,
-    "min": 1,
-    "precip": 86
+    "code": 80,
+    "max": 6,
+    "min": 2,
+    "precip": 80
    },
    {
     "date": "2026-12-02",
-    "code": 53,
-    "max": 7,
+    "code": 51,
+    "max": 6,
     "min": 1,
-    "precip": 75
+    "precip": 73
    },
    {
     "date": "2026-12-03",
-    "code": 51,
-    "max": 4,
-    "min": 2,
-    "precip": 40
+    "code": 71,
+    "max": 2,
+    "min": 0,
+    "precip": 53
+   },
+   {
+    "date": "2026-12-04",
+    "code": 73,
+    "max": 1,
+    "min": -4,
+    "precip": 89
    }
   ],
   "balykchy": [
    {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 7,
-    "min": -3,
-    "precip": 100
-   },
-   {
     "date": "2026-11-28",
-    "code": 71,
-    "max": 3,
-    "min": -5,
-    "precip": 96
-   },
-   {
-    "date": "2026-11-29",
-    "code": 3,
+    "code": 73,
     "max": 4,
     "min": -3,
-    "precip": 2
-   },
-   {
-    "date": "2026-11-30",
-    "code": 45,
-    "max": 6,
-    "min": -1,
-    "precip": 11
-   },
-   {
-    "date": "2026-12-01",
-    "code": 53,
-    "max": 6,
-    "min": 0,
-    "precip": 73
-   },
-   {
-    "date": "2026-12-02",
-    "code": 53,
-    "max": 6,
-    "min": -1,
-    "precip": 65
-   },
-   {
-    "date": "2026-12-03",
-    "code": 45,
-    "max": 6,
-    "min": 0,
-    "precip": 19
-   }
-  ],
-  "naryn": [
-   {
-    "date": "2026-11-27",
-    "code": 71,
-    "max": 7,
-    "min": 0,
-    "precip": 75
-   },
-   {
-    "date": "2026-11-28",
-    "code": 71,
-    "max": 6,
-    "min": -3,
-    "precip": 61
+    "precip": 98
    },
    {
     "date": "2026-11-29",
     "code": 3,
-    "max": 8,
+    "max": 5,
     "min": -3,
-    "precip": 2
+    "precip": 0
    },
    {
     "date": "2026-11-30",
-    "code": 85,
-    "max": 5,
-    "min": -2,
-    "precip": 43
+    "code": 51,
+    "max": 7,
+    "min": -1,
+    "precip": 12
    },
    {
     "date": "2026-12-01",
-    "code": 85,
-    "max": 5,
-    "min": 0,
-    "precip": 75
+    "code": 51,
+    "max": 7,
+    "min": 1,
+    "precip": 69
    },
    {
     "date": "2026-12-02",
-    "code": 85,
-    "max": 3,
+    "code": 45,
+    "max": 7,
     "min": 0,
     "precip": 55
    },
    {
     "date": "2026-12-03",
-    "code": 73,
-    "max": 3,
-    "min": 0,
-    "precip": 37
-   }
-  ],
-  "talas": [
-   {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 6,
+    "code": 45,
+    "max": 5,
     "min": -1,
-    "precip": 100
+    "precip": 39
    },
    {
-    "date": "2026-11-28",
-    "code": 45,
-    "max": 8,
+    "date": "2026-12-04",
+    "code": 51,
+    "max": 3,
     "min": -1,
-    "precip": 0
+    "precip": 73
+   }
+  ],
+  "naryn": [
+   {
+    "date": "2026-11-28",
+    "code": 71,
+    "max": 7,
+    "min": -2,
+    "precip": 24
    },
    {
     "date": "2026-11-29",
     "code": 3,
-    "max": 10,
-    "min": 1,
+    "max": 8,
+    "min": -2,
     "precip": 2
    },
    {
     "date": "2026-11-30",
-    "code": 3,
-    "max": 8,
-    "min": 3,
-    "precip": 6
+    "code": 71,
+    "max": 5,
+    "min": -1,
+    "precip": 37
    },
    {
     "date": "2026-12-01",
-    "code": 86,
-    "max": 8,
-    "min": 1,
-    "precip": 73
+    "code": 71,
+    "max": 6,
+    "min": 0,
+    "precip": 60
    },
    {
     "date": "2026-12-02",
-    "code": 86,
-    "max": 5,
-    "min": -1,
-    "precip": 65
+    "code": 71,
+    "max": 3,
+    "min": 1,
+    "precip": 59
    },
    {
     "date": "2026-12-03",
-    "code": 85,
-    "max": 4,
+    "code": 71,
+    "max": 5,
+    "min": 0,
+    "precip": 42
+   },
+   {
+    "date": "2026-12-04",
+    "code": 71,
+    "max": 2,
+    "min": 0,
+    "precip": 62
+   }
+  ],
+  "talas": [
+   {
+    "date": "2026-11-28",
+    "code": 45,
+    "max": 9,
     "min": -1,
-    "precip": 31
+    "precip": 0
+   },
+   {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 10,
+    "min": 1,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 3,
+    "max": 9,
+    "min": 3,
+    "precip": 4
+   },
+   {
+    "date": "2026-12-01",
+    "code": 80,
+    "max": 12,
+    "min": 5,
+    "precip": 61
+   },
+   {
+    "date": "2026-12-02",
+    "code": 80,
+    "max": 6,
+    "min": 1,
+    "precip": 55
+   },
+   {
+    "date": "2026-12-03",
+    "code": 71,
+    "max": 4,
+    "min": 0,
+    "precip": 41
+   },
+   {
+    "date": "2026-12-04",
+    "code": 73,
+    "max": 2,
+    "min": -2,
+    "precip": 91
    }
   ],
   "batken": [
    {
-    "date": "2026-11-27",
-    "code": 3,
-    "max": 11,
-    "min": 5,
-    "precip": 10
-   },
-   {
     "date": "2026-11-28",
-    "code": 3,
-    "max": 10,
+    "code": 45,
+    "max": 9,
     "min": 3,
     "precip": 0
    },
@@ -536,45 +529,45 @@
    {
     "date": "2026-11-30",
     "code": 3,
-    "max": 14,
-    "min": 5,
+    "max": 15,
+    "min": 7,
     "precip": 0
    },
    {
     "date": "2026-12-01",
     "code": 3,
-    "max": 15,
+    "max": 13,
     "min": 7,
-    "precip": 8
+    "precip": 7
    },
    {
     "date": "2026-12-02",
-    "code": 3,
-    "max": 11,
-    "min": 5,
-    "precip": 7
+    "code": 51,
+    "max": 12,
+    "min": 6,
+    "precip": 14
    },
    {
     "date": "2026-12-03",
     "code": 51,
     "max": 12,
+    "min": 5,
+    "precip": 49
+   },
+   {
+    "date": "2026-12-04",
+    "code": 55,
+    "max": 9,
     "min": 6,
-    "precip": 39
+    "precip": 98
    }
   ],
   "cholpon-ata": [
    {
-    "date": "2026-11-27",
-    "code": 81,
-    "max": 7,
-    "min": 2,
-    "precip": 100
-   },
-   {
     "date": "2026-11-28",
-    "code": 81,
+    "code": 80,
     "max": 4,
-    "min": 1,
+    "min": 2,
     "precip": 100
    },
    {
@@ -582,152 +575,152 @@
     "code": 45,
     "max": 5,
     "min": 2,
-    "precip": 7
+    "precip": 8
    },
    {
     "date": "2026-11-30",
     "code": 3,
     "max": 5,
     "min": 2,
-    "precip": 61
+    "precip": 76
    },
    {
     "date": "2026-12-01",
-    "code": 55,
-    "max": 5,
+    "code": 81,
+    "max": 6,
     "min": 3,
-    "precip": 89
+    "precip": 84
    },
    {
     "date": "2026-12-02",
-    "code": 55,
-    "max": 5,
-    "min": 2,
-    "precip": 80
-   },
-   {
-    "date": "2026-12-03",
     "code": 53,
     "max": 5,
     "min": 3,
-    "precip": 48
+    "precip": 73
+   },
+   {
+    "date": "2026-12-03",
+    "code": 45,
+    "max": 4,
+    "min": 2,
+    "precip": 59
+   },
+   {
+    "date": "2026-12-04",
+    "code": 55,
+    "max": 4,
+    "min": 2,
+    "precip": 71
    }
   ],
   "kant": [
    {
-    "date": "2026-11-27",
-    "code": 86,
-    "max": 9,
-    "min": 0,
-    "precip": 100
-   },
-   {
     "date": "2026-11-28",
     "code": 51,
-    "max": 7,
-    "min": -1,
-    "precip": 41
+    "max": 10,
+    "min": 0,
+    "precip": 80
    },
    {
     "date": "2026-11-29",
     "code": 3,
     "max": 7,
-    "min": -1,
-    "precip": 3
+    "min": 0,
+    "precip": 0
    },
    {
     "date": "2026-11-30",
-    "code": 51,
-    "max": 6,
-    "min": 0,
-    "precip": 41
+    "code": 3,
+    "max": 7,
+    "min": 1,
+    "precip": 27
    },
    {
     "date": "2026-12-01",
-    "code": 55,
-    "max": 4,
-    "min": 1,
-    "precip": 87
+    "code": 61,
+    "max": 6,
+    "min": 2,
+    "precip": 92
    },
    {
     "date": "2026-12-02",
-    "code": 53,
-    "max": 9,
+    "code": 80,
+    "max": 6,
     "min": 2,
-    "precip": 75
+    "precip": 92
    },
    {
     "date": "2026-12-03",
-    "code": 53,
+    "code": 51,
     "max": 4,
-    "min": 2,
-    "precip": 52
+    "min": 1,
+    "precip": 62
+   },
+   {
+    "date": "2026-12-04",
+    "code": 73,
+    "max": 2,
+    "min": -3,
+    "precip": 86
    }
   ],
   "kemin": [
    {
-    "date": "2026-11-27",
-    "code": 80,
-    "max": 9,
-    "min": 1,
+    "date": "2026-11-28",
+    "code": 51,
+    "max": 7,
+    "min": -1,
     "precip": 100
    },
    {
-    "date": "2026-11-28",
-    "code": 51,
-    "max": 4,
-    "min": -2,
-    "precip": 94
-   },
-   {
     "date": "2026-11-29",
-    "code": 3,
-    "max": 8,
-    "min": 1,
-    "precip": 3
+    "code": 45,
+    "max": 10,
+    "min": 0,
+    "precip": 0
    },
    {
     "date": "2026-11-30",
-    "code": 80,
-    "max": 7,
+    "code": 51,
+    "max": 9,
     "min": 2,
-    "precip": 35
+    "precip": 29
    },
    {
     "date": "2026-12-01",
-    "code": 80,
-    "max": 8,
-    "min": 2,
-    "precip": 86
+    "code": 81,
+    "max": 11,
+    "min": 4,
+    "precip": 84
    },
    {
     "date": "2026-12-02",
-    "code": 53,
-    "max": 8,
+    "code": 80,
+    "max": 6,
     "min": 1,
-    "precip": 76
+    "precip": 82
    },
    {
     "date": "2026-12-03",
     "code": 51,
     "max": 5,
     "min": 1,
-    "precip": 35
+    "precip": 37
+   },
+   {
+    "date": "2026-12-04",
+    "code": 71,
+    "max": 2,
+    "min": -1,
+    "precip": 81
    }
   ],
   "kyzyl-kiya": [
    {
-    "date": "2026-11-27",
-    "code": 3,
-    "max": 11,
-    "min": 6,
-    "precip": 4
-   },
-   {
     "date": "2026-11-28",
     "code": 3,
     "max": 10,
-    "min": 5,
+    "min": 4,
     "precip": 0
    },
    {
@@ -740,91 +733,91 @@
    {
     "date": "2026-11-30",
     "code": 3,
-    "max": 15,
+    "max": 14,
     "min": 8,
     "precip": 0
    },
    {
     "date": "2026-12-01",
     "code": 3,
-    "max": 15,
+    "max": 14,
     "min": 8,
-    "precip": 19
+    "precip": 10
    },
    {
     "date": "2026-12-02",
     "code": 3,
     "max": 11,
-    "min": 8,
-    "precip": 20
-   },
-   {
-    "date": "2026-12-03",
-    "code": 51,
-    "max": 11,
-    "min": 7,
-    "precip": 45
-   }
-  ],
-  "toktogul": [
-   {
-    "date": "2026-11-27",
-    "code": 81,
-    "max": 10,
-    "min": 7,
-    "precip": 100
-   },
-   {
-    "date": "2026-11-28",
-    "code": 45,
-    "max": 10,
-    "min": 6,
-    "precip": 8
-   },
-   {
-    "date": "2026-11-29",
-    "code": 45,
-    "max": 11,
-    "min": 6,
-    "precip": 0
-   },
-   {
-    "date": "2026-11-30",
-    "code": 45,
-    "max": 12,
-    "min": 6,
-    "precip": 12
-   },
-   {
-    "date": "2026-12-01",
-    "code": 51,
-    "max": 11,
-    "min": 6,
-    "precip": 54
-   },
-   {
-    "date": "2026-12-02",
-    "code": 3,
-    "max": 10,
     "min": 7,
     "precip": 22
    },
    {
     "date": "2026-12-03",
     "code": 51,
+    "max": 11,
+    "min": 7,
+    "precip": 55
+   },
+   {
+    "date": "2026-12-04",
+    "code": 61,
+    "max": 8,
+    "min": 6,
+    "precip": 100
+   }
+  ],
+  "toktogul": [
+   {
+    "date": "2026-11-28",
+    "code": 45,
+    "max": 10,
+    "min": 6,
+    "precip": 10
+   },
+   {
+    "date": "2026-11-29",
+    "code": 3,
+    "max": 11,
+    "min": 6,
+    "precip": 0
+   },
+   {
+    "date": "2026-11-30",
+    "code": 45,
+    "max": 12,
+    "min": 7,
+    "precip": 11
+   },
+   {
+    "date": "2026-12-01",
+    "code": 55,
+    "max": 11,
+    "min": 7,
+    "precip": 72
+   },
+   {
+    "date": "2026-12-02",
+    "code": 53,
+    "max": 10,
+    "min": 7,
+    "precip": 73
+   },
+   {
+    "date": "2026-12-03",
+    "code": 53,
+    "max": 8,
+    "min": 6,
+    "precip": 82
+   },
+   {
+    "date": "2026-12-04",
+    "code": 53,
     "max": 8,
     "min": 7,
-    "precip": 68
+    "precip": 91
    }
   ],
   "razzakov": [
-   {
-    "date": "2026-11-27",
-    "code": 51,
-    "max": 6,
-    "min": 2,
-    "precip": 100
-   },
    {
     "date": "2026-11-28",
     "code": 45,
@@ -842,30 +835,37 @@
    {
     "date": "2026-11-30",
     "code": 3,
-    "max": 14,
-    "min": 7,
+    "max": 15,
+    "min": 8,
     "precip": 0
    },
    {
     "date": "2026-12-01",
     "code": 3,
-    "max": 17,
-    "min": 7,
-    "precip": 6
+    "max": 18,
+    "min": 6,
+    "precip": 4
    },
    {
     "date": "2026-12-02",
-    "code": 45,
-    "max": 13,
-    "min": 7,
-    "precip": 4
+    "code": 51,
+    "max": 11,
+    "min": 8,
+    "precip": 10
    },
    {
     "date": "2026-12-03",
     "code": 51,
-    "max": 12,
-    "min": 7,
-    "precip": 53
+    "max": 11,
+    "min": 6,
+    "precip": 35
+   },
+   {
+    "date": "2026-12-04",
+    "code": 80,
+    "max": 7,
+    "min": 2,
+    "precip": 99
    }
   ]
  },
@@ -874,30 +874,30 @@
    "gridElevation": 2708,
    "days": [
     {
-     "date": "2026-11-27",
-     "code": 86,
-     "max": -2,
-     "min": -6,
-     "precip": 100,
-     "snowCm": 10.9,
-     "wind": 8
-    },
-    {
      "date": "2026-11-28",
      "code": 85,
      "max": -5,
      "min": -9,
-     "precip": 39,
-     "snowCm": 0.6,
+     "precip": 43,
+     "snowCm": 0.1,
      "wind": 10
     },
     {
      "date": "2026-11-29",
      "code": 71,
      "max": -3,
-     "min": -10,
-     "precip": 32,
-     "snowCm": 0.5,
+     "min": -9,
+     "precip": 35,
+     "snowCm": 0.7,
+     "wind": 8
+    },
+    {
+     "date": "2026-11-30",
+     "code": 71,
+     "max": -4,
+     "min": -8,
+     "precip": 31,
+     "snowCm": 1.1,
      "wind": 9
     }
    ]
@@ -906,31 +906,31 @@
    "gridElevation": 2762,
    "days": [
     {
-     "date": "2026-11-27",
-     "code": 86,
-     "max": 1,
-     "min": -6,
-     "precip": 100,
-     "snowCm": 11.3,
-     "wind": 14
-    },
-    {
      "date": "2026-11-28",
      "code": 71,
      "max": -3,
-     "min": -9,
-     "precip": 92,
-     "snowCm": 0.1,
-     "wind": 16
+     "min": -8,
+     "precip": 98,
+     "snowCm": 0.4,
+     "wind": 17
     },
     {
      "date": "2026-11-29",
-     "code": 3,
+     "code": 71,
      "max": 0,
-     "min": -7,
-     "precip": 31,
-     "snowCm": 0,
+     "min": -6,
+     "precip": 16,
+     "snowCm": 0.1,
      "wind": 12
+    },
+    {
+     "date": "2026-11-30",
+     "code": 71,
+     "max": -2,
+     "min": -7,
+     "precip": 53,
+     "snowCm": 0.6,
+     "wind": 16
     }
    ]
   },
@@ -938,31 +938,31 @@
    "gridElevation": 2549,
    "days": [
     {
-     "date": "2026-11-27",
-     "code": 85,
-     "max": 3,
-     "min": -4,
-     "precip": 98,
-     "snowCm": 1.2,
-     "wind": 11
-    },
-    {
      "date": "2026-11-28",
      "code": 71,
      "max": 0,
-     "min": -4,
+     "min": -3,
      "precip": 100,
-     "snowCm": 0.6,
-     "wind": 10
+     "snowCm": 0.4,
+     "wind": 11
     },
     {
      "date": "2026-11-29",
      "code": 3,
-     "max": 1,
-     "min": -4,
-     "precip": 2,
+     "max": 2,
+     "min": -3,
+     "precip": 4,
      "snowCm": 0,
      "wind": 6
+    },
+    {
+     "date": "2026-11-30",
+     "code": 85,
+     "max": 0,
+     "min": -3,
+     "precip": 64,
+     "snowCm": 1.1,
+     "wind": 9
     }
    ]
   },
@@ -970,31 +970,31 @@
    "gridElevation": 2852,
    "days": [
     {
-     "date": "2026-11-27",
-     "code": 95,
-     "max": -2,
-     "min": -4,
-     "precip": 100,
-     "snowCm": 18.6,
-     "wind": 14
-    },
-    {
      "date": "2026-11-28",
      "code": 85,
      "max": -4,
-     "min": -13,
-     "precip": 92,
-     "snowCm": 0.3,
-     "wind": 12
+     "min": -12,
+     "precip": 98,
+     "snowCm": 0.8,
+     "wind": 13
     },
     {
      "date": "2026-11-29",
-     "code": 45,
+     "code": 3,
      "max": -1,
-     "min": -11,
-     "precip": 31,
+     "min": -10,
+     "precip": 16,
      "snowCm": 0,
-     "wind": 3
+     "wind": 4
+    },
+    {
+     "date": "2026-11-30",
+     "code": 71,
+     "max": -3,
+     "min": -11,
+     "precip": 53,
+     "snowCm": 0.4,
+     "wind": 5
     }
    ]
   },
@@ -1002,19 +1002,10 @@
    "gridElevation": 3573,
    "days": [
     {
-     "date": "2026-11-27",
-     "code": 2,
-     "max": 2,
-     "min": -6,
-     "precip": 0,
-     "snowCm": 0,
-     "wind": 31
-    },
-    {
      "date": "2026-11-28",
      "code": 2,
-     "max": 0,
-     "min": -8,
+     "max": -1,
+     "min": -7,
      "precip": 0,
      "snowCm": 0,
      "wind": 30
@@ -1022,11 +1013,20 @@
     {
      "date": "2026-11-29",
      "code": 3,
-     "max": -1,
+     "max": 0,
      "min": -8,
-     "precip": 3,
+     "precip": 0,
      "snowCm": 0,
      "wind": 20
+    },
+    {
+     "date": "2026-11-30",
+     "code": 71,
+     "max": -2,
+     "min": -7,
+     "precip": 78,
+     "snowCm": 0.1,
+     "wind": 32
     }
    ]
   }
